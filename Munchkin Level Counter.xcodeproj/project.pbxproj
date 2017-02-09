@@ -1,0 +1,442 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A1F8F74D1E4CA6B200B57DEB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F8F74C1E4CA6B200B57DEB /* AppDelegate.swift */; };
+		A1F8F74F1E4CA6B200B57DEB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F8F74E1E4CA6B200B57DEB /* ViewController.swift */; };
+		A1F8F7521E4CA6B200B57DEB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A1F8F7501E4CA6B200B57DEB /* Main.storyboard */; };
+		A1F8F7551E4CA6B200B57DEB /* Munchkin_Level_Counter.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A1F8F7531E4CA6B200B57DEB /* Munchkin_Level_Counter.xcdatamodeld */; };
+		A1F8F7571E4CA6B200B57DEB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A1F8F7561E4CA6B200B57DEB /* Assets.xcassets */; };
+		A1F8F75A1E4CA6B200B57DEB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A1F8F7581E4CA6B200B57DEB /* LaunchScreen.storyboard */; };
+		A1F8F7651E4CA6B200B57DEB /* Munchkin_Level_CounterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F8F7641E4CA6B200B57DEB /* Munchkin_Level_CounterTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		A1F8F7611E4CA6B200B57DEB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A1F8F7411E4CA6B200B57DEB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A1F8F7481E4CA6B200B57DEB;
+			remoteInfo = "Munchkin Level Counter";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		A1F8F7491E4CA6B200B57DEB /* Munchkin Level Counter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Munchkin Level Counter.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A1F8F74C1E4CA6B200B57DEB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		A1F8F74E1E4CA6B200B57DEB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		A1F8F7511E4CA6B200B57DEB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		A1F8F7541E4CA6B200B57DEB /* Munchkin_Level_Counter.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Munchkin_Level_Counter.xcdatamodel; sourceTree = "<group>"; };
+		A1F8F7561E4CA6B200B57DEB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A1F8F7591E4CA6B200B57DEB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		A1F8F75B1E4CA6B200B57DEB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A1F8F7601E4CA6B200B57DEB /* Munchkin Level CounterTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Munchkin Level CounterTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A1F8F7641E4CA6B200B57DEB /* Munchkin_Level_CounterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Munchkin_Level_CounterTests.swift; sourceTree = "<group>"; };
+		A1F8F7661E4CA6B200B57DEB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A1F8F7461E4CA6B200B57DEB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A1F8F75D1E4CA6B200B57DEB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A1F8F7401E4CA6B200B57DEB = {
+			isa = PBXGroup;
+			children = (
+				A1F8F74B1E4CA6B200B57DEB /* Munchkin Level Counter */,
+				A1F8F7631E4CA6B200B57DEB /* Munchkin Level CounterTests */,
+				A1F8F74A1E4CA6B200B57DEB /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		A1F8F74A1E4CA6B200B57DEB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A1F8F7491E4CA6B200B57DEB /* Munchkin Level Counter.app */,
+				A1F8F7601E4CA6B200B57DEB /* Munchkin Level CounterTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A1F8F74B1E4CA6B200B57DEB /* Munchkin Level Counter */ = {
+			isa = PBXGroup;
+			children = (
+				A1F8F74C1E4CA6B200B57DEB /* AppDelegate.swift */,
+				A1F8F74E1E4CA6B200B57DEB /* ViewController.swift */,
+				A1F8F7501E4CA6B200B57DEB /* Main.storyboard */,
+				A1F8F7561E4CA6B200B57DEB /* Assets.xcassets */,
+				A1F8F7581E4CA6B200B57DEB /* LaunchScreen.storyboard */,
+				A1F8F75B1E4CA6B200B57DEB /* Info.plist */,
+				A1F8F7531E4CA6B200B57DEB /* Munchkin_Level_Counter.xcdatamodeld */,
+			);
+			path = "Munchkin Level Counter";
+			sourceTree = "<group>";
+		};
+		A1F8F7631E4CA6B200B57DEB /* Munchkin Level CounterTests */ = {
+			isa = PBXGroup;
+			children = (
+				A1F8F7641E4CA6B200B57DEB /* Munchkin_Level_CounterTests.swift */,
+				A1F8F7661E4CA6B200B57DEB /* Info.plist */,
+			);
+			path = "Munchkin Level CounterTests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A1F8F7481E4CA6B200B57DEB /* Munchkin Level Counter */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A1F8F7691E4CA6B200B57DEB /* Build configuration list for PBXNativeTarget "Munchkin Level Counter" */;
+			buildPhases = (
+				A1F8F7451E4CA6B200B57DEB /* Sources */,
+				A1F8F7461E4CA6B200B57DEB /* Frameworks */,
+				A1F8F7471E4CA6B200B57DEB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Munchkin Level Counter";
+			productName = "Munchkin Level Counter";
+			productReference = A1F8F7491E4CA6B200B57DEB /* Munchkin Level Counter.app */;
+			productType = "com.apple.product-type.application";
+		};
+		A1F8F75F1E4CA6B200B57DEB /* Munchkin Level CounterTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A1F8F76C1E4CA6B200B57DEB /* Build configuration list for PBXNativeTarget "Munchkin Level CounterTests" */;
+			buildPhases = (
+				A1F8F75C1E4CA6B200B57DEB /* Sources */,
+				A1F8F75D1E4CA6B200B57DEB /* Frameworks */,
+				A1F8F75E1E4CA6B200B57DEB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A1F8F7621E4CA6B200B57DEB /* PBXTargetDependency */,
+			);
+			name = "Munchkin Level CounterTests";
+			productName = "Munchkin Level CounterTests";
+			productReference = A1F8F7601E4CA6B200B57DEB /* Munchkin Level CounterTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A1F8F7411E4CA6B200B57DEB /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0820;
+				LastUpgradeCheck = 0820;
+				ORGANIZATIONNAME = datarockets;
+				TargetAttributes = {
+					A1F8F7481E4CA6B200B57DEB = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = M5MBYBFCK5;
+						ProvisioningStyle = Automatic;
+					};
+					A1F8F75F1E4CA6B200B57DEB = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = M5MBYBFCK5;
+						ProvisioningStyle = Automatic;
+						TestTargetID = A1F8F7481E4CA6B200B57DEB;
+					};
+				};
+			};
+			buildConfigurationList = A1F8F7441E4CA6B200B57DEB /* Build configuration list for PBXProject "Munchkin Level Counter" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = A1F8F7401E4CA6B200B57DEB;
+			productRefGroup = A1F8F74A1E4CA6B200B57DEB /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A1F8F7481E4CA6B200B57DEB /* Munchkin Level Counter */,
+				A1F8F75F1E4CA6B200B57DEB /* Munchkin Level CounterTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A1F8F7471E4CA6B200B57DEB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A1F8F75A1E4CA6B200B57DEB /* LaunchScreen.storyboard in Resources */,
+				A1F8F7571E4CA6B200B57DEB /* Assets.xcassets in Resources */,
+				A1F8F7521E4CA6B200B57DEB /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A1F8F75E1E4CA6B200B57DEB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A1F8F7451E4CA6B200B57DEB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A1F8F7551E4CA6B200B57DEB /* Munchkin_Level_Counter.xcdatamodeld in Sources */,
+				A1F8F74F1E4CA6B200B57DEB /* ViewController.swift in Sources */,
+				A1F8F74D1E4CA6B200B57DEB /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A1F8F75C1E4CA6B200B57DEB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A1F8F7651E4CA6B200B57DEB /* Munchkin_Level_CounterTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		A1F8F7621E4CA6B200B57DEB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A1F8F7481E4CA6B200B57DEB /* Munchkin Level Counter */;
+			targetProxy = A1F8F7611E4CA6B200B57DEB /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		A1F8F7501E4CA6B200B57DEB /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A1F8F7511E4CA6B200B57DEB /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		A1F8F7581E4CA6B200B57DEB /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A1F8F7591E4CA6B200B57DEB /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		A1F8F7671E4CA6B200B57DEB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		A1F8F7681E4CA6B200B57DEB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		A1F8F76A1E4CA6B200B57DEB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = M5MBYBFCK5;
+				INFOPLIST_FILE = "Munchkin Level Counter/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.datarockets.Munchkin-Level-Counter";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		A1F8F76B1E4CA6B200B57DEB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = M5MBYBFCK5;
+				INFOPLIST_FILE = "Munchkin Level Counter/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.datarockets.Munchkin-Level-Counter";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		A1F8F76D1E4CA6B200B57DEB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = M5MBYBFCK5;
+				INFOPLIST_FILE = "Munchkin Level CounterTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.datarockets.Munchkin-Level-CounterTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Munchkin Level Counter.app/Munchkin Level Counter";
+			};
+			name = Debug;
+		};
+		A1F8F76E1E4CA6B200B57DEB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = M5MBYBFCK5;
+				INFOPLIST_FILE = "Munchkin Level CounterTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.datarockets.Munchkin-Level-CounterTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Munchkin Level Counter.app/Munchkin Level Counter";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A1F8F7441E4CA6B200B57DEB /* Build configuration list for PBXProject "Munchkin Level Counter" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A1F8F7671E4CA6B200B57DEB /* Debug */,
+				A1F8F7681E4CA6B200B57DEB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A1F8F7691E4CA6B200B57DEB /* Build configuration list for PBXNativeTarget "Munchkin Level Counter" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A1F8F76A1E4CA6B200B57DEB /* Debug */,
+				A1F8F76B1E4CA6B200B57DEB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		A1F8F76C1E4CA6B200B57DEB /* Build configuration list for PBXNativeTarget "Munchkin Level CounterTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A1F8F76D1E4CA6B200B57DEB /* Debug */,
+				A1F8F76E1E4CA6B200B57DEB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		A1F8F7531E4CA6B200B57DEB /* Munchkin_Level_Counter.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				A1F8F7541E4CA6B200B57DEB /* Munchkin_Level_Counter.xcdatamodel */,
+			);
+			currentVersion = A1F8F7541E4CA6B200B57DEB /* Munchkin_Level_Counter.xcdatamodel */;
+			path = Munchkin_Level_Counter.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = A1F8F7411E4CA6B200B57DEB /* Project object */;
+}
