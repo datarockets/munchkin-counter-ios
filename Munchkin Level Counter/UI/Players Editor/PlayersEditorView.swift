@@ -9,5 +9,7 @@
 import Foundation
 
 protocol PlayersEditorView: BaseView {
+    func showText()
     func showPlayers()
+    func addPlayerToList(playerItem: Player)
 }

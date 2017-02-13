@@ -1,22 +1,20 @@
 //
-//  PlayersEditorViewController.swift
+//  OnboardingStepOneViewController.swift
 //  Munchkin Level Counter
 //
-//  Created by Dzmitry Chyrta on 09.02.17.
+//  Created by Dzmitry Chyrta on 10.02.17.
 //  Copyright © 2017 datarockets. All rights reserved.
 //
 
 import UIKit
-import Swinject
 
-class PlayersEditorViewController: UIViewController, PlayersEditorView {
+class OnboardingStepViewController: UIViewController {
 
-    var presenter: PlayersEditorPresenter?
+    var index: Int?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        presenter?.attachView(self)
-        presenter?.getPlayers()
+
         // Do any additional setup after loading the view.
     }
 
@@ -24,23 +22,8 @@ class PlayersEditorViewController: UIViewController, PlayersEditorView {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
 
-    override func viewDidDisappear(_ animated: Bool) {
-        presenter?.detachView()
-    }
-    
-    func showPlayers() {
-        
-    }
-    
-    func showText() {
-        print("Hello world")
-    }
-
-    func addPlayerToList(playerItem: Player) {
-        
-    }
-    
     /*
     // MARK: - Navigation
 

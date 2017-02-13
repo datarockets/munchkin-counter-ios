@@ -7,12 +7,12 @@
 //
 
 import Foundation
+import CoreData
 
 class PreferencesHelper {
     
-    
     init() {
-
+        
     }
     
 }

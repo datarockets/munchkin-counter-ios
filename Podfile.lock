@@ -4,19 +4,28 @@ PODS:
     - Branch/without-IDFA (= 0.12.27)
   - Branch/Core (0.12.27)
   - Branch/without-IDFA (0.12.27)
+  - MagicalRecord (2.3.2):
+    - MagicalRecord/Core (= 2.3.2)
+  - MagicalRecord/Core (2.3.2)
   - RxSwift (3.2.0)
   - Swinject (2.0.0)
+  - SwinjectStoryboard (1.0.0):
+    - Swinject (= 2.0.0)
 
 DEPENDENCIES:
   - Branch
+  - MagicalRecord
   - RxSwift
-  - Swinject
+  - Swinject (= 2.0.0)
+  - SwinjectStoryboard (= 1.0.0)
 
 SPEC CHECKSUMS:
   Branch: 41404cc6de82e84368a26961f66d657b0662ca02
+  MagicalRecord: 53bed74b4323b930992a725be713e53b37d19755
   RxSwift: 46574f70d416b7923c237195939cc488a7fbf3a0
   Swinject: 2e964a80d70ab09b3949c99032711f89147bfd60
+  SwinjectStoryboard: 8e0d3c0202b64172bdf915d55e8dc83d9c4e7863
 
-PODFILE CHECKSUM: c69befd5fbf068ca7e0debce399e0b038de3658e
+PODFILE CHECKSUM: 9fc35e11f1cae1e0bbac7eba3b869128641e1029
 
-COCOAPODS: 1.1.1
+COCOAPODS: 1.2.0

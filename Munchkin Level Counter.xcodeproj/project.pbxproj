@@ -9,14 +9,21 @@
 /* Begin PBXBuildFile section */
 		2E15041594B69D1D724C81A7 /* Pods_Munchkin_Level_Counter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56F6911D425EA6423575B082 /* Pods_Munchkin_Level_Counter.framework */; };
 		8BA8503F1FD86CCEB6E3452F /* Pods_Munchkin_Level_CounterTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7CCEDB83BEC5440482DA548A /* Pods_Munchkin_Level_CounterTests.framework */; };
+		A127FA801E4DC65E002733AA /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A127FA7F1E4DC65E002733AA /* OnboardingViewController.swift */; };
+		A127FA821E4DC66A002733AA /* OnboardingPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A127FA811E4DC66A002733AA /* OnboardingPresenter.swift */; };
+		A127FA841E4DC67C002733AA /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A127FA831E4DC67C002733AA /* OnboardingView.swift */; };
+		A127FA861E4E0FC1002733AA /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A127FA851E4E0FC1002733AA /* DashboardViewController.swift */; };
+		A127FA881E4E0FDE002733AA /* DashboardPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A127FA871E4E0FDE002733AA /* DashboardPresenter.swift */; };
+		A127FA8A1E4E0FE6002733AA /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A127FA891E4E0FE6002733AA /* DashboardView.swift */; };
+		A127FA8C1E4E183C002733AA /* OnboardingStepViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A127FA8B1E4E183C002733AA /* OnboardingStepViewController.swift */; };
+		A170F5FE1E50945F006149D3 /* EntityMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A170F5FD1E50945F006149D3 /* EntityMapper.swift */; };
+		A170F6001E5097FA006149D3 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = A170F5FF1E5097FA006149D3 /* Player.swift */; };
 		A17750101E4CB432004B910E /* PlayersEditorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A177500F1E4CB432004B910E /* PlayersEditorViewController.swift */; };
 		A17750121E4CB446004B910E /* PlayersEditorPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A17750111E4CB446004B910E /* PlayersEditorPresenter.swift */; };
 		A17750151E4CB4CF004B910E /* Presenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A17750141E4CB4CF004B910E /* Presenter.swift */; };
 		A17750171E4CB51E004B910E /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A17750161E4CB51E004B910E /* BaseView.swift */; };
 		A17750191E4CB576004B910E /* PlayersEditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A17750181E4CB576004B910E /* PlayersEditorView.swift */; };
-		A17908271E4CC23C0027F413 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = A17908261E4CC23C0027F413 /* Player.swift */; };
 		A1F8F74D1E4CA6B200B57DEB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F8F74C1E4CA6B200B57DEB /* AppDelegate.swift */; };
-		A1F8F74F1E4CA6B200B57DEB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F8F74E1E4CA6B200B57DEB /* ViewController.swift */; };
 		A1F8F7521E4CA6B200B57DEB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A1F8F7501E4CA6B200B57DEB /* Main.storyboard */; };
 		A1F8F7551E4CA6B200B57DEB /* Munchkin_Level_Counter.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A1F8F7531E4CA6B200B57DEB /* Munchkin_Level_Counter.xcdatamodeld */; };
 		A1F8F7571E4CA6B200B57DEB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A1F8F7561E4CA6B200B57DEB /* Assets.xcassets */; };
@@ -43,15 +50,22 @@
 		5D31C7C05988FDF130E07539 /* Pods-Munchkin Level CounterTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Munchkin Level CounterTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Munchkin Level CounterTests/Pods-Munchkin Level CounterTests.release.xcconfig"; sourceTree = "<group>"; };
 		6166B033B03097EF4FDE051B /* Pods-Munchkin Level Counter.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Munchkin Level Counter.release.xcconfig"; path = "Pods/Target Support Files/Pods-Munchkin Level Counter/Pods-Munchkin Level Counter.release.xcconfig"; sourceTree = "<group>"; };
 		7CCEDB83BEC5440482DA548A /* Pods_Munchkin_Level_CounterTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Munchkin_Level_CounterTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A127FA7F1E4DC65E002733AA /* OnboardingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
+		A127FA811E4DC66A002733AA /* OnboardingPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingPresenter.swift; sourceTree = "<group>"; };
+		A127FA831E4DC67C002733AA /* OnboardingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
+		A127FA851E4E0FC1002733AA /* DashboardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
+		A127FA871E4E0FDE002733AA /* DashboardPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardPresenter.swift; sourceTree = "<group>"; };
+		A127FA891E4E0FE6002733AA /* DashboardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; };
+		A127FA8B1E4E183C002733AA /* OnboardingStepViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingStepViewController.swift; sourceTree = "<group>"; };
+		A170F5FD1E50945F006149D3 /* EntityMapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EntityMapper.swift; sourceTree = "<group>"; };
+		A170F5FF1E5097FA006149D3 /* Player.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		A177500F1E4CB432004B910E /* PlayersEditorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayersEditorViewController.swift; sourceTree = "<group>"; };
 		A17750111E4CB446004B910E /* PlayersEditorPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayersEditorPresenter.swift; sourceTree = "<group>"; };
 		A17750141E4CB4CF004B910E /* Presenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Presenter.swift; sourceTree = "<group>"; };
 		A17750161E4CB51E004B910E /* BaseView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
 		A17750181E4CB576004B910E /* PlayersEditorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayersEditorView.swift; sourceTree = "<group>"; };
-		A17908261E4CC23C0027F413 /* Player.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		A1F8F7491E4CA6B200B57DEB /* Munchkin Level Counter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Munchkin Level Counter.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A1F8F74C1E4CA6B200B57DEB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		A1F8F74E1E4CA6B200B57DEB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		A1F8F7511E4CA6B200B57DEB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A1F8F7541E4CA6B200B57DEB /* Munchkin_Level_Counter.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Munchkin_Level_Counter.xcdatamodel; sourceTree = "<group>"; };
 		A1F8F7561E4CA6B200B57DEB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -106,6 +120,27 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		A127FA7D1E4DC5FA002733AA /* Dashboard */ = {
+			isa = PBXGroup;
+			children = (
+				A127FA851E4E0FC1002733AA /* DashboardViewController.swift */,
+				A127FA871E4E0FDE002733AA /* DashboardPresenter.swift */,
+				A127FA891E4E0FE6002733AA /* DashboardView.swift */,
+			);
+			path = Dashboard;
+			sourceTree = "<group>";
+		};
+		A127FA7E1E4DC625002733AA /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				A127FA7F1E4DC65E002733AA /* OnboardingViewController.swift */,
+				A127FA811E4DC66A002733AA /* OnboardingPresenter.swift */,
+				A127FA831E4DC67C002733AA /* OnboardingView.swift */,
+				A127FA8B1E4E183C002733AA /* OnboardingStepViewController.swift */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
 		A177500C1E4CB3C6004B910E /* Players Editor */ = {
 			isa = PBXGroup;
 			children = (
@@ -151,7 +186,6 @@
 				A1F8F7701E4CA7BE00B57DEB /* Data */,
 				A1F8F76F1E4CA7AD00B57DEB /* UI */,
 				A1F8F74C1E4CA6B200B57DEB /* AppDelegate.swift */,
-				A1F8F74E1E4CA6B200B57DEB /* ViewController.swift */,
 				A1F8F7501E4CA6B200B57DEB /* Main.storyboard */,
 				A1F8F7561E4CA6B200B57DEB /* Assets.xcassets */,
 				A1F8F7581E4CA6B200B57DEB /* LaunchScreen.storyboard */,
@@ -173,6 +207,8 @@
 		A1F8F76F1E4CA7AD00B57DEB /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				A127FA7E1E4DC625002733AA /* Onboarding */,
+				A127FA7D1E4DC5FA002733AA /* Dashboard */,
 				A17750131E4CB4B6004B910E /* Base */,
 				A177500C1E4CB3C6004B910E /* Players Editor */,
 			);
@@ -186,7 +222,6 @@
 				A1F8F7721E4CA7CC00B57DEB /* Remote */,
 				A1F8F7711E4CA7C600B57DEB /* Local */,
 				A1F8F7771E4CA89300B57DEB /* DataManager.swift */,
-				A17908261E4CC23C0027F413 /* Player.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -196,6 +231,7 @@
 			children = (
 				A1F8F7791E4CA8C400B57DEB /* DatabaseHelper.swift */,
 				A1F8F77B1E4CAB8B00B57DEB /* PreferencesHelper.swift */,
+				A170F5FD1E50945F006149D3 /* EntityMapper.swift */,
 			);
 			path = Local;
 			sourceTree = "<group>";
@@ -210,6 +246,7 @@
 		A1F8F7741E4CA7DB00B57DEB /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				A170F5FF1E5097FA006149D3 /* Player.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -418,18 +455,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A127FA801E4DC65E002733AA /* OnboardingViewController.swift in Sources */,
 				A17750151E4CB4CF004B910E /* Presenter.swift in Sources */,
+				A127FA881E4E0FDE002733AA /* DashboardPresenter.swift in Sources */,
 				A17750101E4CB432004B910E /* PlayersEditorViewController.swift in Sources */,
+				A127FA8C1E4E183C002733AA /* OnboardingStepViewController.swift in Sources */,
+				A127FA841E4DC67C002733AA /* OnboardingView.swift in Sources */,
 				A1F8F77C1E4CAB8B00B57DEB /* PreferencesHelper.swift in Sources */,
 				A1F8F7551E4CA6B200B57DEB /* Munchkin_Level_Counter.xcdatamodeld in Sources */,
-				A17908271E4CC23C0027F413 /* Player.swift in Sources */,
+				A170F6001E5097FA006149D3 /* Player.swift in Sources */,
+				A127FA821E4DC66A002733AA /* OnboardingPresenter.swift in Sources */,
 				A1F8F77A1E4CA8C400B57DEB /* DatabaseHelper.swift in Sources */,
 				A1F8F7781E4CA89300B57DEB /* DataManager.swift in Sources */,
-				A1F8F74F1E4CA6B200B57DEB /* ViewController.swift in Sources */,
 				A17750191E4CB576004B910E /* PlayersEditorView.swift in Sources */,
 				A17750171E4CB51E004B910E /* BaseView.swift in Sources */,
+				A127FA8A1E4E0FE6002733AA /* DashboardView.swift in Sources */,
 				A17750121E4CB446004B910E /* PlayersEditorPresenter.swift in Sources */,
 				A1F8F74D1E4CA6B200B57DEB /* AppDelegate.swift in Sources */,
+				A127FA861E4E0FC1002733AA /* DashboardViewController.swift in Sources */,
+				A170F5FE1E50945F006149D3 /* EntityMapper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

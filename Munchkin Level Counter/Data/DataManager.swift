@@ -12,18 +12,33 @@ import RxSwift
 class DataManager {
     
     private let mDatabaseHelper: DatabaseHelper
+    private let mPreferencesHelper: PreferencesHelper
     
-    init(databaseHelper: DatabaseHelper) {
+    init(databaseHelper: DatabaseHelper,
+         preferencesHelper: PreferencesHelper) {
         mDatabaseHelper = databaseHelper
+        mPreferencesHelper = preferencesHelper
     }
     
-    func getPlayer() {
-        
+    func addPlayer(playerName: String) -> Observable<Player> {
+        let player = Player()
+        player.playerName = playerName
+        player.playerLevel = 1
+        player.playerStrength = 1
+        return mDatabaseHelper.addPlayer(player: player)
+    
     }
     
-    func getPlayers() -> Observable<PlayerItem> {
+    func getPlayer(playerId: String) -> Observable<Player> {
         return Observable.create { observer in
-            observer.on(.next(PlayerItem()))
+            observer.onCompleted()
+            return Disposables.create()
+        }
+    }
+    
+    func getPlayers() -> Observable<Player> {
+        return Observable.create { observer in
+            observer.on(.next(Player()))
             observer.on(.completed)
             return Disposables.create()
         }

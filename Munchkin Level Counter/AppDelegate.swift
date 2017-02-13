@@ -9,18 +9,70 @@
 import UIKit
 import CoreData
 import Swinject
+import SwinjectStoryboard
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-    let container = Container() { container in
+    
+    public var container: Container = {
+        let container = Container()
         
-    }
-
+        // Data
+        container.register(PreferencesHelper.self) { _ in
+            print("Preferences Helper initialized")
+            return PreferencesHelper()
+        }
+        container.register(DatabaseHelper.self) { _ in
+            print("Database Helper initialized")
+            return DatabaseHelper()
+        }
+        container.register(DataManager.self) { resolver in
+            print("Data Manager initialized")
+            return DataManager.init(
+                databaseHelper: resolver.resolve(DatabaseHelper.self)!,
+                preferencesHelper: resolver.resolve(PreferencesHelper.self)!)
+        }
+        
+        // Presenters
+        container.register(PlayersEditorPresenter.self) { resolver in
+            print("Players Editor Presenter")
+            return PlayersEditorPresenter.init(dataManager: resolver.resolve(DataManager.self)!)
+        }
+        
+        container.register(OnboardingPresenter.self) { resolver in
+            print("Onboarding Presenter")
+            return OnboardingPresenter.init(dataManager: resolver.resolve(DataManager.self)!)
+        }
+        
+        container.register(DashboardPresenter.self) { resolver in
+            print("Dashboard Presenter")
+            return DashboardPresenter.init(dataManager: resolver.resolve(DataManager.self)!)
+        }
+        
+        // View
+        container.storyboardInitCompleted(PlayersEditorViewController.self) { resolver, controller in
+            controller.presenter = resolver.resolve(PlayersEditorPresenter.self)!
+        }
+        
+        container.storyboardInitCompleted(OnboardingViewController.self) { resolver, controller in
+            controller.presenter = resolver.resolve(OnboardingPresenter.self)!
+        }
+        
+        container.storyboardInitCompleted(DashboardViewController.self) { resolver, controller in
+            controller.presenter = resolver.resolve(DashboardPresenter.self)!
+        }
+        
+        return container
+    }()
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-
+        let storyboard = SwinjectStoryboard.create(name: "Main", bundle: nil, container: container)
+        window?.rootViewController = storyboard.instantiateInitialViewController()
+    
+        
         return true
     }
 
@@ -50,19 +102,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     // MARK: - Core Data stack
 
-    lazy var persistentContainer: NSPersistentContainer = {
+    var persistentContainer: NSPersistentContainer = {
         /*
          The persistent container for the application. This implementation
          creates and returns a container, having loaded the store for the
          application to it. This property is optional since there are legitimate
          error conditions that could cause the creation of the store to fail.
-        */
+         */
         let container = NSPersistentContainer(name: "Munchkin_Level_Counter")
         container.loadPersistentStores(completionHandler: { (storeDescription, error) in
             if let error = error as NSError? {
                 // Replace this implementation with code to handle the error appropriately.
                 // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-                 
+                
                 /*
                  Typical reasons for an error here include:
                  * The parent directory does not exist, cannot be created, or disallows writing.
