@@ -13,32 +13,109 @@ import RxSwift
 
 class DatabaseHelper {
 
-    func addPlayer(player: Player) -> Observable<Player> {
-        return Observable.create { observer in
+    
+    func setPlayer(player: Player) -> Observable<Player> {
+        return Observable.create { subscriber in
             MagicalRecord.save({ (context) in
-                observer.onNext(Player(playerId: "1", playerName: "2", playerLevel: 1, playerStrength: 1))
-                observer.onCompleted()
+                if let entity = PlayerEntity.mr_createEntity(in: context) {
+                    Db.PlayerTable.map(from: player, to: entity)
+                } else {
+                    subscriber.onCompleted()
+                }
+            }, completion: { success, error in
+                subscriber.onNext(player)
+                subscriber.onCompleted()
             })
             return Disposables.create()
         }
     }
     
-    func deletePlayer(withId id: String, completion: @escaping (_ success: Bool) -> Void) {
-        MagicalRecord.save({ (context) in
-            let predicate = NSPredicate(format: "id = '\(id)'")
-            PlayerEntity.mr_deleteAll(matching: predicate, in: context)
-        }, completion: { success, error in
-            completion(success)
-        })
+    func getPlayer(playerId: String) -> Observable<Player> {
+        return Observable.create { subscriber in
+            let context = NSManagedObjectContext.mr_()
+            let predicate = NSPredicate(format: "id = '\(playerId)'")
+            if let entity = PlayerEntity.mr_findFirst(with: predicate, in: context) {
+                let player = Db.PlayerTable.player(from: entity)
+                subscriber.onNext(player)
+            }
+            subscriber.onCompleted()
+            return Disposables.create()
+        }
     }
     
-    func updatePlayerScores(withId id: String, levelScore: Int, strengthScore: Int, completion: @escaping (_ success: Bool) -> Void) {
-        MagicalRecord.save({ (context) in
-            let predicate = NSPredicate(format: "id = '\(id)'")
-            PlayerEntity.mr_deleteAll(matching: predicate, in: context)
-        }, completion: { success, error in
-            completion(success)
-        })
+    func getPlayers() -> Observable<Player> {
+        return Observable.create { subscriber in
+            let context = NSManagedObjectContext.mr_default()
+            if let players = PlayerEntity.mr_findAll(in: context) as? [PlayerEntity] {
+                for entity in players {
+                    let player = Db.PlayerTable.player(from: entity)
+                    subscriber.onNext(player)
+                }
+            }
+            subscriber.onCompleted()
+            return Disposables.create()
+        }
     }
+    
+    func getPlayingPlayers() -> Observable<Player> {
+        return Observable.create { subscriber in
+            let context = NSManagedObjectContext.mr_()
+            let predicate = NSPredicate(format: "playing = \(true)")
+            if let players = PlayerEntity.mr_findAll(with: predicate, in: context) as? [PlayerEntity] {
+                for entity in players {
+                    let player = Db.PlayerTable.player(from: entity)
+                    subscriber.onNext(player)
+                }
+            }
+            subscriber.onCompleted()
+            return Disposables.create()
+        }
+    }
+    
+    func deletePlayer(withId id: String) -> Observable<Void> {
+        return Observable.create { subscriber in
+            MagicalRecord.save({ (context) in
+                let predicate = NSPredicate(format: "id = '\(id)'")
+                PlayerEntity.mr_deleteAll(matching: predicate, in: context)
+            }, completion: { success, error in
+                subscriber.onCompleted()
+            })
+            return Disposables.create()
+        }
+    }
+    
+    func updatePlayerScores(withId id: String, levelScore: Int, strengthScore: Int) -> Observable<Void> {
+        return Observable.create { subscriber in
+            MagicalRecord.save({ (context) in
+                let predicate = NSPredicate(format: "id = '\(id)'")
+                if let entity = PlayerEntity.mr_findFirst(with: predicate, in: context) {
+                    entity.level = Int16(levelScore)
+                    entity.strength = Int16(strengthScore)
+                } else {
+                    subscriber.onCompleted()
+                }
+            }, completion: { success, error in
+                subscriber.onCompleted()
+            })
+            return Disposables.create()
+        }
+    }
+    
+    func markPlayerPlaying(withId id: String, isPlaying: Bool) -> Observable<Void> {
+        return Observable.create { subscriber in
+            MagicalRecord.save({ (context) in
+                let predicate = NSPredicate(format: "id = '\(id)'")
+                if let entity = PlayerEntity.mr_findFirst(with: predicate, in: context) {
+                    entity.playing = isPlaying
+                } else {
+                    subscriber.onCompleted()
+                }
+            }, completion: { success, error in
+                subscriber.onCompleted()
+            })
+            return Disposables.create()
+        }
+    }
+
     
 }

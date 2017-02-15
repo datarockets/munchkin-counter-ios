@@ -16,13 +16,14 @@
 		A127FA881E4E0FDE002733AA /* DashboardPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A127FA871E4E0FDE002733AA /* DashboardPresenter.swift */; };
 		A127FA8A1E4E0FE6002733AA /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A127FA891E4E0FE6002733AA /* DashboardView.swift */; };
 		A127FA8C1E4E183C002733AA /* OnboardingStepViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A127FA8B1E4E183C002733AA /* OnboardingStepViewController.swift */; };
-		A170F5FE1E50945F006149D3 /* EntityMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A170F5FD1E50945F006149D3 /* EntityMapper.swift */; };
+		A12D01B01E54868B009BCD9E /* PlayersEditorTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A12D01AF1E54868B009BCD9E /* PlayersEditorTableViewCell.swift */; };
 		A170F6001E5097FA006149D3 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = A170F5FF1E5097FA006149D3 /* Player.swift */; };
 		A17750101E4CB432004B910E /* PlayersEditorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A177500F1E4CB432004B910E /* PlayersEditorViewController.swift */; };
 		A17750121E4CB446004B910E /* PlayersEditorPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A17750111E4CB446004B910E /* PlayersEditorPresenter.swift */; };
 		A17750151E4CB4CF004B910E /* Presenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A17750141E4CB4CF004B910E /* Presenter.swift */; };
 		A17750171E4CB51E004B910E /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A17750161E4CB51E004B910E /* BaseView.swift */; };
 		A17750191E4CB576004B910E /* PlayersEditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A17750181E4CB576004B910E /* PlayersEditorView.swift */; };
+		A1EFDB8B1E53419600FEBD76 /* Db.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1EFDB8A1E53419600FEBD76 /* Db.swift */; };
 		A1F8F74D1E4CA6B200B57DEB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F8F74C1E4CA6B200B57DEB /* AppDelegate.swift */; };
 		A1F8F7521E4CA6B200B57DEB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A1F8F7501E4CA6B200B57DEB /* Main.storyboard */; };
 		A1F8F7551E4CA6B200B57DEB /* Munchkin_Level_Counter.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A1F8F7531E4CA6B200B57DEB /* Munchkin_Level_Counter.xcdatamodeld */; };
@@ -57,13 +58,14 @@
 		A127FA871E4E0FDE002733AA /* DashboardPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardPresenter.swift; sourceTree = "<group>"; };
 		A127FA891E4E0FE6002733AA /* DashboardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; };
 		A127FA8B1E4E183C002733AA /* OnboardingStepViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingStepViewController.swift; sourceTree = "<group>"; };
-		A170F5FD1E50945F006149D3 /* EntityMapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EntityMapper.swift; sourceTree = "<group>"; };
+		A12D01AF1E54868B009BCD9E /* PlayersEditorTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayersEditorTableViewCell.swift; sourceTree = "<group>"; };
 		A170F5FF1E5097FA006149D3 /* Player.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		A177500F1E4CB432004B910E /* PlayersEditorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayersEditorViewController.swift; sourceTree = "<group>"; };
 		A17750111E4CB446004B910E /* PlayersEditorPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayersEditorPresenter.swift; sourceTree = "<group>"; };
 		A17750141E4CB4CF004B910E /* Presenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Presenter.swift; sourceTree = "<group>"; };
 		A17750161E4CB51E004B910E /* BaseView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
 		A17750181E4CB576004B910E /* PlayersEditorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayersEditorView.swift; sourceTree = "<group>"; };
+		A1EFDB8A1E53419600FEBD76 /* Db.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Db.swift; sourceTree = "<group>"; };
 		A1F8F7491E4CA6B200B57DEB /* Munchkin Level Counter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Munchkin Level Counter.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A1F8F74C1E4CA6B200B57DEB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A1F8F7511E4CA6B200B57DEB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -147,6 +149,7 @@
 				A177500F1E4CB432004B910E /* PlayersEditorViewController.swift */,
 				A17750111E4CB446004B910E /* PlayersEditorPresenter.swift */,
 				A17750181E4CB576004B910E /* PlayersEditorView.swift */,
+				A12D01AF1E54868B009BCD9E /* PlayersEditorTableViewCell.swift */,
 			);
 			path = "Players Editor";
 			sourceTree = "<group>";
@@ -231,7 +234,7 @@
 			children = (
 				A1F8F7791E4CA8C400B57DEB /* DatabaseHelper.swift */,
 				A1F8F77B1E4CAB8B00B57DEB /* PreferencesHelper.swift */,
-				A170F5FD1E50945F006149D3 /* EntityMapper.swift */,
+				A1EFDB8A1E53419600FEBD76 /* Db.swift */,
 			);
 			path = Local;
 			sourceTree = "<group>";
@@ -468,12 +471,13 @@
 				A1F8F77A1E4CA8C400B57DEB /* DatabaseHelper.swift in Sources */,
 				A1F8F7781E4CA89300B57DEB /* DataManager.swift in Sources */,
 				A17750191E4CB576004B910E /* PlayersEditorView.swift in Sources */,
+				A1EFDB8B1E53419600FEBD76 /* Db.swift in Sources */,
 				A17750171E4CB51E004B910E /* BaseView.swift in Sources */,
 				A127FA8A1E4E0FE6002733AA /* DashboardView.swift in Sources */,
 				A17750121E4CB446004B910E /* PlayersEditorPresenter.swift in Sources */,
 				A1F8F74D1E4CA6B200B57DEB /* AppDelegate.swift in Sources */,
+				A12D01B01E54868B009BCD9E /* PlayersEditorTableViewCell.swift in Sources */,
 				A127FA861E4E0FC1002733AA /* DashboardViewController.swift in Sources */,
-				A170F5FE1E50945F006149D3 /* EntityMapper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -4,9 +4,10 @@
         <attribute name="id" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="level" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="playing" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="strength" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
     </entity>
     <elements>
-        <element name="PlayerEntity" positionX="-63" positionY="-18" width="128" height="103"/>
+        <element name="PlayerEntity" positionX="-63" positionY="-18" width="128" height="120"/>
     </elements>
 </model>

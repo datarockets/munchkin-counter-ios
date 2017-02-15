@@ -10,6 +10,7 @@ import UIKit
 import CoreData
 import Swinject
 import SwinjectStoryboard
+import MagicalRecord
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -20,9 +21,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let container = Container()
         
         // Data
-        container.register(PreferencesHelper.self) { _ in
+        container.register(UserDefaults.self) { _ in
+            print("User Defaults")
+            return UserDefaults()
+        }
+        container.register(PreferencesHelper.self) { resolver in
             print("Preferences Helper initialized")
-            return PreferencesHelper()
+            return PreferencesHelper(userDefaults: resolver.resolve(UserDefaults.self)!)
         }
         container.register(DatabaseHelper.self) { _ in
             print("Database Helper initialized")
@@ -69,6 +74,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        MagicalRecord.setupCoreDataStack()
         let storyboard = SwinjectStoryboard.create(name: "Main", bundle: nil, container: container)
         window?.rootViewController = storyboard.instantiateInitialViewController()
     

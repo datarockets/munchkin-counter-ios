@@ -9,7 +9,11 @@
 import Foundation
 
 protocol PlayersEditorView: BaseView {
-    func showText()
-    func showPlayers()
-    func addPlayerToList(playerItem: Player)
+    func addPlayerToList(player: Player)
+    func deletePlayerFromList(playerId: String)
+    func setPlayersList(players: Array<Player>)
+    func showAddNewPlayerAlertDialog()
+    func launchDashboard()
+    func showStartContinueDialog()
+    func showWarning()
 }

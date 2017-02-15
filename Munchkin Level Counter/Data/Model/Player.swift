@@ -7,23 +7,26 @@
 //
 
 import Foundation
+import CoreData
 
 class Player {
-    var playerId: String?
+    var playerId: NSManagedObjectID?
     var playerName: String?
-    var playerLevel: Int?
-    var playerStrength: Int?
+    var playerLevel: Int = 1
+    var playerStrength: Int = 1
+    var isPlaying: Bool = false
     
     init() {}
     
     init(playerId: String,
          playerName: String,
          playerLevel: Int,
-         playerStrength: Int) {
-        self.playerId = playerId
+         playerStrength: Int,
+         isPlaying: Bool) {
         self.playerName = playerName
         self.playerLevel = playerLevel
         self.playerStrength = playerStrength
+        self.isPlaying = isPlaying
     }
     
 }

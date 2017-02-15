@@ -20,32 +20,29 @@ class DataManager {
         mPreferencesHelper = preferencesHelper
     }
     
+    func getPreferencesHelper() -> PreferencesHelper {
+        return mPreferencesHelper
+    }
+    
     func addPlayer(playerName: String) -> Observable<Player> {
         let player = Player()
         player.playerName = playerName
         player.playerLevel = 1
         player.playerStrength = 1
-        return mDatabaseHelper.addPlayer(player: player)
+        return mDatabaseHelper.setPlayer(player: player)
     
     }
     
     func getPlayer(playerId: String) -> Observable<Player> {
-        return Observable.create { observer in
-            observer.onCompleted()
-            return Disposables.create()
-        }
+        return mDatabaseHelper.getPlayer(playerId: playerId)
     }
     
-    func getPlayers() -> Observable<Player> {
-        return Observable.create { observer in
-            observer.on(.next(Player()))
-            observer.on(.completed)
-            return Disposables.create()
-        }
+    func getPlayers() -> Observable<[Player]> {
+        return mDatabaseHelper.getPlayers().toArray()
     }
     
-    func getPlayingPlayers() {
-        
+    func getPlayingPlayers() -> Observable<[Player]>{
+        return mDatabaseHelper.getPlayingPlayers().toArray()
     }
     
 }

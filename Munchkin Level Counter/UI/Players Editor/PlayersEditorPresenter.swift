@@ -30,7 +30,7 @@ class PlayersEditorPresenter: Presenter {
             .subscribeOn(ConcurrentDispatchQueueScheduler(qos: DispatchQoS.background))
             .observeOn(MainScheduler())
             .subscribe(onNext: { player in
-                self.mPlayersEditorView?.addPlayerToList(playerItem: player)
+                self.mPlayersEditorView?.addPlayerToList(player: player)
             })
     }
     
@@ -40,7 +40,32 @@ class PlayersEditorPresenter: Presenter {
             .subscribeOn(ConcurrentDispatchQueueScheduler(qos: DispatchQoS.background))
             .observeOn(MainScheduler())
             .subscribe(onNext: { players in
-                self.mPlayersEditorView?.showText()
+                self.mPlayersEditorView?.setPlayersList(players: players)
+            })
+    }
+    
+    func markPlayerAsPlaying(withId id: String, isPlaying: Bool) {
+        
+    }
+    
+    func checkIsGameStarted() {
+        if mDataManager.getPreferencesHelper().isGameStarted() {
+            mPlayersEditorView?.showStartContinueDialog()
+        }
+    }
+    
+    func checkIsEnoughPlayers() {
+        mSubscription = mDataManager.getPlayingPlayers()
+            .subscribeOn(ConcurrentDispatchQueueScheduler(qos: DispatchQoS.background))
+            .observeOn(MainScheduler())
+            .subscribe(onNext: { players in
+                if players.count > 2 {
+                    print("Enough")
+                    self.mPlayersEditorView?.launchDashboard()
+                } else {
+                    print("Not enough")
+                    self.mPlayersEditorView?.showWarning()
+                }
             })
     }
     
