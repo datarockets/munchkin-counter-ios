@@ -7,10 +7,9 @@
 //
 
 import Foundation
-import CoreData
 
 class Player {
-    var playerId: NSManagedObjectID?
+    var playerId: String?
     var playerName: String?
     var playerLevel: Int = 1
     var playerStrength: Int = 1

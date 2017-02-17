@@ -8,6 +8,7 @@
 
 import Foundation
 import RxSwift
+import CoreData
 
 class DataManager {
     
@@ -26,6 +27,7 @@ class DataManager {
     
     func addPlayer(playerName: String) -> Observable<Player> {
         let player = Player()
+        player.playerId = NSUUID().uuidString
         player.playerName = playerName
         player.playerLevel = 1
         player.playerStrength = 1
@@ -41,8 +43,20 @@ class DataManager {
         return mDatabaseHelper.getPlayers().toArray()
     }
     
-    func getPlayingPlayers() -> Observable<[Player]>{
+    func getPlayingPlayers() -> Observable<[Player]> {
         return mDatabaseHelper.getPlayingPlayers().toArray()
+    }
+    
+    func markPlayerAsPlaying(playerId: String, isPlaying: Bool) -> Observable<Void> {
+        return mDatabaseHelper.markPlayerPlaying(withId: playerId, isPlaying: isPlaying)
+    }
+    
+    func clearGameSteps() -> Observable<Void> {
+        return mDatabaseHelper.clearGameSteps()
+    }
+    
+    func updatePlayersScores(playerId: String, levelScore: Int, strengthScore: Int) -> Observable<Void> {
+        return mDatabaseHelper.updatePlayerScores(withId: playerId, levelScore: levelScore, strengthScore: strengthScore)
     }
     
 }

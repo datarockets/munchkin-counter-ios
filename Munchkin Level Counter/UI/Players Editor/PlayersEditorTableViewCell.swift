@@ -6,7 +6,6 @@
 //  Copyright © 2017 datarockets. All rights reserved.
 //
 
-import Foundation
 import UIKit
 
 protocol OnPlayerStatusChanged {
@@ -14,6 +13,7 @@ protocol OnPlayerStatusChanged {
 }
 
 class PlayersEditorTableViewCell: UITableViewCell {
+    @IBOutlet weak var ivPlayerImage: UIImageView?
     @IBOutlet weak var tvPlayerName: UILabel!
     @IBOutlet weak var swIsPlaying: UISwitch!
     var playerStatus: OnPlayerStatusChanged?

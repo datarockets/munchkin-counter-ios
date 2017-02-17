@@ -8,12 +8,13 @@
 
 import UIKit
 import Swinject
+import UIImageView_Letters
 
 class PlayersEditorViewController: UIViewController, UITableViewDelegate,
     UITableViewDataSource,
     OnPlayerStatusChanged,
     PlayersEditorView {
-
+    
     var presenter: PlayersEditorPresenter?
     
     private var players: [Player] = []
@@ -25,16 +26,20 @@ class PlayersEditorViewController: UIViewController, UITableViewDelegate,
         playersListTableView.delegate = self
         playersListTableView.dataSource = self
         presenter?.attachView(self)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
         presenter?.getPlayers()
         presenter?.checkIsGameStarted()
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = playersListTableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! PlayersEditorTableViewCell
+        cell.playerStatus = self
         cell.swIsPlaying.isOn = players[indexPath.row].isPlaying
         cell.tvPlayerName.text = players[indexPath.row].playerName
+        cell.ivPlayerImage?.setImageWith(players[indexPath.row].playerName, color: nil, circular: true)
         cell.tag = indexPath.row
-        cell.playerStatus = self
         return cell
     }
     
@@ -58,28 +63,37 @@ class PlayersEditorViewController: UIViewController, UITableViewDelegate,
     }
     
     func showAddNewPlayerAlertDialog() {
-        let addNewPlayerAlert = UIAlertController(title: "Hello", message: "World", preferredStyle: UIAlertControllerStyle.alert)
+        let addNewPlayerAlert = UIAlertController(title: "Hello", message: "World", preferredStyle: .alert)
         addNewPlayerAlert.addTextField { textField in
             textField.placeholder = "Player Name"
         }
-        let addPlayerAction = UIAlertAction(title: "Add Player", style: UIAlertActionStyle.default) { action in
+        let addPlayerAction = UIAlertAction(title: "Add Player", style: .default) { action in
             let enteredText = ((addNewPlayerAlert.textFields?.first)! as UITextField).text
             self.presenter?.addPlayer(playerName: enteredText!)
         }
-        let cancelAction = UIAlertAction(title: "Cancel",
-                                         style: UIAlertActionStyle.cancel, handler: nil)
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
         addNewPlayerAlert.addAction(addPlayerAction)
         addNewPlayerAlert.addAction(cancelAction)
         present(addNewPlayerAlert, animated: true, completion: nil)
     }
     
     func launchDashboard() {
-        let dashboardViewController = storyboard?.instantiateViewController(withIdentifier: "hello") as! DashboardViewController
+        let dashboardViewController = storyboard?.instantiateViewController(withIdentifier: "dashboard") as! DashboardViewController
+        presenter?.setGameStarted()
         present(dashboardViewController, animated: true, completion: nil)
     }
     
     func showStartContinueDialog() {
-        
+        let startContinueAlert = UIAlertController(title: "Continue or start?", message: "Would you like to continue or start a new game?", preferredStyle: .alert)
+        let startNewGameAction = UIAlertAction(title: "Start", style: .destructive) { action in
+            self.presenter?.setGameFinished()
+        }
+        let continueGameAction = UIAlertAction(title: "Continue", style: .default) { action in
+            self.launchDashboard()
+        }
+        startContinueAlert.addAction(startNewGameAction)
+        startContinueAlert.addAction(continueGameAction)
+        present(startContinueAlert, animated: true, completion: nil)
     }
     
     func showWarning() {
@@ -91,6 +105,7 @@ class PlayersEditorViewController: UIViewController, UITableViewDelegate,
     }
     
     @IBAction func onStartGameClick(_ sender: Any) {
+        print("Check is enough players")
         presenter?.checkIsEnoughPlayers()
     }
     
@@ -100,7 +115,8 @@ class PlayersEditorViewController: UIViewController, UITableViewDelegate,
     }
 
     func onPlayerStatus(position: Int) {
-        print("hello \(position)")
+        let playerId = players[position].playerId
+        presenter?.markPlayerAsPlaying(withObjectId: playerId!, isPlaying: true)
     }
     
     override func viewDidDisappear(_ animated: Bool) {

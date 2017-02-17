@@ -8,6 +8,7 @@
 
 import Foundation
 import RxSwift
+import CoreData
 
 class PlayersEditorPresenter: Presenter {
     typealias BaseView = PlayersEditorView
@@ -24,11 +25,24 @@ class PlayersEditorPresenter: Presenter {
         mPlayersEditorView = view
     }
     
+    func checkIsEnoughPlayers() {
+        mSubscription = mDataManager.getPlayingPlayers()
+            .subscribeOn(ConcurrentDispatchQueueScheduler(qos: DispatchQoS.background))
+            .observeOn(MainScheduler.instance)
+            .subscribe(onNext: { players in
+                if players.count >= 2 {
+                    self.mPlayersEditorView?.launchDashboard()
+                } else {
+                    self.mPlayersEditorView?.showWarning()
+                }
+            })
+    }
+    
     func addPlayer(playerName: String) {
         mSubscription = mDataManager
             .addPlayer(playerName: playerName)
             .subscribeOn(ConcurrentDispatchQueueScheduler(qos: DispatchQoS.background))
-            .observeOn(MainScheduler())
+            .observeOn(MainScheduler.instance)
             .subscribe(onNext: { player in
                 self.mPlayersEditorView?.addPlayerToList(player: player)
             })
@@ -38,35 +52,40 @@ class PlayersEditorPresenter: Presenter {
         mSubscription = mDataManager
             .getPlayers()
             .subscribeOn(ConcurrentDispatchQueueScheduler(qos: DispatchQoS.background))
-            .observeOn(MainScheduler())
+            .observeOn(MainScheduler.instance)
             .subscribe(onNext: { players in
                 self.mPlayersEditorView?.setPlayersList(players: players)
             })
     }
     
-    func markPlayerAsPlaying(withId id: String, isPlaying: Bool) {
-        
+    func markPlayerAsPlaying(withObjectId id: String, isPlaying: Bool) {
+        mSubscription = mDataManager
+            .markPlayerAsPlaying(playerId: id, isPlaying: isPlaying)
+            .subscribeOn(ConcurrentDispatchQueueScheduler(qos: DispatchQoS.background))
+            .observeOn(MainScheduler.instance)
+            .subscribe()
+    }
+    
+    func clearGameSteps() {
+        mSubscription = mDataManager
+            .clearGameSteps()
+            .subscribeOn(ConcurrentDispatchQueueScheduler(qos: DispatchQoS.background))
+            .observeOn(MainScheduler.instance)
+            .subscribe()
+    }
+    
+    func setGameStarted() {
+        mDataManager.getPreferencesHelper().setGameStatus(isGameStarted: true)
+    }
+    
+    func setGameFinished() {
+        mDataManager.getPreferencesHelper().setGameStatus(isGameStarted: false)
     }
     
     func checkIsGameStarted() {
         if mDataManager.getPreferencesHelper().isGameStarted() {
             mPlayersEditorView?.showStartContinueDialog()
         }
-    }
-    
-    func checkIsEnoughPlayers() {
-        mSubscription = mDataManager.getPlayingPlayers()
-            .subscribeOn(ConcurrentDispatchQueueScheduler(qos: DispatchQoS.background))
-            .observeOn(MainScheduler())
-            .subscribe(onNext: { players in
-                if players.count > 2 {
-                    print("Enough")
-                    self.mPlayersEditorView?.launchDashboard()
-                } else {
-                    print("Not enough")
-                    self.mPlayersEditorView?.showWarning()
-                }
-            })
     }
     
     func detachView() {

@@ -38,7 +38,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             return DataManager.init(
                 databaseHelper: resolver.resolve(DatabaseHelper.self)!,
                 preferencesHelper: resolver.resolve(PreferencesHelper.self)!)
-        }
+        }.inObjectScope(.container)
         
         // Presenters
         container.register(PlayersEditorPresenter.self) { resolver in
@@ -56,6 +56,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             return DashboardPresenter.init(dataManager: resolver.resolve(DataManager.self)!)
         }
         
+        container.register(PlayerPresenter.self) { resolver in
+            print("Player Presenter")
+            return PlayerPresenter.init(dataManager: resolver.resolve(DataManager.self)!)
+        }
+        
+        container.register(GameResultPresenter.self) { resolver in
+            print("Game Result Presenter")
+            return GameResultPresenter.init(dataManager: resolver.resolve(DataManager.self)!)
+        }
+        
         // View
         container.storyboardInitCompleted(PlayersEditorViewController.self) { resolver, controller in
             controller.presenter = resolver.resolve(PlayersEditorPresenter.self)!
@@ -69,6 +79,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             controller.presenter = resolver.resolve(DashboardPresenter.self)!
         }
         
+        container.storyboardInitCompleted(PlayerViewController.self) { resolver, controller in
+            controller.presenter = resolver.resolve(PlayerPresenter.self)!
+        }
+        
         return container
     }()
     
@@ -77,7 +91,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         MagicalRecord.setupCoreDataStack()
         let storyboard = SwinjectStoryboard.create(name: "Main", bundle: nil, container: container)
         window?.rootViewController = storyboard.instantiateInitialViewController()
-    
         
         return true
     }

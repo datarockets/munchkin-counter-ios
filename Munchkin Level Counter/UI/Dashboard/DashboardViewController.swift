@@ -8,13 +8,23 @@
 
 import UIKit
 
-class DashboardViewController: UIViewController, DashboardView {
+class DashboardViewController: UIViewController, UITableViewDelegate,
+    UITableViewDataSource,
+    DashboardView {
 
     var presenter: DashboardPresenter?
     
+    private var playingPlayers: [Player] = []
+    
+    @IBOutlet weak var playingPlayersTableView: UITableView!
+    @IBOutlet weak var playerViewController: UIView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        playingPlayersTableView.delegate = self
+        playingPlayersTableView.dataSource = self
         presenter?.attachView(self)
+        presenter?.getPlayingPlayers()
         // Do any additional setup after loading the view.
     }
 
@@ -27,14 +37,64 @@ class DashboardViewController: UIViewController, DashboardView {
     override func viewDidDisappear(_ animated: Bool) {
         presenter?.detachView()
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = playingPlayersTableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! DashboardTableViewCell
+        let player = playingPlayers[indexPath.row]
+        cell.tvPlayerName.text = player.playerName
+        cell.tvPlayerLevel.text = "\(player.playerLevel)"
+        cell.tvPlayerStrength.text = "\(player.playerStrength)"
+        return cell
     }
-    */
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return playingPlayers.count
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+    }
+    
+    func finishGame() {
+        presenter?.setGameFinished()
+    }
+    
+    
+    @IBAction func onNextPlayerClick(_ sender: Any) {
+        var selectedIndex = playingPlayersTableView.indexPathForSelectedRow?.row
+        print("\(selectedIndex)")
+        selectedIndex = selectedIndex! + 1
+        let indexPath = IndexPath(row: selectedIndex!, section: 0)
+        playingPlayersTableView.selectRow(at: indexPath, animated: true, scrollPosition: UITableViewScrollPosition.bottom)
+    }
+    
+    @IBAction func onFinishGameButtonClick(_ sender: Any) {
+        showConfirmFinishGameDialog()
+    }
+    
+    func showConfirmFinishGameDialog() {
+        let confirmFinishGameAlertDialog = UIAlertController(title: "Finish game", message: "Do you want to finish the game?", preferredStyle: .alert)
+        let finishGameAction = UIAlertAction(title: "Yes", style: .default) { action in
+            self.finishGame()
+        }
+        let cancelAction = UIAlertAction(title: "No", style: .cancel) { action in
+            print("Cancel")
+        }
+        confirmFinishGameAlertDialog.addAction(finishGameAction)
+        confirmFinishGameAlertDialog.addAction(cancelAction)
+        present(confirmFinishGameAlertDialog, animated: true, completion: nil)
+    }
+    
+    func showRollDiceDialog() {
+        
+    }
+    
+    func setPlayers(players: Array<Player>) {
+        self.playingPlayers = players
+        playingPlayersTableView.reloadData()
+    }
+    
+    func updatePlayerInformation(player: Player, position: Int) {
+    }
 
 }

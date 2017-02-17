@@ -1,0 +1,12 @@
+
+/* Class = "UIBarButtonItem"; title = "Start game"; ObjectID = "PF0-WM-ydF"; */
+"PF0-WM-ydF.title" = "Начать";
+
+/* Class = "UILabel"; text = "Hello"; ObjectID = "fgL-Bb-LsG"; */
+"fgL-Bb-LsG.text" = "Привет";
+
+/* Class = "UILabel"; text = "Player Name"; ObjectID = "rlG-bz-ikm"; */
+"rlG-bz-ikm.text" = "Имя игрока";
+
+/* Class = "UINavigationItem"; title = "Players Editor"; ObjectID = "zdy-iK-x4u"; */
+"zdy-iK-x4u.title" = "Игроки";

@@ -117,5 +117,11 @@ class DatabaseHelper {
         }
     }
 
+    func clearGameSteps() -> Observable<Void> {
+        return Observable.create { subscriber in
+            subscriber.onCompleted()
+            return Disposables.create()
+        }
+    }
     
 }

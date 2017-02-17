@@ -9,7 +9,8 @@ target 'Munchkin Level Counter' do
   pod 'SwinjectStoryboard', '1.0.0'
   pod 'RxSwift'
   pod 'MagicalRecord'
-
+  pod 'UIImageView-Letters'
+  
   target 'Munchkin Level CounterTests' do
     inherit! :search_paths
   end
