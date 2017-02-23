@@ -10,7 +10,11 @@ target 'Munchkin Level Counter' do
   pod 'RxSwift'
   pod 'MagicalRecord'
   pod 'UIImageView-Letters'
-  
+  pod 'Fabric'
+  pod 'Crashlytics'
+  pod 'EAIntroView', '~> 2.10.0'
+  pod 'Charts'
+
   target 'Munchkin Level CounterTests' do
     inherit! :search_paths
   end
