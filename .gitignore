@@ -51,3 +51,8 @@ xcuserdata
 
 Pods/
 !Podfile.lock
+
+# Fabric
+
+fabric.apikey
+fabric.buildsecret
