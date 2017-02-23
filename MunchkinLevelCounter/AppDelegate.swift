@@ -118,9 +118,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let whitespaceToTrim: CharacterSet = CharacterSet.whitespacesAndNewlines
         let fabricAPIKeyTrimmed: String = fabricAPIKey!.trimmingCharacters(in: whitespaceToTrim )
         print("Key for Fabric: \(fabricAPIKeyTrimmed)")
-        
-        Fabric.with([Crashlytics.self]).api
-        
         Fabric.with([Crashlytics.start(withAPIKey: fabricAPIKeyTrimmed)])
     }
     

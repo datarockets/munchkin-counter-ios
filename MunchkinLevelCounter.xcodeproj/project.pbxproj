@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		1596F86AF70B4F44A3006312 /* Pods_MunchkinLevelCounterTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2F903EC40DD9BDDCCA1E5B9 /* Pods_MunchkinLevelCounterTests.framework */; };
-		2E15041594B69D1D724C81A7 /* Pods_Munchkin_Level_Counter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56F6911D425EA6423575B082 /* Pods_Munchkin_Level_Counter.framework */; };
 		7AC27E8E985D8EB9173E1A46 /* Pods_MunchkinLevelCounter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46399C6A6BB7CEB218A85294 /* Pods_MunchkinLevelCounter.framework */; };
 		8BA8503F1FD86CCEB6E3452F /* Pods_Munchkin_Level_CounterTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7CCEDB83BEC5440482DA548A /* Pods_Munchkin_Level_CounterTests.framework */; };
 		A113D1581E5DD5E1006A2CA9 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A113D1571E5DD5E1006A2CA9 /* Localizable.strings */; };
@@ -125,7 +124,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2E15041594B69D1D724C81A7 /* Pods_Munchkin_Level_Counter.framework in Frameworks */,
 				7AC27E8E985D8EB9173E1A46 /* Pods_MunchkinLevelCounter.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
