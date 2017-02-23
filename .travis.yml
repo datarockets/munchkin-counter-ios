@@ -1,3 +1,5 @@
 language: objective-c
-xcode_project: MunchkinLevelCounter.xcodeproj
-xcode_schemee: MunchkinLevelCounterTests
+before_install:
+  - brew update
+  - brew install xctool
+script: xctool -workspace MunchkinLevelCounter.xcworkspace -scheme MunchkinLevelCounter build

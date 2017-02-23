@@ -111,12 +111,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let resourceURL: URL = Bundle.main.url(forResource: "fabric.apikey", withExtension: nil)!
         let fabricAPIKey: String?
         do {
-            fabricAPIKey = try String(contentsOf: resourceURL, encoding: String.Encoding.unicode)
+            fabricAPIKey = try String(contentsOf: resourceURL, encoding: String.Encoding.utf8)
         } catch _ {
             fabricAPIKey = nil
         }
         let whitespaceToTrim: CharacterSet = CharacterSet.whitespacesAndNewlines
         let fabricAPIKeyTrimmed: String = fabricAPIKey!.trimmingCharacters(in: whitespaceToTrim )
+        print("Key for Fabric: \(fabricAPIKeyTrimmed)")
         Fabric.with([Crashlytics.start(withAPIKey: fabricAPIKeyTrimmed)])
     }
     
