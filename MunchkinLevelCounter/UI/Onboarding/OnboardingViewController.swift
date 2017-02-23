@@ -38,11 +38,11 @@ class OnboardingViewController: UIViewController, OnboardingView, EAIntroDelegat
         
         let pageTwo = EAIntroPage()
         pageTwo.title = NSLocalizedString("onboarder.page2.title", comment: "")
-        pageTwo.desc = NSLocalizedString("onboader.page2.description", comment: "")
+        pageTwo.desc = NSLocalizedString("onboarder.page2.description", comment: "")
     
         let pageThree = EAIntroPage()
-        pageThree.title = NSLocalizedString("onboader.page3.title", comment: "")
-        pageThree.desc  = NSLocalizedString("onboader.page3.description", comment: "")
+        pageThree.title = NSLocalizedString("onboarder.page3.title", comment: "")
+        pageThree.desc  = NSLocalizedString("onboarder.page3.description", comment: "")
         
         let introView: EAIntroView = EAIntroView(frame: rootView!.bounds, andPages: [pageOne, pageTwo, pageThree])
         introView.backgroundColor = UIColor(colorLiteralRed: 0, green: 0.49, blue: 0.96, alpha: 1)

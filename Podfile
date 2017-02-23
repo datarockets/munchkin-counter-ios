@@ -1,7 +1,7 @@
 source 'https://github.com/CocoaPods/Specs.git'
 platform :ios, '9.0'
 
-target 'Munchkin Level Counter' do
+target 'MunchkinLevelCounter' do
   use_frameworks!
 
   pod 'Branch'
@@ -11,11 +11,11 @@ target 'Munchkin Level Counter' do
   pod 'MagicalRecord'
   pod 'UIImageView-Letters'
   pod 'Fabric'
-  pod 'Crashlytics'
+  pod 'Crashlytics', '~>  3.8'
   pod 'EAIntroView', '~> 2.10.0'
   pod 'Charts'
 
-  target 'Munchkin Level CounterTests' do
+  target 'MunchkinLevelCounterTests' do
     inherit! :search_paths
   end
 
