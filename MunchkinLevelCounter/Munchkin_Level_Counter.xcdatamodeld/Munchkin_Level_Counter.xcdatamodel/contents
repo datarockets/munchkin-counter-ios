@@ -6,6 +6,7 @@
         <attribute name="playerStrength" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
     </entity>
     <entity name="PlayerEntity" representedClassName="PlayerEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="color" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="id" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="level" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
@@ -13,7 +14,7 @@
         <attribute name="strength" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
     </entity>
     <elements>
-        <element name="PlayerEntity" positionX="-63" positionY="-18" width="128" height="118"/>
         <element name="GameStepEntity" positionX="135" positionY="-9" width="128" height="88"/>
+        <element name="PlayerEntity" positionX="-63" positionY="-72" width="128" height="135"/>
     </elements>
 </model>

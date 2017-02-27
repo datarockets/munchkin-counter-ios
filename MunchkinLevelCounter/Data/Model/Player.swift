@@ -6,13 +6,12 @@
 //  Copyright © 2017 datarockets. All rights reserved.
 //
 
-import Foundation
-
 class Player {
     var playerId: String?
     var playerName: String?
     var playerLevel: Int = 1
     var playerStrength: Int = 1
+    var playerColor: String?
     var isPlaying: Bool = false
     
     init() {}
@@ -21,10 +20,12 @@ class Player {
          playerName: String,
          playerLevel: Int,
          playerStrength: Int,
+         playerColor: String,
          isPlaying: Bool) {
         self.playerName = playerName
         self.playerLevel = playerLevel
         self.playerStrength = playerStrength
+        self.playerColor = playerColor
         self.isPlaying = isPlaying
     }
     

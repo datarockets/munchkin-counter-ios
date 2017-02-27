@@ -17,6 +17,7 @@ class Db {
             player.playerName = entity.name!
             player.playerLevel = Int(entity.level)
             player.playerStrength = Int(entity.strength)
+            player.playerColor = entity.color
             player.isPlaying = entity.playing
         }
         
@@ -25,6 +26,7 @@ class Db {
             entity.name = player.playerName
             entity.level = Int16(player.playerLevel)
             entity.strength = Int16(player.playerStrength)
+            entity.color = player.playerColor
             entity.playing = player.isPlaying
         }
         
