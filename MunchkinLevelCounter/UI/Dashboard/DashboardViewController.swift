@@ -10,6 +10,7 @@ import UIKit
 
 class DashboardViewController: UIViewController, UITableViewDelegate,
     UITableViewDataSource,
+    OnScoreChangedDelegate,
     DashboardView {
 
     var presenter: DashboardPresenter?
@@ -17,7 +18,7 @@ class DashboardViewController: UIViewController, UITableViewDelegate,
     private var playingPlayers: [Player] = []
     
     @IBOutlet weak var playingPlayersTableView: UITableView!
-    @IBOutlet weak var playerViewController: UIView!
+    @IBOutlet weak var playerViewController: PlayerViewController!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,6 +26,8 @@ class DashboardViewController: UIViewController, UITableViewDelegate,
         playingPlayersTableView.dataSource = self
         presenter?.attachView(self)
         presenter?.getPlayingPlayers()
+        playerViewController = self.childViewControllers[0] as? PlayerViewController
+        playerViewController?.scoreChangedDelegate = self
         // Do any additional setup after loading the view.
     }
 
@@ -52,14 +55,11 @@ class DashboardViewController: UIViewController, UITableViewDelegate,
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("Did select row")
         let selectedPlayerId = playingPlayers[indexPath.row].playerId
-        let playerView = self.childViewControllers[0] as? PlayerViewController
-        playerView?.loadPlayerScores(playerId: selectedPlayerId!)
+        playerViewController?.loadPlayerScores(playerId: selectedPlayerId!, playerPosition: indexPath.row)
     }
     
     func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
-        print("Will select row at")
         return indexPath
     }
     
@@ -67,19 +67,24 @@ class DashboardViewController: UIViewController, UITableViewDelegate,
         presenter?.setGameFinished()
         let gameResultViewController = storyboard?.instantiateViewController(withIdentifier: "gameResult")
         present(gameResultViewController!, animated: true, completion: nil)
+        self.navigationController?.dismiss(animated: true, completion: nil)
     }
-    
     
     @IBAction func onNextPlayerClick(_ sender: Any) {
         var selectedIndex = playingPlayersTableView.indexPathForSelectedRow?.row
-        print("\(selectedIndex)")
-        selectedIndex = selectedIndex! + 1
-        let indexPath = IndexPath(row: selectedIndex!, section: 0)
-        playingPlayersTableView.selectRow(at: indexPath, animated: true, scrollPosition: .bottom)
-        
-        let playerView = self.childViewControllers[0] as? PlayerViewController
-        playerView?.loadPlayerScores(playerId: playingPlayers[selectedIndex!].playerId!)
-        
+        print("onNexPlayerClick selected index \(selectedIndex)")
+        if (selectedIndex == playingPlayers.count - 1) {
+            let indexPath = IndexPath(row: 0, section: 0)
+            playingPlayersTableView.selectRow(at: indexPath, animated: true, scrollPosition: .bottom)
+            tableView(playingPlayersTableView, didSelectRowAt: indexPath)
+            selectedIndex = 0
+        } else {
+            selectedIndex! += 1
+            let indexPath = IndexPath(row: selectedIndex!, section: 0)
+            playingPlayersTableView.selectRow(at: indexPath, animated: true, scrollPosition: .bottom)
+            tableView(playingPlayersTableView, didSelectRowAt: indexPath)
+        }
+
     }
     
     @IBAction func onFinishGameButtonClick(_ sender: Any) {
@@ -87,11 +92,15 @@ class DashboardViewController: UIViewController, UITableViewDelegate,
     }
     
     func showConfirmFinishGameDialog() {
-        let confirmFinishGameAlertDialog = UIAlertController(title: "Finish game", message: "Do you want to finish the game?", preferredStyle: .alert)
-        let finishGameAction = UIAlertAction(title: "Yes", style: .default) { action in
+        let confirmFinishGameAlertDialog = UIAlertController(title: NSLocalizedString("dialog.finish_game.title", comment: ""),
+                                                             message: NSLocalizedString("dialog.finish_game.message", comment: ""),
+                                                             preferredStyle: .alert)
+        let finishGameAction = UIAlertAction(title: NSLocalizedString("button.yes", comment: ""),
+                                             style: .default) { action in
             self.finishGame()
         }
-        let cancelAction = UIAlertAction(title: "No", style: .cancel) { action in
+        let cancelAction = UIAlertAction(title: NSLocalizedString("button.no", comment: ""),
+                                         style: .cancel) { action in
             print("Cancel")
         }
         confirmFinishGameAlertDialog.addAction(finishGameAction)
@@ -106,11 +115,22 @@ class DashboardViewController: UIViewController, UITableViewDelegate,
     func setPlayers(players: Array<Player>) {
         self.playingPlayers = players
         playingPlayersTableView.reloadData()
-        let selectedIndex = playingPlayersTableView.indexPathForSelectedRow
-        playingPlayersTableView.selectRow(at: selectedIndex, animated: true, scrollPosition: .top)
+        let selectedIndexPath = IndexPath(row: 0, section: 0)
+        playingPlayersTableView.selectRow(at: selectedIndexPath, animated: true, scrollPosition: .top)
+        tableView(playingPlayersTableView, didSelectRowAt: selectedIndexPath)
     }
     
     func updatePlayerInformation(player: Player, position: Int) {
+        
+    }
+    
+    func onScoreChanged(playerPosition: Int, playerLevel: Int, playerStrength: Int) {
+        playingPlayers[playerPosition].playerLevel = playerLevel
+        playingPlayers[playerPosition].playerStrength = playerStrength
+        let selectedIndexPath = IndexPath(row: playerPosition, section: 0)
+        print("onScoreChanged selectedIndex \(selectedIndexPath)")
+        playingPlayersTableView.reloadRows(at: [selectedIndexPath], with: .none)
+        playingPlayersTableView.selectRow(at: selectedIndexPath, animated: false, scrollPosition: .none)
     }
 
 }

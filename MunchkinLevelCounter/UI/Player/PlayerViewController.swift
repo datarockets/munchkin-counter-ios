@@ -8,9 +8,16 @@
 
 import UIKit
 
+protocol OnScoreChangedDelegate {
+    func onScoreChanged(playerPosition: Int, playerLevel: Int, playerStrength: Int)
+}
+
 class PlayerViewController: UIViewController, PlayerView {
 
     var presenter: PlayerPresenter?
+    
+    private var mPlayerPosition: Int = 0
+    var scoreChangedDelegate: OnScoreChangedDelegate?
     
     @IBOutlet weak var btnIncreaseLevel: UIButton!
     @IBOutlet weak var btnDecreaseLevel: UIButton!
@@ -33,7 +40,8 @@ class PlayerViewController: UIViewController, PlayerView {
         presenter?.detachView()
     }
 
-    func loadPlayerScores(playerId: String) {
+    func loadPlayerScores(playerId: String, playerPosition: Int) {
+        mPlayerPosition = playerPosition
         presenter?.loadPlayerScores(playerId: playerId)
     }
     
@@ -44,6 +52,9 @@ class PlayerViewController: UIViewController, PlayerView {
     func showPlayerScores(levelScore: Int, strengthScore: Int) {
         tvLevelScore.text = "\(levelScore)"
         tvStrengthScore.text = "\(strengthScore)"
+        scoreChangedDelegate?.onScoreChanged(playerPosition: mPlayerPosition,
+                                             playerLevel: levelScore,
+                                             playerStrength: strengthScore)
     }
 
     @IBAction func onIncreaseLevelButtonClick(_ sender: Any) {
