@@ -57,8 +57,17 @@
 /*  */
 "button.start" = "Start";
 
+/* */
+"button.cancel" = "Cancel";
+
 /*  */
 "button.continue" = "Continue";
+
+/*  */
+"dialog.add_player.title" = "Add a player";
+
+/*  */
+"dialog.add_player.message" = "Give a name to a new player";
 
 /*  */
 "dialog.player_actions.edit_player" = "Edit Player";
