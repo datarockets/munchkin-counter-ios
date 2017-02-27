@@ -35,10 +35,11 @@ class PlayersEditorViewController: UIViewController, UITableViewDelegate,
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = playersListTableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! PlayersEditorTableViewCell
+        let player = players[indexPath.row]
         cell.playerStatus = self
-        cell.swIsPlaying.isOn = players[indexPath.row].isPlaying
-        cell.tvPlayerName.text = players[indexPath.row].playerName
-        cell.ivPlayerImage?.setImageWith(players[indexPath.row].playerName, color: nil, circular: true)
+        cell.swIsPlaying.isOn = player.isPlaying
+        cell.tvPlayerName.text = player.playerName
+        cell.ivPlayerImage?.setImageWith(player.playerName, color: UIColor.colorHash(name: player.playerName), circular: true)
         cell.tag = indexPath.row
         return cell
     }
@@ -70,15 +71,16 @@ class PlayersEditorViewController: UIViewController, UITableViewDelegate,
     }
     
     func showAddNewPlayerAlertDialog() {
-        let addNewPlayerAlert = UIAlertController(title: "Hello", message: "World", preferredStyle: .alert)
+        let addNewPlayerAlert = UIAlertController(title: "dialog.add_player.title".localized,
+                                                  message: "dialog.add_player.message".localized, preferredStyle: .alert)
         addNewPlayerAlert.addTextField { textField in
-            textField.placeholder = "Player Name"
+            textField.placeholder = "text.player_name".localized
         }
-        let addPlayerAction = UIAlertAction(title: "Add Player", style: .default) { action in
+        let addPlayerAction = UIAlertAction(title: "button.add_new_player".localized, style: .default) { action in
             let enteredText = ((addNewPlayerAlert.textFields?.first)! as UITextField).text
             self.presenter?.addPlayer(playerName: enteredText!)
         }
-        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        let cancelAction = UIAlertAction(title: "button.cancel".localized, style: .cancel, handler: nil)
         addNewPlayerAlert.addAction(addPlayerAction)
         addNewPlayerAlert.addAction(cancelAction)
         present(addNewPlayerAlert, animated: true, completion: nil)
@@ -88,14 +90,16 @@ class PlayersEditorViewController: UIViewController, UITableViewDelegate,
         let dashboardViewController = storyboard?.instantiateViewController(withIdentifier: "dashboard") as! DashboardViewController
         presenter?.setGameStarted()
         present(dashboardViewController, animated: true, completion: nil)
+        self.navigationController?.dismiss(animated: true, completion: nil)
     }
     
     func showStartContinueDialog() {
-        let startContinueAlert = UIAlertController(title: NSLocalizedString("dialog.start_continue_game.title", comment: ""), message: NSLocalizedString("dialog.start_continue_game.message", comment: ""), preferredStyle: .alert)
-        let startNewGameAction = UIAlertAction(title: "Start", style: .destructive) { action in
+        let startContinueAlert = UIAlertController(title: "dialog.start_continue_game.title".localized,
+                                                   message: "dialog.start_continue_game.message".localized, preferredStyle: .alert)
+        let startNewGameAction = UIAlertAction(title: "button.start".localized, style: .destructive) { action in
             self.presenter?.setGameFinished()
         }
-        let continueGameAction = UIAlertAction(title: "Continue", style: .default) { action in
+        let continueGameAction = UIAlertAction(title: "button.continue".localized, style: .default) { action in
             self.launchDashboard()
         }
         startContinueAlert.addAction(startNewGameAction)
@@ -104,7 +108,8 @@ class PlayersEditorViewController: UIViewController, UITableViewDelegate,
     }
     
     func showWarning() {
-        let warningAlert = UIAlertController(title: "Hello", message: NSLocalizedString("text.player_add_warning", comment: ""), preferredStyle: .alert)
+        let warningAlert = UIAlertController(title: "Warning", message:
+            "text.player_add_warning".localized, preferredStyle: .alert)
         let cancelAction = UIAlertAction(title: "OK", style: .default, handler: nil)
         warningAlert.addAction(cancelAction)
         present(warningAlert, animated: true, completion: nil)
@@ -115,7 +120,6 @@ class PlayersEditorViewController: UIViewController, UITableViewDelegate,
     }
     
     @IBAction func onStartGameClick(_ sender: Any) {
-        print("Check is enough players")
         presenter?.checkIsEnoughPlayers()
     }
     
