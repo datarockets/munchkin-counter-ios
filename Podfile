@@ -17,6 +17,8 @@ target 'MunchkinLevelCounter' do
 
   target 'MunchkinLevelCounterTests' do
     inherit! :search_paths
+    pod 'Quick'
+    pod 'Nimble'
   end
 
 end
