@@ -19,7 +19,6 @@ enum Storyboard : String {
     case Onboarding = "Onboarding"
 }
 
-
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -84,8 +83,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             controller.presenter = resolver.resolve(PlayersEditorPresenter.self)!
         }
         
-        container.storyboardInitCompleted(OnboardingViewController.self) { resolver, controller in
+        container.register(OnboardingViewController.self) { resolver in
+            let controller = OnboardingViewController()
             controller.presenter = resolver.resolve(OnboardingPresenter.self)!
+            return controller
         }
         
         container.storyboardInitCompleted(DashboardViewController.self) { resolver, controller in
@@ -129,8 +130,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func launchStoryboard(storyboard: Storyboard) {
-        let storyboard = SwinjectStoryboard.create(name: storyboard.rawValue, bundle: nil, container: container)
-        window?.rootViewController = storyboard.instantiateInitialViewController()
+        switch storyboard {
+            case .Main:
+                let storyboard = SwinjectStoryboard.create(name: storyboard.rawValue, bundle: nil, container: container)
+                window?.rootViewController = storyboard.instantiateInitialViewController()
+                break
+            case .Onboarding:
+                window?.rootViewController = container.resolve(OnboardingViewController.self)
+                break
+        }
+
     }
 
     func applicationWillResignActive(_ application: UIApplication) {
