@@ -19,11 +19,17 @@ class GameResultViewController: UIViewController, GameResultView {
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         presenter?.detachView()
     }
 
+    @IBAction func onEditorButtonClick(_ sender: Any) {
+        presenter?.clearGameResults()
+        let playersEditorViewController = storyboard?.instantiateInitialViewController()
+        present(playersEditorViewController!, animated: true, completion: nil)
+        self.navigationController?.dismiss(animated: true, completion: nil)
+    }
+    
 }

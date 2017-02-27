@@ -24,6 +24,13 @@ class GameResultPresenter: Presenter {
         mGameResultView = view
     }
     
+    func clearGameResults() {
+        mSubscription = mDataManager.clearGameSteps()
+            .subscribeOn(ConcurrentDispatchQueueScheduler.init(qos: DispatchQoS.background))
+            .observeOn(MainScheduler.instance)
+            .subscribe()
+    }
+    
     func detachView() {
         mGameResultView = nil
         mSubscription?.dispose()
