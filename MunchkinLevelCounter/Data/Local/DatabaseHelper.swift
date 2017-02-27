@@ -119,7 +119,18 @@ class DatabaseHelper {
 
     func clearGameSteps() -> Observable<Void> {
         return Observable.create { subscriber in
-            subscriber.onCompleted()
+            MagicalRecord.save({ (context) in
+                if let players = PlayerEntity.mr_findAll(in: context) as? [PlayerEntity] {
+                    players.forEach({ (entity) in
+                        entity.level = Int16(1)
+                        entity.strength = Int16(1)
+                    })
+                } else {
+                    subscriber.onCompleted()
+                }
+            }, completion: { success, error in
+                subscriber.onCompleted()
+            })
             return Disposables.create()
         }
     }
