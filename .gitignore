@@ -53,6 +53,11 @@ Pods/
 !Podfile.lock
 
 # Fabric
-
 fabric.apikey
 fabric.buildsecret
+
+# Fastlane
+fastlane/report.xml
+fastlane/Preview.html
+fastlane/screenshots
+fastlane/test_output
