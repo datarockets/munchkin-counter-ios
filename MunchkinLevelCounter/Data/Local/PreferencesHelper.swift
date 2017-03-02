@@ -11,9 +11,9 @@ import CoreData
 
 class PreferencesHelper {
     
-    private let IS_ONBOARING_SEEN = "is_onboarding_seen"
-    private let IS_WAKELOCK_ACTIVE = "is_wakelock_active"
-    private let IS_GAME_STARTED = "is_game_started"
+    private let isOnboardingSeen = "is_onboarding_seen"
+    private let isWakeLockActive = "is_wakelock_active"
+    private let isGameStarted = "is_game_started"
     
     private let mUserDefaults: UserDefaults
     
@@ -21,28 +21,31 @@ class PreferencesHelper {
         mUserDefaults = userDefaults
     }
     
-    func checkIsUserSeenOnboarding() -> Bool {
-        return mUserDefaults.bool(forKey: IS_ONBOARING_SEEN)
+    var userSeenOnboarding: Bool {
+        get {
+            return mUserDefaults.bool(forKey: isOnboardingSeen)
+        }
+        set (newValue) {
+            mUserDefaults.set(newValue, forKey: isOnboardingSeen)
+        }
     }
     
-    func setOnboardingSeen() {
-        mUserDefaults.set(true, forKey: IS_ONBOARING_SEEN)
+    var wakeLockActive: Bool {
+        get {
+            return mUserDefaults.bool(forKey: isWakeLockActive)
+        }
+        set (newValue) {
+            mUserDefaults.set(newValue, forKey: isWakeLockActive)
+        }
     }
     
-    func isWakeLockActive() -> Bool {
-        return mUserDefaults.bool(forKey: IS_WAKELOCK_ACTIVE)
-    }
-    
-    func setWakeLock(isActive: Bool) {
-        mUserDefaults.set(isActive, forKey: IS_WAKELOCK_ACTIVE)
-    }
-    
-    func isGameStarted() -> Bool {
-        return mUserDefaults.bool(forKey: IS_GAME_STARTED)
-    }
-    
-    func setGameStatus(isGameStarted: Bool) {
-        mUserDefaults.set(isGameStarted, forKey: IS_GAME_STARTED)
+    var gameStarted: Bool {
+        get {
+            return mUserDefaults.bool(forKey: isGameStarted)
+        }
+        set (newValue) {
+            mUserDefaults.set(newValue, forKey: isGameStarted)
+        }
     }
     
 }
