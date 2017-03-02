@@ -9,6 +9,7 @@
 import Foundation
 import RxSwift
 import CoreData
+import Charts
 
 class DataManager {
     
@@ -47,6 +48,19 @@ class DataManager {
         return mDatabaseHelper.getPlayingPlayers().toArray()
     }
     
+    func getPlayers(sortType: Int) -> Observable<[Player]> {
+        switch sortType {
+            case 0:
+                return mDatabaseHelper.getPlayedPlayersByLevel().toArray()
+            case 1:
+                return mDatabaseHelper.getPlayedPlayersByStrength().toArray()
+            case 2:
+                return mDatabaseHelper.getPlayedPlayersByTotal().toArray()
+            default:
+                return mDatabaseHelper.getPlayers().toArray()
+        }
+    }
+    
     func deletePlayer(playerId: String) -> Observable<Void> {
         return mDatabaseHelper.deletePlayer(withId: playerId)
     }
@@ -57,6 +71,20 @@ class DataManager {
     
     func clearGameSteps() -> Observable<Void> {
         return mDatabaseHelper.clearGameSteps()
+    }
+    
+    func getLineData(type: Int) -> Observable<ChartData> {
+        return Observable.create { subscriber in
+            return Disposables.create()
+        }
+    }
+    
+    func addGameStep(playerId: String, levelScore: Int, strengthScore: Int) -> Observable<Void> {
+        let gameStep = GameStep()
+        gameStep.playerId = playerId
+        gameStep.playerLevel = levelScore
+        gameStep.playerStrength = strengthScore
+        return mDatabaseHelper.setGameStep(gameStep: gameStep)
     }
     
     func updatePlayersScores(playerId: String, levelScore: Int, strengthScore: Int) -> Observable<Void> {

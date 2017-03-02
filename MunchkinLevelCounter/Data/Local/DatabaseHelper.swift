@@ -72,6 +72,61 @@ class DatabaseHelper {
         }
     }
     
+    func getPlayedPlayersByLevel() -> Observable<Player> {
+        return Observable.create { subscriber in
+            let context = NSManagedObjectContext.mr_()
+            let predicate = NSPredicate(format: "playing = \(true)")
+            let playedPlayersRequest = PlayerEntity.mr_requestAll(with: predicate, in: context)
+            let descriptor = NSSortDescriptor(key: "level", ascending: false)
+            playedPlayersRequest.sortDescriptors = [descriptor]
+            if let players = PlayerEntity.mr_executeFetchRequest(playedPlayersRequest) as? [PlayerEntity] {
+                for entity in players {
+                    let player = Db.PlayerTable.player(from: entity)
+                    subscriber.onNext(player)
+                }
+            }
+            subscriber.onCompleted()
+            return Disposables.create()
+        }
+    }
+    
+    func getPlayedPlayersByStrength() -> Observable<Player> {
+        return Observable.create { subscriber in
+            let context = NSManagedObjectContext.mr_()
+            let predicate = NSPredicate(format: "playing = \(true)")
+            let playedPlayersRequest = PlayerEntity.mr_requestAll(with: predicate, in: context)
+            let descriptor = NSSortDescriptor(key: "strength", ascending: false)
+            playedPlayersRequest.sortDescriptors = [descriptor]
+            if let players = PlayerEntity.mr_executeFetchRequest(playedPlayersRequest) as? [PlayerEntity] {
+                for entity in players {
+                    let player = Db.PlayerTable.player(from: entity)
+                    subscriber.onNext(player)
+                }
+            }
+            subscriber.onCompleted()
+            return Disposables.create()
+        }
+    }
+    
+    func getPlayedPlayersByTotal() -> Observable<Player> {
+        return Observable.create { subscriber in
+            let context = NSManagedObjectContext.mr_()
+            let predicate = NSPredicate(format: "playing = \(true)")
+            let playedPlayersRequest = PlayerEntity.mr_requestAll(with: predicate, in: context)
+            let levelSortDescriptor = NSSortDescriptor(key: "level", ascending: false)
+            let strengthSortDescription = NSSortDescriptor(key: "strength", ascending: false)
+            playedPlayersRequest.sortDescriptors = [levelSortDescriptor, strengthSortDescription]
+            if let players = PlayerEntity.mr_executeFetchRequest(playedPlayersRequest) as? [PlayerEntity] {
+                for entity in players {
+                    let player = Db.PlayerTable.player(from: entity)
+                    subscriber.onNext(player)
+                }
+            }
+            subscriber.onCompleted()
+            return Disposables.create()
+        }
+    }
+    
     func deletePlayer(withId id: String) -> Observable<Void> {
         return Observable.create { subscriber in
             MagicalRecord.save({ (context) in
@@ -113,6 +168,28 @@ class DatabaseHelper {
             }, completion: { success, error in
                 subscriber.onCompleted()
             })
+            return Disposables.create()
+        }
+    }
+    
+    func setGameStep(gameStep: GameStep) -> Observable<Void> {
+        return Observable.create { subscriber in
+            MagicalRecord.save({ (context) in
+                if let entity = GameStepEntity.mr_createEntity(in: context) {
+                    Db.GameTable.map(from: gameStep, to: entity)
+                } else {
+                    subscriber.onCompleted()
+                }
+            }, completion: { success, error in
+                subscriber.onCompleted()
+            })
+            return Disposables.create()
+        }
+    }
+    
+    func getGameSteps() -> Observable<GameStep> {
+        return Observable.create { subscriber in
+            
             return Disposables.create()
         }
     }
