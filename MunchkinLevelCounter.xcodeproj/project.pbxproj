@@ -64,6 +64,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		15EAA78869A77B67CCD9A5A9 /* Pods-MunchkinLevelCounter.app store.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MunchkinLevelCounter.app store.xcconfig"; path = "Pods/Target Support Files/Pods-MunchkinLevelCounter/Pods-MunchkinLevelCounter.app store.xcconfig"; sourceTree = "<group>"; };
+		407977610C8921B6EB54369F /* Pods-MunchkinLevelCounter.ad hoc.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MunchkinLevelCounter.ad hoc.xcconfig"; path = "Pods/Target Support Files/Pods-MunchkinLevelCounter/Pods-MunchkinLevelCounter.ad hoc.xcconfig"; sourceTree = "<group>"; };
 		46399C6A6BB7CEB218A85294 /* Pods_MunchkinLevelCounter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MunchkinLevelCounter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		47FABE3AEFFEE99EA22B6D39 /* Pods-MunchkinLevelCounter.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MunchkinLevelCounter.release.xcconfig"; path = "Pods/Target Support Files/Pods-MunchkinLevelCounter/Pods-MunchkinLevelCounter.release.xcconfig"; sourceTree = "<group>"; };
 		4E9A64392CE0FF0897E8F225 /* Pods-MunchkinLevelCounterTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MunchkinLevelCounterTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MunchkinLevelCounterTests/Pods-MunchkinLevelCounterTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -72,6 +74,7 @@
 		5D31C7C05988FDF130E07539 /* Pods-Munchkin Level CounterTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Munchkin Level CounterTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Munchkin Level CounterTests/Pods-Munchkin Level CounterTests.release.xcconfig"; sourceTree = "<group>"; };
 		6166B033B03097EF4FDE051B /* Pods-Munchkin Level Counter.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Munchkin Level Counter.release.xcconfig"; path = "Pods/Target Support Files/Pods-Munchkin Level Counter/Pods-Munchkin Level Counter.release.xcconfig"; sourceTree = "<group>"; };
 		7CCEDB83BEC5440482DA548A /* Pods_Munchkin_Level_CounterTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Munchkin_Level_CounterTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9083A2A5C71E08EADEBB36E7 /* Pods-MunchkinLevelCounterTests.app store.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MunchkinLevelCounterTests.app store.xcconfig"; path = "Pods/Target Support Files/Pods-MunchkinLevelCounterTests/Pods-MunchkinLevelCounterTests.app store.xcconfig"; sourceTree = "<group>"; };
 		A0522E5E71C1DB5DA4A41109 /* Pods-MunchkinLevelCounter.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MunchkinLevelCounter.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MunchkinLevelCounter/Pods-MunchkinLevelCounter.debug.xcconfig"; sourceTree = "<group>"; };
 		A113D1571E5DD5E1006A2CA9 /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		A127FA7F1E4DC65E002733AA /* OnboardingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
@@ -121,6 +124,7 @@
 		A1FE90631E66E69E0072315A /* Appearance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Appearance.swift; sourceTree = "<group>"; };
 		A1FE90671E67959A0072315A /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		A2F903EC40DD9BDDCCA1E5B9 /* Pods_MunchkinLevelCounterTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MunchkinLevelCounterTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CBAC2354BAA805BAA503F815 /* Pods-MunchkinLevelCounterTests.ad hoc.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MunchkinLevelCounterTests.ad hoc.xcconfig"; path = "Pods/Target Support Files/Pods-MunchkinLevelCounterTests/Pods-MunchkinLevelCounterTests.ad hoc.xcconfig"; sourceTree = "<group>"; };
 		DE001F53FC67234840A18435 /* Pods-Munchkin Level CounterTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Munchkin Level CounterTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Munchkin Level CounterTests/Pods-Munchkin Level CounterTests.debug.xcconfig"; sourceTree = "<group>"; };
 		DF0D7CDB2BB31B124060FDAE /* Pods-MunchkinLevelCounterTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MunchkinLevelCounterTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MunchkinLevelCounterTests/Pods-MunchkinLevelCounterTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -167,6 +171,10 @@
 				47FABE3AEFFEE99EA22B6D39 /* Pods-MunchkinLevelCounter.release.xcconfig */,
 				DF0D7CDB2BB31B124060FDAE /* Pods-MunchkinLevelCounterTests.debug.xcconfig */,
 				4E9A64392CE0FF0897E8F225 /* Pods-MunchkinLevelCounterTests.release.xcconfig */,
+				15EAA78869A77B67CCD9A5A9 /* Pods-MunchkinLevelCounter.app store.xcconfig */,
+				407977610C8921B6EB54369F /* Pods-MunchkinLevelCounter.ad hoc.xcconfig */,
+				9083A2A5C71E08EADEBB36E7 /* Pods-MunchkinLevelCounterTests.app store.xcconfig */,
+				CBAC2354BAA805BAA503F815 /* Pods-MunchkinLevelCounterTests.ad hoc.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -682,7 +690,7 @@
 		};
 		A17E20941E6074CB00EA04CB /* App Store */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4E9A64392CE0FF0897E8F225 /* Pods-MunchkinLevelCounterTests.release.xcconfig */;
+			baseConfigurationReference = 9083A2A5C71E08EADEBB36E7 /* Pods-MunchkinLevelCounterTests.app store.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				DEVELOPMENT_TEAM = M5MBYBFCK5;
@@ -740,7 +748,7 @@
 		};
 		A18EBB281E699F730069DCC5 /* Ad Hoc */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 47FABE3AEFFEE99EA22B6D39 /* Pods-MunchkinLevelCounter.release.xcconfig */;
+			baseConfigurationReference = 407977610C8921B6EB54369F /* Pods-MunchkinLevelCounter.ad hoc.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -750,7 +758,7 @@
 				INFOPLIST_FILE = "$(SRCROOT)/MunchkinLevelCounter/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.datarockets.munchkin.adhoc;
+				PRODUCT_BUNDLE_IDENTIFIER = com.datarockets.munchkin;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "85f20a4c-127e-4439-9c63-5fc972f9453c";
 				PROVISIONING_PROFILE_SPECIFIER = "Munchkin Level Counter Ad Hoc Distribution";
@@ -761,7 +769,7 @@
 		};
 		A18EBB291E699F730069DCC5 /* Ad Hoc */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4E9A64392CE0FF0897E8F225 /* Pods-MunchkinLevelCounterTests.release.xcconfig */;
+			baseConfigurationReference = CBAC2354BAA805BAA503F815 /* Pods-MunchkinLevelCounterTests.ad hoc.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				DEVELOPMENT_TEAM = M5MBYBFCK5;
@@ -879,7 +887,7 @@
 				INFOPLIST_FILE = "$(SRCROOT)/MunchkinLevelCounter/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.datarockets.munchkin.development;
+				PRODUCT_BUNDLE_IDENTIFIER = com.datarockets.munchkin;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "02f6fb08-7421-4d48-99fa-8ebddb030c38";
 				PROVISIONING_PROFILE_SPECIFIER = "Munchkin Level Counter Development";
@@ -890,7 +898,7 @@
 		};
 		A1F8F76B1E4CA6B200B57DEB /* App Store */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 47FABE3AEFFEE99EA22B6D39 /* Pods-MunchkinLevelCounter.release.xcconfig */;
+			baseConfigurationReference = 15EAA78869A77B67CCD9A5A9 /* Pods-MunchkinLevelCounter.app store.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;

@@ -6,6 +6,10 @@ default_platform :ios
 
 platform :ios do
 
+  before_all do
+    cocoapods
+  end
+
   desc "Submit a new build of Munchkin Level Counter to Fabric Beta"
   lane :beta do
 
@@ -25,9 +29,9 @@ platform :ios do
 
     # Import distribution certificate
     import_certificate(
+      keychain_name: keychain_name,
       certificate_path: "fastlane/Certificates/datarockets.p12",
       certificate_password: ENV["KEY_PASSWORD"],
-      keychain_name: keychain_name
     )
 
     # Fetch or create provisioning profile
@@ -38,9 +42,6 @@ platform :ios do
       provisioning_name: "Munchkin Level Counter Ad Hoc Distribution",
       cert_id: "M5MBYBFCK5"
     )
-
-    # Installing pods
-    cocoapods
 
     # Building an app
     gym(
@@ -67,6 +68,12 @@ platform :ios do
       message: "Munckin Level Counter was released",
       slack_url: "https://hooks.slack.com/services/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"
     )
+
+    error do |lane, exception|
+      delete_keychain(
+        name: keychain_name
+      )
+    end
 
   end
 
