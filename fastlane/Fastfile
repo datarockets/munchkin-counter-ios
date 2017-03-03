@@ -2,12 +2,16 @@ require "securerandom"
 
 fastlane_version "1.109.0"
 
-default_platform :ios do
+default_platform :ios
+
+platform :ios do
 
   desc "Submit a new build of Munchkin Level Counter to Fabric Beta"
   lane :beta do
 
-    keychain_name = "munchkin-level-counter-certs"
+    skip_docs
+
+    keychain_name = "munchkin"
 
     # Creating keychain
     create_keychain(
@@ -21,7 +25,7 @@ default_platform :ios do
 
     # Import distribution certificate
     import_certificate(
-      certificate: "fastlane/Certificates/datarockets.p12",
+      certificate_path: "fastlane/Certificates/datarockets.p12",
       certificate_password: ENV["KEY_PASSWORD"],
       keychain_name: keychain_name
     )
@@ -52,6 +56,10 @@ default_platform :ios do
     crashlytics(
       api_token: ENV["FABRIC_API_TOKEN"],
       build_secret: ENV["FABRIC_BUILD_SECRET"]
+    )
+
+    delete_keychain(
+      name: keychain_name
     )
 
     # Post a message to opensource channel
