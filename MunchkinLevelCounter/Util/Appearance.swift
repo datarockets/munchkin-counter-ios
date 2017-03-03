@@ -16,7 +16,6 @@ class Appearance {
         // status bar color - card general
         // color accent (checkbox and textfields) - card corner
         
-        
         UINavigationBar.appearance().barTintColor = Colors.cardLight
         UINavigationBar.appearance().tintColor = Colors.cardCorner
         

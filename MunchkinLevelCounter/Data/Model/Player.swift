@@ -29,4 +29,8 @@ class Player {
         self.isPlaying = isPlaying
     }
     
+    func getTotalScore() -> Int {
+        return playerLevel + playerStrength
+    }
+    
 }

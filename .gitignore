@@ -57,6 +57,8 @@ fabric.apikey
 fabric.buildsecret
 
 # Fastlane
+fastlane/local_config.sh
+fastlane/Certificates/datarockets.p12
 fastlane/report.xml
 fastlane/Preview.html
 fastlane/screenshots

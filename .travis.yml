@@ -1,14 +1,13 @@
 language: objective-c
 osx_image: xcode8
-xcode_workspace: MunchkinLevelCounter.xcworkspace
-xcode_scheme: MunchkinLevelCounter
-xcode_sdk: iphonesimulator
-cache:
-  - cocoapods
-  - bundler
-install:
-  - bundle install --without=documentation
 before_script:
-  - export LANG=en_US.UTF-8
+- openssl aes-256-cbc -k $ENCRYPTION_PASSWORD -in fastlane/Certificates/datarockets.p12.enc -d -a -out fastlane/Certificates/datarockets.p12
 script:
-  - bundle exec fastlane test
+- ./fastlane/travis.sh
+notifications:
+  email:
+    on_sucess: never
+env:
+  global:
+  - secure: BaV15pwAibyBI9W7Y6xtNDtcW/so/u1BjGDhhNE+IhZsohzJzoaPcZb98wXDlEW+TRXfJU3G86rjoRt/tH5LvbClboBa1qkXLuNoXHyjA4sI4Tv4f2gf6gi1lOrd4O9DYoX3i+7hONGvKqguld4o26WuVJtna2vXXgd9bKrdk3UHUbC2j7xaDhrJJ9It0FVx/rP08bH5peqinVR1uHON361kHCIFoSmSRSP6lCbUcAwrFuf3GekFtk0GDfpXaaP8rkXzKLJYPhDz2tQW3Me1nyNOFPEch9x4fOHl8upQ5QIrwBnFwL1Hh7dwBNwbt5Ig9T6FkngsRRe771Q2J9Jq+Jm36OvdZaErMlHIELtTomaGd4zPLHcRC47CqmqbhXIS9twF29aeMeuPj6ccpyOrhC6XvoKJf5KzVFjKCDsKAW6EHTSq3PjbPAaAXg3aYpmkEieDObrAT3+YOMxm06nyfQGxtnjjxpWkGzQAuT6DEwVoJTLfTdaWZI2FTi61GFMlnX7o1cwlIQfKDVdowzBUbYpzKgot9Nk/UUf3fDBN5wGjoHu4NyOWeP2RBGsrQsJ0Smozy10VTyT4bue165ky1e3HhrjbZgcQkypTz7Kbl9XQcDMcgwiJ2dNYm6OuIfpvtl75PEvv4oedhc64Q2mNAl4FvZfGfryyKdyn4qqtWnc=
+  - secure: CRGsj+b8+QJoR3e7aWV24QxCJMeCogabpGeFoslt+5dBFvOROLmGQy60jeUheUj0nUJ2FWVETScr2zTBjh/YbBWb8PSE0WDs0OmOoS6uFKyikgfzKgtZDJkthAhmtxgYzIUh1WugAFyD6KO7UhwwUD/80kfu72q/L7VTY73cMwzxlaex9/Q6cG8gLcm7FPXX896J4XRtani48dqoqKus4V3lbttnbiTQPxvw+QhMTP4rSoZczfgTpBbzO46oVqim70KGh/595i/MC41+LYYh5I3kVVVR4K4qUW8TvwEy7mU5T5i6BFR3SZyD0POAKmWsW2x+b528BGNDnihpSuRHh4vKBWYjh+4Czp0yFR1FvAbLwmZfIsArgjJEawQnNMM29afJyvVtwtADU2O869qY5gCNsWbHPdNkWgpOd+Q83QHibI0twsROl87DbYRPFCTmfjc/HmFMEwF/SbtR/n0k3Nxpd5QyemZSHv/9+W+KGRSL40WXrrTORzeVgjsPCndoS00Khjyl6lWe3v9hcmwXii8m9dI4upm6qBfN3ZATPNP2Zerv8Xazg33bNhONxKWdmYMazXKRy5znSUijj/a57+edxP+CcCgnZux3jv+tGmoOyLyDREh9BPmgFCE8JWRM63rla5dECxIgjvLeOJ0ZmdJ+KGxYmYF/5SvC3RkYUOs=

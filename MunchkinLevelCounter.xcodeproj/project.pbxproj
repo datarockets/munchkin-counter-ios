@@ -384,6 +384,7 @@
 				9F6F4D1556553E029FA8D086 /* [CP] Check Pods Manifest.lock */,
 				A1F8F7451E4CA6B200B57DEB /* Sources */,
 				A1F8F7461E4CA6B200B57DEB /* Frameworks */,
+				A1DA49E21E685C94003FF1CF /* ShellScript */,
 				A1F8F7471E4CA6B200B57DEB /* Resources */,
 				469F216926D2EB0135B8362D /* [CP] Embed Pods Frameworks */,
 				B6E0C7F1841A6B9184B5B2D0 /* [CP] Copy Pods Resources */,
@@ -537,6 +538,19 @@
 			shellPath = /bin/sh;
 			shellScript = "FABRIC_APIKEY=$(cat ${SRCROOT}/fabric.apikey)\nFABRIC_BUILDSECRET=$(cat ${SRCROOT}/fabric.buildsecret)\n\"${PODS_ROOT}/Fabric/run\" ${FABRIC_APIKEY} ${FABRIC_BUILDSECRET}";
 		};
+		A1DA49E21E685C94003FF1CF /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\n    swiftlint\nelse\n    echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi";
+		};
 		B6E0C7F1841A6B9184B5B2D0 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -666,7 +680,7 @@
 			};
 			name = Debug;
 		};
-		A17E20941E6074CB00EA04CB /* Release */ = {
+		A17E20941E6074CB00EA04CB /* App Store */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 4E9A64392CE0FF0897E8F225 /* Pods-MunchkinLevelCounterTests.release.xcconfig */;
 			buildSettings = {
@@ -679,9 +693,9 @@
 				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MunchkinLevelCounter.app/MunchkinLevelCounter";
 			};
-			name = Release;
+			name = "App Store";
 		};
-		A199C9521E67BAFD0051BCCC /* Testing */ = {
+		A18EBB271E699F730069DCC5 /* Ad Hoc */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -722,9 +736,9 @@
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				VALIDATE_PRODUCT = YES;
 			};
-			name = Testing;
+			name = "Ad Hoc";
 		};
-		A199C9531E67BAFD0051BCCC /* Testing */ = {
+		A18EBB281E699F730069DCC5 /* Ad Hoc */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 47FABE3AEFFEE99EA22B6D39 /* Pods-MunchkinLevelCounter.release.xcconfig */;
 			buildSettings = {
@@ -736,16 +750,16 @@
 				INFOPLIST_FILE = "$(SRCROOT)/MunchkinLevelCounter/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.datarockets.munchkin;
+				PRODUCT_BUNDLE_IDENTIFIER = com.datarockets.munchkin.adhoc;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "85f20a4c-127e-4439-9c63-5fc972f9453c";
 				PROVISIONING_PROFILE_SPECIFIER = "Munchkin Level Counter Ad Hoc Distribution";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
-			name = Testing;
+			name = "Ad Hoc";
 		};
-		A199C9541E67BAFD0051BCCC /* Testing */ = {
+		A18EBB291E699F730069DCC5 /* Ad Hoc */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 4E9A64392CE0FF0897E8F225 /* Pods-MunchkinLevelCounterTests.release.xcconfig */;
 			buildSettings = {
@@ -758,7 +772,7 @@
 				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MunchkinLevelCounter.app/MunchkinLevelCounter";
 			};
-			name = Testing;
+			name = "Ad Hoc";
 		};
 		A1F8F7671E4CA6B200B57DEB /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -810,7 +824,7 @@
 			};
 			name = Debug;
 		};
-		A1F8F7681E4CA6B200B57DEB /* Release */ = {
+		A1F8F7681E4CA6B200B57DEB /* App Store */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -851,7 +865,7 @@
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				VALIDATE_PRODUCT = YES;
 			};
-			name = Release;
+			name = "App Store";
 		};
 		A1F8F76A1E4CA6B200B57DEB /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -865,7 +879,7 @@
 				INFOPLIST_FILE = "$(SRCROOT)/MunchkinLevelCounter/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.datarockets.munchkin;
+				PRODUCT_BUNDLE_IDENTIFIER = com.datarockets.munchkin.development;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "02f6fb08-7421-4d48-99fa-8ebddb030c38";
 				PROVISIONING_PROFILE_SPECIFIER = "Munchkin Level Counter Development";
@@ -874,7 +888,7 @@
 			};
 			name = Debug;
 		};
-		A1F8F76B1E4CA6B200B57DEB /* Release */ = {
+		A1F8F76B1E4CA6B200B57DEB /* App Store */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 47FABE3AEFFEE99EA22B6D39 /* Pods-MunchkinLevelCounter.release.xcconfig */;
 			buildSettings = {
@@ -893,7 +907,7 @@
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
-			name = Release;
+			name = "App Store";
 		};
 /* End XCBuildConfiguration section */
 
@@ -902,31 +916,31 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				A17E20931E6074CB00EA04CB /* Debug */,
-				A17E20941E6074CB00EA04CB /* Release */,
-				A199C9541E67BAFD0051BCCC /* Testing */,
+				A17E20941E6074CB00EA04CB /* App Store */,
+				A18EBB291E699F730069DCC5 /* Ad Hoc */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = "App Store";
 		};
 		A1F8F7441E4CA6B200B57DEB /* Build configuration list for PBXProject "MunchkinLevelCounter" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				A1F8F7671E4CA6B200B57DEB /* Debug */,
-				A1F8F7681E4CA6B200B57DEB /* Release */,
-				A199C9521E67BAFD0051BCCC /* Testing */,
+				A1F8F7681E4CA6B200B57DEB /* App Store */,
+				A18EBB271E699F730069DCC5 /* Ad Hoc */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = "App Store";
 		};
 		A1F8F7691E4CA6B200B57DEB /* Build configuration list for PBXNativeTarget "MunchkinLevelCounter" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				A1F8F76A1E4CA6B200B57DEB /* Debug */,
-				A1F8F76B1E4CA6B200B57DEB /* Release */,
-				A199C9531E67BAFD0051BCCC /* Testing */,
+				A1F8F76B1E4CA6B200B57DEB /* App Store */,
+				A18EBB281E699F730069DCC5 /* Ad Hoc */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = "App Store";
 		};
 /* End XCConfigurationList section */
 

@@ -27,8 +27,7 @@ extension UIColor {
             b = min(max(b, 0.1), 0.84)
             
             return UIColor.init(red: CGFloat(r), green: CGFloat(g), blue: CGFloat(b), alpha: 1.0)
-        }
-        else {
+        } else {
             return UIColor.red
         }
     }

@@ -14,9 +14,9 @@ import MagicalRecord
 import Fabric
 import Crashlytics
 
-enum Storyboard : String {
-    case Main = "Main"
-    case Onboarding = "Onboarding"
+enum Storyboard: String {
+    case Main
+    case Onboarding
 }
 
 @UIApplicationMain
@@ -29,7 +29,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // Data
         container.register(UserDefaults.self) { _ in
-            print("User Defaults")
             return UserDefaults()
         }
         container.register(PreferencesHelper.self) { resolver in
@@ -79,14 +78,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         
         // View
-        container.storyboardInitCompleted(PlayersEditorViewController.self) { resolver, controller in
-            controller.presenter = resolver.resolve(PlayersEditorPresenter.self)!
-        }
-        
         container.register(OnboardingViewController.self) { resolver in
             let controller = OnboardingViewController()
             controller.presenter = resolver.resolve(OnboardingPresenter.self)!
             return controller
+        }
+        
+        container.storyboardInitCompleted(PlayersEditorViewController.self) { resolver, controller in
+            controller.presenter = resolver.resolve(PlayersEditorPresenter.self)!
         }
         
         container.storyboardInitCompleted(DashboardViewController.self) { resolver, controller in
@@ -119,11 +118,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let whitespaceToTrim: CharacterSet = CharacterSet.whitespacesAndNewlines
         let fabricAPIKeyTrimmed: String = fabricAPIKey!.trimmingCharacters(in: whitespaceToTrim )
         print("Key for Fabric: \(fabricAPIKeyTrimmed)")
-        Fabric.with([Crashlytics.start(withAPIKey: fabricAPIKeyTrimmed)])
+        Crashlytics.start(withAPIKey: fabricAPIKeyTrimmed)
+        Fabric.with([Crashlytics.self])
     }
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         initFabric()
+        Appearance.setupUIAppearance()
         MagicalRecord.setupCoreDataStack()
         launchStoryboard(storyboard: Storyboard.Onboarding)
         return true
@@ -176,7 +177,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
          error conditions that could cause the creation of the store to fail.
          */
         let container = NSPersistentContainer(name: "Munchkin_Level_Counter")
-        container.loadPersistentStores(completionHandler: { (storeDescription, error) in
+        container.loadPersistentStores(completionHandler: { (_, error) in
             if let error = error as NSError? {
                 // Replace this implementation with code to handle the error appropriately.
                 // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
@@ -212,4 +213,3 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
 }
-

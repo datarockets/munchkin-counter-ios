@@ -1,0 +1,10 @@
+app_identifier "com.datarockets.munchkin"
+apple_id "chyrta@me.com"
+
+for platform :ios do
+
+  for_lane :beta do
+    app_identifier "com.datarockets.munchkin.ad-hoc"
+  end
+
+end
