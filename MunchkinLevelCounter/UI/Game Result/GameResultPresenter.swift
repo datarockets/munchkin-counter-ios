@@ -24,6 +24,18 @@ class GameResultPresenter: Presenter {
         mGameResultView = view
     }
     
+    func chooseScoreType(scoreType: Int) {
+        switch scoreType {
+        case 0:
+            self.mGameResultView?.loadChartViewController(scoreType: .levelScore)
+        case 1:
+            self.mGameResultView?.loadChartViewController(scoreType: .strengthScore)
+        case 2:
+            self.mGameResultView?.loadChartViewController(scoreType: .totalScore)
+        default: break
+        }
+    }
+    
     func clearGameResults() {
         mSubscription = mDataManager.clearGameSteps()
             .subscribeOn(ConcurrentDispatchQueueScheduler.init(qos: DispatchQoS.background))
@@ -35,6 +47,5 @@ class GameResultPresenter: Presenter {
         mGameResultView = nil
         mSubscription?.dispose()
     }
-    
 
 }

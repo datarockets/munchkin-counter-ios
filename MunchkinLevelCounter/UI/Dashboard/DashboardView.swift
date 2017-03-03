@@ -10,7 +10,7 @@ import Foundation
 
 protocol DashboardView: BaseView {
     func finishGame()
-    func setPlayers(players: Array<Player>)
+    func setPlayers(players: [Player])
     func showConfirmFinishGameDialog()
     func showRollDiceDialog()
     func updatePlayerInformation(player: Player, position: Int)

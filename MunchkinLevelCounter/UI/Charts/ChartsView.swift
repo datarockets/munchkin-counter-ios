@@ -10,6 +10,6 @@ import Foundation
 import Charts
 
 protocol ChartsView: BaseView {
-    func showPlayersList(players: Array<Player>)
+    func showPlayersList(players: [Player])
     func showPlayersCharts(chartData: ChartData)
 }

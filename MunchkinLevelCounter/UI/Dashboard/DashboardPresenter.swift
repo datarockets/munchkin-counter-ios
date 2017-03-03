@@ -34,7 +34,7 @@ class DashboardPresenter: Presenter {
     }
     
     func setGameFinished() {
-        mDataManager.getPreferencesHelper().setGameStatus(isGameStarted: false)
+        mDataManager.getPreferencesHelper().gameStarted = false
     }
     
     func detachView() {

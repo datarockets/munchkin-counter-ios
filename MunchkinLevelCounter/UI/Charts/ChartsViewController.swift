@@ -21,6 +21,8 @@ class ChartsViewController: UIViewController,
     @IBOutlet weak var lineChartView: LineChartView!
     @IBOutlet weak var playedPlayersTableView: UITableView!
     
+    var currentScoreType: ScoreType?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         playedPlayersTableView.dataSource = self
@@ -32,12 +34,31 @@ class ChartsViewController: UIViewController,
         return playedPlayers.count
     }
     
+    func loadChartData(chartType: ScoreType) {
+        currentScoreType = chartType
+        presenter?.loadChartData(type: chartType)
+        presenter?.loadPlayers(sortType: chartType)
+    }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = playedPlayersTableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! ChartsTableViewCell
+        guard let cell = playedPlayersTableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as? ChartsTableViewCell else { fatalError("Dequeuing reusable cell failed") }
+        let player = playedPlayers[indexPath.row]
+        cell.ivPlayerImage?.setImageWith(player.playerName, color: UIColor.colorHash(name: player.playerName), circular: true)
+        cell.tvPlayerName.text = player.playerName
+        
+        switch currentScoreType! {
+        case .levelScore:
+            cell.tvPlayerScore.text = "\(player.playerLevel)"
+        case .strengthScore:
+            cell.tvPlayerScore.text = "\(player.playerStrength)"
+        case .totalScore:
+            cell.tvPlayerScore.text = "\(player.getTotalScore())"
+        }
+        
         return cell
     }
     
-    func showPlayersList(players: Array<Player>) {
+    func showPlayersList(players: [Player]) {
         playedPlayers = players
         playedPlayersTableView.reloadData()
     }

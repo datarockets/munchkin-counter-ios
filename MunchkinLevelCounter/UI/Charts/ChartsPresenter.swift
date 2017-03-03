@@ -24,6 +24,20 @@ class ChartsPresenter: Presenter {
         mChartsView = view
     }
     
+    func loadChartData(type: ScoreType) {
+        
+    }
+    
+    func loadPlayers(sortType: ScoreType) {
+        mSubscription = mDataManager.getPlayers(sortType: sortType)
+            .subscribeOn(ConcurrentDispatchQueueScheduler.init(qos: DispatchQoS.background))
+            .observeOn(MainScheduler.instance)
+            .subscribe(onNext: { players in
+                    self.mChartsView?.showPlayersList(players: players)
+                }
+            )
+    }
+    
     func detachView() {
         mChartsView = nil
         mSubscription?.dispose()

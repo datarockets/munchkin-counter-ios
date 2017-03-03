@@ -83,15 +83,15 @@ class PlayersEditorPresenter: Presenter {
     }
     
     func setGameStarted() {
-        mDataManager.getPreferencesHelper().setGameStatus(isGameStarted: true)
+        mDataManager.getPreferencesHelper().gameStarted = true
     }
     
     func setGameFinished() {
-        mDataManager.getPreferencesHelper().setGameStatus(isGameStarted: false)
+        mDataManager.getPreferencesHelper().gameStarted = false
     }
     
     func checkIsGameStarted() {
-        if mDataManager.getPreferencesHelper().isGameStarted() {
+        if mDataManager.getPreferencesHelper().gameStarted {
             mPlayersEditorView?.showStartContinueDialog()
         }
     }
@@ -100,6 +100,5 @@ class PlayersEditorPresenter: Presenter {
         mPlayersEditorView = nil
         mSubscription?.dispose()
     }
-    
     
 }

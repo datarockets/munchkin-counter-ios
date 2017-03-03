@@ -6,5 +6,6 @@
 //  Copyright © 2017 datarockets. All rights reserved.
 //
 
-protocol GameResultView: BaseView {    
+protocol GameResultView: BaseView {
+    func loadChartViewController(scoreType: ScoreType)
 }

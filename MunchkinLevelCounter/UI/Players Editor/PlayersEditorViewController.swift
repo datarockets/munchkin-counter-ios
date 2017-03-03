@@ -10,7 +10,7 @@ import UIKit
 import Swinject
 import UIImageView_Letters
 
-class PlayersEditorViewController: UIViewController, UITableViewDelegate,
+class PlayersEditorViewController: BaseViewController, UITableViewDelegate,
     UITableViewDataSource,
     OnPlayerStatusChanged,
     PlayersEditorView {
@@ -34,7 +34,7 @@ class PlayersEditorViewController: UIViewController, UITableViewDelegate,
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = playersListTableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! PlayersEditorTableViewCell
+        guard let cell = playersListTableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as? PlayersEditorTableViewCell else { fatalError("Dequeuing reusable cell failed") }
         let player = players[indexPath.row]
         cell.playerStatus = self
         cell.swIsPlaying.isOn = player.isPlaying
@@ -65,7 +65,7 @@ class PlayersEditorViewController: UIViewController, UITableViewDelegate,
         playersListTableView.reloadData()
     }
     
-    func setPlayersList(players: Array<Player>) {
+    func setPlayersList(players: [Player]) {
         self.players = players
         playersListTableView.reloadData()
     }
@@ -76,7 +76,7 @@ class PlayersEditorViewController: UIViewController, UITableViewDelegate,
         addNewPlayerAlert.addTextField { textField in
             textField.placeholder = "text.player_name".localized
         }
-        let addPlayerAction = UIAlertAction(title: "button.add_new_player".localized, style: .default) { action in
+        let addPlayerAction = UIAlertAction(title: "button.add_new_player".localized, style: .default) { _ in
             let enteredText = ((addNewPlayerAlert.textFields?.first)! as UITextField).text
             self.presenter?.addPlayer(playerName: enteredText!)
         }
@@ -87,19 +87,18 @@ class PlayersEditorViewController: UIViewController, UITableViewDelegate,
     }
     
     func launchDashboard() {
-        let dashboardViewController = storyboard?.instantiateViewController(withIdentifier: "dashboard") as! DashboardViewController
+        guard let dashboardViewController = storyboard?.instantiateViewController(withIdentifier: "dashboard") as? DashboardViewController else { return }
         presenter?.setGameStarted()
         present(dashboardViewController, animated: true, completion: nil)
-        self.navigationController?.dismiss(animated: true, completion: nil)
     }
     
     func showStartContinueDialog() {
         let startContinueAlert = UIAlertController(title: "dialog.start_continue_game.title".localized,
                                                    message: "dialog.start_continue_game.message".localized, preferredStyle: .alert)
-        let startNewGameAction = UIAlertAction(title: "button.start".localized, style: .destructive) { action in
+        let startNewGameAction = UIAlertAction(title: "button.start".localized, style: .destructive) { _ in
             self.presenter?.setGameFinished()
         }
-        let continueGameAction = UIAlertAction(title: "button.continue".localized, style: .default) { action in
+        let continueGameAction = UIAlertAction(title: "button.continue".localized, style: .default) { _ in
             self.launchDashboard()
         }
         startContinueAlert.addAction(startNewGameAction)

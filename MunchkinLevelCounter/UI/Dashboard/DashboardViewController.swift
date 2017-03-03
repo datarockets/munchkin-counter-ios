@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DashboardViewController: UIViewController, UITableViewDelegate,
+class DashboardViewController: BaseViewController, UITableViewDelegate,
     UITableViewDataSource,
     OnScoreChangedDelegate,
     DashboardView {
@@ -35,14 +35,13 @@ class DashboardViewController: UIViewController, UITableViewDelegate,
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
 
     override func viewDidDisappear(_ animated: Bool) {
         presenter?.detachView()
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = playingPlayersTableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! DashboardTableViewCell
+        guard let cell = playingPlayersTableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as? DashboardTableViewCell else { fatalError("Dequeing reusable cell failed") }
         let player = playingPlayers[indexPath.row]
         cell.tvPlayerName.text = player.playerName
         cell.tvPlayerLevel.text = "\(player.playerLevel)"
@@ -86,7 +85,7 @@ class DashboardViewController: UIViewController, UITableViewDelegate,
         }
 
     }
-    
+
     @IBAction func onFinishGameButtonClick(_ sender: Any) {
         showConfirmFinishGameDialog()
     }
@@ -96,11 +95,11 @@ class DashboardViewController: UIViewController, UITableViewDelegate,
                                                              message: NSLocalizedString("dialog.finish_game.message", comment: ""),
                                                              preferredStyle: .alert)
         let finishGameAction = UIAlertAction(title: NSLocalizedString("button.yes", comment: ""),
-                                             style: .default) { action in
+                                             style: .default) { _ in
             self.finishGame()
         }
         let cancelAction = UIAlertAction(title: NSLocalizedString("button.no", comment: ""),
-                                         style: .cancel) { action in
+                                         style: .cancel) { _ in
             print("Cancel")
         }
         confirmFinishGameAlertDialog.addAction(finishGameAction)
@@ -112,7 +111,7 @@ class DashboardViewController: UIViewController, UITableViewDelegate,
         
     }
     
-    func setPlayers(players: Array<Player>) {
+    func setPlayers(players: [Player]) {
         self.playingPlayers = players
         playingPlayersTableView.reloadData()
         let selectedIndexPath = IndexPath(row: 0, section: 0)

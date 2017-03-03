@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol OnScoreChangedDelegate {
+protocol OnScoreChangedDelegate: class {
     func onScoreChanged(playerPosition: Int, playerLevel: Int, playerStrength: Int)
 }
 
@@ -17,15 +17,16 @@ class PlayerViewController: UIViewController, PlayerView {
     var presenter: PlayerPresenter?
     
     private var mPlayerPosition: Int = 0
-    var scoreChangedDelegate: OnScoreChangedDelegate?
     
-    @IBOutlet weak var btnIncreaseLevel: UIButton!
-    @IBOutlet weak var btnDecreaseLevel: UIButton!
-    @IBOutlet weak var btnIncreaseStrength: UIButton!
-    @IBOutlet weak var btnDecreaseStrength: UIButton!
-    @IBOutlet weak var tvLevelScore: UILabel!
-    @IBOutlet weak var tvStrengthScore: UILabel!
-    @IBOutlet weak var tvPlayerName: UILabel!
+    weak var scoreChangedDelegate: OnScoreChangedDelegate?
+    
+    @IBOutlet weak private var btnIncreaseLevel: UIButton!
+    @IBOutlet weak private var btnDecreaseLevel: UIButton!
+    @IBOutlet weak private var btnIncreaseStrength: UIButton!
+    @IBOutlet weak private var btnDecreaseStrength: UIButton!
+    @IBOutlet weak private var tvLevelScore: UILabel!
+    @IBOutlet weak private var tvStrengthScore: UILabel!
+    @IBOutlet weak private var tvPlayerName: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,6 +38,7 @@ class PlayerViewController: UIViewController, PlayerView {
     }
     
     override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
         presenter?.detachView()
     }
 

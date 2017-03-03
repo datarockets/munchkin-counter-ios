@@ -8,13 +8,24 @@
 
 import UIKit
 
-class GameResultViewController: UIViewController, GameResultView {
+enum ScoreType: Int {
+    case levelScore = 0
+    case strengthScore = 1
+    case totalScore = 2
+}
 
+class GameResultViewController: BaseViewController, GameResultView {
+    
     var presenter: GameResultPresenter?
+    
+    @IBOutlet weak private var scoreTypeChanger: UISegmentedControl!
+    @IBOutlet weak private var chartViewController: ChartsViewController!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         presenter?.attachView(self)
+        chartViewController = childViewControllers.first as? ChartsViewController
+        presenter?.chooseScoreType(scoreType: 0)
     }
 
     override func didReceiveMemoryWarning() {
@@ -30,6 +41,15 @@ class GameResultViewController: UIViewController, GameResultView {
         let playersEditorViewController = storyboard?.instantiateInitialViewController()
         present(playersEditorViewController!, animated: true, completion: nil)
         self.navigationController?.dismiss(animated: true, completion: nil)
+    }
+    
+    @IBAction func onScoreTypeChanged(_ sender: UISegmentedControl) {
+        let selectedIndex = scoreTypeChanger.selectedSegmentIndex
+        presenter?.chooseScoreType(scoreType: selectedIndex)
+    }
+    
+    func loadChartViewController(scoreType: ScoreType) {
+        chartViewController?.loadChartData(chartType: scoreType)
     }
     
 }
