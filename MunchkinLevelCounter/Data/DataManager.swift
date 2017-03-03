@@ -48,16 +48,15 @@ class DataManager {
         return mDatabaseHelper.getPlayingPlayers().toArray()
     }
     
-    func getPlayers(sortType: Int) -> Observable<[Player]> {
+    func getPlayers(sortType: ScoreType) -> Observable<[Player]> {
         switch sortType {
-            case 0:
+            case .levelScore:
                 return mDatabaseHelper.getPlayedPlayersByLevel().toArray()
-            case 1:
+            case .strengthScore:
                 return mDatabaseHelper.getPlayedPlayersByStrength().toArray()
-            case 2:
+            case .totalScore:
                 return mDatabaseHelper.getPlayedPlayersByTotal().toArray()
-            default:
-                return mDatabaseHelper.getPlayers().toArray()
+
         }
     }
     
@@ -74,7 +73,7 @@ class DataManager {
     }
     
     func getLineData(type: Int) -> Observable<ChartData> {
-        return Observable.create { subscriber in
+        return Observable.create { _ in
             return Disposables.create()
         }
     }

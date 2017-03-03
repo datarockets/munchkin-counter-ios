@@ -13,7 +13,6 @@ import RxSwift
 
 class DatabaseHelper {
 
-    
     func setPlayer(player: Player) -> Observable<Player> {
         return Observable.create { subscriber in
             MagicalRecord.save({ (context) in
@@ -22,7 +21,7 @@ class DatabaseHelper {
                 } else {
                     subscriber.onCompleted()
                 }
-            }, completion: { success, error in
+            }, completion: { _ in
                 subscriber.onNext(player)
                 subscriber.onCompleted()
             })
@@ -132,7 +131,7 @@ class DatabaseHelper {
             MagicalRecord.save({ (context) in
                 let predicate = NSPredicate(format: "id = '\(id)'")
                 PlayerEntity.mr_deleteAll(matching: predicate, in: context)
-            }, completion: { success, error in
+            }, completion: { _ in
                 subscriber.onCompleted()
             })
             return Disposables.create()
@@ -149,7 +148,7 @@ class DatabaseHelper {
                 } else {
                     subscriber.onCompleted()
                 }
-            }, completion: { success, error in
+            }, completion: { _ in
                 subscriber.onCompleted()
             })
             return Disposables.create()
@@ -165,7 +164,7 @@ class DatabaseHelper {
                 } else {
                     subscriber.onCompleted()
                 }
-            }, completion: { success, error in
+            }, completion: { _ in
                 subscriber.onCompleted()
             })
             return Disposables.create()
@@ -180,7 +179,7 @@ class DatabaseHelper {
                 } else {
                     subscriber.onCompleted()
                 }
-            }, completion: { success, error in
+            }, completion: { _ in
                 subscriber.onCompleted()
             })
             return Disposables.create()
@@ -188,7 +187,7 @@ class DatabaseHelper {
     }
     
     func getGameSteps() -> Observable<GameStep> {
-        return Observable.create { subscriber in
+        return Observable.create { _ in
             
             return Disposables.create()
         }
@@ -205,7 +204,7 @@ class DatabaseHelper {
                 } else {
                     subscriber.onCompleted()
                 }
-            }, completion: { success, error in
+            }, completion: { _ in
                 subscriber.onCompleted()
             })
             return Disposables.create()
