@@ -752,6 +752,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = M5MBYBFCK5;
@@ -760,8 +761,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.datarockets.munchkin;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "85f20a4c-127e-4439-9c63-5fc972f9453c";
-				PROVISIONING_PROFILE_SPECIFIER = "Munchkin Level Counter Ad Hoc Distribution";
+				PROVISIONING_PROFILE = "84b7fd86-0bcf-425b-91a8-f0c799bc6f83";
+				PROVISIONING_PROFILE_SPECIFIER = "match AdHoc com.datarockets.munchkin";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -881,6 +882,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = M5MBYBFCK5;
@@ -889,8 +891,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.datarockets.munchkin;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "02f6fb08-7421-4d48-99fa-8ebddb030c38";
-				PROVISIONING_PROFILE_SPECIFIER = "Munchkin Level Counter Development";
+				PROVISIONING_PROFILE = "4c5a5519-2b5a-4e6c-b9d3-35f2d8ca7f3f";
+				PROVISIONING_PROFILE_SPECIFIER = "match Development com.datarockets.munchkin";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -902,6 +904,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = M5MBYBFCK5;
@@ -910,8 +913,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.datarockets.munchkin;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "64f08564-a736-4e99-ae79-90847c769f25";
-				PROVISIONING_PROFILE_SPECIFIER = "Munchkin Level Counter AppStore Distribution";
+				PROVISIONING_PROFILE = "9ffdb0d0-4eb7-4c19-8a77-7d6959d9d62d";
+				PROVISIONING_PROFILE_SPECIFIER = "match AppStore com.datarockets.munchkin";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
