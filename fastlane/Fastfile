@@ -5,10 +5,7 @@ default_platform :ios
 platform :ios do
 
   before_all do
-    cocoapods(
-      clean: true,
-      repo_update: true
-    )
+    cocoapods
   end
 
   desc "Submit a new build of Munchkin Level Counter to Fabric Beta"
