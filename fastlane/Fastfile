@@ -20,7 +20,7 @@ platform :ios do
     gym(
       scheme: "MunchkinLevelCounter",
       configuration: "Ad Hoc",
-      sdk: "iphoneos10.0",
+      sdk: "iphoneos10.2",
       clean: true,
       include_bitcode: false,
       include_symbols: true,
