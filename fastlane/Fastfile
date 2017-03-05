@@ -14,7 +14,21 @@ platform :ios do
   desc "Submit a new build of Munchkin Level Counter to Fabric Beta"
   lane :beta do
 
-    match(type: "adhoc", readonly: true)
+    create_keychain(
+      name: ENV["MATCH_KEYCHAIN_NAME"],
+      password: ENV["MATCH_PASSWORD"],
+      default_keychain: true,
+      unlock: true,
+      timeout: 3600,
+      add_to_search_list: true
+    )
+
+    match(
+      type: "adhoc",
+      keychain_name: ENV["MATCH_KEYCHAIN_NAME"],
+      keychain_password: ENV["MATCH_PASSWORD"],
+      readonly: true
+    )
 
     # Building an app
     gym(
@@ -33,10 +47,6 @@ platform :ios do
       build_secret: ENV["FABRIC_BUILD_SECRET"]
     )
 
-    delete_keychain(
-      name: keychain_name
-    )
-
     # Post a message to opensource channel
     slack(
       message: "Munckin Level Counter was released",
@@ -44,9 +54,6 @@ platform :ios do
     )
 
     error do |lane, exception|
-      delete_keychain(
-        name: keychain_name
-      )
     end
 
   end
