@@ -15,7 +15,6 @@ platform :ios do
   lane :beta do
 
     create_keychain(
-      name: ENV["MATCH_KEYCHAIN_NAME"],
       password: ENV["MATCH_PASSWORD"],
       default_keychain: true,
       unlock: true,
@@ -25,7 +24,6 @@ platform :ios do
 
     match(
       type: "adhoc",
-      keychain_name: ENV["MATCH_KEYCHAIN_NAME"],
       keychain_password: ENV["MATCH_PASSWORD"],
       readonly: true
     )
