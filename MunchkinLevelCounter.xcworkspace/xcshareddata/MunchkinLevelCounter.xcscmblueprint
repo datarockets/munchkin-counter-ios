@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "C26A060C29B0D44F03B6AD2A1FA9ADD079926BA2",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "C26A060C29B0D44F03B6AD2A1FA9ADD079926BA2" : 9223372036854775807,
+    "0AC10B4370A9E1F22A7471E95672D3F91477060A" : 9223372036854775807
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "D1B729EA-49CB-4640-A002-74BA085DE830",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "C26A060C29B0D44F03B6AD2A1FA9ADD079926BA2" : "MunchkinLevelCounter\/",
+    "0AC10B4370A9E1F22A7471E95672D3F91477060A" : "..\/AndroidStudioProjects\/munchkin-counter-android"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "MunchkinLevelCounter",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "MunchkinLevelCounter.xcworkspace",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:datarockets\/munchkin-counter-android.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "0AC10B4370A9E1F22A7471E95672D3F91477060A"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:datarockets\/munchkin-counter-ios.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "C26A060C29B0D44F03B6AD2A1FA9ADD079926BA2"
+    }
+  ]
+}

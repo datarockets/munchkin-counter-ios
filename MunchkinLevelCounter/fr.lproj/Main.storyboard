@@ -10,11 +10,6 @@
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <customFonts key="customFonts">
-        <array key="munchkin.ttf">
-            <string>Buccaneer-Cyr-Regular</string>
-        </array>
-    </customFonts>
     <scenes>
         <!--Players Editor View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -36,7 +31,7 @@
                                         <rect key="frame" x="0.0" y="28" width="414" height="67"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="g9W-9s-9Cd" id="8Va-fp-h5U">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="66.666666666666671"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="66"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Player Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rlG-bz-ikm">
@@ -145,13 +140,13 @@
                             </containerView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="pu1-w3-ERq">
                                 <rect key="frame" x="0.0" y="369.33333333333337" width="414" height="305.33333333333337"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" id="ghI-cD-NSE" customClass="DashboardTableViewCell" customModule="MunchkinLevelCounter" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ghI-cD-NSE" id="hZd-7j-Ho7">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.666666666666664"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Player Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aVi-EG-DEp">
@@ -200,10 +195,9 @@
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d3G-Lq-58f">
                                 <rect key="frame" x="0.0" y="674.66666666666652" width="414" height="61.333333333333371"/>
-                                <color key="backgroundColor" red="0.23137254901960785" green="0.086274509803921567" blue="0.023529411764705882" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="backgroundColor" red="0.49431713922261589" green="0.87337285070100679" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="Next Player">
-                                    <color key="titleColor" red="0.96862745098039216" green="0.84313725490196079" blue="0.45490196078431372" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleColor" red="0.33720406785566848" green="0.046800963304453158" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="onNextPlayerClick:" destination="re3-RX-2fl" eventType="touchUpInside" id="P3u-WS-34Z"/>
@@ -262,7 +256,7 @@
                                             </connections>
                                         </barButtonItem>
                                         <segmentedControl key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="5Py-mq-ylf">
-                                            <rect key="frame" x="105.66666666666669" y="7" width="203" height="30"/>
+                                            <rect key="frame" x="106" y="7" width="203" height="30"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <segments>
                                                 <segment title="Level"/>
@@ -273,7 +267,6 @@
                                                 <action selector="onScoreTypeChanged:" destination="Xs3-F6-RTo" eventType="valueChanged" id="wJy-Pi-qME"/>
                                             </connections>
                                         </segmentedControl>
-                                        <barButtonItem key="rightBarButtonItem" title="Share" id="FL1-D1-fVB"/>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
@@ -317,14 +310,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="62" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="CUR-X1-9Ka">
-                                <rect key="frame" x="0.0" y="340.33333333333326" width="414" height="331.66666666666674"/>
+                                <rect key="frame" x="0.0" y="340" width="414" height="332"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" rowHeight="62" id="CjV-uD-eiT" customClass="ChartsTableViewCell" customModule="MunchkinLevelCounter" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="62"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="CjV-uD-eiT" id="f8p-4S-89z">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="61.666666666666664"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="61"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="O9F-4K-mfi">
@@ -365,7 +358,7 @@
                                 </prototypes>
                             </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="h1L-nc-2IW" customClass="LineChartView" customModule="Charts">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="332.33333333333331"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="332"/>
                                 <color key="backgroundColor" red="1" green="0.9812229615929362" blue="0.98907852610791203" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
                         </subviews>
@@ -393,7 +386,7 @@
         <!--Player View Controller-->
         <scene sceneID="4Av-7n-SQN">
             <objects>
-                <viewController modalPresentationStyle="currentContext" id="h5z-sL-wEG" customClass="PlayerViewController" customModule="MunchkinLevelCounter" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="h5z-sL-wEG" customClass="PlayerViewController" customModule="MunchkinLevelCounter" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="EBt-qs-Yh1"/>
                         <viewControllerLayoutGuide type="bottom" id="obP-jI-Qs8"/>
@@ -406,11 +399,11 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="305"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="70P-fM-Yyv" userLabel="Top Container">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="33.333333333333336"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="36"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Player Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3EL-IU-MPe">
-                                        <rect key="frame" x="124.66666666666666" y="0.0" width="166.33333333333334" height="33.333333333333336"/>
-                                        <fontDescription key="fontDescription" name="Buccaneer-Cyr-Regular" family="Buccaneer Cyr" pointSize="25"/>
+                                        <rect key="frame" x="123" y="0.0" width="169" height="36"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -422,13 +415,13 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2Ku-WL-KaD" userLabel="Container">
-                                <rect key="frame" x="0.0" y="33.333333333333343" width="414" height="271.66666666666663"/>
+                                <rect key="frame" x="0.0" y="36" width="414" height="269"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VRp-eO-WaT" userLabel="Left Part">
-                                        <rect key="frame" x="0.0" y="0.0" width="207" height="271.66666666666669"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="207" height="269"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pqs-rt-TGb">
-                                                <rect key="frame" x="87" y="0.0" width="32" height="31.999999999999993"/>
+                                                <rect key="frame" x="88" y="0.0" width="32" height="32"/>
                                                 <rect key="contentStretch" x="1" y="0.0" width="1" height="1"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="32" id="qUG-3Z-K3U"/>
@@ -441,13 +434,13 @@
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NiR-Nc-Hce">
-                                                <rect key="frame" x="83.333333333333329" y="31.999999999999993" width="40" height="80"/>
-                                                <fontDescription key="fontDescription" name="Buccaneer-Cyr-Regular" family="Buccaneer Cyr" pointSize="60"/>
+                                                <rect key="frame" x="80" y="32" width="46" height="84"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="70"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iAU-RD-tP8">
-                                                <rect key="frame" x="87" y="112" width="32" height="32"/>
+                                                <rect key="frame" x="87" y="116" width="32" height="32"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="32" id="ngv-g9-CHm"/>
                                                     <constraint firstAttribute="width" constant="32" id="yMP-cn-z9T"/>
@@ -458,8 +451,8 @@
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Level" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gXR-gH-wzX">
-                                                <rect key="frame" x="80.666666666666671" y="159" width="45.666666666666657" height="22.666666666666657"/>
-                                                <fontDescription key="fontDescription" name="Buccaneer-Cyr-Regular" family="Buccaneer Cyr" pointSize="17"/>
+                                                <rect key="frame" x="83" y="163" width="40" height="21"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -476,10 +469,10 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="suD-wE-t4f" userLabel="Right Part">
-                                        <rect key="frame" x="207" y="0.0" width="207" height="271.66666666666669"/>
+                                        <rect key="frame" x="207" y="0.0" width="207" height="269"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="haQ-W9-jn4">
-                                                <rect key="frame" x="88" y="0.0" width="32" height="31.999999999999993"/>
+                                                <rect key="frame" x="87" y="0.0" width="32" height="32"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="32" id="9Pe-Yk-k2g"/>
                                                     <constraint firstAttribute="width" constant="32" id="WQD-uI-0fL"/>
@@ -490,13 +483,13 @@
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pl9-ht-bE1">
-                                                <rect key="frame" x="84.333333333333314" y="31.999999999999993" width="40" height="80"/>
-                                                <fontDescription key="fontDescription" name="Buccaneer-Cyr-Regular" family="Buccaneer Cyr" pointSize="60"/>
+                                                <rect key="frame" x="80" y="32" width="46" height="84"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="70"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Tu-cm-eRW">
-                                                <rect key="frame" x="88" y="112" width="32" height="32"/>
+                                                <rect key="frame" x="87" y="116" width="32" height="32"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="32" id="3xj-rf-PRp"/>
                                                     <constraint firstAttribute="height" constant="32" id="YZ9-hv-Nie"/>
@@ -507,8 +500,8 @@
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Strength" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BSt-WG-s6F">
-                                                <rect key="frame" x="67.333333333333314" y="159" width="75.333333333333371" height="22.666666666666657"/>
-                                                <fontDescription key="fontDescription" name="Buccaneer-Cyr-Regular" family="Buccaneer Cyr" pointSize="17"/>
+                                                <rect key="frame" x="70" y="163" width="67" height="21"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -552,9 +545,6 @@
                             <constraint firstItem="70P-fM-Yyv" firstAttribute="bottom" secondItem="2Ku-WL-KaD" secondAttribute="top" id="t5R-Hp-zDV"/>
                         </constraints>
                     </view>
-                    <extendedEdge key="edgesForExtendedLayout"/>
-                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <size key="freeformSize" width="414" height="305.33333333333331"/>
                     <connections>
                         <outlet property="btnDecreaseLevel" destination="iAU-RD-tP8" id="TZi-YH-4iU"/>
                         <outlet property="btnDecreaseStrength" destination="2Tu-cm-eRW" id="PHC-gh-or9"/>
@@ -567,7 +557,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tce-pi-7RF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1823.1884057971015" y="-141.84782608695653"/>
+            <point key="canvasLocation" x="1823.1884057971015" y="-141.44021739130437"/>
         </scene>
     </scenes>
     <resources>

@@ -1,0 +1,151 @@
+/* 
+  Localizable.strings
+  Munchkin Level Counter
+
+  Created by Dzmitry Chyrta on 22.02.17.
+  Copyright © 2017 datarockets. All rights reserved.
+*/
+
+/*  */
+"app_name" = "Munchkin Level Counter";
+
+/*  */
+"title.choose_game_type" = "Choose Game Type";
+
+/*  */
+"title.players_editor" = "Players Editor";
+
+/*  */
+"title.analytics" = "Analytics";
+
+/*  */
+"title.settings" = "Settings";
+
+/*  */
+"menu.finish" = "Finish";
+
+/*  */
+"menu.settings" = "Settings";
+
+/*  */
+"menu.roll_dice" = "Roll a dice";
+
+/*  */
+"menu.share_app" = "Share Munchkin Level Counter";
+
+/*  */
+"button.finish" = "Finish";
+
+/*  */
+"button.skip" = "Skip";
+
+/*  */
+"button.next_player" = "Next player";
+
+/*  */
+"button.add_new_player" = "Add player";
+
+/*  */
+"button.update_player" = "Update player";
+
+/*  */
+"button.yes" = "Yes";
+
+/*  */
+"button.no" = "No";
+
+/*  */
+"button.start" = "Start";
+
+/* */
+"button.cancel" = "Cancel";
+
+/*  */
+"button.continue" = "Continue";
+
+/*  */
+"dialog.add_player.title" = "Add a player";
+
+/*  */
+"dialog.add_player.message" = "Give a name to a new player";
+
+/*  */
+"dialog.player_actions.edit_player" = "Edit Player";
+
+/*  */
+"dialog.player_actions.delete_player" = "Delete Player";
+
+/*  */
+"dialog.finish_game.title" = "Finish game";
+
+/*  */
+"dialog.finish_game.message" = "Do you want to finish the game?";
+
+/*  */
+"dialog.player_delete.title" = "Delete a player";
+
+/*  */
+"dialog.player_delete.message" = "Do you want to delete this player?";
+
+/*  */
+"dialog.start_continue_game.title" = "Continue or start?";
+
+/*  */
+"dialog.start_continue_game.message" = "Would you like to continue or start a new game?";
+
+/*  */
+"progress_dialog.stats_loader.title" = "Loading";
+
+/*  */
+"progress_dialog.stats_loader.message" = "Wait while we are loading your stats";
+
+/*  */
+"text.player_add_warning" = "Please, add two or more players and press Start icon";
+
+/*  */
+"text.player_name" = "Player Name";
+
+/*  */
+"text.edit_player" = "Edit Player";
+
+/*  */
+"text.level" = "Level";
+
+/*  */
+"text.strength" = "Strength";
+
+/*  */
+"text.steps" = "Steps";
+
+/*  */
+"settings.max_level" = "Maximum level";
+
+/*  */
+"settings.keep_screen_on" = "Keep screen awake";
+
+/*  */
+"tab.level" = "Level";
+
+/*  */
+"tab.strength" = "Strength";
+
+/*  */
+"tab.summary" = "Summary";
+
+/*  */
+"onboarder.page1.title" = "Welcome!";
+
+/*  */
+"onboarder.page1.description" = "Munchkin Level Counter makes your game a way better";
+
+/*  */
+"onboarder.page2.title" = "Unlimited";
+
+/*  */
+"onboarder.page2.description" = "Add so much players as you want";
+
+/*  */
+"onboarder.page3.title" = "Usability";
+
+/*  */
+"onboarder.page3.description" = "Handle players scores easy";

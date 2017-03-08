@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		7AC27E8E985D8EB9173E1A46 /* Pods_MunchkinLevelCounter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46399C6A6BB7CEB218A85294 /* Pods_MunchkinLevelCounter.framework */; };
 		80E1B09664D5B7664BD2778F /* Pods_MunchkinLevelCounterTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2F903EC40DD9BDDCCA1E5B9 /* Pods_MunchkinLevelCounterTests.framework */; };
-		A113D1581E5DD5E1006A2CA9 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A113D1571E5DD5E1006A2CA9 /* Localizable.strings */; };
 		A127FA801E4DC65E002733AA /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A127FA7F1E4DC65E002733AA /* OnboardingViewController.swift */; };
 		A127FA821E4DC66A002733AA /* OnboardingPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A127FA811E4DC66A002733AA /* OnboardingPresenter.swift */; };
 		A127FA841E4DC67C002733AA /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A127FA831E4DC67C002733AA /* OnboardingView.swift */; };
@@ -28,6 +27,8 @@
 		A17E208E1E6074CB00EA04CB /* MunchkinLevelCounterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A17E208D1E6074CB00EA04CB /* MunchkinLevelCounterTests.swift */; };
 		A193D5BF1E645F1B00FD42FD /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A193D5BE1E645F1B00FD42FD /* Extensions.swift */; };
 		A199C94E1E67B5610051BCCC /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A199C94D1E67B5610051BCCC /* BaseViewController.swift */; };
+		A19A768C1E6CEB65005C691A /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A19A768E1E6CEB65005C691A /* Localizable.strings */; };
+		A19A76941E6CF078005C691A /* munchkin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A19A76921E6CF061005C691A /* munchkin.ttf */; };
 		A1BD807F1E5C9B090010038F /* ChartsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1BD807E1E5C9B090010038F /* ChartsViewController.swift */; };
 		A1BD80811E5C9B1B0010038F /* ChartsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1BD80801E5C9B1B0010038F /* ChartsPresenter.swift */; };
 		A1BD80831E5C9B250010038F /* ChartsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1BD80821E5C9B250010038F /* ChartsView.swift */; };
@@ -76,7 +77,6 @@
 		7CCEDB83BEC5440482DA548A /* Pods_Munchkin_Level_CounterTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Munchkin_Level_CounterTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9083A2A5C71E08EADEBB36E7 /* Pods-MunchkinLevelCounterTests.app store.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MunchkinLevelCounterTests.app store.xcconfig"; path = "Pods/Target Support Files/Pods-MunchkinLevelCounterTests/Pods-MunchkinLevelCounterTests.app store.xcconfig"; sourceTree = "<group>"; };
 		A0522E5E71C1DB5DA4A41109 /* Pods-MunchkinLevelCounter.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MunchkinLevelCounter.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MunchkinLevelCounter/Pods-MunchkinLevelCounter.debug.xcconfig"; sourceTree = "<group>"; };
-		A113D1571E5DD5E1006A2CA9 /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		A127FA7F1E4DC65E002733AA /* OnboardingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		A127FA811E4DC66A002733AA /* OnboardingPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingPresenter.swift; sourceTree = "<group>"; };
 		A127FA831E4DC67C002733AA /* OnboardingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
@@ -98,6 +98,9 @@
 		A193D5BE1E645F1B00FD42FD /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		A199C94D1E67B5610051BCCC /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		A199C9551E67BB1D0051BCCC /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Main.strings; sourceTree = "<group>"; };
+		A19A768D1E6CEB65005C691A /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
+		A19A76901E6CEB78005C691A /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
+		A19A76921E6CF061005C691A /* munchkin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = munchkin.ttf; path = "../../../../AndroidStudioProjects/munchkin-counter-android/app/src/main/assets/munchkin.ttf"; sourceTree = "<group>"; };
 		A1BD807E1E5C9B090010038F /* ChartsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartsViewController.swift; sourceTree = "<group>"; };
 		A1BD80801E5C9B1B0010038F /* ChartsPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartsPresenter.swift; sourceTree = "<group>"; };
 		A1BD80821E5C9B250010038F /* ChartsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartsView.swift; sourceTree = "<group>"; };
@@ -240,6 +243,14 @@
 			path = Util;
 			sourceTree = "<group>";
 		};
+		A19A76911E6CEFFC005C691A /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				A19A76921E6CF061005C691A /* munchkin.ttf */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		A1BD807D1E5C9AEB0010038F /* Charts */ = {
 			isa = PBXGroup;
 			children = (
@@ -296,12 +307,13 @@
 		A1F8F74B1E4CA6B200B57DEB /* MunchkinLevelCounter */ = {
 			isa = PBXGroup;
 			children = (
+				A19A76911E6CEFFC005C691A /* Resources */,
 				A1F8F7701E4CA7BE00B57DEB /* Data */,
 				A1F8F76F1E4CA7AD00B57DEB /* UI */,
 				A193D5BD1E645F0300FD42FD /* Util */,
 				A1F8F74C1E4CA6B200B57DEB /* AppDelegate.swift */,
 				A1F8F7501E4CA6B200B57DEB /* Main.storyboard */,
-				A113D1571E5DD5E1006A2CA9 /* Localizable.strings */,
+				A19A768E1E6CEB65005C691A /* Localizable.strings */,
 				A1F8F7561E4CA6B200B57DEB /* Assets.xcassets */,
 				A1F8F7581E4CA6B200B57DEB /* LaunchScreen.storyboard */,
 				A1F8F75B1E4CA6B200B57DEB /* Info.plist */,
@@ -437,6 +449,7 @@
 			knownRegions = (
 				en,
 				Base,
+				ru,
 			);
 			mainGroup = A1F8F7401E4CA6B200B57DEB;
 			productRefGroup = A1F8F74A1E4CA6B200B57DEB /* Products */;
@@ -461,10 +474,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A113D1581E5DD5E1006A2CA9 /* Localizable.strings in Resources */,
+				A19A768C1E6CEB65005C691A /* Localizable.strings in Resources */,
 				A16725FE1E5F2508006CF6E8 /* fabric.buildsecret in Resources */,
 				A1F8F75A1E4CA6B200B57DEB /* LaunchScreen.storyboard in Resources */,
 				A1F8F7571E4CA6B200B57DEB /* Assets.xcassets in Resources */,
+				A19A76941E6CF078005C691A /* munchkin.ttf in Resources */,
 				A16725FC1E5F24FB006CF6E8 /* fabric.apikey in Resources */,
 				A1F8F7521E4CA6B200B57DEB /* Main.storyboard in Resources */,
 			);
@@ -653,6 +667,15 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		A19A768E1E6CEB65005C691A /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A19A768D1E6CEB65005C691A /* Base */,
+				A19A76901E6CEB78005C691A /* ru */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		A1F8F7501E4CA6B200B57DEB /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

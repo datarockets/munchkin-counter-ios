@@ -1,0 +1,149 @@
+/*
+ * Loco ios export: iOS Localizable.strings
+ * Project: strings.xml conversion
+ * Release: Working copy
+ * Locale: en, English
+ * Exported by: Unregistered user
+ * Exported at: Mon, 06 Mar 2017 00:58:31 +0000
+ */
+
+/*  */
+"app_name" = "Munchkin Level Counter";
+
+/*  */
+"title.choose_game_type" = "Выберите тип игры";
+
+/*  */
+"title.players_editor" = "Редактор игроков";
+
+/*  */
+"title.analytics" = "Аналитика";
+
+/*  */
+"title.settings" = "Настройки";
+
+/*  */
+"menu.finish" = "Финиш";
+
+/*  */
+"menu.settings" = "Настройки";
+
+/*  */
+"button.finish" = "Финиш";
+
+/*  */
+"button.skip" = "Пропустить";
+
+/*  */
+"button.add_new_player" = "Добавить игрока";
+
+/*  */
+"button.yes" = "Да";
+
+/*  */
+"button.no" = "Нет";
+
+/*  */
+"button.start" = "Старт";
+
+/*  */
+"button.continue" = "Продолжить";
+
+/*  */
+"dialog.add_player.title" = "Добавить игрока";
+
+/*  */
+"dialog.add_player.message" = "Дайте имя новому игроку";
+
+/*  */
+"dialog.finish_game.title" = "Завершить игру";
+
+/*  */
+"dialog.finish_game.message" = "Вы хотите завершить игру?";
+
+/*  */
+"dialog.player_delete.title" = "Удалить игрока";
+
+/*  */
+"dialog.player_delete.message" = "Вы хотите удалить этого игрока?";
+
+/*  */
+"dialog.start_continue_game.title" = "Продолжить или начать заново?";
+
+/*  */
+"dialog.start_continue_game.message" = "Вы бы хотели продолжить или начать новую игру?";
+
+/*  */
+"progress_dialog.stats_loader.title" = "Загрузка";
+
+/*  */
+"progress_dialog.stats_loader.message" = "Подождите, пока мы загрузим графики";
+
+/*  */
+"text.player_add_warning" = "Пожалуйста, добавьте двух и более игроков и нажмите на Старт";
+
+/*  */
+"text.player_name" = "Имя игрока";
+
+/*  */
+"text.level" = "Уровень";
+
+/*  */
+"text.strength" = "Сила";
+
+/*  */
+"text.steps" = "Ходы";
+
+/*  */
+"settings.max_level" = "Максимальный уровень";
+
+/*  */
+"tab.level" = "Уровень";
+
+/*  */
+"tab.strength" = "Сила";
+
+/*  */
+"tab.summary" = "Итого";
+
+/*  */
+"onboarder.page1.title" = "Добро пожаловать!";
+
+/*  */
+"onboarder.page1.description" = "Munchkin Level Counter сделает вашу игру лучше";
+
+/*  */
+"onboarder.page2.title" = "Безлимитный";
+
+/*  */
+"onboarder.page2.description" = "Добавьте столько игроков, сколько хотите";
+
+/*  */
+"onboarder.page3.title" = "Удобство";
+
+/*  */
+"onboarder.page3.description" = "Управляйте количеством очков других игроков";
+
+/*  */
+"settings.keep_screen_on" = "Держать экран включенным";
+
+/*  */
+"button.update_player" = "Обновить игрока";
+
+/*  */
+"menu.roll_dice" = "Бросить кость";
+
+/*  */
+"text.edit_player" = "Изменить игрока";
+
+/*  */
+"button.next_player" = "Следующий игрок";
+
+/*  */
+"dialog.player_actions.delete_player" = "Удалить игрока";
+
+/*  */
+"dialog.player_actions.edit_player" = "Изменить игрока";
+
+/*  */
+"menu.share_app" = "Поделись Munchkin Level Counter";
