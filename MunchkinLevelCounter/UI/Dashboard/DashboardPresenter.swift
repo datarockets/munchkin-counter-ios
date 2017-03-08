@@ -37,6 +37,13 @@ class DashboardPresenter: Presenter {
         mDataManager.getPreferencesHelper().gameStarted = false
     }
     
+    func insertStep(playerId: String, levelScore: Int, strengthScore: Int) {
+        mSubscription = mDataManager.addGameStep(playerId: playerId, levelScore: levelScore, strengthScore: strengthScore)
+            .subscribeOn(ConcurrentDispatchQueueScheduler(qos: DispatchQoS.background))
+            .observeOn(MainScheduler.instance)
+            .subscribe()
+    }
+    
     func detachView() {
         mDashboardView = nil
         mSubscription?.dispose()

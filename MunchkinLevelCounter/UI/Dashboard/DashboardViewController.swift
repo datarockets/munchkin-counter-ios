@@ -55,7 +55,7 @@ class DashboardViewController: BaseViewController, UITableViewDelegate,
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let selectedPlayerId = playingPlayers[indexPath.row].playerId
-        playerViewController?.loadPlayerScores(playerId: selectedPlayerId!, playerPosition: indexPath.row)
+        playerViewController?.loadPlayerScores(playerId: selectedPlayerId, playerPosition: indexPath.row)
     }
     
     func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
@@ -71,7 +71,7 @@ class DashboardViewController: BaseViewController, UITableViewDelegate,
     
     @IBAction func onNextPlayerClick(_ sender: Any) {
         var selectedIndex = playingPlayersTableView.indexPathForSelectedRow?.row
-        print("onNexPlayerClick selected index \(selectedIndex)")
+        print("onNextPlayerClick selected index \(selectedIndex)")
         if (selectedIndex == playingPlayers.count - 1) {
             let indexPath = IndexPath(row: 0, section: 0)
             playingPlayersTableView.selectRow(at: indexPath, animated: true, scrollPosition: .bottom)
@@ -126,6 +126,9 @@ class DashboardViewController: BaseViewController, UITableViewDelegate,
     func onScoreChanged(playerPosition: Int, playerLevel: Int, playerStrength: Int) {
         playingPlayers[playerPosition].playerLevel = playerLevel
         playingPlayers[playerPosition].playerStrength = playerStrength
+        presenter?.insertStep(playerId: playingPlayers[playerPosition].playerId,
+                              levelScore: playerLevel,
+                              strengthScore: playerStrength)
         let selectedIndexPath = IndexPath(row: playerPosition, section: 0)
         print("onScoreChanged selectedIndex \(selectedIndexPath)")
         playingPlayersTableView.reloadRows(at: [selectedIndexPath], with: .none)
