@@ -34,7 +34,7 @@ class OnboardingViewController: UIViewController, OnboardingView, EAIntroDelegat
     func displayOnboarding() {
         let pageOne = EAIntroPage()
         pageOne.title = "onboarder.page1.title".localized
-        pageOne.desc = "onboarder.page2.description".localized
+        pageOne.desc = "onboarder.page1.description".localized
         pageOne.titleIconView = UIImageView(image: UIImage(named: "MunchkinOnboarder"))
         pageOne.bgColor = Colors.cardGeneral
         
@@ -53,11 +53,13 @@ class OnboardingViewController: UIViewController, OnboardingView, EAIntroDelegat
         let introView: EAIntroView = EAIntroView(frame: rootView!.bounds, andPages: [pageOne, pageTwo, pageThree])
         introView.backgroundColor = UIColor(colorLiteralRed: 0, green: 0.49, blue: 0.96, alpha: 1)
         introView.delegate = self
+        introView.skipButton.setTitle("button.skip".localized, for: .normal)
         introView.show(in: rootView)
         
     }
     
     func introDidFinish(_ introView: EAIntroView!, wasSkipped: Bool) {
+        presenter?.setOnboardingSeen()
         let appDelegate = UIApplication.shared.delegate as? AppDelegate
         appDelegate?.launchStoryboard(storyboard: Storyboard.Main)
     }

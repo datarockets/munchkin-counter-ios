@@ -22,6 +22,10 @@ class OnboardingPresenter: Presenter {
         mOnboardingView = view
     }
     
+    func setOnboardingSeen() {
+        mDataManager.getPreferencesHelper().userSeenOnboarding = true
+    }
+    
     func detachView() {
         mOnboardingView = nil
     }
