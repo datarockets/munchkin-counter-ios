@@ -100,7 +100,7 @@
 		A199C9551E67BB1D0051BCCC /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Main.strings; sourceTree = "<group>"; };
 		A19A768D1E6CEB65005C691A /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		A19A76901E6CEB78005C691A /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
-		A19A76921E6CF061005C691A /* munchkin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = munchkin.ttf; path = "../../../../AndroidStudioProjects/munchkin-counter-android/app/src/main/assets/munchkin.ttf"; sourceTree = "<group>"; };
+		A19A76921E6CF061005C691A /* munchkin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = munchkin.ttf; path = Fonts/munchkin.ttf; sourceTree = "<group>"; };
 		A1BD807E1E5C9B090010038F /* ChartsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartsViewController.swift; sourceTree = "<group>"; };
 		A1BD80801E5C9B1B0010038F /* ChartsPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartsPresenter.swift; sourceTree = "<group>"; };
 		A1BD80821E5C9B250010038F /* ChartsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartsView.swift; sourceTree = "<group>"; };
@@ -246,6 +246,7 @@
 		A19A76911E6CEFFC005C691A /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				A1E4F77B1E70111400C15792 /* Fonts */,
 				A19A76921E6CF061005C691A /* munchkin.ttf */,
 			);
 			path = Resources;
@@ -280,6 +281,13 @@
 				A1E060801E55EE07006D2891 /* PlayerView.swift */,
 			);
 			path = Player;
+			sourceTree = "<group>";
+		};
+		A1E4F77B1E70111400C15792 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 		A1F8F7401E4CA6B200B57DEB = {
