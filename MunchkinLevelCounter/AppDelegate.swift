@@ -126,8 +126,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         initFabric()
         Appearance.setupUIAppearance()
         MagicalRecord.setupCoreDataStack()
-        launchStoryboard(storyboard: Storyboard.Onboarding)
+        checkOnboarding()
         return true
+    }
+    
+    func checkOnboarding() {
+        let preferencesHelper = container.resolve(PreferencesHelper.self)
+        if (preferencesHelper?.userSeenOnboarding)! {
+            launchStoryboard(storyboard: .Main)
+        } else {
+            launchStoryboard(storyboard: .Onboarding)
+        }
+        
     }
     
     func launchStoryboard(storyboard: Storyboard) {
