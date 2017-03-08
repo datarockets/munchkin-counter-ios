@@ -25,12 +25,19 @@ class ChartsPresenter: Presenter {
     }
     
     func loadChartData(type: ScoreType) {
-        
+        print("Loading chart data")
+        mSubscription = mDataManager.getLineData(type: type.rawValue)
+            .subscribeOn(ConcurrentDispatchQueueScheduler(qos: DispatchQoS.background))
+            .observeOn(MainScheduler.instance)
+            .subscribe(onNext: { lineChartData in
+                    self.mChartsView?.showPlayersCharts(chartData: lineChartData)
+                }
+            )
     }
     
     func loadPlayers(sortType: ScoreType) {
         mSubscription = mDataManager.getPlayers(sortType: sortType)
-            .subscribeOn(ConcurrentDispatchQueueScheduler.init(qos: DispatchQoS.background))
+            .subscribeOn(ConcurrentDispatchQueueScheduler(qos: DispatchQoS.background))
             .observeOn(MainScheduler.instance)
             .subscribe(onNext: { players in
                     self.mChartsView?.showPlayersList(players: players)
