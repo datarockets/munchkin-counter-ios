@@ -38,7 +38,7 @@ class GameResultPresenter: Presenter {
     
     func clearGameResults() {
         mSubscription = mDataManager.clearGameSteps()
-            .subscribeOn(ConcurrentDispatchQueueScheduler.init(qos: DispatchQoS.background))
+            .subscribeOn(ConcurrentDispatchQueueScheduler(qos: DispatchQoS.background))
             .observeOn(MainScheduler.instance)
             .subscribe()
     }

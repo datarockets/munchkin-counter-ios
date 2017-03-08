@@ -47,7 +47,7 @@ class PlayersEditorViewController: BaseViewController, UITableViewDelegate,
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         switch editingStyle {
             case .delete:
-                presenter?.deletePlayer(playerId: players[indexPath.row].playerId!)
+                presenter?.deletePlayer(playerId: players[indexPath.row].playerId)
                 players.remove(at: indexPath.row)
                 playersListTableView.deleteRows(at: [indexPath], with: .automatic)
                 break
@@ -90,6 +90,7 @@ class PlayersEditorViewController: BaseViewController, UITableViewDelegate,
         guard let dashboardViewController = storyboard?.instantiateViewController(withIdentifier: "dashboard") as? DashboardViewController else { return }
         presenter?.setGameStarted()
         present(dashboardViewController, animated: true, completion: nil)
+        self.navigationController?.dismiss(animated: false, completion: nil)
     }
     
     func showStartContinueDialog() {
@@ -130,7 +131,7 @@ class PlayersEditorViewController: BaseViewController, UITableViewDelegate,
     func onPlayerStatus(position: Int, playing: Bool) {
         let playerId = players[position].playerId
         players[position].isPlaying = playing
-        presenter?.markPlayerAsPlaying(withObjectId: playerId!, isPlaying: playing)
+        presenter?.markPlayerAsPlaying(withObjectId: playerId, isPlaying: playing)
     }
     
     override func viewDidDisappear(_ animated: Bool) {
