@@ -27,8 +27,7 @@ class DataManager {
     }
     
     func addPlayer(playerName: String) -> Observable<Player> {
-        let player = Player()
-        player.playerId = NSUUID().uuidString
+        let player = Player(playerId: NSUUID().uuidString)
         player.playerName = playerName
         player.playerLevel = 1
         player.playerStrength = 1
@@ -73,7 +72,69 @@ class DataManager {
     }
     
     func getLineData(type: Int) -> Observable<ChartData> {
-        return Observable.create { _ in
+        return Observable.create { subscriber in
+            let playersList = self.mDatabaseHelper.getPlayingPlayers()
+            let gameSteps = self.mDatabaseHelper.getGameSteps()
+            var playerGameSteps = [Player: [GameStep]]()
+            
+            playersList.subscribe(onNext: { player in
+                var playerSteps = [GameStep]()
+                gameSteps.subscribe(onNext: { step in
+                    if step.playerId == player.playerId {
+                        playerSteps.append(step)
+                    }
+                })
+                playerGameSteps.updateValue(playerSteps, forKey: player)
+            })
+            
+            
+            var playerLines = [ChartDataSet]()
+            var playerColors = [UIColor]()
+            
+            
+            playerGameSteps.keys.forEach { player in
+                print("\(player.playerName)")
+                let color = UIColor.colorHash(name: player.playerName)
+                playerColors.append(color)
+            }
+            
+            
+            for (index, playerStepsList) in playerGameSteps.values.enumerated() {
+                var entries = [ChartDataEntry]()
+                for (index, step) in playerStepsList.enumerated() {
+                    switch type {
+                    case 0:
+                        let playerLevel = step.playerLevel!
+                        let levelEntry = ChartDataEntry(x: Double(index), y: Double(playerLevel))
+                        entries.append(levelEntry)
+                    case 1:
+                        let playerStrength = step.playerStrength!
+                        let strengthEntry = ChartDataEntry(x: Double(index), y: Double(playerStrength))
+                        entries.append(strengthEntry)
+                    case 2:
+                        let playerTotal = step.playerLevel! + step.playerStrength!
+                        let totalEntry = ChartDataEntry(x: Double(index), y: Double(playerTotal))
+                        entries.append(totalEntry)
+                    default:
+                        break
+                    }
+                }
+                
+                let lineDataSet = LineChartDataSet.init(values: entries, label: nil)
+                lineDataSet.drawCirclesEnabled = false
+                lineDataSet.setColor(playerColors[index])
+                lineDataSet.formLineWidth = 3.0
+                lineDataSet.cubicIntensity = 0.1
+                lineDataSet.mode = .cubicBezier
+                lineDataSet.drawValuesEnabled = false
+                lineDataSet.highlightEnabled = false
+                playerLines.append(lineDataSet)
+                    
+            }
+            
+            let lineData = LineChartData(dataSets: playerLines)
+            subscriber.onNext(lineData)
+            subscriber.onCompleted()
             return Disposables.create()
         }
     }

@@ -6,31 +6,27 @@
 //  Copyright © 2017 datarockets. All rights reserved.
 //
 
-class Player {
-    var playerId: String?
+class Player: Hashable {
+    var playerId: String
     var playerName: String?
     var playerLevel: Int = 1
     var playerStrength: Int = 1
     var playerColor: String?
     var isPlaying: Bool = false
+    var hashValue: Int {
+        return playerId.hashValue
+    }
     
-    init() {}
-    
-    init(playerId: String,
-         playerName: String,
-         playerLevel: Int,
-         playerStrength: Int,
-         playerColor: String,
-         isPlaying: Bool) {
-        self.playerName = playerName
-        self.playerLevel = playerLevel
-        self.playerStrength = playerStrength
-        self.playerColor = playerColor
-        self.isPlaying = isPlaying
+    init(playerId: String) {
+        self.playerId = playerId
     }
     
     func getTotalScore() -> Int {
         return playerLevel + playerStrength
     }
     
+}
+
+func ==(lhs: Player, rhs: Player) -> Bool {
+    return lhs.playerId == rhs.playerId
 }

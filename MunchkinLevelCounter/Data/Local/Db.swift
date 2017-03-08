@@ -13,7 +13,7 @@ class Db {
     class PlayerTable {
      
         class func map(from entity: PlayerEntity, to player: Player) {
-            player.playerId = entity.id
+            player.playerId = entity.id!
             player.playerName = entity.name!
             player.playerLevel = Int(entity.level)
             player.playerStrength = Int(entity.strength)
@@ -31,7 +31,7 @@ class Db {
         }
         
         class func player(from entity: PlayerEntity) -> Player {
-            let player = Player()
+            let player = Player(playerId: entity.id!)
             map(from: entity, to: player)
             return player
         }

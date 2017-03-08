@@ -187,8 +187,15 @@ class DatabaseHelper {
     }
     
     func getGameSteps() -> Observable<GameStep> {
-        return Observable.create { _ in
-            
+        return Observable.create { subscriber in
+            let context = NSManagedObjectContext.mr_default()
+            if let gameSteps = GameStepEntity.mr_findAll(in: context) as? [GameStepEntity] {
+                for entity in gameSteps {
+                    let step = Db.GameTable.step(from: entity)
+                    subscriber.onNext(step)
+                }
+            }
+            subscriber.onCompleted()
             return Disposables.create()
         }
     }
@@ -204,6 +211,7 @@ class DatabaseHelper {
                 } else {
                     subscriber.onCompleted()
                 }
+                GameStepEntity.mr_truncateAll(in: context)
             }, completion: { _ in
                 subscriber.onCompleted()
             })
