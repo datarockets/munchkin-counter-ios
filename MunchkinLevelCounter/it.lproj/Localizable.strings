@@ -1,0 +1,142 @@
+/*
+  Localizable.strings
+  Munchkin Level Counter
+
+  Created by Dzmitry Chyrta on 22.02.17.
+  Copyright © 2017 datarockets. All rights reserved.
+*/
+
+/*  */
+"app_name" = "Munchkin Level Counter";
+
+/*  */
+"button.add_new_player" = "Aggiungere giocatore";
+
+/*  */
+"button.continue" = "Continuare";
+
+/*  */
+"button.finish" = "Finire";
+
+/*  */
+"button.no" = "No";
+
+/*  */
+"button.skip" = "Saltare";
+
+/*  */
+"button.start" = "Iniziare";
+
+/*  */
+"button.yes" = "Sì";
+
+/*  */
+"dialog.finish_game.message" = "Vuoi finire il gioco?";
+
+/*  */
+"dialog.finish_game.title" = "Fine del gioco";
+
+/*  */
+"dialog.player_delete.message" = "Vuoi eliminare questo giocatore?";
+
+/*  */
+"dialog.player_delete.title" = "Elimina un giocatore";
+
+/*  */
+"dialog.start_continue_game.message" = "Vuoi continuare o iniziare una nuova partita?";
+
+/*  */
+"dialog.start_continue_game.title" = "Continuare o iniziare?";
+
+/*  */
+"menu.finish" = "Finire";
+
+/*  */
+"menu.settings" = "Impostazioni";
+
+/*  */
+"onboarder.page1.description" = "Munchkin Level Counter rende il gioco un modo migliore";
+
+/*  */
+"onboarder.page1.title" = "Benvenuto!";
+
+/*  */
+"onboarder.page2.description" = "Aggiungere tanto i giocatori come si desidera";
+
+/*  */
+"onboarder.page2.title" = "Illimitato";
+
+/*  */
+"onboarder.page3.description" = "Gestire i giocatori punteggi facile";
+
+/*  */
+"onboarder.page3.title" = "Usabilità";
+
+/*  */
+"progress_dialog.stats_loader.message" = "Attendere mentre si sta caricando le tue statistiche";
+
+/*  */
+"progress_dialog.stats_loader.title" = "Il caricamento";
+
+/*  */
+"settings.keep_screen_on" = "Tenere schermo sveglio";
+
+/*  */
+"settings.max_level" = "Livello massimo";
+
+/*  */
+"tab.level" = "Livello";
+
+/*  */
+"tab.strength" = "Forza";
+
+/*  */
+"tab.summary" = "Riepilogo";
+
+/*  */
+"text.level" = "Livello";
+
+/*  */
+"text.player_add_warning" = "Per favore, aggiungere due o più giocatori e premere l'icona di Avvio";
+
+/*  */
+"text.player_name" = "Nome Del Giocatore";
+
+/*  */
+"text.strength" = "Forza";
+
+/*  */
+"text.steps" = "Passi";
+
+/*  */
+"title.analytics" = "Analytics";
+
+/*  */
+"title.choose_game_type" = "Scegliere Il Tipo Di Gioco";
+
+/*  */
+"title.players_editor" = "I Giocatori Editor";
+
+/*  */
+"title.settings" = "Impostazioni";
+
+/*  */
+"button.update_player" = "Aggiornamento giocatore";
+
+/*  */
+"menu.roll_dice" = "Tirare un dado";
+
+/*  */
+"text.edit_player" = "Modifica Player";
+
+/*  */
+"button.next_player" = "Prossimo giocatore";
+
+/*  */
+"dialog.player_actions.delete_player" = "Eliminare giocatore";
+
+/*  */
+"dialog.player_actions.edit_player" = "Modifica giocatore";
+
+/*  */
+"menu.share_app" = "Condividi Munchkin Level Counter";

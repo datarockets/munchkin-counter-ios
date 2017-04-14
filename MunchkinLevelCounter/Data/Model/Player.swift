@@ -11,8 +11,10 @@ class Player: Hashable {
     var playerName: String?
     var playerLevel: Int = 1
     var playerStrength: Int = 1
+    var playerPosition: Int = 0
     var playerColor: String?
     var isPlaying: Bool = false
+    
     var hashValue: Int {
         return playerId.hashValue
     }

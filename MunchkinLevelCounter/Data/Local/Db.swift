@@ -19,6 +19,7 @@ class Db {
             player.playerStrength = Int(entity.strength)
             player.playerColor = entity.color
             player.isPlaying = entity.playing
+            player.playerPosition = Int(entity.position)
         }
         
         class func map(from player: Player, to entity: PlayerEntity) {
@@ -28,6 +29,7 @@ class Db {
             entity.strength = Int16(player.playerStrength)
             entity.color = player.playerColor
             entity.playing = player.isPlaying
+            entity.position = Int16(player.playerPosition)
         }
         
         class func player(from entity: PlayerEntity) -> Player {

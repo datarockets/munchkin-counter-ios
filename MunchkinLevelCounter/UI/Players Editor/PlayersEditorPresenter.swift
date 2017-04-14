@@ -22,26 +22,30 @@ class PlayersEditorPresenter: Presenter {
     }
     
     func attachView(_ view: PlayersEditorView) {
+        print("attaching View")
         mPlayersEditorView = view
     }
     
     func checkIsEnoughPlayers() {
+        print("checkIsEnoughPlayers")
         mSubscription = mDataManager.getPlayingPlayers()
-            .subscribeOn(ConcurrentDispatchQueueScheduler(qos: DispatchQoS.background))
+            .subscribeOn(ConcurrentDispatchQueueScheduler(qos: .background))
             .observeOn(MainScheduler.instance)
             .subscribe(onNext: { players in
                 if players.count >= 2 {
+                    print("enoughPlayers")
                     self.mPlayersEditorView?.launchDashboard()
                 } else {
+                    print("not enough players")
                     self.mPlayersEditorView?.showWarning()
                 }
             })
     }
     
-    func addPlayer(playerName: String) {
+    func addPlayer(playerName: String, position: Int) {
         mSubscription = mDataManager
-            .addPlayer(playerName: playerName)
-            .subscribeOn(ConcurrentDispatchQueueScheduler(qos: DispatchQoS.background))
+            .addPlayer(playerName: playerName, position: position)
+            .subscribeOn(ConcurrentDispatchQueueScheduler(qos: .background))
             .observeOn(MainScheduler.instance)
             .subscribe(onNext: { player in
                 self.mPlayersEditorView?.addPlayerToList(player: player)
@@ -58,8 +62,8 @@ class PlayersEditorPresenter: Presenter {
     
     func getPlayers() {
         mSubscription = mDataManager
-            .getPlayers()
-            .subscribeOn(ConcurrentDispatchQueueScheduler(qos: DispatchQoS.background))
+            .getPlayersByPosition()
+            .subscribeOn(ConcurrentDispatchQueueScheduler(qos: .background))
             .observeOn(MainScheduler.instance)
             .subscribe(onNext: { players in
                 self.mPlayersEditorView?.setPlayersList(players: players)
@@ -69,7 +73,7 @@ class PlayersEditorPresenter: Presenter {
     func markPlayerAsPlaying(withObjectId id: String, isPlaying: Bool) {
         mSubscription = mDataManager
             .markPlayerAsPlaying(playerId: id, isPlaying: isPlaying)
-            .subscribeOn(ConcurrentDispatchQueueScheduler(qos: DispatchQoS.background))
+            .subscribeOn(ConcurrentDispatchQueueScheduler(qos: .background))
             .observeOn(MainScheduler.instance)
             .subscribe()
     }
@@ -77,7 +81,15 @@ class PlayersEditorPresenter: Presenter {
     func clearGameSteps() {
         mSubscription = mDataManager
             .clearGameSteps()
-            .subscribeOn(ConcurrentDispatchQueueScheduler(qos: DispatchQoS.background))
+            .subscribeOn(ConcurrentDispatchQueueScheduler(qos: .background))
+            .observeOn(MainScheduler.instance)
+            .subscribe()
+    }
+    
+    func updatesPosition(playerId: String, position: Int) {
+        mSubscription = mDataManager
+            .updatePlayerPosition(playerId: playerId, position: position)
+            .subscribeOn(ConcurrentDispatchQueueScheduler(qos: .background))
             .observeOn(MainScheduler.instance)
             .subscribe()
     }
@@ -97,6 +109,7 @@ class PlayersEditorPresenter: Presenter {
     }
     
     func detachView() {
+        print("Detaching of view")
         mPlayersEditorView = nil
         mSubscription?.dispose()
     }

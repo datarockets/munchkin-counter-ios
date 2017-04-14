@@ -50,12 +50,6 @@
 "button.continue" = "Продолжить";
 
 /*  */
-"dialog.add_player.title" = "Добавить игрока";
-
-/*  */
-"dialog.add_player.message" = "Дайте имя новому игроку";
-
-/*  */
 "dialog.finish_game.title" = "Завершить игру";
 
 /*  */

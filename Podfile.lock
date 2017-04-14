@@ -1,9 +1,4 @@
 PODS:
-  - Branch (0.12.30):
-    - Branch/Core (= 0.12.30)
-    - Branch/without-IDFA (= 0.12.30)
-  - Branch/Core (0.12.30)
-  - Branch/without-IDFA (0.12.30)
   - Charts (3.0.1):
     - Charts/Core (= 3.0.1)
   - Charts/Core (3.0.1)
@@ -18,14 +13,13 @@ PODS:
   - MagicalRecord/Core (2.3.2)
   - Nimble (6.0.1)
   - Quick (1.1.0)
-  - RxSwift (3.2.0)
+  - RxSwift (3.3.1)
   - Swinject (2.0.0)
   - SwinjectStoryboard (1.0.0):
     - Swinject (= 2.0.0)
   - UIImageView-Letters (1.1.4)
 
 DEPENDENCIES:
-  - Branch
   - Charts
   - Crashlytics (~> 3.8)
   - EAIntroView (~> 2.10.0)
@@ -39,7 +33,6 @@ DEPENDENCIES:
   - UIImageView-Letters
 
 SPEC CHECKSUMS:
-  Branch: 024ce8e69872f159e7de45b72fc681f9971b8599
   Charts: 0e84f4418e87dad6a9edde221fba37ebb51d3ba7
   Crashlytics: 79e236942ca1e7fc641df1feb9a275360a78ab6a
   EAIntroView: 3494b7bbd1212e3a4f7e8d16194a1b00e7b9abb2
@@ -48,11 +41,11 @@ SPEC CHECKSUMS:
   MagicalRecord: 53bed74b4323b930992a725be713e53b37d19755
   Nimble: 1527fd1bd2b4cf0636251a36bc8ab37e81da8347
   Quick: dafc587e21eed9f4cab3249b9f9015b0b7a7f71d
-  RxSwift: 46574f70d416b7923c237195939cc488a7fbf3a0
+  RxSwift: 8fc9f2de6275a9101d518444e00bf32f1a42caac
   Swinject: 2e964a80d70ab09b3949c99032711f89147bfd60
   SwinjectStoryboard: 8e0d3c0202b64172bdf915d55e8dc83d9c4e7863
   UIImageView-Letters: f62db28076797adf3560ab7410647dc6899b9eef
 
-PODFILE CHECKSUM: 7ce04ea04b8b49eb6afb5c8e2d7d4d071889df1c
+PODFILE CHECKSUM: eb84750fe73d638b1dc8133ae1748c35445d3173
 
 COCOAPODS: 1.2.0

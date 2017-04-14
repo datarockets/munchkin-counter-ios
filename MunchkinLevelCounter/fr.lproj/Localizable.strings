@@ -1,0 +1,142 @@
+/*
+  Localizable.strings
+  Munchkin Level Counter
+
+  Created by Dzmitry Chyrta on 22.02.17.
+  Copyright © 2017 datarockets. All rights reserved.
+*/
+
+/*  */
+"app_name" = "Munchkin Level Counter";
+
+/*  */
+"button.skip" = "Passer";
+
+/*  */
+"button.finish" = "Terminer";
+
+/*  */
+"button.continue" = "Continuer";
+
+/*  */
+"button.add_new_player" = "Ajouter un joueur";
+
+/*  */
+"button.no" = "Non";
+
+/*  */
+"button.yes" = "Oui";
+
+/*  */
+"button.start" = "Commencer";
+
+/*  */
+"menu.finish" = "Terminer";
+
+/*  */
+"onboarder.page1.title" = "Bienvenue!";
+
+/*  */
+"onboarder.page2.title" = "Illimité";
+
+/*  */
+"progress_dialog.stats_loader.title" = "Chargement";
+
+/*  */
+"settings.max_level" = "Niveau maximum";
+
+/*  */
+"tab.level" = "Niveau";
+
+/*  */
+"text.level" = "Niveau";
+
+/*  */
+"dialog.finish_game.title" = "Terminer le jeu";
+
+/*  */
+"dialog.finish_game.message" = "Voulez-vous terminer le jeu?";
+
+/*  */
+"dialog.player_delete.message" = "Voulez-vous supprimer ce joueur?";
+
+/*  */
+"dialog.player_delete.title" = "Supprimer un joueur";
+
+/*  */
+"dialog.start_continue_game.message" = "Voulez-vous continuer ou commencer une nouvelle partie?";
+
+/*  */
+"menu.settings" = "Paramètres";
+
+/*  */
+"dialog.start_continue_game.title" = "Continuer ou commencer?";
+
+/*  */
+"settings.keep_screen_on" = "Suspendre la mise en veille de l'écran";
+
+/*  */
+"text.player_name" = "Nom du joueur";
+
+/*  */
+"text.player_add_warning" = "Veuillez ajouter deux joueurs ou plus et appuyer sur commencer";
+
+/*  */
+"tab.strength" = "Force";
+
+/*  */
+"progress_dialog.stats_loader.message" = "Patientez pendant le chargement des statistiques";
+
+/*  */
+"onboarder.page3.title" = "Facilité d'utilisation";
+
+/*  */
+"tab.summary" = "Résumé";
+
+/*  */
+"text.steps" = "Tours";
+
+/*  */
+"text.strength" = "Force";
+
+/*  */
+"title.analytics" = "Analyse";
+
+/*  */
+"title.choose_game_type" = "Choisir un type de jeu";
+
+/*  */
+"title.players_editor" = "Editeur de joueurs";
+
+/*  */
+"title.settings" = "Paramètres";
+
+/*  */
+"onboarder.page1.description" = "Munchkin Level Counter rend votre jeu beaucoup mieux";
+
+/*  */
+"onboarder.page2.description" = "Ajoute autant de joueurs que tu veux";
+
+/*  */
+"onboarder.page3.description" = "Gère le score des joueurs facilement";
+
+/*  */
+"button.update_player" = "Mettre à jour un joueur";
+
+/*  */
+"menu.roll_dice" = "Lancer un dé";
+
+/*  */
+"text.edit_player" = "Modifier le joueur";
+
+/*  */
+"button.next_player" = "Prochain joueur";
+
+/*  */
+"dialog.player_actions.delete_player" = "Supprimer joueur";
+
+/*  */
+"dialog.player_actions.edit_player" = "Modifier le joueur";
+
+/*  */
+"menu.share_app" = "Partagez Munchkin Level Counter";

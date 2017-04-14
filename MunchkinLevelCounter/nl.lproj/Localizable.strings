@@ -1,0 +1,142 @@
+/*
+  Localizable.strings
+  Munchkin Level Counter
+
+  Created by Dzmitry Chyrta on 22.02.17.
+  Copyright © 2017 datarockets. All rights reserved.
+*/
+
+/*  */
+"app_name" = "Munchkin Level Teller";
+
+/*  */
+"title.choose_game_type" = "Kies Spel Type";
+
+/*  */
+"title.players_editor" = "Speler Bewerking";
+
+/*  */
+"title.analytics" = "Analyse";
+
+/*  */
+"title.settings" = "Instellingen";
+
+/*  */
+"menu.finish" = "Klaar";
+
+/*  */
+"menu.settings" = "Instellingen";
+
+/*  */
+"menu.roll_dice" = "Rol Een Dobbelsteen";
+
+/*  */
+"menu.share_app" = "Deel Munchkin Level Teller";
+
+/*  */
+"button.finish" = "Klaar";
+
+/*  */
+"button.skip" = "Overslaan";
+
+/*  */
+"button.next_player" = "Volgende Speler";
+
+/*  */
+"button.add_new_player" = "Speler Toevoegen";
+
+/*  */
+"button.update_player" = "Speler vernieuwen";
+
+/*  */
+"button.yes" = "Ja";
+
+/*  */
+"button.no" = "Nee";
+
+/*  */
+"button.start" = "Start";
+
+/*  */
+"button.continue" = "Volgende";
+
+/*  */
+"dialog.player_actions.edit_player" = "Speler Bewerken";
+
+/*  */
+"dialog.player_actions.delete_player" = "Speler verwijderen";
+
+/*  */
+"dialog.finish_game.title" = "Spel beëindigen";
+
+/*  */
+"dialog.finish_game.message" = "Wil je het spel beëindigen?";
+
+/*  */
+"dialog.player_delete.title" = "Verwijder een speler";
+
+/*  */
+"dialog.player_delete.message" = "Wil je deze speler verwijderen?";
+
+/*  */
+"dialog.start_continue_game.title" = "Verder of opnieuw?";
+
+/*  */
+"dialog.start_continue_game.message" = "Wil je verder gaan of een nieuw spel starten??";
+
+/*  */
+"progress_dialog.stats_loader.title" = "Laden";
+
+/*  */
+"progress_dialog.stats_loader.message" = "Wacht terwijl we je statistieken laden";
+
+/*  */
+"text.player_add_warning" = "Voeg alsjeblieft nog twee speler toe en druk op Start";
+
+/*  */
+"text.player_name" = "Speler Naam";
+
+/*  */
+"text.edit_player" = "Speler Bewerken";
+
+/*  */
+"text.level" = "Level";
+
+/*  */
+"text.strength" = "Kracht";
+
+/*  */
+"text.steps" = "Stappen";
+
+/*  */
+"settings.max_level" = "Maximale Level";
+
+/*  */
+"settings.keep_screen_on" = "Houd het scherm aan";
+
+/*  */
+"tab.level" = "Level";
+
+/*  */
+"tab.strength" = "Kracht";
+
+/*  */
+"tab.summary" = "Samenvatting";
+
+/*  */
+"onboarder.page1.title" = "Welkom!";
+
+/*  */
+"onboarder.page1.description" = "Munchkin Level Tellen maakt je spel stukken beter!";
+
+/*  */
+"onboarder.page2.title" = "Oneindig";
+
+/*  */
+"onboarder.page2.description" = "Voeg zo veel spelers toe als je wilt";
+
+/*  */
+"onboarder.page3.title" = "Bruikbaar";
+
+/*  */
+"onboarder.page3.description" = "Houd speler standen makkelijk bij";

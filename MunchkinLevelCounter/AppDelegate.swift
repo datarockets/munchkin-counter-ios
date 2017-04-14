@@ -144,7 +144,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         switch storyboard {
             case .Main:
                 let storyboard = SwinjectStoryboard.create(name: storyboard.rawValue, bundle: nil, container: container)
-                window?.rootViewController = storyboard.instantiateInitialViewController()
+                let rootViewController = storyboard.instantiateInitialViewController()! as UIViewController
+                let navigationController = UINavigationController(rootViewController: rootViewController)
+                window?.rootViewController = navigationController
                 break
             case .Onboarding:
                 window?.rootViewController = container.resolve(OnboardingViewController.self)

@@ -1,0 +1,142 @@
+/*
+  Localizable.strings
+  Munchkin Level Counter
+
+  Created by Dzmitry Chyrta on 22.02.17.
+  Copyright © 2017 datarockets. All rights reserved.
+*/
+
+/*  */
+"app_name" = "Munchkin Level Counter";
+
+/*  */
+"title.choose_game_type" = "Wähle den Spieltyp";
+
+/*  */
+"title.players_editor" = "Spieler Editor";
+
+/*  */
+"title.analytics" = "Analyse";
+
+/*  */
+"title.settings" = "Einstellungen";
+
+/*  */
+"menu.finish" = "Ende";
+
+/*  */
+"menu.settings" = "Einstellungen";
+
+/*  */
+"button.finish" = "Ende";
+
+/*  */
+"button.skip" = "Überspringen";
+
+/*  */
+"button.add_new_player" = "Spieler hinzufügen";
+
+/*  */
+"button.yes" = "Ja";
+
+/*  */
+"button.no" = "Nein";
+
+/*  */
+"button.start" = "Start";
+
+/*  */
+"button.continue" = "Weiter";
+
+/*  */
+"dialog.finish_game.title" = "Spiel beenden";
+
+/*  */
+"dialog.finish_game.message" = "Möchtest du das Spiel beenden?";
+
+/*  */
+"dialog.player_delete.title" = "Spieler Löschen";
+
+/*  */
+"dialog.player_delete.message" = "Möchtest du diesen Spieler wirklich löschen?";
+
+/*  */
+"dialog.start_continue_game.title" = "Fortsetzen oder starten?";
+
+/*  */
+"dialog.start_continue_game.message" = "Möchtest du ein Spiel fortsetzen oder ein Neues beginnen?";
+
+/*  */
+"progress_dialog.stats_loader.title" = "Laden";
+
+/*  */
+"progress_dialog.stats_loader.message" = "Bitte warten, während wir deine Statistiken laden";
+
+/*  */
+"text.player_add_warning" = "Bitte füge zwei oder mehr Spieler hinzu und drücke auf Start";
+
+/*  */
+"text.player_name" = "Spielername";
+
+/*  */
+"text.level" = "Level";
+
+/*  */
+"text.strength" = "Stärke";
+
+/*  */
+"text.steps" = "Runde";
+
+/*  */
+"settings.max_level" = "Maximales Level";
+
+/*  */
+"tab.level" = "Level";
+
+/*  */
+"tab.strength" = "Stärke";
+
+/*  */
+"tab.summary" = "Zusammenfassung";
+
+/*  */
+"onboarder.page1.title" = "Willkommen!";
+
+/*  */
+"onboarder.page1.description" = "Munchkin Level Counter macht dein Spiel um Längen besser";
+
+/*  */
+"onboarder.page2.title" = "Unbegrenzt";
+
+/*  */
+"onboarder.page2.description" = "Füge so viele Spieler hinzu, wie du willst";
+
+/*  */
+"onboarder.page3.title" = "Nutzbarkeit";
+
+/*  */
+"onboarder.page3.description" = "Verwalte deine Spielergebnisse ganz einfach";
+
+/*  */
+"settings.keep_screen_on" = "Halten Bildschirm wach";
+
+/*  */
+"button.update_player" = "Spieler aktualisieren";
+
+/*  */
+"menu.roll_dice" = "Würfeln";
+
+/*  */
+"text.edit_player" = "Spieler bearbeiten";
+
+/*  */
+"button.next_player" = "Nächste Spieler";
+
+/*  */
+"dialog.player_actions.delete_player" = "Spieler löschen";
+
+/*  */
+"dialog.player_actions.edit_player" = "Spieler bearbeiten";
+
+/*  */
+"menu.share_app" = "Empfehlen Munchkin Level Counter";

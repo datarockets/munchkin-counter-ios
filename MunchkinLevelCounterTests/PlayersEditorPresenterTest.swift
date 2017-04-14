@@ -17,25 +17,10 @@ class PlayersEditorPresenterTest: XCTestCase {
     
     override func setUp() {
         super.setUp()
-        let assembler = try! Assembler(assemblies: [
-            DataAssembly(),
-            PresentersAssembly()
-        ])
-        
-        playersEditorView = PlayersEditorView()
-        playersEditorPresenter = assembler.resolver.resolve(PlayersEditorPresenter.self)!
-        playersEditorPresenter?.attachView(playersEditorView!)
-    }
-    
-    func testAddingPlayer() {
-        playersEditorPresenter?.addPlayer(playerName: "Dzmitry")
     }
     
     override func tearDown() {
         super.tearDown()
     }
-    
-    
-    
     
 }

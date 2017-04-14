@@ -26,11 +26,12 @@ class DataManager {
         return mPreferencesHelper
     }
     
-    func addPlayer(playerName: String) -> Observable<Player> {
+    func addPlayer(playerName: String, position: Int) -> Observable<Player> {
         let player = Player(playerId: NSUUID().uuidString)
         player.playerName = playerName
         player.playerLevel = 1
         player.playerStrength = 1
+        player.playerPosition = position
         return mDatabaseHelper.setPlayer(player: player)
     
     }
@@ -39,8 +40,8 @@ class DataManager {
         return mDatabaseHelper.getPlayer(playerId: playerId)
     }
     
-    func getPlayers() -> Observable<[Player]> {
-        return mDatabaseHelper.getPlayers().toArray()
+    func getPlayersByPosition() -> Observable<[Player]> {
+        return mDatabaseHelper.getPlayersByPosition().toArray()
     }
     
     func getPlayingPlayers() -> Observable<[Player]> {
@@ -65,6 +66,10 @@ class DataManager {
     
     func markPlayerAsPlaying(playerId: String, isPlaying: Bool) -> Observable<Void> {
         return mDatabaseHelper.markPlayerPlaying(withId: playerId, isPlaying: isPlaying)
+    }
+    
+    func updatePlayerPosition(playerId: String, position: Int) -> Observable<Void> {
+        return mDatabaseHelper.updatePlayerPosition(with: playerId, position: position)
     }
     
     func clearGameSteps() -> Observable<Void> {
