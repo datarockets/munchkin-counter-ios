@@ -21,6 +21,9 @@ class Appearance {
         
         UISwitch.appearance().onTintColor = Colors.cardCorner.withAlphaComponent(0.2)
         UISwitch.appearance().thumbTintColor = Colors.cardCorner
+        
+        UIToolbar.appearance().backgroundColor = Colors.cardLight
+        UIToolbar.appearance().tintColor = Colors.cardCorner
     }
     
 }

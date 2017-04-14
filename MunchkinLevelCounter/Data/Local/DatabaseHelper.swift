@@ -42,11 +42,14 @@ class DatabaseHelper {
         }
     }
     
-    func getPlayers() -> Observable<Player> {
+    func getPlayersByPosition() -> Observable<Player> {
         return Observable.create { subscriber in
             let context = NSManagedObjectContext.mr_default()
-            if let players = PlayerEntity.mr_findAll(in: context) as? [PlayerEntity] {
-                for entity in players {
+            let playersRequest = PlayerEntity.mr_requestAllSorted(by: "position",
+                                                                  ascending: true,
+                                                                  in: context)
+            if let players = PlayerEntity.mr_executeFetchRequest(playersRequest) as? [PlayerEntity] {
+                players.forEach { entity in
                     let player = Db.PlayerTable.player(from: entity)
                     subscriber.onNext(player)
                 }
@@ -60,7 +63,10 @@ class DatabaseHelper {
         return Observable.create { subscriber in
             let context = NSManagedObjectContext.mr_()
             let predicate = NSPredicate(format: "playing = \(true)")
-            if let players = PlayerEntity.mr_findAll(with: predicate, in: context) as? [PlayerEntity] {
+            let playingPlayersRequest = PlayerEntity.mr_requestAll(with: predicate, in: context)
+            let descriptor = NSSortDescriptor(key: "position", ascending: true)
+            playingPlayersRequest.sortDescriptors = [descriptor]
+            if let players = PlayerEntity.mr_executeFetchRequest(playingPlayersRequest) as? [PlayerEntity] {
                 for entity in players {
                     let player = Db.PlayerTable.player(from: entity)
                     subscriber.onNext(player)
@@ -73,7 +79,7 @@ class DatabaseHelper {
     
     func getPlayedPlayersByLevel() -> Observable<Player> {
         return Observable.create { subscriber in
-            let context = NSManagedObjectContext.mr_()
+            let context = NSManagedObjectContext.mr_default()
             let predicate = NSPredicate(format: "playing = \(true)")
             let playedPlayersRequest = PlayerEntity.mr_requestAll(with: predicate, in: context)
             let descriptor = NSSortDescriptor(key: "level", ascending: false)
@@ -161,6 +167,22 @@ class DatabaseHelper {
                 let predicate = NSPredicate(format: "id = '\(id)'")
                 if let entity = PlayerEntity.mr_findFirst(with: predicate, in: context) {
                     entity.playing = isPlaying
+                } else {
+                    subscriber.onCompleted()
+                }
+            }, completion: { _ in
+                subscriber.onCompleted()
+            })
+            return Disposables.create()
+        }
+    }
+    
+    func updatePlayerPosition(with id: String, position: Int) -> Observable<Void> {
+        return Observable.create { subscriber in
+            MagicalRecord.save({ (context) in
+                let predicate = NSPredicate(format: "id = '\(id)'")
+                if let entity = PlayerEntity.mr_findFirst(with: predicate, in: context) {
+                    entity.position = Int16(position)
                 } else {
                     subscriber.onCompleted()
                 }

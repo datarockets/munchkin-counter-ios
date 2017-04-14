@@ -36,13 +36,6 @@ class GameResultPresenter: Presenter {
         }
     }
     
-    func clearGameResults() {
-        mSubscription = mDataManager.clearGameSteps()
-            .subscribeOn(ConcurrentDispatchQueueScheduler(qos: DispatchQoS.background))
-            .observeOn(MainScheduler.instance)
-            .subscribe()
-    }
-    
     func detachView() {
         mGameResultView = nil
         mSubscription?.dispose()

@@ -20,16 +20,23 @@ class PlayersEditorViewController: BaseViewController, UITableViewDelegate,
     private var players: [Player] = []
     
     @IBOutlet weak var playersListTableView: UITableView!
+    @IBOutlet weak var btnAddPlayer: UIBarButtonItem!
+    @IBOutlet weak var btnStartGame: UIBarButtonItem!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         playersListTableView.delegate = self
         playersListTableView.dataSource = self
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         presenter?.attachView(self)
         presenter?.getPlayers()
     }
     
     override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         presenter?.checkIsGameStarted()
     }
     
@@ -39,7 +46,9 @@ class PlayersEditorViewController: BaseViewController, UITableViewDelegate,
         cell.playerStatus = self
         cell.swIsPlaying.isOn = player.isPlaying
         cell.tvPlayerName.text = player.playerName
-        cell.ivPlayerImage?.setImageWith(player.playerName, color: UIColor.colorHash(name: player.playerName), circular: true)
+        cell.ivPlayerImage?.setImageWith(player.playerName,
+                                         color: UIColor.colorHash(name: player.playerName),
+                                         circular: true)
         cell.tag = indexPath.row
         return cell
     }
@@ -47,17 +56,45 @@ class PlayersEditorViewController: BaseViewController, UITableViewDelegate,
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         switch editingStyle {
             case .delete:
-                presenter?.deletePlayer(playerId: players[indexPath.row].playerId)
+                let playerId = players[indexPath.row].playerId
                 players.remove(at: indexPath.row)
+                presenter?.deletePlayer(playerId: playerId)
                 playersListTableView.deleteRows(at: [indexPath], with: .automatic)
+                refreshPositions()
                 break
             default:
                 break
         }
     }
     
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCellEditingStyle {
+        if playersListTableView.isEditing {
+            return UITableViewCellEditingStyle.none
+        } else {
+            return UITableViewCellEditingStyle.delete
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, shouldIndentWhileEditingRowAt indexPath: IndexPath) -> Bool {
+        return false
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return players.count
+    }
+    
+    func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to toIndexPath: IndexPath) {
+        let playerToMove = players[fromIndexPath.row]
+        players.remove(at: fromIndexPath.row)
+        players.insert(playerToMove, at: toIndexPath.row)
     }
     
     func addPlayerToList(player: Player) {
@@ -67,39 +104,51 @@ class PlayersEditorViewController: BaseViewController, UITableViewDelegate,
     
     func setPlayersList(players: [Player]) {
         self.players = players
+        for (index, player) in self.players.enumerated() {
+            print("Player \(player.playerName) with position \(index)")
+        }
         playersListTableView.reloadData()
     }
     
     func showAddNewPlayerAlertDialog() {
-        let addNewPlayerAlert = UIAlertController(title: "dialog.add_player.title".localized,
-                                                  message: "dialog.add_player.message".localized, preferredStyle: .alert)
+        let addNewPlayerAlert = UIAlertController(title: "button.add_new_player".localized,
+                                                  message: "text.player_add_warning".localized, preferredStyle: .alert)
         addNewPlayerAlert.addTextField { textField in
             textField.placeholder = "text.player_name".localized
         }
-        let addPlayerAction = UIAlertAction(title: "button.add_new_player".localized, style: .default) { _ in
+        let addPlayerAction = UIAlertAction(title: "button.add_new_player".localized,
+                                            style: .default) { _ in
             let enteredText = ((addNewPlayerAlert.textFields?.first)! as UITextField).text
-            self.presenter?.addPlayer(playerName: enteredText!)
+            let playersCount = self.players.count
+            self.presenter?.addPlayer(playerName: enteredText!,
+                                      position: playersCount)
         }
-        let cancelAction = UIAlertAction(title: "button.cancel".localized, style: .cancel, handler: nil)
+        let cancelAction = UIAlertAction(title: "button.no".localized,
+                                         style: .cancel,
+                                         handler: nil)
         addNewPlayerAlert.addAction(addPlayerAction)
         addNewPlayerAlert.addAction(cancelAction)
         present(addNewPlayerAlert, animated: true, completion: nil)
     }
     
     func launchDashboard() {
-        guard let dashboardViewController = storyboard?.instantiateViewController(withIdentifier: "dashboard") as? DashboardViewController else { return }
+        print("launch dashboard")
+        let dashboardViewController = storyboard?.instantiateViewController(withIdentifier: "dashboard") as? DashboardViewController
         presenter?.setGameStarted()
-        present(dashboardViewController, animated: true, completion: nil)
-        self.navigationController?.dismiss(animated: false, completion: nil)
+        self.navigationController?.pushViewController(dashboardViewController!, animated: true)
     }
     
     func showStartContinueDialog() {
         let startContinueAlert = UIAlertController(title: "dialog.start_continue_game.title".localized,
-                                                   message: "dialog.start_continue_game.message".localized, preferredStyle: .alert)
-        let startNewGameAction = UIAlertAction(title: "button.start".localized, style: .destructive) { _ in
+                                                   message: "dialog.start_continue_game.message".localized,
+                                                   preferredStyle: .alert)
+        let startNewGameAction = UIAlertAction(title: "button.start".localized,
+                                               style: .destructive) { _ in
+            self.presenter?.clearGameSteps()
             self.presenter?.setGameFinished()
         }
-        let continueGameAction = UIAlertAction(title: "button.continue".localized, style: .default) { _ in
+        let continueGameAction = UIAlertAction(title: "button.continue".localized,
+                                               style: .default) { _ in
             self.launchDashboard()
         }
         startContinueAlert.addAction(startNewGameAction)
@@ -108,9 +157,12 @@ class PlayersEditorViewController: BaseViewController, UITableViewDelegate,
     }
     
     func showWarning() {
-        let warningAlert = UIAlertController(title: "Warning", message:
-            "text.player_add_warning".localized, preferredStyle: .alert)
-        let cancelAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+        let warningAlert = UIAlertController(title: "title.players_editor".localized,
+                                             message: "text.player_add_warning".localized,
+                                             preferredStyle: .alert)
+        let cancelAction = UIAlertAction(title: "OK",
+                                         style: .default,
+                                         handler: nil)
         warningAlert.addAction(cancelAction)
         present(warningAlert, animated: true, completion: nil)
     }
@@ -120,12 +172,12 @@ class PlayersEditorViewController: BaseViewController, UITableViewDelegate,
     }
     
     @IBAction func onStartGameClick(_ sender: Any) {
+        presenter?.clearGameSteps()
         presenter?.checkIsEnoughPlayers()
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 
     func onPlayerStatus(position: Int, playing: Bool) {
@@ -136,6 +188,27 @@ class PlayersEditorViewController: BaseViewController, UITableViewDelegate,
     
     override func viewDidDisappear(_ animated: Bool) {
         presenter?.detachView()
+    }
+
+    @IBAction func onChangePositionsCliick(_ sender: Any) {
+        if (!playersListTableView.isEditing) {
+            playersListTableView.setEditing(true, animated: true)
+            btnAddPlayer.isEnabled = false
+            btnStartGame.isEnabled = false
+
+        } else {
+            refreshPositions()
+            playersListTableView.setEditing(false, animated: true)
+            btnAddPlayer.isEnabled = true
+            btnStartGame.isEnabled = true
+        }
+    }
+    
+    func refreshPositions() {
+        for (index, player) in players.enumerated() {
+            print("Player \(player.playerName) with position \(index)")
+            presenter?.updatesPosition(playerId: player.playerId, position: index)
+        }
     }
     
 }

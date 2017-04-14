@@ -26,21 +26,15 @@ class GameResultViewController: BaseViewController, GameResultView {
         presenter?.attachView(self)
         chartViewController = childViewControllers.first as? ChartsViewController
         presenter?.chooseScoreType(scoreType: 0)
+        self.navigationController?.viewControllers.remove(at: 1)
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         presenter?.detachView()
-    }
-
-    @IBAction func onEditorButtonClick(_ sender: Any) {
-        presenter?.clearGameResults()
-        let playersEditorViewController = storyboard?.instantiateInitialViewController()
-        present(playersEditorViewController!, animated: true, completion: nil)
-        self.navigationController?.dismiss(animated: true, completion: nil)
     }
     
     @IBAction func onScoreTypeChanged(_ sender: UISegmentedControl) {
@@ -51,5 +45,4 @@ class GameResultViewController: BaseViewController, GameResultView {
     func loadChartViewController(scoreType: ScoreType) {
         chartViewController?.loadChartData(chartType: scoreType)
     }
-    
 }

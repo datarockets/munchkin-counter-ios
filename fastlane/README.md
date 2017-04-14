@@ -23,7 +23,7 @@ xcode-select --install
 </tr>
 <tr>
 <td width="33%"><code>brew cask install fastlane</code></td>
-<td width="33%"><a href="https://download.fastlane.tools/fastlane.zip">Download the zip file</a>. Then double click on the <code>install</code> script (or run it in a terminal window).</td>
+<td width="33%"><a href="https://download.fastlane.tools">Download the zip file</a>. Then double click on the <code>install</code> script (or run it in a terminal window).</td>
 <td width="33%"><code>sudo gem install fastlane -NV</code></td>
 </tr>
 </table>
@@ -34,6 +34,11 @@ xcode-select --install
 fastlane ios beta
 ```
 Submit a new build of Munchkin Level Counter to Fabric Beta
+### ios remove_keychain
+```
+fastlane ios remove_keychain
+```
+
 
 ----
 

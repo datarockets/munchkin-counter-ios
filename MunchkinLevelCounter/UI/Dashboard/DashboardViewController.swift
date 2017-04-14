@@ -20,22 +20,25 @@ class DashboardViewController: BaseViewController, UITableViewDelegate,
     @IBOutlet weak var playingPlayersTableView: UITableView!
     @IBOutlet weak var playerViewController: PlayerViewController!
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationItem.hidesBackButton = true
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         playingPlayersTableView.delegate = self
         playingPlayersTableView.dataSource = self
         presenter?.attachView(self)
         presenter?.getPlayingPlayers()
-        playerViewController = self.childViewControllers[0] as? PlayerViewController
+        playerViewController = self.childViewControllers.first as? PlayerViewController
         playerViewController?.scoreChangedDelegate = self
-        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
-
+    
     override func viewDidDisappear(_ animated: Bool) {
         presenter?.detachView()
     }
@@ -64,9 +67,8 @@ class DashboardViewController: BaseViewController, UITableViewDelegate,
     
     func finishGame() {
         presenter?.setGameFinished()
-        let gameResultViewController = storyboard?.instantiateViewController(withIdentifier: "gameResult")
-        present(gameResultViewController!, animated: true, completion: nil)
-        self.navigationController?.dismiss(animated: true, completion: nil)
+        guard let gameResultViewController = storyboard?.instantiateViewController(withIdentifier: "gameResult") else { return }
+        self.navigationController?.pushViewController(gameResultViewController, animated: true)
     }
     
     @IBAction func onNextPlayerClick(_ sender: Any) {

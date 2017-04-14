@@ -97,13 +97,18 @@
 		A17E208F1E6074CB00EA04CB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A193D5BE1E645F1B00FD42FD /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		A199C94D1E67B5610051BCCC /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
-		A199C9551E67BB1D0051BCCC /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Main.strings; sourceTree = "<group>"; };
 		A19A768D1E6CEB65005C691A /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		A19A76901E6CEB78005C691A /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
-		A19A76921E6CF061005C691A /* munchkin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = munchkin.ttf; path = Fonts/munchkin.ttf; sourceTree = "<group>"; };
+		A19A76921E6CF061005C691A /* munchkin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = munchkin.ttf; sourceTree = "<group>"; };
+		A19E3BCF1E9FFEA7007DAE81 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
+		A19E3BD01E9FFF66007DAE81 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
+		A19E3BD11EA00007007DAE81 /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/Localizable.strings; sourceTree = "<group>"; };
+		A19E3BD21EA00057007DAE81 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
+		A19E3BD31EA0006F007DAE81 /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/Localizable.strings; sourceTree = "<group>"; };
 		A1BD807E1E5C9B090010038F /* ChartsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartsViewController.swift; sourceTree = "<group>"; };
 		A1BD80801E5C9B1B0010038F /* ChartsPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartsPresenter.swift; sourceTree = "<group>"; };
 		A1BD80821E5C9B250010038F /* ChartsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartsView.swift; sourceTree = "<group>"; };
+		A1D5EE9E1E796D98001416C0 /* Munchkin_Level_Counter 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Munchkin_Level_Counter 2.xcdatamodel"; sourceTree = "<group>"; };
 		A1E0606E1E55D6A3006D2891 /* DashboardTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardTableViewCell.swift; sourceTree = "<group>"; };
 		A1E060731E55DD50006D2891 /* GameResultViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameResultViewController.swift; sourceTree = "<group>"; };
 		A1E060751E55DD62006D2891 /* GameResultView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameResultView.swift; sourceTree = "<group>"; };
@@ -247,7 +252,6 @@
 			isa = PBXGroup;
 			children = (
 				A1E4F77B1E70111400C15792 /* Fonts */,
-				A19A76921E6CF061005C691A /* munchkin.ttf */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -286,6 +290,7 @@
 		A1E4F77B1E70111400C15792 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
+				A19A76921E6CF061005C691A /* munchkin.ttf */,
 			);
 			path = Fonts;
 			sourceTree = "<group>";
@@ -458,6 +463,11 @@
 				en,
 				Base,
 				ru,
+				de,
+				fr,
+				it,
+				es,
+				nl,
 			);
 			mainGroup = A1F8F7401E4CA6B200B57DEB;
 			productRefGroup = A1F8F74A1E4CA6B200B57DEB /* Products */;
@@ -680,6 +690,11 @@
 			children = (
 				A19A768D1E6CEB65005C691A /* Base */,
 				A19A76901E6CEB78005C691A /* ru */,
+				A19E3BCF1E9FFEA7007DAE81 /* de */,
+				A19E3BD01E9FFF66007DAE81 /* fr */,
+				A19E3BD11EA00007007DAE81 /* it */,
+				A19E3BD21EA00057007DAE81 /* es */,
+				A19E3BD31EA0006F007DAE81 /* nl */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
@@ -688,7 +703,6 @@
 			isa = PBXVariantGroup;
 			children = (
 				A1F8F7511E4CA6B200B57DEB /* Base */,
-				A199C9551E67BB1D0051BCCC /* ru */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -990,6 +1004,7 @@
 		A1F8F7531E4CA6B200B57DEB /* Munchkin_Level_Counter.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				A1D5EE9E1E796D98001416C0 /* Munchkin_Level_Counter 2.xcdatamodel */,
 				A1F8F7541E4CA6B200B57DEB /* Munchkin_Level_Counter.xcdatamodel */,
 			);
 			currentVersion = A1F8F7541E4CA6B200B57DEB /* Munchkin_Level_Counter.xcdatamodel */;
