@@ -17,7 +17,6 @@
 		A127FA8A1E4E0FE6002733AA /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A127FA891E4E0FE6002733AA /* DashboardView.swift */; };
 		A12D01B01E54868B009BCD9E /* PlayersEditorTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A12D01AF1E54868B009BCD9E /* PlayersEditorTableViewCell.swift */; };
 		A16725FC1E5F24FB006CF6E8 /* fabric.apikey in Resources */ = {isa = PBXBuildFile; fileRef = A16725FB1E5F24FB006CF6E8 /* fabric.apikey */; };
-		A16725FE1E5F2508006CF6E8 /* fabric.buildsecret in Resources */ = {isa = PBXBuildFile; fileRef = A16725FD1E5F2508006CF6E8 /* fabric.buildsecret */; };
 		A170F6001E5097FA006149D3 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = A170F5FF1E5097FA006149D3 /* Player.swift */; };
 		A17750101E4CB432004B910E /* PlayersEditorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A177500F1E4CB432004B910E /* PlayersEditorViewController.swift */; };
 		A17750121E4CB446004B910E /* PlayersEditorPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A17750111E4CB446004B910E /* PlayersEditorPresenter.swift */; };
@@ -86,7 +85,6 @@
 		A127FA891E4E0FE6002733AA /* DashboardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; };
 		A12D01AF1E54868B009BCD9E /* PlayersEditorTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayersEditorTableViewCell.swift; sourceTree = "<group>"; };
 		A16725FB1E5F24FB006CF6E8 /* fabric.apikey */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = fabric.apikey; sourceTree = "<group>"; };
-		A16725FD1E5F2508006CF6E8 /* fabric.buildsecret */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = fabric.buildsecret; sourceTree = "<group>"; };
 		A170F5FF1E5097FA006149D3 /* Player.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		A177500F1E4CB432004B910E /* PlayersEditorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayersEditorViewController.swift; sourceTree = "<group>"; };
 		A17750111E4CB446004B910E /* PlayersEditorPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayersEditorPresenter.swift; sourceTree = "<group>"; };
@@ -301,7 +299,6 @@
 		A1F8F7401E4CA6B200B57DEB = {
 			isa = PBXGroup;
 			children = (
-				A16725FD1E5F2508006CF6E8 /* fabric.buildsecret */,
 				A16725FB1E5F24FB006CF6E8 /* fabric.apikey */,
 				A1F8F74B1E4CA6B200B57DEB /* MunchkinLevelCounter */,
 				A17E208C1E6074CB00EA04CB /* MunchkinLevelCounterTests */,
@@ -488,7 +485,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				A19A768C1E6CEB65005C691A /* Localizable.strings in Resources */,
-				A16725FE1E5F2508006CF6E8 /* fabric.buildsecret in Resources */,
 				A1F8F75A1E4CA6B200B57DEB /* LaunchScreen.storyboard in Resources */,
 				A1F8F7571E4CA6B200B57DEB /* Assets.xcassets in Resources */,
 				A19A76941E6CF078005C691A /* munchkin.ttf in Resources */,
@@ -828,7 +824,7 @@
 				INFOPLIST_FILE = "$(SRCROOT)/MunchkinLevelCounter/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.datarockets.munchkin;
+				PRODUCT_BUNDLE_IDENTIFIER = com.datarockets.mnchknlvlcntr;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "84b7fd86-0bcf-425b-91a8-f0c799bc6f83";
 				PROVISIONING_PROFILE_SPECIFIER = "match AdHoc com.datarockets.munchkin";
@@ -958,7 +954,7 @@
 				INFOPLIST_FILE = "$(SRCROOT)/MunchkinLevelCounter/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.datarockets.munchkin;
+				PRODUCT_BUNDLE_IDENTIFIER = com.datarockets.mnchknlvlcntr;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "4c5a5519-2b5a-4e6c-b9d3-35f2d8ca7f3f";
 				PROVISIONING_PROFILE_SPECIFIER = "match Development com.datarockets.munchkin";
@@ -981,7 +977,7 @@
 				INFOPLIST_FILE = "$(SRCROOT)/MunchkinLevelCounter/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.datarockets.munchkin;
+				PRODUCT_BUNDLE_IDENTIFIER = com.datarockets.mnchknlvlcntr;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "9ffdb0d0-4eb7-4c19-8a77-7d6959d9d62d";
 				PROVISIONING_PROFILE_SPECIFIER = "match AppStore com.datarockets.munchkin";
