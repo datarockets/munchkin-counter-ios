@@ -30,4 +30,3 @@ func loggingPrint<T>(_ object: @autoclosure () -> T, _ file: String = #file, _ f
         print("<\(queue)> \(fileURL) \(function)[\(line)]: " + String(reflecting: value))
     #endif
 }
-

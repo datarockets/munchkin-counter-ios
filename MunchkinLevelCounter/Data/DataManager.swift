@@ -92,17 +92,14 @@ class DataManager {
                 playerGameSteps.updateValue(playerSteps, forKey: player)
             })
             
-            
             var playerLines = [ChartDataSet]()
             var playerColors = [UIColor]()
-            
             
             playerGameSteps.keys.forEach { player in
                 print("\(player.playerName)")
                 let color = UIColor.colorHash(name: player.playerName)
                 playerColors.append(color)
             }
-            
             
             for (index, playerStepsList) in playerGameSteps.values.enumerated() {
                 var entries = [ChartDataEntry]()
