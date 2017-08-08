@@ -97,7 +97,7 @@ class DataManager {
             
             playerGameSteps.keys.forEach { player in
                 print("\(player.playerName)")
-                let color = UIColor.colorHash(name: player.playerName)
+                let color = UIColor.colorHash(hexString: player.playerName)
                 playerColors.append(color)
             }
             

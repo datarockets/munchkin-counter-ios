@@ -40,7 +40,7 @@ class ChartsViewController: UIViewController, ChartsView, UITableViewDelegate, U
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = playedPlayersTableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as? ChartsTableViewCell else { fatalError("Dequeuing reusable cell failed") }
         let player = playedPlayers[indexPath.row]
-        cell.ivPlayerImage?.setImageWith(player.playerName, color: UIColor.colorHash(name: player.playerName), circular: true)
+        cell.ivPlayerImage?.setImageWith(player.playerName, color: UIColor.colorHash(hexString: player.playerName), circular: true)
         cell.tvPlayerName.text = player.playerName
         
         switch currentScoreType! {

@@ -47,7 +47,7 @@ class PlayersEditorViewController: BaseViewController, UITableViewDelegate,
         cell.swIsPlaying.isOn = player.isPlaying
         cell.tvPlayerName.text = player.playerName
         cell.ivPlayerImage?.setImageWith(player.playerName,
-                                         color: UIColor.colorHash(name: player.playerName),
+                                         color: UIColor.colorHash(hexString: player.playerName),
                                          circular: true)
         cell.tag = indexPath.row
         return cell
