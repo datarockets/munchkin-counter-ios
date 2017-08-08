@@ -9,10 +9,7 @@
 import UIKit
 import Charts
 
-class ChartsViewController: UIViewController,
-    ChartsView,
-    UITableViewDelegate,
-    UITableViewDataSource {
+class ChartsViewController: UIViewController, ChartsView, UITableViewDelegate, UITableViewDataSource {
 
     var presenter: ChartsPresenter?
 

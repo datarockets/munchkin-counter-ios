@@ -25,7 +25,7 @@ class ChartsPresenter: Presenter {
     }
     
     func loadChartData(type: ScoreType) {
-        print("Loading chart data")
+        loggingPrint("Loading chart data")
         mSubscription = mDataManager.getLineData(type: type.rawValue)
             .subscribeOn(ConcurrentDispatchQueueScheduler(qos: DispatchQoS.background))
             .observeOn(MainScheduler.instance)

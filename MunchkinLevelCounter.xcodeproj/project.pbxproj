@@ -52,6 +52,7 @@
 		A1FE902E1E65AABD0072315A /* ChartsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1FE902D1E65AABD0072315A /* ChartsTableViewCell.swift */; };
 		A1FE90641E66E69E0072315A /* Appearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1FE90631E66E69E0072315A /* Appearance.swift */; };
 		A1FE90681E67959A0072315A /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1FE90671E67959A0072315A /* Colors.swift */; };
+		FE7A372F1F39D805005974F7 /* LoggingPrint.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE7A372E1F39D805005974F7 /* LoggingPrint.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -135,6 +136,7 @@
 		CBAC2354BAA805BAA503F815 /* Pods-MunchkinLevelCounterTests.ad hoc.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MunchkinLevelCounterTests.ad hoc.xcconfig"; path = "Pods/Target Support Files/Pods-MunchkinLevelCounterTests/Pods-MunchkinLevelCounterTests.ad hoc.xcconfig"; sourceTree = "<group>"; };
 		DE001F53FC67234840A18435 /* Pods-Munchkin Level CounterTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Munchkin Level CounterTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Munchkin Level CounterTests/Pods-Munchkin Level CounterTests.debug.xcconfig"; sourceTree = "<group>"; };
 		DF0D7CDB2BB31B124060FDAE /* Pods-MunchkinLevelCounterTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MunchkinLevelCounterTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MunchkinLevelCounterTests/Pods-MunchkinLevelCounterTests.debug.xcconfig"; sourceTree = "<group>"; };
+		FE7A372E1F39D805005974F7 /* LoggingPrint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoggingPrint.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -244,6 +246,7 @@
 				A193D5BE1E645F1B00FD42FD /* Extensions.swift */,
 				A1FE90631E66E69E0072315A /* Appearance.swift */,
 				A1FE90671E67959A0072315A /* Colors.swift */,
+				FE7A372E1F39D805005974F7 /* LoggingPrint.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -353,7 +356,6 @@
 			isa = PBXGroup;
 			children = (
 				A1F8F7741E4CA7DB00B57DEB /* Model */,
-				A1F8F7721E4CA7CC00B57DEB /* Remote */,
 				A1F8F7711E4CA7C600B57DEB /* Local */,
 				A1F8F7771E4CA89300B57DEB /* DataManager.swift */,
 			);
@@ -368,13 +370,6 @@
 				A1EFDB8A1E53419600FEBD76 /* Db.swift */,
 			);
 			path = Local;
-			sourceTree = "<group>";
-		};
-		A1F8F7721E4CA7CC00B57DEB /* Remote */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Remote;
 			sourceTree = "<group>";
 		};
 		A1F8F7741E4CA7DB00B57DEB /* Model */ = {
@@ -511,13 +506,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MunchkinLevelCounterTests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		469F216926D2EB0135B8362D /* [CP] Embed Pods Frameworks */ = {
@@ -526,9 +524,26 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-MunchkinLevelCounter/Pods-MunchkinLevelCounter-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Charts/Charts.framework",
+				"${BUILT_PRODUCTS_DIR}/EAIntroView/EAIntroView.framework",
+				"${BUILT_PRODUCTS_DIR}/EARestrictedScrollView/EARestrictedScrollView.framework",
+				"${BUILT_PRODUCTS_DIR}/MagicalRecord/MagicalRecord.framework",
+				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/Swinject/Swinject.framework",
+				"${BUILT_PRODUCTS_DIR}/SwinjectStoryboard/SwinjectStoryboard.framework",
+				"${BUILT_PRODUCTS_DIR}/UIImageView-Letters/UIImageView_Letters.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Charts.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/EAIntroView.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/EARestrictedScrollView.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MagicalRecord.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Swinject.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwinjectStoryboard.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/UIImageView_Letters.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -541,9 +556,14 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-MunchkinLevelCounterTests/Pods-MunchkinLevelCounterTests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Nimble/Nimble.framework",
+				"${BUILT_PRODUCTS_DIR}/Quick/Quick.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Nimble.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Quick.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -556,13 +576,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MunchkinLevelCounter-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		A14D0B201E5B3240008221F4 /* ShellScript */ = {
@@ -665,6 +688,7 @@
 				A1BD80811E5C9B1B0010038F /* ChartsPresenter.swift in Sources */,
 				A1E0607A1E55E67B006D2891 /* GameStep.swift in Sources */,
 				A1E060811E55EE07006D2891 /* PlayerView.swift in Sources */,
+				FE7A372F1F39D805005974F7 /* LoggingPrint.swift in Sources */,
 				A17750121E4CB446004B910E /* PlayersEditorPresenter.swift in Sources */,
 				A1F8F74D1E4CA6B200B57DEB /* AppDelegate.swift in Sources */,
 				A1FE902E1E65AABD0072315A /* ChartsTableViewCell.swift in Sources */,
@@ -938,6 +962,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "4c5a5519-2b5a-4e6c-b9d3-35f2d8ca7f3f";
 				PROVISIONING_PROFILE_SPECIFIER = "match Development com.datarockets.munchkin";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "-D DEBUG";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};

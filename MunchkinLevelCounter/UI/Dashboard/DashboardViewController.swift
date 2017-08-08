@@ -8,10 +8,7 @@
 
 import UIKit
 
-class DashboardViewController: BaseViewController, UITableViewDelegate,
-    UITableViewDataSource,
-    OnScoreChangedDelegate,
-    DashboardView {
+class DashboardViewController: BaseViewController, UITableViewDelegate, UITableViewDataSource, OnScoreChangedDelegate, DashboardView {
 
     var presenter: DashboardPresenter?
     
@@ -73,7 +70,7 @@ class DashboardViewController: BaseViewController, UITableViewDelegate,
     
     @IBAction func onNextPlayerClick(_ sender: Any) {
         var selectedIndex = playingPlayersTableView.indexPathForSelectedRow?.row
-        print("onNextPlayerClick selected index \(selectedIndex)")
+        loggingPrint("onNextPlayerClick selected index \(selectedIndex)")
         if (selectedIndex == playingPlayers.count - 1) {
             let indexPath = IndexPath(row: 0, section: 0)
             playingPlayersTableView.selectRow(at: indexPath, animated: true, scrollPosition: .bottom)
@@ -132,7 +129,7 @@ class DashboardViewController: BaseViewController, UITableViewDelegate,
                               levelScore: playerLevel,
                               strengthScore: playerStrength)
         let selectedIndexPath = IndexPath(row: playerPosition, section: 0)
-        print("onScoreChanged selectedIndex \(selectedIndexPath)")
+        loggingPrint("onScoreChanged selectedIndex \(selectedIndexPath)")
         playingPlayersTableView.reloadRows(at: [selectedIndexPath], with: .none)
         playingPlayersTableView.selectRow(at: selectedIndexPath, animated: false, scrollPosition: .none)
     }

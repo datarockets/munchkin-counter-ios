@@ -12,10 +12,6 @@ import UIKit
 class Appearance {
     
     static func setupUIAppearance() {
-        // navigation bar color - card light
-        // status bar color - card general
-        // color accent (checkbox and textfields) - card corner
-        
         UINavigationBar.appearance().barTintColor = Colors.cardLight
         UINavigationBar.appearance().tintColor = Colors.cardCorner
         

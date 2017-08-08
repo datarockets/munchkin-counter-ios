@@ -22,21 +22,21 @@ class PlayersEditorPresenter: Presenter {
     }
     
     func attachView(_ view: PlayersEditorView) {
-        print("attaching View")
+        loggingPrint("attaching View")
         mPlayersEditorView = view
     }
     
     func checkIsEnoughPlayers() {
-        print("checkIsEnoughPlayers")
+        loggingPrint("checkIsEnoughPlayers")
         mSubscription = mDataManager.getPlayingPlayers()
             .subscribeOn(ConcurrentDispatchQueueScheduler(qos: .background))
             .observeOn(MainScheduler.instance)
             .subscribe(onNext: { players in
                 if players.count >= 2 {
-                    print("enoughPlayers")
+                    loggingPrint("enoughPlayers")
                     self.mPlayersEditorView?.launchDashboard()
                 } else {
-                    print("not enough players")
+                    loggingPrint("not enough players")
                     self.mPlayersEditorView?.showWarning()
                 }
             })
@@ -109,7 +109,7 @@ class PlayersEditorPresenter: Presenter {
     }
     
     func detachView() {
-        print("Detaching of view")
+        loggingPrint("Detaching of view")
         mPlayersEditorView = nil
         mSubscription?.dispose()
     }

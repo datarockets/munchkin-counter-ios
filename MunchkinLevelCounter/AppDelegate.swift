@@ -28,56 +28,62 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let container = Container()
         
         // Data
+        
         container.register(UserDefaults.self) { _ in
             return UserDefaults()
         }
+        
         container.register(PreferencesHelper.self) { resolver in
-            print("Preferences Helper initialized")
+            loggingPrint("Preferences Helper initialized")
             return PreferencesHelper(userDefaults: resolver.resolve(UserDefaults.self)!)
         }
+        
         container.register(DatabaseHelper.self) { _ in
-            print("Database Helper initialized")
+            loggingPrint("Database Helper initialized")
             return DatabaseHelper()
         }
+        
         container.register(DataManager.self) { resolver in
-            print("Data Manager initialized")
+            loggingPrint("Data Manager initialized")
             return DataManager.init(
                 databaseHelper: resolver.resolve(DatabaseHelper.self)!,
                 preferencesHelper: resolver.resolve(PreferencesHelper.self)!)
         }.inObjectScope(.container)
         
         // Presenters
+        
         container.register(PlayersEditorPresenter.self) { resolver in
-            print("Players Editor Presenter")
+            loggingPrint("Players Editor Presenter")
             return PlayersEditorPresenter.init(dataManager: resolver.resolve(DataManager.self)!)
         }
         
         container.register(OnboardingPresenter.self) { resolver in
-            print("Onboarding Presenter")
+            loggingPrint("Onboarding Presenter")
             return OnboardingPresenter.init(dataManager: resolver.resolve(DataManager.self)!)
         }
         
         container.register(DashboardPresenter.self) { resolver in
-            print("Dashboard Presenter")
+            loggingPrint("Dashboard Presenter")
             return DashboardPresenter.init(dataManager: resolver.resolve(DataManager.self)!)
         }
         
         container.register(PlayerPresenter.self) { resolver in
-            print("Player Presenter")
+            loggingPrint("Player Presenter")
             return PlayerPresenter.init(dataManager: resolver.resolve(DataManager.self)!)
         }
         
         container.register(GameResultPresenter.self) { resolver in
-            print("Game Result Presenter")
+            loggingPrint("Game Result Presenter")
             return GameResultPresenter.init(dataManager: resolver.resolve(DataManager.self)!)
         }
         
         container.register(ChartsPresenter.self) { resolver in
-            print("Charts Presenter")
+            loggingPrint("Charts Presenter")
             return ChartsPresenter.init(dataManager: resolver.resolve(DataManager.self)!)
         }
         
         // View
+        
         container.register(OnboardingViewController.self) { resolver in
             let controller = OnboardingViewController()
             controller.presenter = resolver.resolve(OnboardingPresenter.self)!
@@ -117,7 +123,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         let whitespaceToTrim: CharacterSet = CharacterSet.whitespacesAndNewlines
         let fabricAPIKeyTrimmed: String = fabricAPIKey!.trimmingCharacters(in: whitespaceToTrim )
-        print("Key for Fabric: \(fabricAPIKeyTrimmed)")
+        loggingPrint("Key for Fabric: \(fabricAPIKeyTrimmed)")
         Crashlytics.start(withAPIKey: fabricAPIKeyTrimmed)
         Fabric.with([Crashlytics.self])
     }

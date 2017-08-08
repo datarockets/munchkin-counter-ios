@@ -105,7 +105,7 @@ class PlayersEditorViewController: BaseViewController, UITableViewDelegate,
     func setPlayersList(players: [Player]) {
         self.players = players
         for (index, player) in self.players.enumerated() {
-            print("Player \(player.playerName) with position \(index)")
+            loggingPrint("Player \(player.playerName) with position \(index)")
         }
         playersListTableView.reloadData()
     }
@@ -132,7 +132,7 @@ class PlayersEditorViewController: BaseViewController, UITableViewDelegate,
     }
     
     func launchDashboard() {
-        print("launch dashboard")
+        loggingPrint("launch dashboard")
         let dashboardViewController = storyboard?.instantiateViewController(withIdentifier: "dashboard") as? DashboardViewController
         presenter?.setGameStarted()
         self.navigationController?.pushViewController(dashboardViewController!, animated: true)
@@ -206,7 +206,7 @@ class PlayersEditorViewController: BaseViewController, UITableViewDelegate,
     
     func refreshPositions() {
         for (index, player) in players.enumerated() {
-            print("Player \(player.playerName) with position \(index)")
+            loggingPrint("Player \(player.playerName) with position \(index)")
             presenter?.updatesPosition(playerId: player.playerId, position: index)
         }
     }

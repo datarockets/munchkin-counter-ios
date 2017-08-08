@@ -16,7 +16,7 @@ class BaseViewController: UIViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        print("viewWillAppear \(String(describing: self))")
+        loggingPrint("viewWillAppear \(String(describing: self))")
     }
     
     override func viewDidAppear(_ animated: Bool) {
