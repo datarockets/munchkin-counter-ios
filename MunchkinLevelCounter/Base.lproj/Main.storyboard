@@ -1,13 +1,14 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1217" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -16,10 +17,10 @@
         </array>
     </customFonts>
     <scenes>
-        <!--Players Editor-->
+        <!--Players-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController storyboardIdentifier="playersEditor" automaticallyAdjustsScrollViewInsets="NO" id="BYZ-38-t0r" customClass="PlayersEditorViewController" customModule="MunchkinLevelCounter" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="playersEditor" title="Players" automaticallyAdjustsScrollViewInsets="NO" id="BYZ-38-t0r" customClass="PlayersEditorViewController" customModule="MunchkinLevelCounter" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -29,14 +30,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="67" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="QKP-xM-5Qv">
-                                <rect key="frame" x="0.0" y="20" width="414" height="672"/>
+                                <rect key="frame" x="0.0" y="20" width="414" height="716"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="67" id="g9W-9s-9Cd" customClass="PlayersEditorTableViewCell" customModule="MunchkinLevelCounter" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="67"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="g9W-9s-9Cd" id="8Va-fp-h5U">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="67"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="66.666666666666671"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Player Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rlG-bz-ikm">
@@ -76,55 +77,50 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qck-vA-TF9">
-                                <rect key="frame" x="0.0" y="692" width="414" height="44"/>
-                                <items>
-                                    <barButtonItem title="Change Positions" id="P1O-jq-tQW">
-                                        <connections>
-                                            <action selector="onChangePositionsCliick:" destination="BYZ-38-t0r" id="1P2-Y2-zGJ"/>
-                                        </connections>
-                                    </barButtonItem>
-                                </items>
-                            </toolbar>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="Qck-vA-TF9" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="9ME-HX-vmh"/>
                             <constraint firstItem="QKP-xM-5Qv" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Cu7-qT-Av4"/>
                             <constraint firstItem="QKP-xM-5Qv" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="Oac-Pe-aox"/>
                             <constraint firstItem="QKP-xM-5Qv" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailing" id="PLU-tk-zyf"/>
-                            <constraint firstItem="Qck-vA-TF9" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailing" id="d2b-iK-207"/>
-                            <constraint firstItem="QKP-xM-5Qv" firstAttribute="bottom" secondItem="Qck-vA-TF9" secondAttribute="top" id="emB-Xb-PLY"/>
-                            <constraint firstItem="Qck-vA-TF9" firstAttribute="bottom" secondItem="8bC-Xf-vdC" secondAttribute="bottom" id="nDY-DX-VQz"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="QKP-xM-5Qv" secondAttribute="bottom" id="iMU-4V-N6P"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Players Editor" id="IyD-QX-fbv">
-                        <barButtonItem key="leftBarButtonItem" title="Start game" id="PF0-WM-ydF">
+                        <barButtonItem key="leftBarButtonItem" title="Start game" id="PF0-WM-ydF" userLabel="Start">
                             <userDefinedRuntimeAttributes>
                                 <userDefinedRuntimeAttribute type="string" keyPath="localizedText" value="button.start"/>
                             </userDefinedRuntimeAttributes>
                             <connections>
-                                <action selector="onStartGameClick:" destination="BYZ-38-t0r" id="rDe-0t-fUr"/>
+                                <action selector="didTapStartButton:" destination="BYZ-38-t0r" id="3wz-40-IOL"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="LMy-8y-xUq">
-                            <connections>
-                                <action selector="onAddPlayerClick:" destination="BYZ-38-t0r" id="qvy-L3-338"/>
-                            </connections>
-                        </barButtonItem>
+                        <rightBarButtonItems>
+                            <barButtonItem image="Reorder" id="EyR-rh-jhs" userLabel="Reorder">
+                                <connections>
+                                    <action selector="didTapReorderButton:" destination="BYZ-38-t0r" id="x14-mj-mLw"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem systemItem="add" id="LMy-8y-xUq">
+                                <connections>
+                                    <action selector="didTapAddButton:" destination="BYZ-38-t0r" id="ZEn-r6-sR0"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="string" keyPath="localizedText" value="title.players_editor"/>
                         </userDefinedRuntimeAttributes>
                     </navigationItem>
                     <connections>
-                        <outlet property="btnAddPlayer" destination="LMy-8y-xUq" id="FVp-S2-qUM"/>
-                        <outlet property="btnStartGame" destination="PF0-WM-ydF" id="1Mk-ba-lca"/>
+                        <outlet property="btnLeftStart" destination="PF0-WM-ydF" id="ENb-65-569"/>
+                        <outlet property="btnRightAdd" destination="LMy-8y-xUq" id="PbR-7N-KwJ"/>
+                        <outlet property="btnRightReorder" destination="EyR-rh-jhs" id="JHI-sH-cDU"/>
                         <outlet property="playersListTableView" destination="QKP-xM-5Qv" id="mnz-c9-ePY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="794.20289855072474" y="-761.41304347826087"/>
+            <point key="canvasLocation" x="338" y="-779"/>
         </scene>
         <!--Level Counter-->
         <scene sceneID="eeF-Te-36v">
@@ -146,7 +142,7 @@
                                         <rect key="frame" x="0.0" y="28" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ghI-cD-NSE" id="hZd-7j-Ho7">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.666666666666664"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Player Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aVi-EG-DEp">
@@ -252,7 +248,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kYd-hO-yhy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1501.875" y="-778.75"/>
+            <point key="canvasLocation" x="1025" y="-779"/>
         </scene>
         <!--Game Result-->
         <scene sceneID="FjL-DN-XbE">
@@ -308,7 +304,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="d07-IG-s9U" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2260.8695652173915" y="-778.53260869565224"/>
+            <point key="canvasLocation" x="2010" y="-779"/>
         </scene>
         <!--Charts View Controller-->
         <scene sceneID="kup-3x-Igw">
@@ -326,11 +322,11 @@
                                 <rect key="frame" x="0.0" y="362" width="414" height="354"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" rowHeight="62" id="CjV-uD-eiT" customClass="ChartsTableViewCell" customModule="MunchkinLevelCounter" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="320" height="62"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" rowHeight="62" id="CjV-uD-eiT" customClass="ChartsTableViewCell" customModule="MunchkinLevelCounter" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="62"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="CjV-uD-eiT" id="f8p-4S-89z">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="62"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="61.666666666666664"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="O9F-4K-mfi">
@@ -347,7 +343,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UJx-Zd-CNV">
-                                                    <rect key="frame" x="250" y="20" width="42" height="21"/>
+                                                    <rect key="frame" x="344" y="20" width="42" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -394,7 +390,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hcS-ol-hCw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3004" y="-779"/>
+            <point key="canvasLocation" x="2757" y="-779"/>
         </scene>
         <!--Player View Controller-->
         <scene sceneID="4Av-7n-SQN">
@@ -412,7 +408,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="252"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Player Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3EL-IU-MPe">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="34"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="33.333333333333336"/>
                                 <fontDescription key="fontDescription" name="Buccaneer-Cyr-Regular" family="Buccaneer Cyr" pointSize="25"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -427,13 +423,13 @@
                                         <rect key="frame" x="0.0" y="0.0" width="160" height="252"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NiR-Nc-Hce">
-                                                <rect key="frame" x="60.666666666666671" y="86.666666666666657" width="40.000000000000014" height="79.999999999999972"/>
+                                                <rect key="frame" x="60" y="86.666666666666657" width="40" height="79.999999999999972"/>
                                                 <fontDescription key="fontDescription" name="Buccaneer-Cyr-Regular" family="Buccaneer Cyr" pointSize="60"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Level" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gXR-gH-wzX">
-                                                <rect key="frame" x="57.666666666666671" y="213" width="46.000000000000014" height="23"/>
+                                                <rect key="frame" x="58.000000000000007" y="213" width="45.666666666666679" height="22.666666666666657"/>
                                                 <fontDescription key="fontDescription" name="Buccaneer-Cyr-Regular" family="Buccaneer Cyr" pointSize="17"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
@@ -492,7 +488,7 @@
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pl9-ht-bE1">
-                                                <rect key="frame" x="60.666666666666657" y="86.666666666666657" width="40.000000000000028" height="79.999999999999972"/>
+                                                <rect key="frame" x="60" y="86.666666666666657" width="40" height="79.999999999999972"/>
                                                 <fontDescription key="fontDescription" name="Buccaneer-Cyr-Regular" family="Buccaneer Cyr" pointSize="60"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
@@ -509,7 +505,7 @@
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Strength" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BSt-WG-s6F">
-                                                <rect key="frame" x="42.666666666666657" y="213" width="76.000000000000028" height="23"/>
+                                                <rect key="frame" x="42.333333333333343" y="213" width="75.333333333333343" height="22.666666666666657"/>
                                                 <fontDescription key="fontDescription" name="Buccaneer-Cyr-Regular" family="Buccaneer Cyr" pointSize="17"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
@@ -571,12 +567,13 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tce-pi-7RF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1338.75" y="-14.788732394366198"/>
+            <point key="canvasLocation" x="1025" y="-239"/>
         </scene>
     </scenes>
     <resources>
         <image name="ArrowDown" width="48" height="48"/>
         <image name="ArrowUp" width="48" height="48"/>
         <image name="Mnchknbackground" width="341" height="256"/>
+        <image name="Reorder" width="25" height="25"/>
     </resources>
 </document>

@@ -10,18 +10,18 @@ import UIKit
 import Swinject
 import UIImageView_Letters
 
-class PlayersEditorViewController: BaseViewController, UITableViewDelegate,
-    UITableViewDataSource,
-    OnPlayerStatusChanged,
-    PlayersEditorView {
+class PlayersEditorViewController: BaseViewController, UITableViewDelegate, UITableViewDataSource, OnPlayerStatusChanged, PlayersEditorView {
     
     var presenter: PlayersEditorPresenter?
     
     private var players: [Player] = []
     
     @IBOutlet weak var playersListTableView: UITableView!
-    @IBOutlet weak var btnAddPlayer: UIBarButtonItem!
-    @IBOutlet weak var btnStartGame: UIBarButtonItem!
+    @IBOutlet weak var btnLeftStart: UIBarButtonItem!
+    @IBOutlet weak var btnRightAdd: UIBarButtonItem!
+    @IBOutlet weak var btnRightReorder: UIBarButtonItem!
+    
+    // MARK: View Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,6 +40,10 @@ class PlayersEditorViewController: BaseViewController, UITableViewDelegate,
         presenter?.checkIsGameStarted()
     }
     
+    override func viewDidDisappear(_ animated: Bool) {
+        presenter?.detachView()
+    }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = playersListTableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as? PlayersEditorTableViewCell else { fatalError("Dequeuing reusable cell failed") }
         let player = players[indexPath.row]
@@ -55,15 +59,15 @@ class PlayersEditorViewController: BaseViewController, UITableViewDelegate,
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         switch editingStyle {
-            case .delete:
-                let playerId = players[indexPath.row].playerId
-                players.remove(at: indexPath.row)
-                presenter?.deletePlayer(playerId: playerId)
-                playersListTableView.deleteRows(at: [indexPath], with: .automatic)
-                refreshPositions()
-                break
-            default:
-                break
+        case .delete:
+            let playerId = players[indexPath.row].playerId
+            players.remove(at: indexPath.row)
+            presenter?.deletePlayer(playerId: playerId)
+            playersListTableView.deleteRows(at: [indexPath], with: .automatic)
+            refreshPositions()
+            break
+        default:
+            break
         }
     }
     
@@ -97,6 +101,32 @@ class PlayersEditorViewController: BaseViewController, UITableViewDelegate,
         players.insert(playerToMove, at: toIndexPath.row)
     }
     
+    // MARK: User Interactions
+    
+    @IBAction func didTapStartButton(_ sender: Any) {
+        presenter?.clearGameSteps()
+        presenter?.checkIsEnoughPlayers()
+    }
+    
+    @IBAction func didTapAddButton(_ sender: Any) {
+        showAddNewPlayerAlertDialog()
+    }
+    
+    @IBAction func didTapReorderButton(_ sender: Any) {
+        if (!playersListTableView.isEditing) {
+            playersListTableView.setEditing(true, animated: true)
+            btnLeftStart.isEnabled = false
+            btnRightAdd.isEnabled = false
+        } else {
+            refreshPositions()
+            playersListTableView.setEditing(false, animated: true)
+            btnLeftStart.isEnabled = true
+            btnRightAdd.isEnabled = true
+        }
+    }
+    
+    // MARK: Additional Helpers
+    
     func addPlayerToList(player: Player) {
         players.append(player)
         playersListTableView.reloadData()
@@ -105,7 +135,7 @@ class PlayersEditorViewController: BaseViewController, UITableViewDelegate,
     func setPlayersList(players: [Player]) {
         self.players = players
         for (index, player) in self.players.enumerated() {
-            loggingPrint("Player \(player.playerName) with position \(index)")
+            loggingPrint("Player \(String(describing: player.playerName)) with position \(index)")
         }
         playersListTableView.reloadData()
     }
@@ -166,19 +196,6 @@ class PlayersEditorViewController: BaseViewController, UITableViewDelegate,
         warningAlert.addAction(cancelAction)
         present(warningAlert, animated: true, completion: nil)
     }
-    
-    @IBAction func onAddPlayerClick(_ sender: Any) {
-        showAddNewPlayerAlertDialog()
-    }
-    
-    @IBAction func onStartGameClick(_ sender: Any) {
-        presenter?.clearGameSteps()
-        presenter?.checkIsEnoughPlayers()
-    }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-    }
 
     func onPlayerStatus(position: Int, playing: Bool) {
         let playerId = players[position].playerId
@@ -186,27 +203,9 @@ class PlayersEditorViewController: BaseViewController, UITableViewDelegate,
         presenter?.markPlayerAsPlaying(withObjectId: playerId, isPlaying: playing)
     }
     
-    override func viewDidDisappear(_ animated: Bool) {
-        presenter?.detachView()
-    }
-
-    @IBAction func onChangePositionsCliick(_ sender: Any) {
-        if (!playersListTableView.isEditing) {
-            playersListTableView.setEditing(true, animated: true)
-            btnAddPlayer.isEnabled = false
-            btnStartGame.isEnabled = false
-
-        } else {
-            refreshPositions()
-            playersListTableView.setEditing(false, animated: true)
-            btnAddPlayer.isEnabled = true
-            btnStartGame.isEnabled = true
-        }
-    }
-    
     func refreshPositions() {
         for (index, player) in players.enumerated() {
-            loggingPrint("Player \(player.playerName) with position \(index)")
+            loggingPrint("Player \(String(describing: player.playerName)) with position \(index)")
             presenter?.updatesPosition(playerId: player.playerId, position: index)
         }
     }
