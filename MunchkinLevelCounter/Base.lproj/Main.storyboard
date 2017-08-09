@@ -296,11 +296,17 @@
                                 <action selector="onScoreTypeChanged:" destination="Xs3-F6-RTo" eventType="valueChanged" id="wJy-Pi-qME"/>
                             </connections>
                         </segmentedControl>
+                        <barButtonItem key="rightBarButtonItem" image="Share" id="zuH-Jj-ON7" userLabel="Share">
+                            <connections>
+                                <action selector="didTapShareButton:" destination="Xs3-F6-RTo" id="u60-RA-ojF"/>
+                            </connections>
+                        </barButtonItem>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="string" keyPath="localizedText" value="title.analytics"/>
                         </userDefinedRuntimeAttributes>
                     </navigationItem>
                     <connections>
+                        <outlet property="btnLeftShare" destination="zuH-Jj-ON7" id="lG6-G8-Q56"/>
                         <outlet property="chartViewController" destination="zn7-ui-4Y1" id="eKB-Gk-0kz"/>
                         <outlet property="scoreTypeChanger" destination="5Py-mq-ylf" id="Kgx-3E-a3L"/>
                     </connections>
@@ -582,5 +588,6 @@
         <image name="ArrowUp" width="48" height="48"/>
         <image name="Mnchknbackground" width="341" height="256"/>
         <image name="Reorder" width="25" height="25"/>
+        <image name="Share" width="25" height="25"/>
     </resources>
 </document>
