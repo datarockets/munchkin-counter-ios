@@ -28,7 +28,6 @@ class Player: Hashable {
     }
     
 }
-
-func ==(lhs: Player, rhs: Player) -> Bool {
+func == (lhs: Player, rhs: Player) -> Bool {
     return lhs.playerId == rhs.playerId
 }

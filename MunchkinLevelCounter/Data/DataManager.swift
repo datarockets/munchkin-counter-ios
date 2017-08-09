@@ -16,8 +16,7 @@ class DataManager {
     private let mDatabaseHelper: DatabaseHelper
     private let mPreferencesHelper: PreferencesHelper
     
-    init(databaseHelper: DatabaseHelper,
-         preferencesHelper: PreferencesHelper) {
+    init(databaseHelper: DatabaseHelper, preferencesHelper: PreferencesHelper) {
         mDatabaseHelper = databaseHelper
         mPreferencesHelper = preferencesHelper
     }
@@ -82,9 +81,9 @@ class DataManager {
             let gameSteps = self.mDatabaseHelper.getGameSteps()
             var playerGameSteps = [Player: [GameStep]]()
             
-            playersList.subscribe(onNext: { player in
+            _ = playersList.subscribe(onNext: { player in
                 var playerSteps = [GameStep]()
-                gameSteps.subscribe(onNext: { step in
+                _ = gameSteps.subscribe(onNext: { step in
                     if step.playerId == player.playerId {
                         playerSteps.append(step)
                     }
@@ -96,7 +95,7 @@ class DataManager {
             var playerColors = [UIColor]()
             
             playerGameSteps.keys.forEach { player in
-                print("\(player.playerName)")
+                print("\(String(describing: player.playerName))")
                 let color = UIColor.colorHash(hexString: player.playerName)
                 playerColors.append(color)
             }

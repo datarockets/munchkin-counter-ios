@@ -70,7 +70,7 @@ class DashboardViewController: BaseViewController, UITableViewDelegate, UITableV
     
     @IBAction func onNextPlayerClick(_ sender: Any) {
         var selectedIndex = playingPlayersTableView.indexPathForSelectedRow?.row
-        loggingPrint("onNextPlayerClick selected index \(selectedIndex)")
+        loggingPrint("onNextPlayerClick selected index \(String(describing: selectedIndex))")
         if (selectedIndex == playingPlayers.count - 1) {
             let indexPath = IndexPath(row: 0, section: 0)
             playingPlayersTableView.selectRow(at: indexPath, animated: true, scrollPosition: .bottom)

@@ -27,7 +27,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     public var container: Container = {
         let container = Container()
         
-        // Data
+        // MARK: Data
         
         container.register(UserDefaults.self) { _ in
             return UserDefaults()
@@ -50,7 +50,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 preferencesHelper: resolver.resolve(PreferencesHelper.self)!)
         }.inObjectScope(.container)
         
-        // Presenters
+        // MARK: Presenters
         
         container.register(PlayersEditorPresenter.self) { resolver in
             loggingPrint("Players Editor Presenter")
@@ -82,7 +82,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             return ChartsPresenter.init(dataManager: resolver.resolve(DataManager.self)!)
         }
         
-        // View
+        // MARK: View
         
         container.register(OnboardingViewController.self) { resolver in
             let controller = OnboardingViewController()
