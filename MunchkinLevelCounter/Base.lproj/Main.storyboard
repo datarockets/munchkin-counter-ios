@@ -145,42 +145,42 @@
                                         <rect key="frame" x="0.0" y="28" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ghI-cD-NSE" id="hZd-7j-Ho7">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.666666666666664"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Player Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aVi-EG-DEp">
-                                                    <rect key="frame" x="29" y="11" width="224" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <rect key="frame" x="15" y="11" width="320" height="21"/>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OPw-fX-tRx">
-                                                    <rect key="frame" x="297" y="11" width="42" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="42" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9zx-RX-NpD">
+                                                    <rect key="frame" x="375" y="11" width="24" height="21"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="42" id="eVM-b1-YDN"/>
+                                                        <constraint firstAttribute="width" constant="24" id="AlH-VT-VQq"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9zx-RX-NpD">
-                                                    <rect key="frame" x="347" y="11" width="42" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="42" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OPw-fX-tRx">
+                                                    <rect key="frame" x="343" y="11" width="24" height="21"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="42" id="h0M-E2-NRE"/>
+                                                        <constraint firstAttribute="width" constant="24" id="OYX-0A-D7v"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="OPw-fX-tRx" firstAttribute="leading" secondItem="aVi-EG-DEp" secondAttribute="trailing" constant="44" id="INq-5v-9dd"/>
-                                                <constraint firstItem="aVi-EG-DEp" firstAttribute="leading" secondItem="hZd-7j-Ho7" secondAttribute="leadingMargin" constant="21" id="P0k-YU-8G2"/>
-                                                <constraint firstItem="aVi-EG-DEp" firstAttribute="baseline" secondItem="OPw-fX-tRx" secondAttribute="baseline" id="PEU-w0-2HP"/>
-                                                <constraint firstItem="OPw-fX-tRx" firstAttribute="baseline" secondItem="9zx-RX-NpD" secondAttribute="baseline" id="Qmw-n9-Tkf"/>
-                                                <constraint firstItem="aVi-EG-DEp" firstAttribute="centerY" secondItem="hZd-7j-Ho7" secondAttribute="centerY" id="Tug-n8-6ER"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="9zx-RX-NpD" secondAttribute="trailing" constant="17" id="n7j-6K-vGQ"/>
-                                                <constraint firstItem="9zx-RX-NpD" firstAttribute="leading" secondItem="OPw-fX-tRx" secondAttribute="trailing" constant="8" symbolic="YES" id="zH9-aB-u7x"/>
+                                                <constraint firstItem="9zx-RX-NpD" firstAttribute="centerY" secondItem="hZd-7j-Ho7" secondAttribute="centerY" id="G2t-OD-zmT"/>
+                                                <constraint firstItem="aVi-EG-DEp" firstAttribute="leading" secondItem="hZd-7j-Ho7" secondAttribute="leadingMargin" constant="7" id="SYm-31-FLa"/>
+                                                <constraint firstItem="OPw-fX-tRx" firstAttribute="centerY" secondItem="hZd-7j-Ho7" secondAttribute="centerY" id="WLu-My-X2u"/>
+                                                <constraint firstItem="aVi-EG-DEp" firstAttribute="centerY" secondItem="hZd-7j-Ho7" secondAttribute="centerY" id="WP0-AT-GyX"/>
+                                                <constraint firstItem="OPw-fX-tRx" firstAttribute="leading" secondItem="aVi-EG-DEp" secondAttribute="trailing" constant="8" id="gdq-z8-7t5"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="9zx-RX-NpD" secondAttribute="trailing" constant="7" id="mqU-1Z-UmB"/>
+                                                <constraint firstItem="9zx-RX-NpD" firstAttribute="leading" secondItem="OPw-fX-tRx" secondAttribute="trailing" constant="8" id="qr3-ds-mqs"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <inset key="separatorInset" minX="15" minY="0.0" maxX="0.0" maxY="0.0"/>
@@ -194,10 +194,10 @@
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d3G-Lq-58f">
                                 <rect key="frame" x="0.0" y="636" width="414" height="56"/>
-                                <color key="backgroundColor" red="0.23137254901960785" green="0.086274509803921567" blue="0.023529411764705882" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="backgroundColor" red="0.96862745098039216" green="0.84313725490196079" blue="0.45490196078431372" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
                                 <state key="normal" title="Next Player">
-                                    <color key="titleColor" red="0.96862745098039216" green="0.84313725490196079" blue="0.45490196078431372" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="localizedTitle" value="button.next_player"/>
@@ -251,7 +251,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kYd-hO-yhy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1025" y="-779"/>
+            <point key="canvasLocation" x="1024.6376811594205" y="-779.34782608695662"/>
         </scene>
         <!--Game Result-->
         <scene sceneID="FjL-DN-XbE">
