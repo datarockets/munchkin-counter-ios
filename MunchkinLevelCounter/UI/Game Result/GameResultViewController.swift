@@ -21,6 +21,8 @@ class GameResultViewController: BaseViewController, GameResultView {
     @IBOutlet weak private var scoreTypeChanger: UISegmentedControl!
     @IBOutlet weak private var chartViewController: ChartsViewController!
     
+    // MARK: View Lifecycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         presenter?.attachView(self)
@@ -29,18 +31,18 @@ class GameResultViewController: BaseViewController, GameResultView {
         self.navigationController?.viewControllers.remove(at: 1)
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-    }
-    
     override func viewWillDisappear(_ animated: Bool) {
         presenter?.detachView()
     }
+    
+    // MARK: User Interaction
     
     @IBAction func onScoreTypeChanged(_ sender: UISegmentedControl) {
         let selectedIndex = scoreTypeChanger.selectedSegmentIndex
         presenter?.chooseScoreType(scoreType: selectedIndex)
     }
+    
+    // MARK: Other
     
     func loadChartViewController(scoreType: ScoreType) {
         chartViewController?.loadChartData(chartType: scoreType)

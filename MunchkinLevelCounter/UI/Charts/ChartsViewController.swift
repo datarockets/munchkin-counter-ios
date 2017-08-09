@@ -15,10 +15,12 @@ class ChartsViewController: UIViewController, ChartsView, UITableViewDelegate, U
 
     var playedPlayers: [Player] = []
     
+    var currentScoreType: ScoreType?
+    
     @IBOutlet weak var lineChartView: LineChartView!
     @IBOutlet weak var playedPlayersTableView: UITableView!
     
-    var currentScoreType: ScoreType?
+    // MARK: View Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,19 +29,20 @@ class ChartsViewController: UIViewController, ChartsView, UITableViewDelegate, U
         presenter?.attachView(self)
     }
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return playedPlayers.count
+    override func viewDidDisappear(_ animated: Bool) {
+        presenter?.detachView()
     }
     
-    func loadChartData(chartType: ScoreType) {
-        currentScoreType = chartType
-        presenter?.loadChartData(type: chartType)
-        presenter?.loadPlayers(sortType: chartType)
+    // MARK: UITableViewDelegate
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return playedPlayers.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = playedPlayersTableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as? ChartsTableViewCell else { fatalError("Dequeuing reusable cell failed") }
         let player = playedPlayers[indexPath.row]
+        
         cell.ivPlayerImage?.setImageWith(player.playerName, color: UIColor.colorHash(hexString: player.playerName), circular: true)
         cell.tvPlayerName.text = player.playerName
         
@@ -55,6 +58,14 @@ class ChartsViewController: UIViewController, ChartsView, UITableViewDelegate, U
         return cell
     }
     
+    // MARK: Other
+    
+    func loadChartData(chartType: ScoreType) {
+        currentScoreType = chartType
+        presenter?.loadChartData(type: chartType)
+        presenter?.loadPlayers(sortType: chartType)
+    }
+
     func showPlayersList(players: [Player]) {
         playedPlayers = players
         playedPlayersTableView.reloadData()
@@ -69,12 +80,4 @@ class ChartsViewController: UIViewController, ChartsView, UITableViewDelegate, U
         lineChartView.invalidateIntrinsicContentSize()
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-    }
-    
-    override func viewDidDisappear(_ animated: Bool) {
-        presenter?.detachView()
-    }
-
 }
