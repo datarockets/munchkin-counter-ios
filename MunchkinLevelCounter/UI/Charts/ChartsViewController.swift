@@ -20,8 +20,6 @@ class ChartsViewController: UIViewController, ChartsView, UITableViewDelegate, U
     @IBOutlet weak var lineChartView: LineChartView!
     @IBOutlet weak var playedPlayersTableView: UITableView!
     
-    // MARK: View Lifecycle
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         playedPlayersTableView.dataSource = self
@@ -32,8 +30,6 @@ class ChartsViewController: UIViewController, ChartsView, UITableViewDelegate, U
     override func viewDidDisappear(_ animated: Bool) {
         presenter?.detachView()
     }
-    
-    // MARK: UITableViewDelegate
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return playedPlayers.count
@@ -57,9 +53,7 @@ class ChartsViewController: UIViewController, ChartsView, UITableViewDelegate, U
         
         return cell
     }
-    
-    // MARK: Other
-    
+        
     func loadChartData(chartType: ScoreType) {
         currentScoreType = chartType
         presenter?.loadChartData(type: chartType)

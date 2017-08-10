@@ -20,9 +20,7 @@ class PlayersEditorViewController: BaseViewController, UITableViewDelegate, UITa
     @IBOutlet weak var btnLeftStart: UIBarButtonItem!
     @IBOutlet weak var btnRightAdd: UIBarButtonItem!
     @IBOutlet weak var btnRightReorder: UIBarButtonItem!
-    
-    // MARK: View Lifecycle
-    
+        
     override func viewDidLoad() {
         super.viewDidLoad()
         playersListTableView.delegate = self
@@ -101,8 +99,6 @@ class PlayersEditorViewController: BaseViewController, UITableViewDelegate, UITa
         players.insert(playerToMove, at: toIndexPath.row)
     }
     
-    // MARK: User Interactions
-    
     @IBAction func didTapStartButton(_ sender: Any) {
         presenter?.clearGameSteps()
         presenter?.checkIsEnoughPlayers()
@@ -124,8 +120,6 @@ class PlayersEditorViewController: BaseViewController, UITableViewDelegate, UITa
             btnRightAdd.isEnabled = true
         }
     }
-    
-    // MARK: Additional Helpers
     
     func addPlayerToList(player: Player) {
         players.append(player)

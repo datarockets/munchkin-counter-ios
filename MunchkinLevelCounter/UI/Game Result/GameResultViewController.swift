@@ -21,9 +21,7 @@ class GameResultViewController: BaseViewController, GameResultView {
     @IBOutlet weak private var scoreTypeChanger: UISegmentedControl!
     @IBOutlet weak private var chartViewController: ChartsViewController!
     @IBOutlet weak private var btnLeftShare: UIBarButtonItem!
-    
-    // MARK: View Lifecycle
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         presenter?.attachView(self)
@@ -35,8 +33,6 @@ class GameResultViewController: BaseViewController, GameResultView {
     override func viewWillDisappear(_ animated: Bool) {
         presenter?.detachView()
     }
-    
-    // MARK: User Interaction
     
     @IBAction func onScoreTypeChanged(_ sender: UISegmentedControl) {
         let selectedIndex = scoreTypeChanger.selectedSegmentIndex
@@ -59,9 +55,7 @@ class GameResultViewController: BaseViewController, GameResultView {
         
         self.present(activityViewController, animated: true, completion: nil)
     }
-    
-    // MARK: Other
-    
+     
     func loadChartViewController(scoreType: ScoreType) {
         chartViewController?.loadChartData(chartType: scoreType)
     }
