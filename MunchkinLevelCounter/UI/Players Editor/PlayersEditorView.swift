@@ -14,5 +14,5 @@ protocol PlayersEditorView: BaseView {
     func showAddNewPlayerAlertDialog()
     func launchDashboard()
     func showStartContinueDialog()
-    func showWarning()
+    func showNotEnoughPlayersWarning()
 }

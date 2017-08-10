@@ -13,10 +13,12 @@ protocol OnPlayerStatusChanged {
 }
 
 class PlayersEditorTableViewCell: UITableViewCell {
+    
+    var playerStatus: OnPlayerStatusChanged?
+    
     @IBOutlet weak var ivPlayerImage: UIImageView?
     @IBOutlet weak var tvPlayerName: UILabel!
     @IBOutlet weak var swIsPlaying: UISwitch!
-    var playerStatus: OnPlayerStatusChanged?
     
     @IBAction func onPlayingStatusChanged(_ sender: Any) {
         if swIsPlaying.isOn {
@@ -27,3 +29,4 @@ class PlayersEditorTableViewCell: UITableViewCell {
     }
     
 }
+

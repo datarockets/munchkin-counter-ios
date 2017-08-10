@@ -13,47 +13,47 @@ import CoreData
 class PlayersEditorPresenter: Presenter {
     typealias BaseView = PlayersEditorView
     
-    private let mDataManager: DataManager
-    private var mPlayersEditorView: PlayersEditorView?
-    private var mSubscription: Disposable?
+    private let dataManager: DataManager
+    private var playersEditorView: PlayersEditorView?
+    private var disposable: Disposable?
     
     init(dataManager: DataManager) {
-        mDataManager = dataManager
+        self.dataManager = dataManager
     }
     
     func attachView(_ view: PlayersEditorView) {
         loggingPrint("attaching View")
-        mPlayersEditorView = view
+        playersEditorView = view
     }
     
     func checkIsEnoughPlayers() {
         loggingPrint("checkIsEnoughPlayers")
-        mSubscription = mDataManager.getPlayingPlayers()
+        disposable = dataManager.getPlayingPlayers()
             .subscribeOn(ConcurrentDispatchQueueScheduler(qos: .background))
             .observeOn(MainScheduler.instance)
             .subscribe(onNext: { players in
                 if players.count >= 2 {
                     loggingPrint("enoughPlayers")
-                    self.mPlayersEditorView?.launchDashboard()
+                    self.playersEditorView?.launchDashboard()
                 } else {
                     loggingPrint("not enough players")
-                    self.mPlayersEditorView?.showWarning()
+                    self.playersEditorView?.showNotEnoughPlayersWarning()
                 }
             })
     }
     
     func addPlayer(playerName: String, position: Int) {
-        mSubscription = mDataManager
+        disposable = dataManager
             .addPlayer(playerName: playerName, position: position)
             .subscribeOn(ConcurrentDispatchQueueScheduler(qos: .background))
             .observeOn(MainScheduler.instance)
             .subscribe(onNext: { player in
-                self.mPlayersEditorView?.addPlayerToList(player: player)
+                self.playersEditorView?.addPlayerToList(player: player)
             })
     }
     
     func deletePlayer(playerId: String) {
-        mSubscription = mDataManager
+        disposable = dataManager
             .deletePlayer(playerId: playerId)
             .subscribeOn(ConcurrentDispatchQueueScheduler(qos: .background))
             .observeOn(MainScheduler.instance)
@@ -61,17 +61,17 @@ class PlayersEditorPresenter: Presenter {
     }
     
     func getPlayers() {
-        mSubscription = mDataManager
+        disposable = dataManager
             .getPlayersByPosition()
             .subscribeOn(ConcurrentDispatchQueueScheduler(qos: .background))
             .observeOn(MainScheduler.instance)
             .subscribe(onNext: { players in
-                self.mPlayersEditorView?.setPlayersList(players: players)
+                self.playersEditorView?.setPlayersList(players: players)
             })
     }
     
     func markPlayerAsPlaying(withObjectId id: String, isPlaying: Bool) {
-        mSubscription = mDataManager
+        disposable = dataManager
             .markPlayerAsPlaying(playerId: id, isPlaying: isPlaying)
             .subscribeOn(ConcurrentDispatchQueueScheduler(qos: .background))
             .observeOn(MainScheduler.instance)
@@ -79,7 +79,7 @@ class PlayersEditorPresenter: Presenter {
     }
     
     func clearGameSteps() {
-        mSubscription = mDataManager
+        disposable = dataManager
             .clearGameSteps()
             .subscribeOn(ConcurrentDispatchQueueScheduler(qos: .background))
             .observeOn(MainScheduler.instance)
@@ -87,7 +87,7 @@ class PlayersEditorPresenter: Presenter {
     }
     
     func updatesPosition(playerId: String, position: Int) {
-        mSubscription = mDataManager
+        disposable = dataManager
             .updatePlayerPosition(playerId: playerId, position: position)
             .subscribeOn(ConcurrentDispatchQueueScheduler(qos: .background))
             .observeOn(MainScheduler.instance)
@@ -95,23 +95,23 @@ class PlayersEditorPresenter: Presenter {
     }
     
     func setGameStarted() {
-        mDataManager.getPreferencesHelper().gameStarted = true
+        dataManager.getPreferencesHelper().gameStarted = true
     }
     
     func setGameFinished() {
-        mDataManager.getPreferencesHelper().gameStarted = false
+        dataManager.getPreferencesHelper().gameStarted = false
     }
     
     func checkIsGameStarted() {
-        if mDataManager.getPreferencesHelper().gameStarted {
-            mPlayersEditorView?.showStartContinueDialog()
+        if dataManager.getPreferencesHelper().gameStarted {
+            playersEditorView?.showStartContinueDialog()
         }
     }
     
     func detachView() {
         loggingPrint("Detaching of view")
-        mPlayersEditorView = nil
-        mSubscription?.dispose()
+        playersEditorView = nil
+        disposable?.dispose()
     }
     
 }
