@@ -29,4 +29,3 @@ class PlayersEditorTableViewCell: UITableViewCell {
     }
     
 }
-

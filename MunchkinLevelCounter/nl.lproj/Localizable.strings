@@ -66,6 +66,9 @@
 /* */
 "button.delete" = "Verwijderen";
 
+/* */
+"button.edit" = "Bewerk";
+
 /*  */
 "dialog.player_actions.edit_player" = "Speler Bewerken";
 
@@ -95,6 +98,9 @@
 
 /*  */
 "progress_dialog.stats_loader.message" = "Wacht terwijl we je statistieken laden";
+
+/* */
+"text.not_enough_players.title" = "Niet genoeg spelers";
 
 /*  */
 "text.player_add_warning" = "Voeg alsjeblieft nog twee speler toe en druk op Start";

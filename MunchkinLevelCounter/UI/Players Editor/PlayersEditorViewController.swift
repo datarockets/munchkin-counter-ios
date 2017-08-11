@@ -71,7 +71,8 @@ class PlayersEditorViewController: BaseViewController {
     
     fileprivate func showAddNewPlayerDialog() {
         let addNewPlayerAlert = UIAlertController(title: "button.add_new_player".localized,
-                                                  message: "text.player_add_warning".localized, preferredStyle: .alert)
+                                                  message: nil,
+                                                  preferredStyle: .alert)
         addNewPlayerAlert.addTextField { textField in
             textField.placeholder = "text.player_name".localized
         }
@@ -82,12 +83,35 @@ class PlayersEditorViewController: BaseViewController {
                                                 self.presenter?.addPlayer(playerName: enteredText!,
                                                                           position: playersCount)
         }
-        let cancelAction = UIAlertAction(title: "button.no".localized,
+        let cancelAction = UIAlertAction(title: "button.cancel".localized,
                                          style: .cancel,
                                          handler: nil)
         addNewPlayerAlert.addAction(addPlayerAction)
         addNewPlayerAlert.addAction(cancelAction)
         present(addNewPlayerAlert, animated: true, completion: nil)
+    }
+    
+    fileprivate func showEditPlayerDialog(indexPath: IndexPath) {
+        let editPlayerAlert = UIAlertController(title: "dialog.player_actions.edit_player".localized,
+                                                message: nil,
+                                                preferredStyle: .alert)
+        editPlayerAlert.addTextField { textField in
+            textField.text = self.players[indexPath.row].playerName
+        }
+        let confirmEditPlayerAction = UIAlertAction(title: "button.edit".localized,
+                                                    style: .default) { _ in
+                                                        let player = self.players[indexPath.row]
+                                                        player.playerName = ((editPlayerAlert.textFields?.first)! as UITextField).text
+                                                        self.presenter?.updatePlayer(player: player)
+        }
+        let cancelEditPlayerAction = UIAlertAction(title: "button.cancel".localized,
+                                                   style: .cancel) { _ in
+                                                    self.playersListTableView.setEditing(false, animated: true)
+        }
+
+        editPlayerAlert.addAction(confirmEditPlayerAction)
+        editPlayerAlert.addAction(cancelEditPlayerAction)
+        present(editPlayerAlert, animated: true, completion: nil)
     }
     
     fileprivate func showStartContinueGameDialog() {
@@ -109,7 +133,7 @@ class PlayersEditorViewController: BaseViewController {
     }
     
     fileprivate func showNotEnoughPlayersAlert() {
-        let warningAlert = UIAlertController(title: "title.players_editor".localized,
+        let warningAlert = UIAlertController(title: "text.not_enough_players.title".localized,
                                              message: "text.player_add_warning".localized,
                                              preferredStyle: .alert)
         let cancelAction = UIAlertAction(title: "OK",
@@ -160,6 +184,9 @@ extension PlayersEditorViewController: PlayersEditorView {
     
     func addPlayerToList(player: Player) {
         players.append(player)
+    }
+    
+    func updatePlayerList() {
         playersListTableView.reloadData()
     }
     
@@ -209,18 +236,21 @@ extension PlayersEditorViewController : UITableViewDelegate, UITableViewDataSour
         return cell
     }
     
-    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        switch editingStyle {
-        case .delete:
-            showPlayerDeleteAlert(indexPath: indexPath)
-            break
-        default:
-            break
-        }
-    }
-    
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         return true
+    }
+    
+    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        let edit = UITableViewRowAction(style: .normal, title: "button.edit".localized) {_, _ in
+            self.showEditPlayerDialog(indexPath: indexPath)
+        }
+        edit.backgroundColor = Colors.green
+        let delete = UITableViewRowAction(style: .normal, title: "button.delete".localized) {_, _ in
+            self.showPlayerDeleteAlert(indexPath: indexPath)
+        }
+        delete.backgroundColor = Colors.red
+        
+        return [delete, edit]
     }
     
     func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCellEditingStyle {

@@ -35,6 +35,10 @@ class DataManager {
     
     }
     
+    func updatePlayer(player: Player) -> Observable<Player> {
+        return mDatabaseHelper.setPlayer(player: player)
+    }
+    
     func getPlayer(playerId: String) -> Observable<Player> {
         return mDatabaseHelper.getPlayer(playerId: playerId)
     }
@@ -55,7 +59,6 @@ class DataManager {
                 return mDatabaseHelper.getPlayedPlayersByStrength().toArray()
             case .totalScore:
                 return mDatabaseHelper.getPlayedPlayersByTotal().toArray()
-
         }
     }
     

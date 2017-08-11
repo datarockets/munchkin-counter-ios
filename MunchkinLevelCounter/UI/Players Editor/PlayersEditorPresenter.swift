@@ -49,6 +49,17 @@ class PlayersEditorPresenter: Presenter {
             .observeOn(MainScheduler.instance)
             .subscribe(onNext: { player in
                 self.playersEditorView?.addPlayerToList(player: player)
+                self.playersEditorView?.updatePlayerList()
+            })
+    }
+    
+    func updatePlayer(player: Player) {
+        disposable = dataManager
+        .updatePlayer(player: player)
+            .subscribeOn(ConcurrentDispatchQueueScheduler(qos: .background))
+            .observeOn(MainScheduler.instance)
+            .subscribe(onNext: { _ in
+                self.playersEditorView?.updatePlayerList()
             })
     }
     

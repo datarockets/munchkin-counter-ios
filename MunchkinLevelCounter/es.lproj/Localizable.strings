@@ -36,6 +36,9 @@
 /* */
 "button.delete" = "Borrar";
 
+/* */
+"button.edit" = "Editar";
+
 /*  */
 "dialog.finish_game.message" = "¿Quieres terminar el juego?";
 
@@ -101,6 +104,9 @@
 
 /*  */
 "text.level" = "Nivel";
+
+/* */
+"text.not_enough_players.title" = "No hay suficientes jugadores";
 
 /*  */
 "text.player_add_warning" = "Por favor, agrega dos o más jugadores y presiona el ícono Inicio";

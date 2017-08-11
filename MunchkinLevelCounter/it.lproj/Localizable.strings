@@ -96,6 +96,9 @@
 /*  */
 "text.level" = "Livello";
 
+/* */
+"text.not_enough_players.title" = "Non abbastanza giocatori";
+
 /*  */
 "text.player_add_warning" = "Per favore, aggiungere due o più giocatori e premere l'icona di Avvio";
 
@@ -137,6 +140,9 @@
 
 /* */
 "button.delete" = "Elimina";
+
+/* */
+"button.edit" = "Modifica";
 
 /*  */
 "dialog.player_actions.delete_player" = "Eliminare giocatore";

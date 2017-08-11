@@ -66,6 +66,9 @@
 /* */
 "button.delete" = "Delete";
 
+/* */
+"button.edit" = "Edit";
+
 /*  */
 "dialog.player_actions.edit_player" = "Edit Player";
 
@@ -96,8 +99,11 @@
 /*  */
 "progress_dialog.stats_loader.message" = "Wait while we are loading your stats";
 
+/* */
+"text.not_enough_players.title" = "Not enough players";
+
 /*  */
-"text.player_add_warning" = "Please, add two or more players and press Start icon";
+"text.player_add_warning" = "Please, add two or more players and press Start";
 
 /*  */
 "text.player_name" = "Player Name";

@@ -55,6 +55,9 @@
 /* */
 "button.delete" = "Удалить";
 
+/* */
+"button.edit" = "Редактировать";
+
 /*  */
 "dialog.finish_game.title" = "Завершить игру";
 
@@ -78,6 +81,9 @@
 
 /*  */
 "progress_dialog.stats_loader.message" = "Подождите, пока мы загрузим графики";
+
+/* */
+"text.not_enough_players.title" = "Недостаточно игроков";
 
 /*  */
 "text.player_add_warning" = "Пожалуйста, добавьте двух и более игроков и нажмите на Старт";
