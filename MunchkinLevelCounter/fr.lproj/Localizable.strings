@@ -27,6 +27,12 @@
 /*  */
 "button.yes" = "Oui";
 
+/* */
+"button.cancel" = "Annuler";
+
+/* */
+"button.delete" = "Effacer";
+
 /*  */
 "button.start" = "Commencer";
 
@@ -58,7 +64,7 @@
 "dialog.finish_game.message" = "Voulez-vous terminer le jeu?";
 
 /*  */
-"dialog.player_delete.message" = "Voulez-vous supprimer ce joueur?";
+"dialog.player_delete.message" = "Êtes-vous sûr de vouloir supprimer définitivement le joueur %@?";
 
 /*  */
 "dialog.player_delete.title" = "Supprimer un joueur";

@@ -37,7 +37,7 @@
 "dialog.finish_game.title" = "Fine del gioco";
 
 /*  */
-"dialog.player_delete.message" = "Vuoi eliminare questo giocatore?";
+"dialog.player_delete.message" = "Sei sicuro di voler eliminare definitivamente il giocatore %@?";
 
 /*  */
 "dialog.player_delete.title" = "Elimina un giocatore";
@@ -131,6 +131,12 @@
 
 /*  */
 "button.next_player" = "Prossimo giocatore";
+
+/* */
+"button.cancel" = "Annulla";
+
+/* */
+"button.delete" = "Elimina";
 
 /*  */
 "dialog.player_actions.delete_player" = "Eliminare giocatore";

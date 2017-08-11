@@ -49,6 +49,12 @@
 /*  */
 "button.continue" = "Продолжить";
 
+/* */
+"button.cancel" = "Отмена";
+
+/* */
+"button.delete" = "Удалить";
+
 /*  */
 "dialog.finish_game.title" = "Завершить игру";
 
@@ -59,7 +65,7 @@
 "dialog.player_delete.title" = "Удалить игрока";
 
 /*  */
-"dialog.player_delete.message" = "Вы хотите удалить этого игрока?";
+"dialog.player_delete.message" = "Вы уверены, что хотите удалить игрока %@?";
 
 /*  */
 "dialog.start_continue_game.title" = "Продолжить или начать заново?";

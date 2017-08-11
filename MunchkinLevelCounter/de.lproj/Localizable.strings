@@ -48,6 +48,12 @@
 /*  */
 "button.continue" = "Weiter";
 
+/* */
+"button.cancel" = "Stornieren";
+
+/* */
+"button.delete" = "Löschen";
+
 /*  */
 "dialog.finish_game.title" = "Spiel beenden";
 
@@ -58,7 +64,7 @@
 "dialog.player_delete.title" = "Spieler Löschen";
 
 /*  */
-"dialog.player_delete.message" = "Möchtest du diesen Spieler wirklich löschen?";
+"dialog.player_delete.message" = "Bist du sichen, dass du den Spieler %@ endgültig löschen willst?";
 
 /*  */
 "dialog.start_continue_game.title" = "Fortsetzen oder starten?";

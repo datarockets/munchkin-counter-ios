@@ -60,6 +60,12 @@
 /*  */
 "button.continue" = "Volgende";
 
+/* */
+"button.cancel" = "Annuleer";
+
+/* */
+"button.delete" = "Verwijderen";
+
 /*  */
 "dialog.player_actions.edit_player" = "Speler Bewerken";
 
@@ -76,7 +82,7 @@
 "dialog.player_delete.title" = "Verwijder een speler";
 
 /*  */
-"dialog.player_delete.message" = "Wil je deze speler verwijderen?";
+"dialog.player_delete.message" = "Weet u zeker dat u de speler %@ permanent wilt verwijderen?";
 
 /*  */
 "dialog.start_continue_game.title" = "Verder of opnieuw?";

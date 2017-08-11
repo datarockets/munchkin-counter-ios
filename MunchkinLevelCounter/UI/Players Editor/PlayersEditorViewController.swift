@@ -120,15 +120,18 @@ class PlayersEditorViewController: BaseViewController {
     }
     
     fileprivate func showPlayerDeleteAlert(indexPath: IndexPath) {
-        let deleteAlert = UIAlertController(title: "Delete Player",
-                                            message: "Are you sure you want permanently delete this player?",
+        let deleteAlert = UIAlertController(title: "dialog.player_delete.title".localized,
+                                            message: String(format: "dialog.player_delete.message".localized,
+                                                            players[indexPath.row].playerName ?? ""),
                                             preferredStyle: .actionSheet)
-        let cancelAction = UIAlertAction(title: "Cancel",
-                                         style: .cancel,
-                                         handler: {_ in self.playersListTableView.setEditing(false, animated: true)})
-        let deleteAction = UIAlertAction(title: "Delete",
-                                         style: .destructive,
-                                         handler: {_ in self.deletePlayer(indexPath: indexPath)})
+        let cancelAction = UIAlertAction(title: "button.cancel".localized,
+                                         style: .cancel) { _ in
+                                            self.playersListTableView.setEditing(false, animated: true)
+        }
+        let deleteAction = UIAlertAction(title: "button.delete".localized,
+                                         style: .destructive) {_ in
+                                            self.deletePlayer(indexPath: indexPath)
+        }
         deleteAlert.addAction(cancelAction)
         deleteAlert.addAction(deleteAction)
         present(deleteAlert, animated: true, completion: nil)
