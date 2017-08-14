@@ -38,12 +38,23 @@ class GameResultViewController: BaseViewController {
     
     // MARK: Actions
     
-    @IBAction func onScoreTypeChanged(_ sender: UISegmentedControl) {
-        let selectedIndex = scoreTypeChanger.selectedSegmentIndex
-        presenter?.chooseScoreType(scoreType: selectedIndex)
+    @IBAction func didChangeScoreType(_ sender: UISegmentedControl) {
+        presenter?.chooseScoreType(scoreType: scoreTypeChanger.selectedSegmentIndex)
     }
     
     @IBAction func didTapShareButton(_ sender: Any) {
+        presenter?.shareApp()
+    }
+    
+}
+
+extension GameResultViewController: GameResultView {
+
+    func loadChartViewController(scoreType: ScoreType) {
+        self.chartViewController?.loadChartData(chartType: scoreType)
+    }
+    
+    func shareApp() {
         let itemsToShare = [ "Check out Level Counter for Munchkin!" ]    // TODO: Add link to AppStore later
         
         let activityViewController = UIActivityViewController(activityItems: itemsToShare, applicationActivities: nil)
@@ -59,13 +70,4 @@ class GameResultViewController: BaseViewController {
         
         self.present(activityViewController, animated: true, completion: nil)
     }
-    
-}
-
-extension GameResultViewController: GameResultView {
-
-    func loadChartViewController(scoreType: ScoreType) {
-        self.chartViewController?.loadChartData(chartType: scoreType)
-    }
-    
 }

@@ -39,6 +39,10 @@ class DashboardPresenter: Presenter {
         dashboardView?.rollTheDice()
     }
     
+    func nextPlayer() {
+        dashboardView?.nextPlayer()
+    }
+    
     func finishGameWithConfirmation() {
         dashboardView?.showFinishGameConfirmationDialog()
     }

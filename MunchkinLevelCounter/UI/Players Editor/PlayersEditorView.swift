@@ -17,5 +17,6 @@ protocol PlayersEditorView: BaseView {
     func launchDashboard()
     func showStartContinueDialog()
     func showNotEnoughPlayersWarning()
+    func toggleReorder()
     
 }

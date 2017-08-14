@@ -40,19 +40,7 @@ class DashboardViewController: BaseViewController {
     // MARK: Actions
     
     @IBAction func didTapNextPlayerButton(_ sender: Any) {
-        var selectedIndex = playingPlayersTableView.indexPathForSelectedRow?.row
-        loggingPrint("onNextPlayerClick selected index \(String(describing: selectedIndex))")
-        if (selectedIndex == playingPlayers.count - 1) {
-            let indexPath = IndexPath(row: 0, section: 0)
-            playingPlayersTableView.selectRow(at: indexPath, animated: true, scrollPosition: .bottom)
-            tableView(playingPlayersTableView, didSelectRowAt: indexPath)
-            selectedIndex = 0
-        } else {
-            selectedIndex! += 1
-            let indexPath = IndexPath(row: selectedIndex!, section: 0)
-            playingPlayersTableView.selectRow(at: indexPath, animated: true, scrollPosition: .bottom)
-            tableView(playingPlayersTableView, didSelectRowAt: indexPath)
-        }
+        presenter?.nextPlayer()
     }
     
     @IBAction func didTapFinishGameButton(_ sender: Any) {
@@ -93,6 +81,22 @@ extension DashboardViewController: DashboardView {
     
     func rollTheDice() {
         self.showRollTheDiceDialog()
+    }
+    
+    func nextPlayer() {
+        var selectedIndex = playingPlayersTableView.indexPathForSelectedRow?.row
+        loggingPrint("onNextPlayerClick selected index \(String(describing: selectedIndex))")
+        if (selectedIndex == playingPlayers.count - 1) {
+            let indexPath = IndexPath(row: 0, section: 0)
+            playingPlayersTableView.selectRow(at: indexPath, animated: true, scrollPosition: .bottom)
+            tableView(playingPlayersTableView, didSelectRowAt: indexPath)
+            selectedIndex = 0
+        } else {
+            selectedIndex! += 1
+            let indexPath = IndexPath(row: selectedIndex!, section: 0)
+            playingPlayersTableView.selectRow(at: indexPath, animated: true, scrollPosition: .bottom)
+            tableView(playingPlayersTableView, didSelectRowAt: indexPath)
+        }
     }
     
     func showFinishGameConfirmationDialog() {

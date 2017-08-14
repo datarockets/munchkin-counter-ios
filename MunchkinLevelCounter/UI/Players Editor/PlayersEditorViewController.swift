@@ -51,20 +51,11 @@ class PlayersEditorViewController: BaseViewController {
     }
     
     @IBAction func didTapAddButton(_ sender: Any) {
-        showAddNewPlayerAlertDialog()
+        presenter?.addNewPlayer()
     }
     
     @IBAction func didTapReorderButton(_ sender: Any) {
-        if (!playersListTableView.isEditing) {
-            playersListTableView.setEditing(true, animated: true)
-            btnLeftStart.isEnabled = false
-            btnRightAdd.isEnabled = false
-        } else {
-            refreshPositions()
-            playersListTableView.setEditing(false, animated: true)
-            btnLeftStart.isEnabled = true
-            btnRightAdd.isEnabled = true
-        }
+        presenter?.toggleReorder()
     }
     
     // MARK: Helpers
@@ -88,6 +79,7 @@ class PlayersEditorViewController: BaseViewController {
                                          handler: nil)
         addNewPlayerAlert.addAction(addPlayerAction)
         addNewPlayerAlert.addAction(cancelAction)
+        
         present(addNewPlayerAlert, animated: true, completion: nil)
     }
     
@@ -108,9 +100,9 @@ class PlayersEditorViewController: BaseViewController {
                                                    style: .cancel) { _ in
                                                     self.playersListTableView.setEditing(false, animated: true)
         }
-
         editPlayerAlert.addAction(confirmEditPlayerAction)
         editPlayerAlert.addAction(cancelEditPlayerAction)
+        
         present(editPlayerAlert, animated: true, completion: nil)
     }
     
@@ -129,6 +121,7 @@ class PlayersEditorViewController: BaseViewController {
         }
         startContinueAlert.addAction(startNewGameAction)
         startContinueAlert.addAction(continueGameAction)
+        
         present(startContinueAlert, animated: true, completion: nil)
     }
     
@@ -140,6 +133,7 @@ class PlayersEditorViewController: BaseViewController {
                                          style: .default,
                                          handler: nil)
         warningAlert.addAction(cancelAction)
+        
         present(warningAlert, animated: true, completion: nil)
     }
     
@@ -158,6 +152,7 @@ class PlayersEditorViewController: BaseViewController {
         }
         deleteAlert.addAction(cancelAction)
         deleteAlert.addAction(deleteAction)
+        
         present(deleteAlert, animated: true, completion: nil)
     }
     
@@ -215,6 +210,19 @@ extension PlayersEditorViewController: PlayersEditorView {
     
     func showNotEnoughPlayersWarning() {
         showNotEnoughPlayersAlert()
+    }
+    
+    func toggleReorder() {
+        if (!playersListTableView.isEditing) {
+            playersListTableView.setEditing(true, animated: true)
+            btnLeftStart.isEnabled = false
+            btnRightAdd.isEnabled = false
+        } else {
+            refreshPositions()
+            playersListTableView.setEditing(false, animated: true)
+            btnLeftStart.isEnabled = true
+            btnRightAdd.isEnabled = true
+        }
     }
     
 }

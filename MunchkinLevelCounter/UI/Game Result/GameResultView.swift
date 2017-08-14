@@ -9,5 +9,6 @@
 protocol GameResultView: BaseView {
     
     func loadChartViewController(scoreType: ScoreType)
+    func shareApp()
     
 }

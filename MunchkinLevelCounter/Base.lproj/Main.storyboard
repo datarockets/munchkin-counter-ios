@@ -298,7 +298,7 @@
                                 <userDefinedRuntimeAttribute type="boolean" keyPath="localized" value="YES"/>
                             </userDefinedRuntimeAttributes>
                             <connections>
-                                <action selector="onScoreTypeChanged:" destination="Xs3-F6-RTo" eventType="valueChanged" id="wJy-Pi-qME"/>
+                                <action selector="didChangeScoreType:" destination="Xs3-F6-RTo" eventType="valueChanged" id="T4R-P0-Env"/>
                             </connections>
                         </segmentedControl>
                         <barButtonItem key="rightBarButtonItem" image="Share" id="zuH-Jj-ON7" userLabel="Share">

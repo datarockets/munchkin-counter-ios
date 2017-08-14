@@ -35,6 +35,10 @@ class GameResultPresenter: Presenter {
         }
     }
     
+    func shareApp() {
+        gameResultView?.shareApp()
+    }
+    
     func detachView() {
         gameResultView = nil
     }

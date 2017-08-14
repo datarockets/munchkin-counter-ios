@@ -27,6 +27,14 @@ class PlayersEditorPresenter: Presenter {
         playersEditorView = view
     }
     
+    func addNewPlayer() {
+        playersEditorView?.showAddNewPlayerAlertDialog()
+    }
+    
+    func toggleReorder() {
+        playersEditorView?.toggleReorder()
+    }
+    
     func checkIsEnoughPlayers() {
         loggingPrint("checkIsEnoughPlayers")
         dataManager.getPlayingPlayers()
