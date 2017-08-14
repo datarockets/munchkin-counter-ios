@@ -42,8 +42,8 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Player Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rlG-bz-ikm">
-                                                    <rect key="frame" x="77.666666666666657" y="23" width="260.33333333333337" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <rect key="frame" x="77.666666666666657" y="23" width="257.33333333333337" height="21"/>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -57,6 +57,9 @@
                                                 </imageView>
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zy3-mn-7M5">
                                                     <rect key="frame" x="350" y="18" width="51" height="31"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="49" id="EJF-ns-02B"/>
+                                                    </constraints>
                                                     <connections>
                                                         <action selector="onPlayingStatusChanged:" destination="g9W-9s-9Cd" eventType="valueChanged" id="3e1-Av-aEs"/>
                                                     </connections>
@@ -66,7 +69,7 @@
                                                 <constraint firstItem="zy3-mn-7M5" firstAttribute="centerY" secondItem="8Va-fp-h5U" secondAttribute="centerY" id="5HS-Rq-9HG"/>
                                                 <constraint firstItem="A1y-7e-1xm" firstAttribute="centerY" secondItem="8Va-fp-h5U" secondAttribute="centerY" id="7ig-6z-1Np"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="zy3-mn-7M5" secondAttribute="trailing" constant="7" id="OKR-Da-7UX"/>
-                                                <constraint firstItem="zy3-mn-7M5" firstAttribute="leading" secondItem="rlG-bz-ikm" secondAttribute="trailing" constant="12" id="c0P-lc-5Ia"/>
+                                                <constraint firstItem="zy3-mn-7M5" firstAttribute="leading" secondItem="rlG-bz-ikm" secondAttribute="trailing" constant="15" id="c0P-lc-5Ia"/>
                                                 <constraint firstItem="A1y-7e-1xm" firstAttribute="leading" secondItem="8Va-fp-h5U" secondAttribute="leadingMargin" constant="7" id="eCc-Du-lz8"/>
                                                 <constraint firstItem="rlG-bz-ikm" firstAttribute="leading" secondItem="A1y-7e-1xm" secondAttribute="trailing" constant="15" id="fnb-jb-U5O"/>
                                                 <constraint firstItem="rlG-bz-ikm" firstAttribute="centerY" secondItem="8Va-fp-h5U" secondAttribute="centerY" id="uHw-Rk-xQi"/>
@@ -361,7 +364,7 @@
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mTh-nb-hwM">
                                                     <rect key="frame" x="78" y="23" width="270" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
