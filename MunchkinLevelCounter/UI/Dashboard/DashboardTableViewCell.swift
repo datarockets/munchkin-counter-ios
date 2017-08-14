@@ -13,13 +13,5 @@ class DashboardTableViewCell: UITableViewCell {
     @IBOutlet weak var tvPlayerName: UILabel!
     @IBOutlet weak var tvPlayerLevel: UILabel!
     @IBOutlet weak var tvPlayerStrength: UILabel!
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-    }
-    
+        
 }

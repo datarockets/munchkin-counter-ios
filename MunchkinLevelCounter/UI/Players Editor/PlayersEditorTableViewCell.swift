@@ -8,13 +8,15 @@
 
 import UIKit
 
-protocol OnPlayerStatusChanged {
+protocol OnPlayerStatusChangedDelegate {
+    
     func onPlayerStatus(position: Int, playing: Bool)
+    
 }
 
 class PlayersEditorTableViewCell: UITableViewCell {
     
-    var playerStatus: OnPlayerStatusChanged?
+    var playerStatus: OnPlayerStatusChangedDelegate?
     
     @IBOutlet weak var ivPlayerImage: UIImageView?
     @IBOutlet weak var tvPlayerName: UILabel!

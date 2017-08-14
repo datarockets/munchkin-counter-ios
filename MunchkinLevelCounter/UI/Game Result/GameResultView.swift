@@ -7,5 +7,7 @@
 //
 
 protocol GameResultView: BaseView {
+    
     func loadChartViewController(scoreType: ScoreType)
+    
 }

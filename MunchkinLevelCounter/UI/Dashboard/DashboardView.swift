@@ -11,11 +11,8 @@ import Foundation
 protocol DashboardView: BaseView {
 
     func rollTheDice()
-
     func setPlayers(players: [Player])
-    
     func showFinishGameConfirmationDialog()
-    
     func finishGame()
 
 }

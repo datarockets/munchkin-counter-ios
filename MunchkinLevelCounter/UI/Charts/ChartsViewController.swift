@@ -9,16 +9,16 @@
 import UIKit
 import Charts
 
-class ChartsViewController: UIViewController, ChartsView, UITableViewDelegate, UITableViewDataSource {
+class ChartsViewController: UIViewController {
 
     var presenter: ChartsPresenter?
-
-    var playedPlayers: [Player] = []
+    fileprivate var playedPlayers: [Player] = []
+    fileprivate var currentScoreType: ScoreType?
     
-    var currentScoreType: ScoreType?
+    @IBOutlet weak fileprivate var lineChartView: LineChartView!
+    @IBOutlet weak fileprivate var playedPlayersTableView: UITableView!
     
-    @IBOutlet weak var lineChartView: LineChartView!
-    @IBOutlet weak var playedPlayersTableView: UITableView!
+    // MARK: Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,6 +31,38 @@ class ChartsViewController: UIViewController, ChartsView, UITableViewDelegate, U
         presenter?.detachView()
     }
     
+    // MARK: Helpers
+    
+    func loadChartData(chartType: ScoreType) {
+        currentScoreType = chartType
+        presenter?.loadChartData(type: chartType)
+        presenter?.loadPlayers(sortType: chartType)
+    }
+
+}
+
+extension ChartsViewController: ChartsView {
+    
+    func showPlayersList(players: [Player]) {
+        playedPlayers = players
+        playedPlayersTableView.reloadData()
+    }
+    
+    func showPlayersCharts(chartData: ChartData) {
+        lineChartView.xAxis.granularity = 1
+        lineChartView.xAxis.labelPosition = .bottom
+        lineChartView.leftAxis.granularity = 1
+        lineChartView.chartDescription?.enabled = false
+        lineChartView.data = chartData
+        lineChartView.invalidateIntrinsicContentSize()
+    }
+    
+}
+
+// MARK: UITableViewDelegate & UITableViewDataSource
+
+extension ChartsViewController : UITableViewDelegate, UITableViewDataSource {
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return playedPlayers.count
     }
@@ -52,26 +84,6 @@ class ChartsViewController: UIViewController, ChartsView, UITableViewDelegate, U
         }
         
         return cell
-    }
-        
-    func loadChartData(chartType: ScoreType) {
-        currentScoreType = chartType
-        presenter?.loadChartData(type: chartType)
-        presenter?.loadPlayers(sortType: chartType)
-    }
-
-    func showPlayersList(players: [Player]) {
-        playedPlayers = players
-        playedPlayersTableView.reloadData()
-    }
-    
-    func showPlayersCharts(chartData: ChartData) {
-        lineChartView.xAxis.granularity = 1
-        lineChartView.xAxis.labelPosition = .bottom
-        lineChartView.leftAxis.granularity = 1
-        lineChartView.chartDescription?.enabled = false
-        lineChartView.data = chartData
-        lineChartView.invalidateIntrinsicContentSize()
     }
     
 }

@@ -15,10 +15,10 @@ class PlayersEditorViewController: BaseViewController {
     var presenter: PlayersEditorPresenter?
     fileprivate var players: [Player] = []
     
-    @IBOutlet weak var playersListTableView: UITableView!
-    @IBOutlet weak var btnLeftStart: UIBarButtonItem!
-    @IBOutlet weak var btnRightAdd: UIBarButtonItem!
-    @IBOutlet weak var btnRightReorder: UIBarButtonItem!
+    @IBOutlet weak fileprivate var playersListTableView: UITableView!
+    @IBOutlet weak fileprivate var btnLeftStart: UIBarButtonItem!
+    @IBOutlet weak fileprivate var btnRightAdd: UIBarButtonItem!
+    @IBOutlet weak fileprivate var btnRightReorder: UIBarButtonItem!
     
     // MARK: Lifecycle
     
@@ -281,9 +281,9 @@ extension PlayersEditorViewController : UITableViewDelegate, UITableViewDataSour
     
 }
 
-// MARK: OnPlayerStatusChanged Delegate
+// MARK: OnPlayerStatusChangedDelegate
 
-extension PlayersEditorViewController: OnPlayerStatusChanged {
+extension PlayersEditorViewController: OnPlayerStatusChangedDelegate {
     
     func onPlayerStatus(position: Int, playing: Bool) {
         let playerId = players[position].playerId

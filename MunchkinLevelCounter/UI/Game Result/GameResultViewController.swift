@@ -14,14 +14,16 @@ enum ScoreType: Int {
     case totalScore = 2
 }
 
-class GameResultViewController: BaseViewController, GameResultView {
+class GameResultViewController: BaseViewController {
     
     var presenter: GameResultPresenter?
     
-    @IBOutlet weak private var scoreTypeChanger: UISegmentedControl!
-    @IBOutlet weak private var chartViewController: ChartsViewController!
-    @IBOutlet weak private var btnLeftShare: UIBarButtonItem!
+    @IBOutlet weak fileprivate var scoreTypeChanger: UISegmentedControl!
+    @IBOutlet weak fileprivate var btnLeftShare: UIBarButtonItem!
+    @IBOutlet weak fileprivate var chartViewController: ChartsViewController!
 
+    // MARK: Lifecycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         presenter?.attachView(self)
@@ -33,6 +35,8 @@ class GameResultViewController: BaseViewController, GameResultView {
     override func viewWillDisappear(_ animated: Bool) {
         presenter?.detachView()
     }
+    
+    // MARK: Actions
     
     @IBAction func onScoreTypeChanged(_ sender: UISegmentedControl) {
         let selectedIndex = scoreTypeChanger.selectedSegmentIndex
@@ -55,8 +59,13 @@ class GameResultViewController: BaseViewController, GameResultView {
         
         self.present(activityViewController, animated: true, completion: nil)
     }
-     
+    
+}
+
+extension GameResultViewController: GameResultView {
+
     func loadChartViewController(scoreType: ScoreType) {
-        chartViewController?.loadChartData(chartType: scoreType)
+        self.chartViewController?.loadChartData(chartType: scoreType)
     }
+    
 }

@@ -9,6 +9,7 @@
 import Foundation
 
 protocol PlayersEditorView: BaseView {
+    
     func addPlayerToList(player: Player)
     func updatePlayerList()
     func setPlayersList(players: [Player])
@@ -16,4 +17,5 @@ protocol PlayersEditorView: BaseView {
     func launchDashboard()
     func showStartContinueDialog()
     func showNotEnoughPlayersWarning()
+    
 }

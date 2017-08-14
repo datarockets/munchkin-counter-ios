@@ -12,42 +12,42 @@ import RxSwift
 class ChartsPresenter: Presenter {
     typealias BaseView = ChartsView
     
-    private let mDataManager: DataManager
-    private var mChartsView: ChartsView?
-    private var mSubscription: Disposable?
+    private let dataManager: DataManager
+    private var chartsView: ChartsView?
+    private var disposable: Disposable?
     
     init(dataManager: DataManager) {
-        mDataManager = dataManager
+        self.dataManager = dataManager
     }
     
     func attachView(_ view: ChartsView) {
-        mChartsView = view
+        chartsView = view
     }
     
     func loadChartData(type: ScoreType) {
         loggingPrint("Loading chart data")
-        mSubscription = mDataManager.getLineData(type: type.rawValue)
+        disposable = dataManager.getLineData(type: type.rawValue)
             .subscribeOn(ConcurrentDispatchQueueScheduler(qos: DispatchQoS.background))
             .observeOn(MainScheduler.instance)
             .subscribe(onNext: { lineChartData in
-                    self.mChartsView?.showPlayersCharts(chartData: lineChartData)
+                    self.chartsView?.showPlayersCharts(chartData: lineChartData)
                 }
             )
     }
     
     func loadPlayers(sortType: ScoreType) {
-        mSubscription = mDataManager.getPlayers(sortType: sortType)
+        disposable = dataManager.getPlayers(sortType: sortType)
             .subscribeOn(ConcurrentDispatchQueueScheduler(qos: DispatchQoS.background))
             .observeOn(MainScheduler.instance)
             .subscribe(onNext: { players in
-                    self.mChartsView?.showPlayersList(players: players)
+                    self.chartsView?.showPlayersList(players: players)
                 }
             )
     }
     
     func detachView() {
-        mChartsView = nil
-        mSubscription?.dispose()
+        chartsView = nil
+        disposable?.dispose()
     }
     
 }

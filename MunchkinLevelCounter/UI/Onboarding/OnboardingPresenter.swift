@@ -11,23 +11,23 @@ import Foundation
 class OnboardingPresenter: Presenter {
     typealias BaseView = OnboardingView
     
-    private let mDataManager: DataManager
-    private var mOnboardingView: OnboardingView?
+    private let dataManager: DataManager
+    private var onboardingView: OnboardingView?
     
     init(dataManager: DataManager) {
-        mDataManager = dataManager
+        self.dataManager = dataManager
     }
     
     func attachView(_ view: OnboardingView) {
-        mOnboardingView = view
+        onboardingView = view
     }
     
     func setOnboardingSeen() {
-        mDataManager.getPreferencesHelper().userSeenOnboarding = true
+        dataManager.getPreferencesHelper().userSeenOnboarding = true
     }
     
     func detachView() {
-        mOnboardingView = nil
+        onboardingView = nil
     }
     
 }

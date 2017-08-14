@@ -204,7 +204,6 @@
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="didTapNextPlayerButton:" destination="re3-RX-2fl" eventType="touchUpInside" id="NVP-d4-oRl"/>
-                                    <action selector="onNextPlayerClick:" destination="re3-RX-2fl" eventType="touchUpInside" id="P3u-WS-34Z"/>
                                 </connections>
                             </button>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zko-ES-Mp4">

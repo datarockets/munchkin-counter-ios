@@ -13,8 +13,8 @@ class DashboardViewController: BaseViewController {
     var presenter: DashboardPresenter?
     fileprivate var playingPlayers: [Player] = []
     
-    @IBOutlet weak var playingPlayersTableView: UITableView!
-    @IBOutlet weak var playerViewController: PlayerViewController!
+    @IBOutlet weak fileprivate var playingPlayersTableView: UITableView!
+    @IBOutlet weak fileprivate var playerViewController: PlayerViewController!
     
     // MARK: Lifecycle
     
@@ -35,10 +35,6 @@ class DashboardViewController: BaseViewController {
 
     override func viewDidDisappear(_ animated: Bool) {
         presenter?.detachView()
-    }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
     }
     
     // MARK: Actions

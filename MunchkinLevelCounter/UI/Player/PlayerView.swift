@@ -9,6 +9,8 @@
 import Foundation
 
 protocol PlayerView: BaseView {
+    
     func showPlayerName(playerName: String)
     func showPlayerScores(levelScore: Int, strengthScore: Int)
+    
 }
