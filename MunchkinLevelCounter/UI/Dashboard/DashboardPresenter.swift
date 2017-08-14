@@ -12,41 +12,49 @@ import RxSwift
 class DashboardPresenter: Presenter {
     typealias BaseView = DashboardView
     
-    private let mDataManager: DataManager
-    private var mDashboardView: DashboardView?
-    private var mSubscription: Disposable?
+    private let dataManager: DataManager
+    private var dashboardView: DashboardView?
+    private var disposable: Disposable?
     
     init(dataManager: DataManager) {
-        mDataManager = dataManager
+        self.dataManager = dataManager
     }
     
     func attachView(_ view: DashboardView) {
-        mDashboardView = view
+        dashboardView = view
     }
     
     func getPlayingPlayers() {
-        mSubscription = mDataManager.getPlayingPlayers()
+        disposable = dataManager.getPlayingPlayers()
             .subscribeOn(ConcurrentDispatchQueueScheduler(qos: DispatchQoS.background))
             .observeOn(MainScheduler.instance)
             .subscribe(onNext: { players in
-                self.mDashboardView?.setPlayers(players: players)
+                self.dashboardView?.setPlayers(players: players)
             })
     }
     
+    func rollTheDice() {
+        dashboardView?.rollTheDice()
+    }
+    
+    func finishGameWithConfirmation() {
+        dashboardView?.showFinishGameConfirmationDialog()
+    }
+    
     func setGameFinished() {
-        mDataManager.getPreferencesHelper().gameStarted = false
+        dataManager.getPreferencesHelper().gameStarted = false
     }
     
     func insertStep(playerId: String, levelScore: Int, strengthScore: Int) {
-        mSubscription = mDataManager.addGameStep(playerId: playerId, levelScore: levelScore, strengthScore: strengthScore)
+        disposable = dataManager.addGameStep(playerId: playerId, levelScore: levelScore, strengthScore: strengthScore)
             .subscribeOn(ConcurrentDispatchQueueScheduler(qos: DispatchQoS.background))
             .observeOn(MainScheduler.instance)
             .subscribe()
     }
     
     func detachView() {
-        mDashboardView = nil
-        mSubscription?.dispose()
+        dashboardView = nil
+        disposable?.dispose()
     }
     
 }

@@ -108,6 +108,9 @@
 /*  */
 "text.steps" = "Tours";
 
+/* */
+"text.dice" = "%d";
+
 /*  */
 "text.strength" = "Force";
 

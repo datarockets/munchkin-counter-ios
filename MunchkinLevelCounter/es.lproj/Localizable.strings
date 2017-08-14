@@ -117,6 +117,9 @@
 /*  */
 "text.steps" = "Pasos";
 
+/* */
+"text.dice" = "%d";
+
 /*  */
 "text.strength" = "Fuerza";
 

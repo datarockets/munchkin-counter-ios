@@ -8,19 +8,15 @@
 
 import UIKit
 
-class DashboardViewController: BaseViewController, UITableViewDelegate, UITableViewDataSource, OnScoreChangedDelegate, DashboardView {
-
-    var presenter: DashboardPresenter?
+class DashboardViewController: BaseViewController {
     
-    private var playingPlayers: [Player] = []
+    var presenter: DashboardPresenter?
+    fileprivate var playingPlayers: [Player] = []
     
     @IBOutlet weak var playingPlayersTableView: UITableView!
     @IBOutlet weak var playerViewController: PlayerViewController!
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        self.navigationItem.hidesBackButton = true
-    }
+    // MARK: Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,14 +27,104 @@ class DashboardViewController: BaseViewController, UITableViewDelegate, UITableV
         playerViewController = self.childViewControllers.first as? PlayerViewController
         playerViewController?.scoreChangedDelegate = self
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationItem.hidesBackButton = true
+    }
 
+    override func viewDidDisappear(_ animated: Bool) {
+        presenter?.detachView()
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
     
-    override func viewDidDisappear(_ animated: Bool) {
-        presenter?.detachView()
+    // MARK: Actions
+    
+    @IBAction func didTapNextPlayerButton(_ sender: Any) {
+        var selectedIndex = playingPlayersTableView.indexPathForSelectedRow?.row
+        loggingPrint("onNextPlayerClick selected index \(String(describing: selectedIndex))")
+        if (selectedIndex == playingPlayers.count - 1) {
+            let indexPath = IndexPath(row: 0, section: 0)
+            playingPlayersTableView.selectRow(at: indexPath, animated: true, scrollPosition: .bottom)
+            tableView(playingPlayersTableView, didSelectRowAt: indexPath)
+            selectedIndex = 0
+        } else {
+            selectedIndex! += 1
+            let indexPath = IndexPath(row: selectedIndex!, section: 0)
+            playingPlayersTableView.selectRow(at: indexPath, animated: true, scrollPosition: .bottom)
+            tableView(playingPlayersTableView, didSelectRowAt: indexPath)
+        }
     }
+    
+    @IBAction func didTapFinishGameButton(_ sender: Any) {
+        presenter?.finishGameWithConfirmation()
+    }
+    
+    @IBAction func didTapDiceButton(_ sender: Any) {
+        presenter?.rollTheDice()
+    }
+    
+    // MARK: Helpers
+    
+    fileprivate func showRollTheDiceDialog() {
+        let diceValue = Int(arc4random_uniform(6) + 1)
+        let diceAlertDialog = UIAlertController(title: String(format: "text.dice".localized, diceValue),
+                                                message: "",
+                                                preferredStyle: .alert)
+        let closelAction = UIAlertAction(title: "Ok",
+                                         style: .default,
+                                         handler: nil)
+        diceAlertDialog.addAction(closelAction)
+        present(diceAlertDialog, animated: true, completion: nil)
+    }
+    
+}
+
+// MARK: PlayersEditorView
+
+extension DashboardViewController: DashboardView {
+ 
+    func setPlayers(players: [Player]) {
+        self.playingPlayers = players
+        playingPlayersTableView.reloadData()
+        let selectedIndexPath = IndexPath(row: 0, section: 0)
+        playingPlayersTableView.selectRow(at: selectedIndexPath, animated: true, scrollPosition: .top)
+        tableView(playingPlayersTableView, didSelectRowAt: selectedIndexPath)
+    }
+    
+    func rollTheDice() {
+        self.showRollTheDiceDialog()
+    }
+    
+    func showFinishGameConfirmationDialog() {
+        let confirmFinishGameAlertDialog = UIAlertController(title: NSLocalizedString("dialog.finish_game.title", comment: ""),
+                                                             message: NSLocalizedString("dialog.finish_game.message", comment: ""),
+                                                             preferredStyle: .alert)
+        let finishGameAction = UIAlertAction(title: NSLocalizedString("button.yes", comment: ""),
+                                             style: .default) { _ in
+                                                self.finishGame()
+        }
+        let cancelAction = UIAlertAction(title: NSLocalizedString("button.no", comment: ""),
+                                         style: .cancel) { _ in }
+        confirmFinishGameAlertDialog.addAction(finishGameAction)
+        confirmFinishGameAlertDialog.addAction(cancelAction)
+        present(confirmFinishGameAlertDialog, animated: true, completion: nil)
+    }
+    
+    func finishGame() {
+        presenter?.setGameFinished()
+        guard let gameResultViewController = storyboard?.instantiateViewController(withIdentifier: "gameResult") else { return }
+        self.navigationController?.pushViewController(gameResultViewController, animated: true)
+    }
+    
+}
+
+// MARK: UITableViewDelegate & UITableViewDataSource
+
+extension DashboardViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = playingPlayersTableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as? DashboardTableViewCell else { fatalError("Dequeing reusable cell failed") }
@@ -62,65 +148,11 @@ class DashboardViewController: BaseViewController, UITableViewDelegate, UITableV
         return indexPath
     }
     
-    func finishGame() {
-        presenter?.setGameFinished()
-        guard let gameResultViewController = storyboard?.instantiateViewController(withIdentifier: "gameResult") else { return }
-        self.navigationController?.pushViewController(gameResultViewController, animated: true)
-    }
-    
-    @IBAction func onNextPlayerClick(_ sender: Any) {
-        var selectedIndex = playingPlayersTableView.indexPathForSelectedRow?.row
-        loggingPrint("onNextPlayerClick selected index \(String(describing: selectedIndex))")
-        if (selectedIndex == playingPlayers.count - 1) {
-            let indexPath = IndexPath(row: 0, section: 0)
-            playingPlayersTableView.selectRow(at: indexPath, animated: true, scrollPosition: .bottom)
-            tableView(playingPlayersTableView, didSelectRowAt: indexPath)
-            selectedIndex = 0
-        } else {
-            selectedIndex! += 1
-            let indexPath = IndexPath(row: selectedIndex!, section: 0)
-            playingPlayersTableView.selectRow(at: indexPath, animated: true, scrollPosition: .bottom)
-            tableView(playingPlayersTableView, didSelectRowAt: indexPath)
-        }
+}
 
-    }
+// MARK: OnScoreChanged Delegate
 
-    @IBAction func onFinishGameButtonClick(_ sender: Any) {
-        showConfirmFinishGameDialog()
-    }
-    
-    func showConfirmFinishGameDialog() {
-        let confirmFinishGameAlertDialog = UIAlertController(title: NSLocalizedString("dialog.finish_game.title", comment: ""),
-                                                             message: NSLocalizedString("dialog.finish_game.message", comment: ""),
-                                                             preferredStyle: .alert)
-        let finishGameAction = UIAlertAction(title: NSLocalizedString("button.yes", comment: ""),
-                                             style: .default) { _ in
-            self.finishGame()
-        }
-        let cancelAction = UIAlertAction(title: NSLocalizedString("button.no", comment: ""),
-                                         style: .cancel) { _ in
-            print("Cancel")
-        }
-        confirmFinishGameAlertDialog.addAction(finishGameAction)
-        confirmFinishGameAlertDialog.addAction(cancelAction)
-        present(confirmFinishGameAlertDialog, animated: true, completion: nil)
-    }
-    
-    func showRollDiceDialog() {
-        
-    }
-    
-    func setPlayers(players: [Player]) {
-        self.playingPlayers = players
-        playingPlayersTableView.reloadData()
-        let selectedIndexPath = IndexPath(row: 0, section: 0)
-        playingPlayersTableView.selectRow(at: selectedIndexPath, animated: true, scrollPosition: .top)
-        tableView(playingPlayersTableView, didSelectRowAt: selectedIndexPath)
-    }
-    
-    func updatePlayerInformation(player: Player, position: Int) {
-        
-    }
+extension DashboardViewController: OnScoreChangedDelegate {
     
     func onScoreChanged(playerPosition: Int, playerLevel: Int, playerStrength: Int) {
         playingPlayers[playerPosition].playerLevel = playerLevel
@@ -133,5 +165,5 @@ class DashboardViewController: BaseViewController, UITableViewDelegate, UITableV
         playingPlayersTableView.reloadRows(at: [selectedIndexPath], with: .none)
         playingPlayersTableView.selectRow(at: selectedIndexPath, animated: false, scrollPosition: .none)
     }
-
+    
 }

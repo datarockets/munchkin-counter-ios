@@ -41,13 +41,13 @@ class OnboardingViewController: UIViewController, OnboardingView, EAIntroDelegat
         let pageTwo = EAIntroPage()
         pageTwo.title = "onboarder.page2.title".localized
         pageTwo.desc = "onboarder.page2.description".localized
-        pageTwo.titleIconView = UIImageView(image: UIImage(named: "Dice"))
+        pageTwo.titleIconView = UIImageView(image: UIImage(named: "OnboardDice"))
         pageTwo.bgColor = Colors.cardLight
     
         let pageThree = EAIntroPage()
         pageThree.title = "onboarder.page3.title".localized
         pageThree.desc  = "onboarder.page3.description".localized
-        pageThree.titleIconView = UIImageView(image: UIImage(named: "Infinite"))
+        pageThree.titleIconView = UIImageView(image: UIImage(named: "OnboardInfinite"))
         pageThree.bgColor = Colors.cardCorner
         
         let introView: EAIntroView = EAIntroView(frame: rootView!.bounds, andPages: [pageOne, pageTwo, pageThree])

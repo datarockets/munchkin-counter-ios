@@ -120,6 +120,9 @@
 /*  */
 "text.steps" = "Steps";
 
+/* */
+"text.dice" = "Dropped %d";
+
 /*  */
 "settings.max_level" = "Maximum level";
 

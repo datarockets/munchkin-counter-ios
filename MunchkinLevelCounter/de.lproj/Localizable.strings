@@ -99,6 +99,9 @@
 /*  */
 "text.steps" = "Runde";
 
+/* */
+"text.dice" = "%d";
+
 /*  */
 "settings.max_level" = "Maximales Level";
 
