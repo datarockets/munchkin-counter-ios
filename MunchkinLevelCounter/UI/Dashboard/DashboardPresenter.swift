@@ -12,12 +12,13 @@ import RxSwift
 class DashboardPresenter: Presenter {
     typealias BaseView = DashboardView
     
+    private let disposeBag: DisposeBag
     private let dataManager: DataManager
     private var dashboardView: DashboardView?
-    private var disposable: Disposable?
     
     init(dataManager: DataManager) {
         self.dataManager = dataManager
+        disposeBag = DisposeBag()
     }
     
     func attachView(_ view: DashboardView) {
@@ -25,12 +26,13 @@ class DashboardPresenter: Presenter {
     }
     
     func getPlayingPlayers() {
-        disposable = dataManager.getPlayingPlayers()
+        dataManager.getPlayingPlayers()
             .subscribeOn(ConcurrentDispatchQueueScheduler(qos: DispatchQoS.background))
             .observeOn(MainScheduler.instance)
             .subscribe(onNext: { players in
                 self.dashboardView?.setPlayers(players: players)
             })
+            .disposed(by: disposeBag)
     }
     
     func rollTheDice() {
@@ -46,15 +48,15 @@ class DashboardPresenter: Presenter {
     }
     
     func insertStep(playerId: String, levelScore: Int, strengthScore: Int) {
-        disposable = dataManager.addGameStep(playerId: playerId, levelScore: levelScore, strengthScore: strengthScore)
+        dataManager.addGameStep(playerId: playerId, levelScore: levelScore, strengthScore: strengthScore)
             .subscribeOn(ConcurrentDispatchQueueScheduler(qos: DispatchQoS.background))
             .observeOn(MainScheduler.instance)
             .subscribe()
+            .disposed(by: disposeBag)
     }
     
     func detachView() {
         dashboardView = nil
-        disposable?.dispose()
     }
     
 }

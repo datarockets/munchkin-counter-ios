@@ -12,9 +12,9 @@ import RxSwift
 class PlayerPresenter: Presenter {
     typealias BaseView = PlayerView
 
+    private let disposeBag: DisposeBag
     private let dataManager: DataManager
     private var playerView: PlayerView?
-    private var disposable: Disposable?
     
     private var playerId: String?
     private var playerLevelScore: Int = 0
@@ -22,6 +22,7 @@ class PlayerPresenter: Presenter {
     
     init(dataManager: DataManager) {
         self.dataManager = dataManager
+        disposeBag = DisposeBag()
     }
     
     func attachView(_ view: PlayerView) {
@@ -29,7 +30,7 @@ class PlayerPresenter: Presenter {
     }
     
     func loadPlayerScores(playerId: String) {
-        disposable = dataManager.getPlayer(playerId: playerId)
+        dataManager.getPlayer(playerId: playerId)
             .subscribeOn(ConcurrentDispatchQueueScheduler(qos: .background))
             .observeOn(MainScheduler.instance)
             .subscribe(onNext: { player in
@@ -40,6 +41,7 @@ class PlayerPresenter: Presenter {
                 self.playerView?.showPlayerScores(levelScore: self.playerLevelScore,
                                                   strengthScore: self.playerStrengthScore)
             })
+            .disposed(by: disposeBag)
     }
     
     func increaseLevelScore() {
@@ -63,18 +65,18 @@ class PlayerPresenter: Presenter {
     }
     
     func updatePlayerScores() {
-        disposable = dataManager.updatePlayersScores(playerId: playerId!, levelScore: playerLevelScore, strengthScore: playerStrengthScore)
+        dataManager.updatePlayersScores(playerId: playerId!, levelScore: playerLevelScore, strengthScore: playerStrengthScore)
             .subscribeOn(ConcurrentDispatchQueueScheduler(qos: DispatchQoS.background))
             .observeOn(MainScheduler.instance)
             .subscribe(onCompleted: {
                 self.playerView?.showPlayerScores(levelScore: self.playerLevelScore,
                                                   strengthScore: self.playerStrengthScore)
             })
+            .disposed(by: disposeBag)
     }
     
     func detachView() {
         playerView = nil
-        disposable?.dispose()
     }
     
 }

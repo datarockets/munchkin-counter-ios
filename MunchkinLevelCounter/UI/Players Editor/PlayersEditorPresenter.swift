@@ -13,12 +13,13 @@ import CoreData
 class PlayersEditorPresenter: Presenter {
     typealias BaseView = PlayersEditorView
     
+    private let disposeBag: DisposeBag
     private let dataManager: DataManager
     private var playersEditorView: PlayersEditorView?
-    private var disposable: Disposable?
     
     init(dataManager: DataManager) {
         self.dataManager = dataManager
+        self.disposeBag = DisposeBag()
     }
     
     func attachView(_ view: PlayersEditorView) {
@@ -28,7 +29,7 @@ class PlayersEditorPresenter: Presenter {
     
     func checkIsEnoughPlayers() {
         loggingPrint("checkIsEnoughPlayers")
-        disposable = dataManager.getPlayingPlayers()
+        dataManager.getPlayingPlayers()
             .subscribeOn(ConcurrentDispatchQueueScheduler(qos: .background))
             .observeOn(MainScheduler.instance)
             .subscribe(onNext: { players in
@@ -40,10 +41,11 @@ class PlayersEditorPresenter: Presenter {
                     self.playersEditorView?.showNotEnoughPlayersWarning()
                 }
             })
+            .disposed(by: disposeBag)
     }
     
     func addPlayer(playerName: String, position: Int) {
-        disposable = dataManager
+        dataManager
             .addPlayer(playerName: playerName, position: position)
             .subscribeOn(ConcurrentDispatchQueueScheduler(qos: .background))
             .observeOn(MainScheduler.instance)
@@ -51,58 +53,65 @@ class PlayersEditorPresenter: Presenter {
                 self.playersEditorView?.addPlayerToList(player: player)
                 self.playersEditorView?.updatePlayerList()
             })
+            .disposed(by: disposeBag)
     }
     
     func updatePlayer(player: Player) {
-        disposable = dataManager
-        .updatePlayer(player: player)
+        dataManager
+            .updatePlayer(player: player)
             .subscribeOn(ConcurrentDispatchQueueScheduler(qos: .background))
             .observeOn(MainScheduler.instance)
             .subscribe(onNext: { _ in
                 self.playersEditorView?.updatePlayerList()
             })
+            .disposed(by: disposeBag)
     }
     
     func deletePlayer(playerId: String) {
-        disposable = dataManager
+        dataManager
             .deletePlayer(playerId: playerId)
             .subscribeOn(ConcurrentDispatchQueueScheduler(qos: .background))
             .observeOn(MainScheduler.instance)
             .subscribe()
+            .disposed(by: disposeBag)
     }
     
     func getPlayers() {
-        disposable = dataManager
+        dataManager
             .getPlayersByPosition()
             .subscribeOn(ConcurrentDispatchQueueScheduler(qos: .background))
             .observeOn(MainScheduler.instance)
             .subscribe(onNext: { players in
                 self.playersEditorView?.setPlayersList(players: players)
             })
+            .disposed(by: disposeBag)
     }
     
     func markPlayerAsPlaying(withObjectId id: String, isPlaying: Bool) {
-        disposable = dataManager
+        dataManager
             .markPlayerAsPlaying(playerId: id, isPlaying: isPlaying)
             .subscribeOn(ConcurrentDispatchQueueScheduler(qos: .background))
             .observeOn(MainScheduler.instance)
             .subscribe()
+            .disposed(by: disposeBag)
     }
     
     func clearGameSteps() {
-        disposable = dataManager
+        dataManager
             .clearGameSteps()
             .subscribeOn(ConcurrentDispatchQueueScheduler(qos: .background))
             .observeOn(MainScheduler.instance)
             .subscribe()
+            .disposed(by: disposeBag)
     }
     
     func updatesPosition(playerId: String, position: Int) {
-        disposable = dataManager
+        dataManager
             .updatePlayerPosition(playerId: playerId, position: position)
             .subscribeOn(ConcurrentDispatchQueueScheduler(qos: .background))
             .observeOn(MainScheduler.instance)
             .subscribe()
+            .disposed(by: disposeBag)
     }
     
     func setGameStarted() {
@@ -122,7 +131,6 @@ class PlayersEditorPresenter: Presenter {
     func detachView() {
         loggingPrint("Detaching of view")
         playersEditorView = nil
-        disposable?.dispose()
     }
     
 }

@@ -12,12 +12,13 @@ import RxSwift
 class ChartsPresenter: Presenter {
     typealias BaseView = ChartsView
     
+    private let disposeBag: DisposeBag
     private let dataManager: DataManager
     private var chartsView: ChartsView?
-    private var disposable: Disposable?
     
     init(dataManager: DataManager) {
         self.dataManager = dataManager
+        disposeBag = DisposeBag()
     }
     
     func attachView(_ view: ChartsView) {
@@ -26,28 +27,29 @@ class ChartsPresenter: Presenter {
     
     func loadChartData(type: ScoreType) {
         loggingPrint("Loading chart data")
-        disposable = dataManager.getLineData(type: type.rawValue)
+        dataManager.getLineData(type: type.rawValue)
             .subscribeOn(ConcurrentDispatchQueueScheduler(qos: DispatchQoS.background))
             .observeOn(MainScheduler.instance)
             .subscribe(onNext: { lineChartData in
                     self.chartsView?.showPlayersCharts(chartData: lineChartData)
                 }
             )
+            .disposed(by: disposeBag)
     }
     
     func loadPlayers(sortType: ScoreType) {
-        disposable = dataManager.getPlayers(sortType: sortType)
+        dataManager.getPlayers(sortType: sortType)
             .subscribeOn(ConcurrentDispatchQueueScheduler(qos: DispatchQoS.background))
             .observeOn(MainScheduler.instance)
             .subscribe(onNext: { players in
                     self.chartsView?.showPlayersList(players: players)
                 }
             )
+            .disposed(by: disposeBag)
     }
     
     func detachView() {
         chartsView = nil
-        disposable?.dispose()
     }
     
 }

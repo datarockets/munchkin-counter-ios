@@ -14,7 +14,6 @@ class GameResultPresenter: Presenter {
     
     private let dataManager: DataManager
     private var gameResultView: GameResultView?
-    private var disposable: Disposable?
     
     init(dataManager: DataManager) {
         self.dataManager = dataManager
@@ -38,7 +37,6 @@ class GameResultPresenter: Presenter {
     
     func detachView() {
         gameResultView = nil
-        disposable?.dispose()
     }
 
 }
