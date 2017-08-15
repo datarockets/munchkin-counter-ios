@@ -6,7 +6,7 @@
 //  Copyright © 2017 datarockets. All rights reserved.
 //
 
-class Player: Hashable {
+final class Player: Hashable {
     var playerId: String
     var playerName: String?
     var playerLevel: Int = 1
@@ -28,6 +28,7 @@ class Player: Hashable {
     }
     
 }
+
 func == (lhs: Player, rhs: Player) -> Bool {
     return lhs.playerId == rhs.playerId
 }

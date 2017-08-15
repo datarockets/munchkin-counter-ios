@@ -6,9 +6,7 @@
 //  Copyright © 2017 datarockets. All rights reserved.
 //
 
-import Foundation
-
-class GameStep {
+final class GameStep {
     var playerId: String?
     var playerLevel: Int?
     var playerStrength: Int?

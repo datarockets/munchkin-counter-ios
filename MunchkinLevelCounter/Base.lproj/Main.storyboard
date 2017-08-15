@@ -37,7 +37,7 @@
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="66" id="g9W-9s-9Cd" customClass="PlayersEditorTableViewCell" customModule="MunchkinLevelCounter" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="66"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="g9W-9s-9Cd" id="8Va-fp-h5U">
+                                        <tableViewCellContentView key="contentView" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="g9W-9s-9Cd" id="8Va-fp-h5U">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="65.666666666666671"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
@@ -55,7 +55,7 @@
                                                         <constraint firstAttribute="height" constant="48" id="mmy-5J-8Uc"/>
                                                     </constraints>
                                                 </imageView>
-                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zy3-mn-7M5">
+                                                <switch contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zy3-mn-7M5">
                                                     <rect key="frame" x="350" y="18" width="51" height="31"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="49" id="EJF-ns-02B"/>
@@ -147,7 +147,7 @@
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" id="ghI-cD-NSE" customClass="DashboardTableViewCell" customModule="MunchkinLevelCounter" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ghI-cD-NSE" id="hZd-7j-Ho7">
+                                        <tableViewCellContentView key="contentView" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ghI-cD-NSE" id="hZd-7j-Ho7">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="43.666666666666664"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
@@ -195,7 +195,7 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d3G-Lq-58f">
+                            <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d3G-Lq-58f">
                                 <rect key="frame" x="0.0" y="636" width="414" height="56"/>
                                 <color key="backgroundColor" red="0.96862745098039216" green="0.84313725490196079" blue="0.45490196078431372" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
@@ -209,7 +209,7 @@
                                     <action selector="didTapNextPlayerButton:" destination="re3-RX-2fl" eventType="touchUpInside" id="NVP-d4-oRl"/>
                                 </connections>
                             </button>
-                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zko-ES-Mp4">
+                            <containerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zko-ES-Mp4">
                                 <rect key="frame" x="0.0" y="20" width="414" height="336"/>
                                 <connections>
                                     <segue destination="h5z-sL-wEG" kind="embed" id="FKt-kU-6q1"/>
@@ -273,7 +273,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zn7-ui-4Y1">
+                            <containerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zn7-ui-4Y1">
                                 <rect key="frame" x="0.0" y="20" width="414" height="716"/>
                                 <connections>
                                     <segue destination="WcP-Ah-FTY" kind="embed" id="8cz-Y3-qno"/>
@@ -304,7 +304,7 @@
                                 <action selector="didChangeScoreType:" destination="Xs3-F6-RTo" eventType="valueChanged" id="T4R-P0-Env"/>
                             </connections>
                         </segmentedControl>
-                        <barButtonItem key="rightBarButtonItem" image="Share" id="zuH-Jj-ON7" userLabel="Share">
+                        <barButtonItem key="rightBarButtonItem" enabled="NO" image="Share" id="zuH-Jj-ON7" userLabel="Share">
                             <connections>
                                 <action selector="didTapShareButton:" destination="Xs3-F6-RTo" id="u60-RA-ojF"/>
                             </connections>
@@ -342,7 +342,7 @@
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" rowHeight="66" id="CjV-uD-eiT" customClass="ChartsTableViewCell" customModule="MunchkinLevelCounter" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="66"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="CjV-uD-eiT" id="f8p-4S-89z">
+                                        <tableViewCellContentView key="contentView" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="CjV-uD-eiT" id="f8p-4S-89z">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="65.666666666666671"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
@@ -444,13 +444,13 @@
                                         <rect key="frame" x="0.0" y="0.0" width="160" height="252"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NiR-Nc-Hce">
-                                                <rect key="frame" x="60.666666666666671" y="86.666666666666657" width="40.000000000000014" height="79.999999999999972"/>
+                                                <rect key="frame" x="60" y="86.666666666666657" width="40" height="79.999999999999972"/>
                                                 <fontDescription key="fontDescription" name="Buccaneer-Cyr-Regular" family="Buccaneer Cyr" pointSize="60"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Level" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gXR-gH-wzX">
-                                                <rect key="frame" x="57.666666666666671" y="213" width="45.666666666666671" height="22.666666666666657"/>
+                                                <rect key="frame" x="58.000000000000007" y="213" width="45.666666666666679" height="22.666666666666657"/>
                                                 <fontDescription key="fontDescription" name="Buccaneer-Cyr-Regular" family="Buccaneer Cyr" pointSize="17"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
@@ -458,7 +458,7 @@
                                                     <userDefinedRuntimeAttribute type="string" keyPath="localizedText" value="text.level"/>
                                                 </userDefinedRuntimeAttributes>
                                             </label>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iAU-RD-tP8">
+                                            <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iAU-RD-tP8">
                                                 <rect key="frame" x="56.666666666666671" y="165" width="48.000000000000014" height="48"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="48" id="ngv-g9-CHm"/>
@@ -469,7 +469,7 @@
                                                     <action selector="onDecreaseLevelButtonClick:" destination="h5z-sL-wEG" eventType="touchUpInside" id="JaX-71-ND2"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pqs-rt-TGb">
+                                            <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pqs-rt-TGb">
                                                 <rect key="frame" x="56.666666666666671" y="39" width="48.000000000000014" height="48"/>
                                                 <rect key="contentStretch" x="1" y="0.0" width="1" height="1"/>
                                                 <constraints>
@@ -497,7 +497,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="suD-wE-t4f" userLabel="Right Part">
                                         <rect key="frame" x="160" y="0.0" width="160" height="252"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="haQ-W9-jn4">
+                                            <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="haQ-W9-jn4">
                                                 <rect key="frame" x="56.666666666666657" y="39" width="48.000000000000028" height="48"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="48" id="9Pe-Yk-k2g"/>
@@ -509,12 +509,12 @@
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pl9-ht-bE1">
-                                                <rect key="frame" x="60.666666666666657" y="86.666666666666657" width="40.000000000000028" height="79.999999999999972"/>
+                                                <rect key="frame" x="60" y="86.666666666666657" width="40" height="79.999999999999972"/>
                                                 <fontDescription key="fontDescription" name="Buccaneer-Cyr-Regular" family="Buccaneer Cyr" pointSize="60"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Tu-cm-eRW">
+                                            <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Tu-cm-eRW">
                                                 <rect key="frame" x="56.666666666666657" y="165" width="48.000000000000028" height="48"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="48" id="3xj-rf-PRp"/>
@@ -526,7 +526,7 @@
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Strength" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BSt-WG-s6F">
-                                                <rect key="frame" x="43" y="213" width="75.333333333333314" height="22.666666666666657"/>
+                                                <rect key="frame" x="42.333333333333343" y="213" width="75.333333333333343" height="22.666666666666657"/>
                                                 <fontDescription key="fontDescription" name="Buccaneer-Cyr-Regular" family="Buccaneer Cyr" pointSize="17"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
