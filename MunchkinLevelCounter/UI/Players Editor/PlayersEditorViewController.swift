@@ -14,6 +14,7 @@ class PlayersEditorViewController: BaseViewController {
     
     var presenter: PlayersEditorPresenter?
     fileprivate var players: [Player] = []
+    private var editingPlayerName: String?
     
     @IBOutlet weak fileprivate var playersListTableView: UITableView!
     @IBOutlet weak fileprivate var btnLeftStart: UIBarButtonItem!
@@ -60,50 +61,69 @@ class PlayersEditorViewController: BaseViewController {
     
     // MARK: Helpers
     
+    fileprivate func isValidName(name: String?) -> Bool {
+        return name != "" && !players.filter { $0.playerName != editingPlayerName }.contains(where: { player in player.playerName == name })
+    }
+    
+    @objc fileprivate func validate(_ textField: UITextField) {
+        var responder: UIResponder! = textField
+        while !(responder is UIAlertController) {
+            responder = responder.next
+        }
+        guard let alert = responder as? UIAlertController else {
+            return
+        }
+        alert.actions[0].isEnabled = self.isValidName(name: textField.text)
+    }
+    
     fileprivate func showAddNewPlayerDialog() {
-        let addNewPlayerAlert = UIAlertController(title: "button.add_new_player".localized,
-                                                  message: nil,
-                                                  preferredStyle: .alert)
-        addNewPlayerAlert.addTextField { textField in
+        let alert = UIAlertController(title: "button.add_new_player".localized, message: nil, preferredStyle: .alert)
+        alert.addTextField { textField in
             textField.placeholder = "text.player_name".localized
+            textField.addTarget(self, action: #selector(self.validate(_:)), for: .editingChanged)
         }
         let addPlayerAction = UIAlertAction(title: "button.add_new_player".localized,
                                             style: .default) { _ in
-                                                let enteredText = ((addNewPlayerAlert.textFields?.first)! as UITextField).text
+                                                alert.textFields?[0].removeTarget(nil, action: nil, for: .allEvents)
+                                                let enteredText = ((alert.textFields?.first)! as UITextField).text
                                                 let playersCount = self.players.count
                                                 self.presenter?.addPlayer(playerName: enteredText!,
                                                                           position: playersCount)
         }
         let cancelAction = UIAlertAction(title: "button.cancel".localized,
-                                         style: .cancel,
-                                         handler: nil)
-        addNewPlayerAlert.addAction(addPlayerAction)
-        addNewPlayerAlert.addAction(cancelAction)
+                                         style: .cancel) { _ in
+                                            alert.textFields?[0].removeTarget(nil, action: nil, for: .allEvents)
+        }
+        alert.addAction(addPlayerAction)
+        alert.addAction(cancelAction)
+        alert.actions[0].isEnabled = false
         
-        present(addNewPlayerAlert, animated: true, completion: nil)
+        present(alert, animated: true, completion: nil)
     }
     
     fileprivate func showEditPlayerDialog(indexPath: IndexPath) {
-        let editPlayerAlert = UIAlertController(title: "dialog.player_actions.edit_player".localized,
-                                                message: nil,
-                                                preferredStyle: .alert)
-        editPlayerAlert.addTextField { textField in
-            textField.text = self.players[indexPath.row].playerName
+        let alert = UIAlertController(title: "dialog.player_actions.edit_player".localized, message: nil, preferredStyle: .alert)
+        alert.addTextField { textField in
+            self.editingPlayerName = self.players[indexPath.row].playerName
+            textField.text = self.editingPlayerName
+            textField.addTarget(self, action: #selector(self.validate(_:)), for: .editingChanged)
         }
         let confirmEditPlayerAction = UIAlertAction(title: "button.edit".localized,
                                                     style: .default) { _ in
+                                                        alert.textFields?[0].removeTarget(nil, action: nil, for: .allEvents)
                                                         let player = self.players[indexPath.row]
-                                                        player.playerName = ((editPlayerAlert.textFields?.first)! as UITextField).text
+                                                        player.playerName = ((alert.textFields?.first)! as UITextField).text
                                                         self.presenter?.updatePlayer(player: player)
         }
         let cancelEditPlayerAction = UIAlertAction(title: "button.cancel".localized,
                                                    style: .cancel) { _ in
+                                                    alert.textFields?[0].removeTarget(nil, action: nil, for: .allEvents)
                                                     self.playersListTableView.setEditing(false, animated: true)
         }
-        editPlayerAlert.addAction(confirmEditPlayerAction)
-        editPlayerAlert.addAction(cancelEditPlayerAction)
+        alert.addAction(confirmEditPlayerAction)
+        alert.addAction(cancelEditPlayerAction)
         
-        present(editPlayerAlert, animated: true, completion: nil)
+        present(alert, animated: true, completion: nil)
     }
     
     fileprivate func showStartContinueGameDialog() {
@@ -285,6 +305,16 @@ extension PlayersEditorViewController : UITableViewDelegate, UITableViewDataSour
         let playerToMove = players[fromIndexPath.row]
         players.remove(at: fromIndexPath.row)
         players.insert(playerToMove, at: toIndexPath.row)
+    }
+    
+}
+
+// MARK: UITextFieldDelegate
+
+extension PlayersEditorViewController: UITextFieldDelegate {
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        loggingPrint(textField.text)
     }
     
 }
