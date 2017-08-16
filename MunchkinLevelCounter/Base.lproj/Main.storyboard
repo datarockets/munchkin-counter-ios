@@ -444,13 +444,13 @@
                                         <rect key="frame" x="0.0" y="0.0" width="160" height="252"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NiR-Nc-Hce">
-                                                <rect key="frame" x="60" y="86.666666666666657" width="40" height="79.999999999999972"/>
+                                                <rect key="frame" x="60.333333333333329" y="86.666666666666657" width="39.999999999999986" height="79.999999999999972"/>
                                                 <fontDescription key="fontDescription" name="Buccaneer-Cyr-Regular" family="Buccaneer Cyr" pointSize="60"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Level" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gXR-gH-wzX">
-                                                <rect key="frame" x="58.000000000000007" y="213" width="45.666666666666679" height="22.666666666666657"/>
+                                                <rect key="frame" x="57.333333333333343" y="213" width="45.666666666666657" height="22.666666666666657"/>
                                                 <fontDescription key="fontDescription" name="Buccaneer-Cyr-Regular" family="Buccaneer Cyr" pointSize="17"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
@@ -509,7 +509,7 @@
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pl9-ht-bE1">
-                                                <rect key="frame" x="60" y="86.666666666666657" width="40" height="79.999999999999972"/>
+                                                <rect key="frame" x="60.333333333333343" y="86.666666666666657" width="39.999999999999972" height="79.999999999999972"/>
                                                 <fontDescription key="fontDescription" name="Buccaneer-Cyr-Regular" family="Buccaneer Cyr" pointSize="60"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
@@ -526,7 +526,7 @@
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Strength" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BSt-WG-s6F">
-                                                <rect key="frame" x="42.333333333333343" y="213" width="75.333333333333343" height="22.666666666666657"/>
+                                                <rect key="frame" x="42.666666666666657" y="213" width="75.333333333333343" height="22.666666666666657"/>
                                                 <fontDescription key="fontDescription" name="Buccaneer-Cyr-Regular" family="Buccaneer Cyr" pointSize="17"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>

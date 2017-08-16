@@ -11,8 +11,8 @@ import UIKit
 
 struct Colors {
     static let black = UIColor.black
-    static let red = UIColor.init(hex: 0xFF3B30)
-    static let green = UIColor.init(hex: 0x4CD964)
+    static let red = UIColor(hex: 0xFF3B30)
+    static let green = UIColor(hex: 0x4CD964)
     
     static let cardGeneral = UIColor(hex: 0xF7D774)
     static let cardLight = UIColor(hex: 0xF6D264)

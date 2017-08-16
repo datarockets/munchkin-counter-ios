@@ -8,7 +8,7 @@
  */
 
 /*  */
-"app_name" = "Munchkin Level Counter";
+"app_name" = "Level Counter for Munchkin";
 
 /*  */
 "title.choose_game_type" = "Выберите тип игры";
