@@ -13,105 +13,132 @@ import CoreData
 class PlayersEditorPresenter: Presenter {
     typealias BaseView = PlayersEditorView
     
-    private let mDataManager: DataManager
-    private var mPlayersEditorView: PlayersEditorView?
-    private var mSubscription: Disposable?
+    private let disposeBag: DisposeBag
+    private let dataManager: DataManager
+    private var playersEditorView: PlayersEditorView?
     
     init(dataManager: DataManager) {
-        mDataManager = dataManager
+        self.dataManager = dataManager
+        self.disposeBag = DisposeBag()
     }
     
     func attachView(_ view: PlayersEditorView) {
-        print("attaching View")
-        mPlayersEditorView = view
+        loggingPrint("attaching View")
+        playersEditorView = view
+    }
+    
+    func addNewPlayer() {
+        playersEditorView?.showAddNewPlayerAlertDialog()
+    }
+    
+    func toggleReorder() {
+        playersEditorView?.toggleReorder()
     }
     
     func checkIsEnoughPlayers() {
-        print("checkIsEnoughPlayers")
-        mSubscription = mDataManager.getPlayingPlayers()
+        loggingPrint("checkIsEnoughPlayers")
+        dataManager.getPlayingPlayers()
             .subscribeOn(ConcurrentDispatchQueueScheduler(qos: .background))
             .observeOn(MainScheduler.instance)
             .subscribe(onNext: { players in
                 if players.count >= 2 {
-                    print("enoughPlayers")
-                    self.mPlayersEditorView?.launchDashboard()
+                    loggingPrint("enoughPlayers")
+                    self.playersEditorView?.launchDashboard()
                 } else {
-                    print("not enough players")
-                    self.mPlayersEditorView?.showWarning()
+                    loggingPrint("not enough players")
+                    self.playersEditorView?.showNotEnoughPlayersWarning()
                 }
             })
+            .disposed(by: disposeBag)
     }
     
     func addPlayer(playerName: String, position: Int) {
-        mSubscription = mDataManager
+        dataManager
             .addPlayer(playerName: playerName, position: position)
             .subscribeOn(ConcurrentDispatchQueueScheduler(qos: .background))
             .observeOn(MainScheduler.instance)
             .subscribe(onNext: { player in
-                self.mPlayersEditorView?.addPlayerToList(player: player)
+                self.playersEditorView?.addPlayerToList(player: player)
+                self.playersEditorView?.updatePlayerList()
             })
+            .disposed(by: disposeBag)
+    }
+    
+    func updatePlayer(player: Player) {
+        dataManager
+            .updatePlayer(player: player)
+            .subscribeOn(ConcurrentDispatchQueueScheduler(qos: .background))
+            .observeOn(MainScheduler.instance)
+            .subscribe(onNext: { _ in
+                self.playersEditorView?.updatePlayerList()
+            })
+            .disposed(by: disposeBag)
     }
     
     func deletePlayer(playerId: String) {
-        mSubscription = mDataManager
+        dataManager
             .deletePlayer(playerId: playerId)
             .subscribeOn(ConcurrentDispatchQueueScheduler(qos: .background))
             .observeOn(MainScheduler.instance)
             .subscribe()
+            .disposed(by: disposeBag)
     }
     
     func getPlayers() {
-        mSubscription = mDataManager
+        dataManager
             .getPlayersByPosition()
             .subscribeOn(ConcurrentDispatchQueueScheduler(qos: .background))
             .observeOn(MainScheduler.instance)
             .subscribe(onNext: { players in
-                self.mPlayersEditorView?.setPlayersList(players: players)
+                self.playersEditorView?.setPlayersList(players: players)
             })
+            .disposed(by: disposeBag)
     }
     
     func markPlayerAsPlaying(withObjectId id: String, isPlaying: Bool) {
-        mSubscription = mDataManager
+        dataManager
             .markPlayerAsPlaying(playerId: id, isPlaying: isPlaying)
             .subscribeOn(ConcurrentDispatchQueueScheduler(qos: .background))
             .observeOn(MainScheduler.instance)
             .subscribe()
+            .disposed(by: disposeBag)
     }
     
     func clearGameSteps() {
-        mSubscription = mDataManager
+        dataManager
             .clearGameSteps()
             .subscribeOn(ConcurrentDispatchQueueScheduler(qos: .background))
             .observeOn(MainScheduler.instance)
             .subscribe()
+            .disposed(by: disposeBag)
     }
     
     func updatesPosition(playerId: String, position: Int) {
-        mSubscription = mDataManager
+        dataManager
             .updatePlayerPosition(playerId: playerId, position: position)
             .subscribeOn(ConcurrentDispatchQueueScheduler(qos: .background))
             .observeOn(MainScheduler.instance)
             .subscribe()
+            .disposed(by: disposeBag)
     }
     
     func setGameStarted() {
-        mDataManager.getPreferencesHelper().gameStarted = true
+        dataManager.getPreferencesHelper().gameStarted = true
     }
     
     func setGameFinished() {
-        mDataManager.getPreferencesHelper().gameStarted = false
+        dataManager.getPreferencesHelper().gameStarted = false
     }
     
     func checkIsGameStarted() {
-        if mDataManager.getPreferencesHelper().gameStarted {
-            mPlayersEditorView?.showStartContinueDialog()
+        if dataManager.getPreferencesHelper().gameStarted {
+            playersEditorView?.showStartContinueDialog()
         }
     }
     
     func detachView() {
-        print("Detaching of view")
-        mPlayersEditorView = nil
-        mSubscription?.dispose()
+        loggingPrint("Detaching of view")
+        playersEditorView = nil
     }
     
 }

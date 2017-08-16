@@ -9,7 +9,9 @@
 import UIKit
 
 class ChartsTableViewCell: UITableViewCell {
+    
     @IBOutlet weak var ivPlayerImage: UIImageView?
     @IBOutlet weak var tvPlayerName: UILabel!
     @IBOutlet weak var tvPlayerScore: UILabel!
+    
 }

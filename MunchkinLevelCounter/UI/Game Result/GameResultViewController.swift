@@ -14,12 +14,15 @@ enum ScoreType: Int {
     case totalScore = 2
 }
 
-class GameResultViewController: BaseViewController, GameResultView {
+class GameResultViewController: BaseViewController {
     
     var presenter: GameResultPresenter?
     
-    @IBOutlet weak private var scoreTypeChanger: UISegmentedControl!
-    @IBOutlet weak private var chartViewController: ChartsViewController!
+    @IBOutlet weak fileprivate var scoreTypeChanger: UISegmentedControl!
+    @IBOutlet weak fileprivate var btnLeftShare: UIBarButtonItem!
+    @IBOutlet weak fileprivate var chartViewController: ChartsViewController!
+
+    // MARK: Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,20 +32,42 @@ class GameResultViewController: BaseViewController, GameResultView {
         self.navigationController?.viewControllers.remove(at: 1)
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-    }
-    
     override func viewWillDisappear(_ animated: Bool) {
         presenter?.detachView()
     }
     
-    @IBAction func onScoreTypeChanged(_ sender: UISegmentedControl) {
-        let selectedIndex = scoreTypeChanger.selectedSegmentIndex
-        presenter?.chooseScoreType(scoreType: selectedIndex)
+    // MARK: Actions
+    
+    @IBAction func didChangeScoreType(_ sender: UISegmentedControl) {
+        presenter?.chooseScoreType(scoreType: scoreTypeChanger.selectedSegmentIndex)
     }
     
+    @IBAction func didTapShareButton(_ sender: Any) {
+        presenter?.shareApp()
+    }
+    
+}
+
+extension GameResultViewController: GameResultView {
+
     func loadChartViewController(scoreType: ScoreType) {
-        chartViewController?.loadChartData(chartType: scoreType)
+        self.chartViewController?.loadChartData(chartType: scoreType)
+    }
+    
+    func shareApp() {
+        let itemsToShare = [ "Check out Level Counter for Munchkin!" ]    // TODO: Add link to AppStore later
+        
+        let activityViewController = UIActivityViewController(activityItems: itemsToShare, applicationActivities: nil)
+        activityViewController.popoverPresentationController?.sourceView = self.view
+        activityViewController.excludedActivityTypes = [UIActivityType.addToReadingList,
+                                                        UIActivityType.airDrop,
+                                                        UIActivityType.assignToContact,
+                                                        UIActivityType.openInIBooks,
+                                                        UIActivityType.postToFlickr,
+                                                        UIActivityType.postToVimeo,
+                                                        UIActivityType.print,
+                                                        UIActivityType.saveToCameraRoll]
+        
+        self.present(activityViewController, animated: true, completion: nil)
     }
 }

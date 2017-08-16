@@ -9,12 +9,13 @@
 import UIKit
 import EAIntroView
 
-class OnboardingViewController: UIViewController, OnboardingView, EAIntroDelegate {
+class OnboardingViewController: UIViewController {
 
     var presenter: OnboardingPresenter?
+    fileprivate var rootView: UIView?
+    fileprivate var intro: EAIntroView?
     
-    var rootView: UIView?
-    var intro: EAIntroView?
+    // MARK: Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,16 +23,14 @@ class OnboardingViewController: UIViewController, OnboardingView, EAIntroDelegat
         rootView = self.view
         displayOnboarding()
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-    }
     
     override func viewDidDisappear(_ animated: Bool) {
         presenter?.detachView()
     }
+        
+    // MARK: Helpers
     
-    func displayOnboarding() {
+    fileprivate func displayOnboarding() {
         let pageOne = EAIntroPage()
         pageOne.title = "onboarder.page1.title".localized
         pageOne.desc = "onboarder.page1.description".localized
@@ -41,13 +40,13 @@ class OnboardingViewController: UIViewController, OnboardingView, EAIntroDelegat
         let pageTwo = EAIntroPage()
         pageTwo.title = "onboarder.page2.title".localized
         pageTwo.desc = "onboarder.page2.description".localized
-        pageTwo.titleIconView = UIImageView(image: UIImage(named: "Dice"))
+        pageTwo.titleIconView = UIImageView(image: UIImage(named: "OnboardDice"))
         pageTwo.bgColor = Colors.cardLight
     
         let pageThree = EAIntroPage()
         pageThree.title = "onboarder.page3.title".localized
         pageThree.desc  = "onboarder.page3.description".localized
-        pageThree.titleIconView = UIImageView(image: UIImage(named: "Infinite"))
+        pageThree.titleIconView = UIImageView(image: UIImage(named: "OnboardInfinite"))
         pageThree.bgColor = Colors.cardCorner
         
         let introView: EAIntroView = EAIntroView(frame: rootView!.bounds, andPages: [pageOne, pageTwo, pageThree])
@@ -55,8 +54,19 @@ class OnboardingViewController: UIViewController, OnboardingView, EAIntroDelegat
         introView.delegate = self
         introView.skipButton.setTitle("button.skip".localized, for: .normal)
         introView.show(in: rootView)
-        
     }
+    
+}
+
+// MARK: OnboardingView
+
+extension OnboardingViewController: OnboardingView {
+    
+}
+
+// MARK: EAIntroDelegate
+
+extension OnboardingViewController: EAIntroDelegate {
     
     func introDidFinish(_ introView: EAIntroView!, wasSkipped: Bool) {
         presenter?.setOnboardingSeen()

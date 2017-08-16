@@ -12,41 +12,55 @@ import RxSwift
 class DashboardPresenter: Presenter {
     typealias BaseView = DashboardView
     
-    private let mDataManager: DataManager
-    private var mDashboardView: DashboardView?
-    private var mSubscription: Disposable?
+    private let disposeBag: DisposeBag
+    private let dataManager: DataManager
+    private var dashboardView: DashboardView?
     
     init(dataManager: DataManager) {
-        mDataManager = dataManager
+        self.dataManager = dataManager
+        disposeBag = DisposeBag()
     }
     
     func attachView(_ view: DashboardView) {
-        mDashboardView = view
+        dashboardView = view
     }
     
     func getPlayingPlayers() {
-        mSubscription = mDataManager.getPlayingPlayers()
+        dataManager.getPlayingPlayers()
             .subscribeOn(ConcurrentDispatchQueueScheduler(qos: DispatchQoS.background))
             .observeOn(MainScheduler.instance)
             .subscribe(onNext: { players in
-                self.mDashboardView?.setPlayers(players: players)
+                self.dashboardView?.setPlayers(players: players)
             })
+            .disposed(by: disposeBag)
+    }
+    
+    func rollTheDice() {
+        dashboardView?.rollTheDice()
+    }
+    
+    func nextPlayer() {
+        dashboardView?.nextPlayer()
+    }
+    
+    func finishGameWithConfirmation() {
+        dashboardView?.showFinishGameConfirmationDialog()
     }
     
     func setGameFinished() {
-        mDataManager.getPreferencesHelper().gameStarted = false
+        dataManager.getPreferencesHelper().gameStarted = false
     }
     
     func insertStep(playerId: String, levelScore: Int, strengthScore: Int) {
-        mSubscription = mDataManager.addGameStep(playerId: playerId, levelScore: levelScore, strengthScore: strengthScore)
+        dataManager.addGameStep(playerId: playerId, levelScore: levelScore, strengthScore: strengthScore)
             .subscribeOn(ConcurrentDispatchQueueScheduler(qos: DispatchQoS.background))
             .observeOn(MainScheduler.instance)
             .subscribe()
+            .disposed(by: disposeBag)
     }
     
     func detachView() {
-        mDashboardView = nil
-        mSubscription?.dispose()
+        dashboardView = nil
     }
     
 }

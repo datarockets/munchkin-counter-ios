@@ -12,69 +12,71 @@ import RxSwift
 class PlayerPresenter: Presenter {
     typealias BaseView = PlayerView
 
-    private let mDataManager: DataManager
-    private var mPlayerView: PlayerView?
-    private var mSubscription: Disposable?
+    private let disposeBag: DisposeBag
+    private let dataManager: DataManager
+    private var playerView: PlayerView?
     
-    private var mPlayerId: String?
-    private var mPlayerLevelScore: Int = 0
-    private var mPlayerStrengthScore: Int = 0
+    private var playerId: String?
+    private var playerLevelScore: Int = 0
+    private var playerStrengthScore: Int = 0
     
     init(dataManager: DataManager) {
-        mDataManager = dataManager
+        self.dataManager = dataManager
+        disposeBag = DisposeBag()
     }
     
     func attachView(_ view: PlayerView) {
-        mPlayerView = view
+        playerView = view
     }
     
     func loadPlayerScores(playerId: String) {
-        mSubscription = mDataManager.getPlayer(playerId: playerId)
+        dataManager.getPlayer(playerId: playerId)
             .subscribeOn(ConcurrentDispatchQueueScheduler(qos: .background))
             .observeOn(MainScheduler.instance)
             .subscribe(onNext: { player in
-                self.mPlayerId = player.playerId
-                self.mPlayerLevelScore = player.playerLevel
-                self.mPlayerStrengthScore = player.playerStrength
-                self.mPlayerView?.showPlayerName(playerName: player.playerName!)
-                self.mPlayerView?.showPlayerScores(levelScore: self.mPlayerLevelScore,
-                                                   strengthScore: self.mPlayerStrengthScore)
+                self.playerId = player.playerId
+                self.playerLevelScore = player.playerLevel
+                self.playerStrengthScore = player.playerStrength
+                self.playerView?.showPlayerName(playerName: player.playerName!)
+                self.playerView?.showPlayerScores(levelScore: self.playerLevelScore,
+                                                  strengthScore: self.playerStrengthScore)
             })
+            .disposed(by: disposeBag)
     }
     
     func increaseLevelScore() {
-        mPlayerLevelScore += 1
+        playerLevelScore += 1
         updatePlayerScores()
     }
     
     func decreaseLevelScore() {
-        mPlayerLevelScore -= 1
+        playerLevelScore -= 1
         updatePlayerScores()
     }
     
     func increaseStrengthScore() {
-        mPlayerStrengthScore += 1
+        playerStrengthScore += 1
         updatePlayerScores()
     }
     
     func decreaseStrengthScore() {
-        mPlayerStrengthScore -= 1
+        playerStrengthScore -= 1
         updatePlayerScores()
     }
     
     func updatePlayerScores() {
-        mSubscription = mDataManager.updatePlayersScores(playerId: mPlayerId!, levelScore: mPlayerLevelScore, strengthScore: mPlayerStrengthScore)
+        dataManager.updatePlayersScores(playerId: playerId!, levelScore: playerLevelScore, strengthScore: playerStrengthScore)
             .subscribeOn(ConcurrentDispatchQueueScheduler(qos: DispatchQoS.background))
             .observeOn(MainScheduler.instance)
             .subscribe(onCompleted: {
-                self.mPlayerView?.showPlayerScores(levelScore: self.mPlayerLevelScore,
-                                                   strengthScore: self.mPlayerStrengthScore)
+                self.playerView?.showPlayerScores(levelScore: self.playerLevelScore,
+                                                  strengthScore: self.playerStrengthScore)
             })
+            .disposed(by: disposeBag)
     }
     
     func detachView() {
-        mPlayerView = nil
-        mSubscription?.dispose()
+        playerView = nil
     }
     
 }

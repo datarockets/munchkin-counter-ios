@@ -12,33 +12,35 @@ import RxSwift
 class GameResultPresenter: Presenter {
     typealias BaseView = GameResultView
     
-    private let mDataManager: DataManager
-    private var mGameResultView: GameResultView?
-    private var mSubscription: Disposable?
+    private let dataManager: DataManager
+    private var gameResultView: GameResultView?
     
     init(dataManager: DataManager) {
-        mDataManager = dataManager
+        self.dataManager = dataManager
     }
 
     func attachView(_ view: GameResultView) {
-        mGameResultView = view
+        gameResultView = view
     }
     
     func chooseScoreType(scoreType: Int) {
         switch scoreType {
         case 0:
-            self.mGameResultView?.loadChartViewController(scoreType: .levelScore)
+            self.gameResultView?.loadChartViewController(scoreType: .levelScore)
         case 1:
-            self.mGameResultView?.loadChartViewController(scoreType: .strengthScore)
+            self.gameResultView?.loadChartViewController(scoreType: .strengthScore)
         case 2:
-            self.mGameResultView?.loadChartViewController(scoreType: .totalScore)
+            self.gameResultView?.loadChartViewController(scoreType: .totalScore)
         default: break
         }
     }
     
+    func shareApp() {
+        gameResultView?.shareApp()
+    }
+    
     func detachView() {
-        mGameResultView = nil
-        mSubscription?.dispose()
+        gameResultView = nil
     }
 
 }

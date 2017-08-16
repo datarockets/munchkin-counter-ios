@@ -7,7 +7,7 @@
 */
 
 /*  */
-"app_name" = "Munchkin Level Counter";
+"app_name" = "Level Counter for Munchkin";
 
 /*  */
 "button.add_new_player" = "Aggiungere giocatore";
@@ -37,7 +37,7 @@
 "dialog.finish_game.title" = "Fine del gioco";
 
 /*  */
-"dialog.player_delete.message" = "Vuoi eliminare questo giocatore?";
+"dialog.player_delete.message" = "Sei sicuro di voler eliminare definitivamente il giocatore %@?";
 
 /*  */
 "dialog.player_delete.title" = "Elimina un giocatore";
@@ -96,6 +96,9 @@
 /*  */
 "text.level" = "Livello";
 
+/* */
+"text.not_enough_players.title" = "Non abbastanza giocatori";
+
 /*  */
 "text.player_add_warning" = "Per favore, aggiungere due o più giocatori e premere l'icona di Avvio";
 
@@ -108,6 +111,9 @@
 /*  */
 "text.steps" = "Passi";
 
+/* */
+"text.dice" = "%d";
+
 /*  */
 "title.analytics" = "Analytics";
 
@@ -115,7 +121,7 @@
 "title.choose_game_type" = "Scegliere Il Tipo Di Gioco";
 
 /*  */
-"title.players_editor" = "I Giocatori Editor";
+"title.players_editor" = "Giocatori";
 
 /*  */
 "title.settings" = "Impostazioni";
@@ -131,6 +137,15 @@
 
 /*  */
 "button.next_player" = "Prossimo giocatore";
+
+/* */
+"button.cancel" = "Annulla";
+
+/* */
+"button.delete" = "Elimina";
+
+/* */
+"button.edit" = "Modifica";
 
 /*  */
 "dialog.player_actions.delete_player" = "Eliminare giocatore";

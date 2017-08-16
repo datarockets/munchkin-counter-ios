@@ -13,17 +13,16 @@ import Charts
 
 class DataManager {
     
-    private let mDatabaseHelper: DatabaseHelper
-    private let mPreferencesHelper: PreferencesHelper
+    private let databaseHelper: DatabaseHelper
+    private let preferencesHelper: PreferencesHelper
     
-    init(databaseHelper: DatabaseHelper,
-         preferencesHelper: PreferencesHelper) {
-        mDatabaseHelper = databaseHelper
-        mPreferencesHelper = preferencesHelper
+    init(databaseHelper: DatabaseHelper, preferencesHelper: PreferencesHelper) {
+        self.databaseHelper = databaseHelper
+        self.preferencesHelper = preferencesHelper
     }
     
     func getPreferencesHelper() -> PreferencesHelper {
-        return mPreferencesHelper
+        return preferencesHelper
     }
     
     func addPlayer(playerName: String, position: Int) -> Observable<Player> {
@@ -32,59 +31,62 @@ class DataManager {
         player.playerLevel = 1
         player.playerStrength = 1
         player.playerPosition = position
-        return mDatabaseHelper.setPlayer(player: player)
+        return databaseHelper.setPlayer(player: player)
     
+    }
+    
+    func updatePlayer(player: Player) -> Observable<Player> {
+        return databaseHelper.setPlayer(player: player)
     }
     
     func getPlayer(playerId: String) -> Observable<Player> {
-        return mDatabaseHelper.getPlayer(playerId: playerId)
+        return databaseHelper.getPlayer(playerId: playerId)
     }
     
     func getPlayersByPosition() -> Observable<[Player]> {
-        return mDatabaseHelper.getPlayersByPosition().toArray()
+        return databaseHelper.getPlayersByPosition().toArray()
     }
     
     func getPlayingPlayers() -> Observable<[Player]> {
-        return mDatabaseHelper.getPlayingPlayers().toArray()
+        return databaseHelper.getPlayingPlayers().toArray()
     }
     
     func getPlayers(sortType: ScoreType) -> Observable<[Player]> {
         switch sortType {
             case .levelScore:
-                return mDatabaseHelper.getPlayedPlayersByLevel().toArray()
+                return databaseHelper.getPlayedPlayersByLevel().toArray()
             case .strengthScore:
-                return mDatabaseHelper.getPlayedPlayersByStrength().toArray()
+                return databaseHelper.getPlayedPlayersByStrength().toArray()
             case .totalScore:
-                return mDatabaseHelper.getPlayedPlayersByTotal().toArray()
-
+                return databaseHelper.getPlayedPlayersByTotal().toArray()
         }
     }
     
     func deletePlayer(playerId: String) -> Observable<Void> {
-        return mDatabaseHelper.deletePlayer(withId: playerId)
+        return databaseHelper.deletePlayer(withId: playerId)
     }
     
     func markPlayerAsPlaying(playerId: String, isPlaying: Bool) -> Observable<Void> {
-        return mDatabaseHelper.markPlayerPlaying(withId: playerId, isPlaying: isPlaying)
+        return databaseHelper.markPlayerPlaying(withId: playerId, isPlaying: isPlaying)
     }
     
     func updatePlayerPosition(playerId: String, position: Int) -> Observable<Void> {
-        return mDatabaseHelper.updatePlayerPosition(with: playerId, position: position)
+        return databaseHelper.updatePlayerPosition(with: playerId, position: position)
     }
     
     func clearGameSteps() -> Observable<Void> {
-        return mDatabaseHelper.clearGameSteps()
+        return databaseHelper.clearGameSteps()
     }
     
     func getLineData(type: Int) -> Observable<ChartData> {
         return Observable.create { subscriber in
-            let playersList = self.mDatabaseHelper.getPlayingPlayers()
-            let gameSteps = self.mDatabaseHelper.getGameSteps()
+            let playersList = self.databaseHelper.getPlayingPlayers()
+            let gameSteps = self.databaseHelper.getGameSteps()
             var playerGameSteps = [Player: [GameStep]]()
             
-            playersList.subscribe(onNext: { player in
+            _ = playersList.subscribe(onNext: { player in
                 var playerSteps = [GameStep]()
-                gameSteps.subscribe(onNext: { step in
+                _ = gameSteps.subscribe(onNext: { step in
                     if step.playerId == player.playerId {
                         playerSteps.append(step)
                     }
@@ -92,17 +94,14 @@ class DataManager {
                 playerGameSteps.updateValue(playerSteps, forKey: player)
             })
             
-            
             var playerLines = [ChartDataSet]()
             var playerColors = [UIColor]()
             
-            
             playerGameSteps.keys.forEach { player in
-                print("\(player.playerName)")
-                let color = UIColor.colorHash(name: player.playerName)
+                print("\(String(describing: player.playerName))")
+                let color = UIColor.colorHash(hexString: player.playerName)
                 playerColors.append(color)
             }
-            
             
             for (index, playerStepsList) in playerGameSteps.values.enumerated() {
                 var entries = [ChartDataEntry]()
@@ -149,11 +148,11 @@ class DataManager {
         gameStep.playerId = playerId
         gameStep.playerLevel = levelScore
         gameStep.playerStrength = strengthScore
-        return mDatabaseHelper.setGameStep(gameStep: gameStep)
+        return databaseHelper.setGameStep(gameStep: gameStep)
     }
     
     func updatePlayersScores(playerId: String, levelScore: Int, strengthScore: Int) -> Observable<Void> {
-        return mDatabaseHelper.updatePlayerScores(withId: playerId, levelScore: levelScore, strengthScore: strengthScore)
+        return databaseHelper.updatePlayerScores(withId: playerId, levelScore: levelScore, strengthScore: strengthScore)
     }
     
 }

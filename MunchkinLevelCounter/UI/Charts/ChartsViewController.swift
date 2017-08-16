@@ -9,19 +9,16 @@
 import UIKit
 import Charts
 
-class ChartsViewController: UIViewController,
-    ChartsView,
-    UITableViewDelegate,
-    UITableViewDataSource {
+class ChartsViewController: UIViewController {
 
     var presenter: ChartsPresenter?
-
-    var playedPlayers: [Player] = []
+    fileprivate var playedPlayers: [Player] = []
+    fileprivate var currentScoreType: ScoreType?
     
-    @IBOutlet weak var lineChartView: LineChartView!
-    @IBOutlet weak var playedPlayersTableView: UITableView!
+    @IBOutlet weak fileprivate var lineChartView: LineChartView!
+    @IBOutlet weak fileprivate var playedPlayersTableView: UITableView!
     
-    var currentScoreType: ScoreType?
+    // MARK: Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,33 +27,21 @@ class ChartsViewController: UIViewController,
         presenter?.attachView(self)
     }
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return playedPlayers.count
+    override func viewDidDisappear(_ animated: Bool) {
+        presenter?.detachView()
     }
+    
+    // MARK: Helpers
     
     func loadChartData(chartType: ScoreType) {
         currentScoreType = chartType
         presenter?.loadChartData(type: chartType)
         presenter?.loadPlayers(sortType: chartType)
     }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = playedPlayersTableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as? ChartsTableViewCell else { fatalError("Dequeuing reusable cell failed") }
-        let player = playedPlayers[indexPath.row]
-        cell.ivPlayerImage?.setImageWith(player.playerName, color: UIColor.colorHash(name: player.playerName), circular: true)
-        cell.tvPlayerName.text = player.playerName
-        
-        switch currentScoreType! {
-        case .levelScore:
-            cell.tvPlayerScore.text = "\(player.playerLevel)"
-        case .strengthScore:
-            cell.tvPlayerScore.text = "\(player.playerStrength)"
-        case .totalScore:
-            cell.tvPlayerScore.text = "\(player.getTotalScore())"
-        }
-        
-        return cell
-    }
+
+}
+
+extension ChartsViewController: ChartsView {
     
     func showPlayersList(players: [Player]) {
         playedPlayers = players
@@ -72,12 +57,33 @@ class ChartsViewController: UIViewController,
         lineChartView.invalidateIntrinsicContentSize()
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
+}
+
+// MARK: UITableViewDelegate & UITableViewDataSource
+
+extension ChartsViewController : UITableViewDelegate, UITableViewDataSource {
+
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return playedPlayers.count
     }
     
-    override func viewDidDisappear(_ animated: Bool) {
-        presenter?.detachView()
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = playedPlayersTableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as? ChartsTableViewCell else { fatalError("Dequeuing reusable cell failed") }
+        let player = playedPlayers[indexPath.row]
+        
+        cell.ivPlayerImage?.setImageWith(player.playerName, color: UIColor.colorHash(hexString: player.playerName), circular: true)
+        cell.tvPlayerName.text = player.playerName
+        
+        switch currentScoreType! {
+        case .levelScore:
+            cell.tvPlayerScore.text = "\(player.playerLevel)"
+        case .strengthScore:
+            cell.tvPlayerScore.text = "\(player.playerStrength)"
+        case .totalScore:
+            cell.tvPlayerScore.text = "\(player.getTotalScore())"
+        }
+        
+        return cell
     }
-
+    
 }

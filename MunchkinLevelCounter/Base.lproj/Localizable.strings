@@ -7,13 +7,13 @@
 */
 
 /*  */
-"app_name" = "Munchkin Level Counter";
+"app_name" = "Level Counter for Munchkin";
 
 /*  */
 "title.choose_game_type" = "Choose Game Type";
 
 /*  */
-"title.players_editor" = "Players Editor";
+"title.players_editor" = "Players";
 
 /*  */
 "title.analytics" = "Analytics";
@@ -60,6 +60,15 @@
 /*  */
 "button.continue" = "Continue";
 
+/* */
+"button.cancel" = "Cancel";
+
+/* */
+"button.delete" = "Delete";
+
+/* */
+"button.edit" = "Edit";
+
 /*  */
 "dialog.player_actions.edit_player" = "Edit Player";
 
@@ -76,7 +85,7 @@
 "dialog.player_delete.title" = "Delete a player";
 
 /*  */
-"dialog.player_delete.message" = "Do you want to delete this player?";
+"dialog.player_delete.message" = "Are you sure you want permanently delete %@?";
 
 /*  */
 "dialog.start_continue_game.title" = "Continue or start?";
@@ -90,8 +99,11 @@
 /*  */
 "progress_dialog.stats_loader.message" = "Wait while we are loading your stats";
 
+/* */
+"text.not_enough_players.title" = "Not enough players";
+
 /*  */
-"text.player_add_warning" = "Please, add two or more players and press Start icon";
+"text.player_add_warning" = "Please, add two or more players and press Start";
 
 /*  */
 "text.player_name" = "Player Name";
@@ -107,6 +119,9 @@
 
 /*  */
 "text.steps" = "Steps";
+
+/* */
+"text.dice" = "Dropped %d";
 
 /*  */
 "settings.max_level" = "Maximum level";

@@ -15,36 +15,36 @@ class PreferencesHelper {
     private let isWakeLockActive = "is_wakelock_active"
     private let isGameStarted = "is_game_started"
     
-    private let mUserDefaults: UserDefaults
+    private let userDefaults: UserDefaults
     
     init(userDefaults: UserDefaults) {
-        mUserDefaults = userDefaults
+        self.userDefaults = userDefaults
     }
     
     var userSeenOnboarding: Bool {
         get {
-            return mUserDefaults.bool(forKey: isOnboardingSeen)
+            return userDefaults.bool(forKey: isOnboardingSeen)
         }
         set (newValue) {
-            mUserDefaults.set(newValue, forKey: isOnboardingSeen)
+            userDefaults.set(newValue, forKey: isOnboardingSeen)
         }
     }
     
     var wakeLockActive: Bool {
         get {
-            return mUserDefaults.bool(forKey: isWakeLockActive)
+            return userDefaults.bool(forKey: isWakeLockActive)
         }
         set (newValue) {
-            mUserDefaults.set(newValue, forKey: isWakeLockActive)
+            userDefaults.set(newValue, forKey: isWakeLockActive)
         }
     }
     
     var gameStarted: Bool {
         get {
-            return mUserDefaults.bool(forKey: isGameStarted)
+            return userDefaults.bool(forKey: isGameStarted)
         }
         set (newValue) {
-            mUserDefaults.set(newValue, forKey: isGameStarted)
+            userDefaults.set(newValue, forKey: isGameStarted)
         }
     }
     
