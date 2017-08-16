@@ -79,6 +79,7 @@ class PlayersEditorViewController: BaseViewController {
     fileprivate func showAddNewPlayerDialog() {
         let alert = UIAlertController(title: "button.add_new_player".localized, message: nil, preferredStyle: .alert)
         alert.addTextField { textField in
+            textField.returnKeyType = .done
             textField.placeholder = "text.player_name".localized
             textField.addTarget(self, action: #selector(self.validate(_:)), for: .editingChanged)
         }
@@ -105,6 +106,7 @@ class PlayersEditorViewController: BaseViewController {
         let alert = UIAlertController(title: "dialog.player_actions.edit_player".localized, message: nil, preferredStyle: .alert)
         alert.addTextField { textField in
             self.editingPlayerName = self.players[indexPath.row].playerName
+            textField.returnKeyType = .done
             textField.text = self.editingPlayerName
             textField.addTarget(self, action: #selector(self.validate(_:)), for: .editingChanged)
         }
