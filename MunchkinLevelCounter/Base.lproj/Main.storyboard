@@ -128,10 +128,10 @@
             </objects>
             <point key="canvasLocation" x="337.68115942028987" y="-779.34782608695662"/>
         </scene>
-        <!--Level Counter-->
+        <!--Counter-->
         <scene sceneID="eeF-Te-36v">
             <objects>
-                <viewController storyboardIdentifier="dashboard" automaticallyAdjustsScrollViewInsets="NO" id="re3-RX-2fl" customClass="DashboardViewController" customModule="MunchkinLevelCounter" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="dashboard" title="Counter" automaticallyAdjustsScrollViewInsets="NO" id="re3-RX-2fl" customClass="DashboardViewController" customModule="MunchkinLevelCounter" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="TV2-4F-tFI"/>
                         <viewControllerLayoutGuide type="bottom" id="88z-Rb-Qk1"/>
@@ -233,7 +233,7 @@
                         </constraints>
                     </view>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" title="Level Counter" id="888-oU-dXc">
+                    <navigationItem key="navigationItem" id="888-oU-dXc">
                         <barButtonItem key="leftBarButtonItem" image="Dice" id="3gY-ni-FWC" userLabel="Dice">
                             <connections>
                                 <action selector="didTapDiceButton:" destination="re3-RX-2fl" id="IRK-rl-XWf"/>
@@ -248,7 +248,7 @@
                             </connections>
                         </barButtonItem>
                         <userDefinedRuntimeAttributes>
-                            <userDefinedRuntimeAttribute type="string" keyPath="localizedTextText" value="app_name"/>
+                            <userDefinedRuntimeAttribute type="string" keyPath="localizedTextText" value="title.level_counter"/>
                         </userDefinedRuntimeAttributes>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
@@ -444,13 +444,13 @@
                                         <rect key="frame" x="0.0" y="0.0" width="160" height="252"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NiR-Nc-Hce">
-                                                <rect key="frame" x="60.333333333333329" y="86.666666666666657" width="39.999999999999986" height="79.999999999999972"/>
+                                                <rect key="frame" x="60" y="86.666666666666657" width="40" height="79.999999999999972"/>
                                                 <fontDescription key="fontDescription" name="Buccaneer-Cyr-Regular" family="Buccaneer Cyr" pointSize="60"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Level" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gXR-gH-wzX">
-                                                <rect key="frame" x="57.333333333333343" y="213" width="45.666666666666657" height="22.666666666666657"/>
+                                                <rect key="frame" x="58.000000000000007" y="213" width="45.666666666666679" height="22.666666666666657"/>
                                                 <fontDescription key="fontDescription" name="Buccaneer-Cyr-Regular" family="Buccaneer Cyr" pointSize="17"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
@@ -509,7 +509,7 @@
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pl9-ht-bE1">
-                                                <rect key="frame" x="60.333333333333343" y="86.666666666666657" width="39.999999999999972" height="79.999999999999972"/>
+                                                <rect key="frame" x="60" y="86.666666666666657" width="40" height="79.999999999999972"/>
                                                 <fontDescription key="fontDescription" name="Buccaneer-Cyr-Regular" family="Buccaneer Cyr" pointSize="60"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
@@ -526,7 +526,7 @@
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Strength" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BSt-WG-s6F">
-                                                <rect key="frame" x="42.666666666666657" y="213" width="75.333333333333343" height="22.666666666666657"/>
+                                                <rect key="frame" x="42.333333333333343" y="213" width="75.333333333333343" height="22.666666666666657"/>
                                                 <fontDescription key="fontDescription" name="Buccaneer-Cyr-Regular" family="Buccaneer Cyr" pointSize="17"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>

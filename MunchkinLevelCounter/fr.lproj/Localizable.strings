@@ -123,11 +123,14 @@
 /*  */
 "title.players_editor" = "Joueurs";
 
+/* */
+"title.level_counter" = "Compteur";
+
 /*  */
 "title.settings" = "Paramètres";
 
 /*  */
-"onboarder.page1.description" = "Munchkin Level Counter rend votre jeu beaucoup mieux";
+"onboarder.page1.description" = "Level Counter for Munchkin rend votre jeu beaucoup mieux";
 
 /*  */
 "onboarder.page2.description" = "Ajoute autant de joueurs que tu veux";
@@ -154,4 +157,4 @@
 "dialog.player_actions.edit_player" = "Modifier le joueur";
 
 /*  */
-"menu.share_app" = "Partagez Munchkin Level Counter";
+"menu.share_app" = "Partagez Level Counter for Munchkin";

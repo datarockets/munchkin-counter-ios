@@ -15,6 +15,9 @@
 /*  */
 "title.players_editor" = "Players";
 
+/* */
+"title.level_counter" = "Counter";
+
 /*  */
 "title.analytics" = "Analytics";
 
@@ -31,7 +34,7 @@
 "menu.roll_dice" = "Roll a dice";
 
 /*  */
-"menu.share_app" = "Share Munchkin Level Counter";
+"menu.share_app" = "Share Level Counter for Munchkin";
 
 /*  */
 "button.finish" = "Finish";
