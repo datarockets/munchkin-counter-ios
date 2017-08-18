@@ -48,10 +48,10 @@ platform :ios do
     )
 
     # Post a message to opensource channel
-    slack(
-      message: "Munckin Level Counter was released",
-      slack_url: "https://hooks.slack.com/services/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"
-    )
+    # slack(
+    #   message: "Level Counter for Munchkin was released",
+    #   slack_url: "https://hooks.slack.com/services/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"
+    # )
 
     error do |lane, exception|
     end

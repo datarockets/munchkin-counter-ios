@@ -1,10 +1,10 @@
-app_identifier "com.datarockets.munchkin"
+app_identifier "com.datarockets.mnchknlvlcntr"
 apple_id "chyrta@me.com"
 
 for_platform :ios do
 
   for_lane :beta do
-    app_identifier "com.datarockets.munchkin"
+    app_identifier "com.datarockets.mnchknlvlcntr"
   end
 
 end
