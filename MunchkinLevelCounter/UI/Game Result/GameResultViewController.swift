@@ -55,7 +55,7 @@ extension GameResultViewController: GameResultView {
     }
     
     func shareApp() {
-        let itemsToShare = [ "Check out Level Counter for Munchkin!" ]    // TODO: Add link to AppStore later
+        let itemsToShare = [ "Check out Levels for Munchkin!" ]    // TODO: Add link to AppStore later
         
         let activityViewController = UIActivityViewController(activityItems: itemsToShare, applicationActivities: nil)
         activityViewController.popoverPresentationController?.sourceView = self.view

@@ -7,7 +7,7 @@
 */
 
 /*  */
-"app_name" = "Level Counter for Munchkin";
+"app_name" = "Levels for Munchkin";
 
 /*  */
 "button.skip" = "Passer";
@@ -157,4 +157,4 @@
 "dialog.player_actions.edit_player" = "Modifier le joueur";
 
 /*  */
-"menu.share_app" = "Partagez Level Counter for Munchkin";
+"menu.share_app" = "Partagez Levels for Munchkin";

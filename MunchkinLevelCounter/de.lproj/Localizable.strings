@@ -7,7 +7,7 @@
 */
 
 /*  */
-"app_name" = "Level Counter for Munchkin";
+"app_name" = "Levels for Munchkin";
 
 /*  */
 "title.choose_game_type" = "Wähle den Spieltyp";
@@ -157,4 +157,4 @@
 "dialog.player_actions.edit_player" = "Spieler bearbeiten";
 
 /*  */
-"menu.share_app" = "Empfehlen Level Counter for Munchkin";
+"menu.share_app" = "Empfehlen Levels for Munchkin";

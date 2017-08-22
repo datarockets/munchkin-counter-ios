@@ -7,7 +7,7 @@
 */
 
 /*  */
-"app_name" = "Level Counter for Munchkin";
+"app_name" = "Levels for Munchkin";
 
 /*  */
 "title.choose_game_type" = "Kies Spel Type";
@@ -34,7 +34,7 @@
 "menu.roll_dice" = "Rol Een Dobbelsteen";
 
 /*  */
-"menu.share_app" = "Deel Level Counter for Munchkin";
+"menu.share_app" = "Deel Levels for Munchkin";
 
 /*  */
 "button.finish" = "Klaar";

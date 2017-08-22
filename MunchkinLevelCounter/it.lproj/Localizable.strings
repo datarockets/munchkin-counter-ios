@@ -7,7 +7,7 @@
 */
 
 /*  */
-"app_name" = "Level Counter for Munchkin";
+"app_name" = "Levels for Munchkin";
 
 /*  */
 "button.add_new_player" = "Aggiungere giocatore";
@@ -157,4 +157,4 @@
 "dialog.player_actions.edit_player" = "Modifica giocatore";
 
 /*  */
-"menu.share_app" = "Condividi Level Counter for Munchkin";
+"menu.share_app" = "Condividi Levels for Munchkin";
