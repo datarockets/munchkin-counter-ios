@@ -1,0 +1,7 @@
+Einfach zu bedienen Level Counter für Munchkin. Es ist Open Source, kostenlos und enthält keine Anzeigen.
+
+Eigenschaften:
+• Füge soviel Spieler hinzu, wie du willst
+• Das Spiel und die Stärke des Spielers mit Leichtigkeit
+• Die Würfel in die App rollen
+• Analysieren Sie Spieldaten nach Spielerniveau, Stärke und Gesamtpunktzahl

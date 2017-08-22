@@ -1,0 +1,7 @@
+Easy to use level counter for Munchkin. It's open source, free, and contain no Ads.
+
+Features:
+• Add as much players as you want
+• Count player's level and strength with ease
+• Roll the dice right in the app
+• Analyse game data by player's level, strength and total score

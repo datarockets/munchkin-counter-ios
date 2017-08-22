@@ -1,5 +1,5 @@
 app_identifier "com.datarockets.mnchknlvlcntr"
-apple_id "chyrta@me.com"
+apple_id "p.vashkel@datarockets.com"
 
 for_platform :ios do
 

@@ -1,0 +1,7 @@
+Makkelijk te gebruiken niveau teller voor Munchkin. Het is open source, gratis en bevat geen advertenties.
+
+Kenmerken:
+• Voeg zoveel spelers toe als u wilt
+• Tellen het niveau en de kracht van de speler met gemak
+• Rol de dobbelstenen recht in de app
+• Ontdek de spelgegevens op spelerniveau, kracht en totale score
