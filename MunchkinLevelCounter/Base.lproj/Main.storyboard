@@ -38,7 +38,7 @@
                                         <rect key="frame" x="0.0" y="28" width="414" height="66"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="g9W-9s-9Cd" id="8Va-fp-h5U">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="65.666666666666671"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="66"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Player Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rlG-bz-ikm">
@@ -148,7 +148,7 @@
                                         <rect key="frame" x="0.0" y="28" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ghI-cD-NSE" id="hZd-7j-Ho7">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.666666666666664"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Player Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aVi-EG-DEp">
@@ -304,7 +304,7 @@
                                 <action selector="didChangeScoreType:" destination="Xs3-F6-RTo" eventType="valueChanged" id="T4R-P0-Env"/>
                             </connections>
                         </segmentedControl>
-                        <barButtonItem key="rightBarButtonItem" enabled="NO" image="Share" id="zuH-Jj-ON7" userLabel="Share">
+                        <barButtonItem key="rightBarButtonItem" image="Share" id="zuH-Jj-ON7" userLabel="Share">
                             <connections>
                                 <action selector="didTapShareButton:" destination="Xs3-F6-RTo" id="u60-RA-ojF"/>
                             </connections>
@@ -343,7 +343,7 @@
                                         <rect key="frame" x="0.0" y="28" width="414" height="66"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="CjV-uD-eiT" id="f8p-4S-89z">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="65.666666666666671"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="66"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="O9F-4K-mfi">
@@ -429,7 +429,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="252"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Player Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3EL-IU-MPe">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="29.333333333333332"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="33.333333333333336"/>
                                 <fontDescription key="fontDescription" name="Buccaneer-Cyr-Regular" family="Buccaneer Cyr" pointSize="25"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -444,13 +444,13 @@
                                         <rect key="frame" x="0.0" y="0.0" width="160" height="252"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NiR-Nc-Hce">
-                                                <rect key="frame" x="63.333333333333343" y="91.666666666666657" width="33.666666666666657" height="69.999999999999972"/>
+                                                <rect key="frame" x="60.333333333333329" y="86.666666666666657" width="39.999999999999986" height="79.999999999999972"/>
                                                 <fontDescription key="fontDescription" name="Buccaneer-Cyr-Regular" family="Buccaneer Cyr" pointSize="60"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Level" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gXR-gH-wzX">
-                                                <rect key="frame" x="61" y="213" width="40" height="20"/>
+                                                <rect key="frame" x="57.333333333333343" y="213" width="45.666666666666657" height="22.666666666666657"/>
                                                 <fontDescription key="fontDescription" name="Buccaneer-Cyr-Regular" family="Buccaneer Cyr" pointSize="17"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
@@ -509,7 +509,7 @@
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pl9-ht-bE1">
-                                                <rect key="frame" x="63.333333333333343" y="91.666666666666657" width="33.666666666666657" height="69.999999999999972"/>
+                                                <rect key="frame" x="60.333333333333343" y="86.666666666666657" width="39.999999999999972" height="79.999999999999972"/>
                                                 <fontDescription key="fontDescription" name="Buccaneer-Cyr-Regular" family="Buccaneer Cyr" pointSize="60"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
@@ -526,7 +526,7 @@
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Strength" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BSt-WG-s6F">
-                                                <rect key="frame" x="47.666666666666657" y="213" width="65.000000000000028" height="20"/>
+                                                <rect key="frame" x="42.666666666666657" y="213" width="75.333333333333343" height="22.666666666666657"/>
                                                 <fontDescription key="fontDescription" name="Buccaneer-Cyr-Regular" family="Buccaneer Cyr" pointSize="17"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>

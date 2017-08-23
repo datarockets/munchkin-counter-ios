@@ -106,6 +106,9 @@
 /* */
 "text.dice" = "Выпало %d";
 
+/* */
+"text.share_message" = "Levels for Munchkin - простой в использовании счетчик уровней";
+
 /*  */
 "settings.max_level" = "Максимальный уровень";
 

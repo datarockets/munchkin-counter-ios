@@ -120,6 +120,9 @@
 /* */
 "text.dice" = "%d";
 
+/* */
+"text.share_message" = "Levels for Munchkin - niveles fáciles de usar counter";
+
 /*  */
 "text.strength" = "Fuerza";
 

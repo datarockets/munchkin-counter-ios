@@ -737,7 +737,7 @@
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = M5MBYBFCK5;
 				INFOPLIST_FILE = "$(SRCROOT)/MunchkinLevelCounter/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.datarockets.mnchknlvlcntr;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -852,7 +852,7 @@
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = M5MBYBFCK5;
 				INFOPLIST_FILE = "$(SRCROOT)/MunchkinLevelCounter/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.datarockets.mnchknlvlcntr;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -875,7 +875,7 @@
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = M5MBYBFCK5;
 				INFOPLIST_FILE = "$(SRCROOT)/MunchkinLevelCounter/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = com.datarockets.mnchknlvlcntr;

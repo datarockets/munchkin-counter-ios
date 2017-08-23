@@ -126,6 +126,9 @@
 /* */
 "text.dice" = "%d";
 
+/* */
+"text.share_message" = "Levels for Munchkin - makkelijk te gebruiken niveau teller";
+
 /*  */
 "settings.max_level" = "Maximale Level";
 

@@ -111,6 +111,9 @@
 /* */
 "text.dice" = "%d";
 
+/* */
+"text.share_message" = "Levels for Munchkin - compteur de niveaux facile à utiliser";
+
 /*  */
 "text.strength" = "Force";
 

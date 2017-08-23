@@ -105,6 +105,9 @@
 /* */
 "text.dice" = "%d";
 
+/* */
+"text.share_message" = "Levels for Munchkin - einfach zu bedienende Level Counter";
+
 /*  */
 "settings.max_level" = "Maximales Level";
 
