@@ -11,47 +11,54 @@ platform :ios do
     )
   end
 
-  desc "Submit a new build of Munchkin Level Counter to Fabric Beta"
-  lane :beta do
+  desc "Submit a new build to AppStore"
+  lane :appstore do
 
-    create_keychain(
-      name: ENV["MATCH_KEYCHAIN_NAME"],
-      password: ENV["MATCH_PASSWORD"],
-      default_keychain: true,
-      unlock: true,
-      timeout: 3600,
-      add_to_search_list: true
-    )
+    # create_keychain(
+    #   name: ENV["MATCH_KEYCHAIN_NAME"],
+    #   password: ENV["MATCH_PASSWORD"],
+    #   default_keychain: true,
+    #   unlock: true,
+    #   timeout: 3600,
+    #   add_to_search_list: true
+    # )
 
-    match(
-      type: "adhoc",
-      keychain_name: ENV["MATCH_KEYCHAIN_NAME"],
-      keychain_password: ENV["MATCH_PASSWORD"],
-      readonly: true
-    )
+    # match(
+    #   type: "adhoc",
+    #   keychain_name: ENV["MATCH_KEYCHAIN_NAME"],
+    #   keychain_password: ENV["MATCH_PASSWORD"],
+    #   readonly: true
+    # )
 
     # Building an app
     gym(
       scheme: "MunchkinLevelCounter",
-      configuration: "Ad Hoc",
-      sdk: "iphoneos10.2",
+      output_directory: "./build",
+      output_name: "LevelCounterForMunchkin_1.0.0",
+      configuration: "AppStore",
+      sdk: "iphoneos10.3",
       clean: true,
       include_bitcode: false,
       include_symbols: true,
-      export_method: "ad-hoc"
+      export_options(
+        method: "app-store",
+        provisioningProfiles: { 
+          "com.datarockets.mnchknlvlcntr": "match AppStore com.datarockets.mnchknlvlcntr"
+        }
+      )
     )
 
     # Pushing to Fabric Beta
-    crashlytics(
-      api_token: ENV["FABRIC_API_TOKEN"],
-      build_secret: ENV["FABRIC_BUILD_SECRET"]
-    )
+    # crashlytics(
+    #   api_token: ENV["FABRIC_API_TOKEN"],
+    #   build_secret: ENV["FABRIC_BUILD_SECRET"]
+    # )
 
     # Post a message to opensource channel
-    slack(
-      message: "Munckin Level Counter was released",
-      slack_url: "https://hooks.slack.com/services/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"
-    )
+    # slack(
+    #   message: "Level Counter for Munchkin was released",
+    #   slack_url: "https://hooks.slack.com/services/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"
+    # )
 
     error do |lane, exception|
     end

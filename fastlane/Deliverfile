@@ -1,10 +1,67 @@
-###################### More Options ######################
-# If you want to have even more control, check out the documentation
-# https://github.com/fastlane/fastlane/blob/master/deliver/Deliverfile.md
+app_identifier "com.datarockets.mnchknlvlcntr"
 
+username "p.vashkel@datarockets.com"
 
-###################### Automatically generated ######################
-# Feel free to remove the following line if you use fastlane (which you should)
+ipa "LevelsForMunchkin_1.0.0.ipa"
 
-app_identifier "com.datarockets.munchkin" # The bundle identifier of your app
-username "chyrta@me.com" # your Apple ID user
+app_version "1.0.0"
+
+submit_for_review false
+
+screenshots_path "fastlane/screenshots/"
+
+metadata_path "fastlane/metadata/"
+
+app_review_information(
+  first_name: "Pavel",
+  last_name: "Vashkel",
+  phone_number: "",
+  email_address: "p.vashkel@datarockets.com",
+  notes: "Share button at last screen (game results) is currently disabled due to reason that by design it should give user ability to share this app including a link to app page at App Store."
+)
+
+app_rating_config_path "fastlane/rating_config.json"
+
+name(
+  'en-US' => "Levels for Munchkin",
+  'de-DE' => "Levels for Munchkin",
+  'fr-FR' => "Levels for Munchkin",
+  'it' => "Levels for Munchkin",
+  'es-ES' => "Levels for Munchkin",
+  'nl-NL' => "Levels for Munchkin",
+  'ru' => "Levels for Munchkin"
+)
+
+support_url(
+  'en-US' => "https://datarockets.com/",
+  'de-DE' => "https://datarockets.com/",
+  'fr-FR' => "https://datarockets.com/",
+  'it' => "https://datarockets.com/",
+  'es-ES' => "https://datarockets.com/",
+  'nl-NL' => "https://datarockets.com/",
+  'ru' => "https://datarockets.com/"
+)
+
+keywords(
+  'en-US' => "card, board, game, assistant, free, dice, score",
+  'de-DE' => "Karte, Brett, Spiel, Assistent, frei, Würfel, Kerbe",
+  'fr-FR' => "carte, planche, jeu, assistant, gratuit, dés, score",
+  'it' => "carta, tavola, gioco, assistente, libero, dadi, punteggio",
+  'es-ES' => "tarjeta, mesa, juego, asistente, libre, dados, puntuación",
+  'nl-NL' => "kaart, bordspel, spel, assistent, gratis, dobbelstenen, score",
+  'ru' => "карты, настольная, игра, помощник, бесплатно, кости, оценка"
+)
+
+app_icon './AppIcon.png'
+
+platform 'ios'
+
+copyright "2017 datarockets, LLC"
+
+primary_category 'MZGenre.Games'
+
+secondary_category 'MZGenre.Entertainment'
+
+primary_first_sub_category 'MZGenre.Card'
+
+primary_second_sub_category 'MZGenre.Board'

@@ -7,13 +7,16 @@
 */
 
 /*  */
-"app_name" = "Level Counter for Munchkin";
+"app_name" = "Levels for Munchkin";
 
 /*  */
 "title.choose_game_type" = "Kies Spel Type";
 
 /*  */
 "title.players_editor" = "Spelers";
+
+/* */
+"title.level_counter" = "Taller";
 
 /*  */
 "title.analytics" = "Analyse";
@@ -31,7 +34,7 @@
 "menu.roll_dice" = "Rol Een Dobbelsteen";
 
 /*  */
-"menu.share_app" = "Deel Munchkin Level Teller";
+"menu.share_app" = "Deel Levels for Munchkin";
 
 /*  */
 "button.finish" = "Klaar";
@@ -123,6 +126,9 @@
 /* */
 "text.dice" = "%d";
 
+/* */
+"text.share_message" = "Levels for Munchkin - makkelijk te gebruiken niveau teller";
+
 /*  */
 "settings.max_level" = "Maximale Level";
 
@@ -142,7 +148,7 @@
 "onboarder.page1.title" = "Welkom!";
 
 /*  */
-"onboarder.page1.description" = "Munchkin Level Tellen maakt je spel stukken beter!";
+"onboarder.page1.description" = "Level Counter for Munchkin maakt je spel stukken beter!";
 
 /*  */
 "onboarder.page2.title" = "Oneindig";

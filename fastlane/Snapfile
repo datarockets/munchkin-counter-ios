@@ -1,0 +1,21 @@
+devices([
+  # "iPhone 5",
+  # "iPhone 7",
+  "iPhone 7 Plus"
+])
+
+languages([
+  "ru",
+  "en",
+  "de",
+  "fr",
+  "it",
+  "es",
+  "nl"
+])
+
+scheme "MunchkinLevelCounter"
+
+output_directory "./fastlane/screenshots"
+
+clear_previous_screenshots true

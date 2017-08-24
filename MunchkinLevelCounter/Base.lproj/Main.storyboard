@@ -38,7 +38,7 @@
                                         <rect key="frame" x="0.0" y="28" width="414" height="66"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="g9W-9s-9Cd" id="8Va-fp-h5U">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="65.666666666666671"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="66"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Player Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rlG-bz-ikm">
@@ -128,10 +128,10 @@
             </objects>
             <point key="canvasLocation" x="337.68115942028987" y="-779.34782608695662"/>
         </scene>
-        <!--Level Counter-->
+        <!--Counter-->
         <scene sceneID="eeF-Te-36v">
             <objects>
-                <viewController storyboardIdentifier="dashboard" automaticallyAdjustsScrollViewInsets="NO" id="re3-RX-2fl" customClass="DashboardViewController" customModule="MunchkinLevelCounter" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="dashboard" title="Counter" automaticallyAdjustsScrollViewInsets="NO" id="re3-RX-2fl" customClass="DashboardViewController" customModule="MunchkinLevelCounter" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="TV2-4F-tFI"/>
                         <viewControllerLayoutGuide type="bottom" id="88z-Rb-Qk1"/>
@@ -148,7 +148,7 @@
                                         <rect key="frame" x="0.0" y="28" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ghI-cD-NSE" id="hZd-7j-Ho7">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.666666666666664"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Player Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aVi-EG-DEp">
@@ -233,7 +233,7 @@
                         </constraints>
                     </view>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" title="Level Counter" id="888-oU-dXc">
+                    <navigationItem key="navigationItem" title="Counter" id="888-oU-dXc">
                         <barButtonItem key="leftBarButtonItem" image="Dice" id="3gY-ni-FWC" userLabel="Dice">
                             <connections>
                                 <action selector="didTapDiceButton:" destination="re3-RX-2fl" id="IRK-rl-XWf"/>
@@ -248,7 +248,7 @@
                             </connections>
                         </barButtonItem>
                         <userDefinedRuntimeAttributes>
-                            <userDefinedRuntimeAttribute type="string" keyPath="localizedTextText" value="app_name"/>
+                            <userDefinedRuntimeAttribute type="string" keyPath="localizedTextText" value="title.level_counter"/>
                         </userDefinedRuntimeAttributes>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
@@ -304,7 +304,7 @@
                                 <action selector="didChangeScoreType:" destination="Xs3-F6-RTo" eventType="valueChanged" id="T4R-P0-Env"/>
                             </connections>
                         </segmentedControl>
-                        <barButtonItem key="rightBarButtonItem" enabled="NO" image="Share" id="zuH-Jj-ON7" userLabel="Share">
+                        <barButtonItem key="rightBarButtonItem" image="Share" id="zuH-Jj-ON7" userLabel="Share">
                             <connections>
                                 <action selector="didTapShareButton:" destination="Xs3-F6-RTo" id="u60-RA-ojF"/>
                             </connections>
@@ -343,7 +343,7 @@
                                         <rect key="frame" x="0.0" y="28" width="414" height="66"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="CjV-uD-eiT" id="f8p-4S-89z">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="65.666666666666671"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="66"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="O9F-4K-mfi">

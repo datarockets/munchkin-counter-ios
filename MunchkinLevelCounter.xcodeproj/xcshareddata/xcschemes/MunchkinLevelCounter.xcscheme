@@ -38,6 +38,16 @@
                ReferencedContainer = "container:MunchkinLevelCounter.xcodeproj">
             </BuildableReference>
          </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "FE08593B1F459F3B005662E2"
+               BuildableName = "MunchkinLevelCounterUITests.xctest"
+               BlueprintName = "MunchkinLevelCounterUITests"
+               ReferencedContainer = "container:MunchkinLevelCounter.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference

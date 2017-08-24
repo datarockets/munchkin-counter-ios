@@ -1,0 +1,7 @@
+Compteur de niveaux facile à utiliser pour Munchkin. C'est gratuit, gratuit et ne contient aucune publicité.
+
+Caractéristiques:
+• Ajouter autant de joueurs que vous voulez
+• Compétez le niveau et la force du joueur avec facilité
+• Faites glisser les dés directement dans l'application
+• Analyser les données du jeu par le niveau, la force et le score total du joueur

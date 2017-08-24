@@ -20,6 +20,7 @@ class DashboardViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationController?.topViewController?.title = "title.level_counter".localized
         playingPlayersTableView.delegate = self
         playingPlayersTableView.dataSource = self
         presenter?.attachView(self)

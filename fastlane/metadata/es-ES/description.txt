@@ -1,0 +1,7 @@
+Contador de niveles fácil de usar para Munchkin. Es de código abierto, gratuito y no contiene anuncios.
+
+Caracteristicas:
+• Añade tantos jugadores como quieras
+• Contar con facilidad el nivel y la fuerza del jugador
+• Gira los dados directamente en la aplicación
+• Analizar datos de juego por nivel de jugador, fuerza y puntuación total

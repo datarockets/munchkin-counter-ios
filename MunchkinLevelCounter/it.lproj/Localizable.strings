@@ -7,7 +7,7 @@
 */
 
 /*  */
-"app_name" = "Level Counter for Munchkin";
+"app_name" = "Levels for Munchkin";
 
 /*  */
 "button.add_new_player" = "Aggiungere giocatore";
@@ -55,7 +55,7 @@
 "menu.settings" = "Impostazioni";
 
 /*  */
-"onboarder.page1.description" = "Munchkin Level Counter rende il gioco un modo migliore";
+"onboarder.page1.description" = "Level Counter for Munchkin rende il gioco un modo migliore";
 
 /*  */
 "onboarder.page1.title" = "Benvenuto!";
@@ -114,6 +114,9 @@
 /* */
 "text.dice" = "%d";
 
+/* */
+"text.share_message" = "Levels for Munchkin - contatore di facile utilizzo";
+
 /*  */
 "title.analytics" = "Analytics";
 
@@ -122,6 +125,9 @@
 
 /*  */
 "title.players_editor" = "Giocatori";
+
+/* */
+"title.level_counter" = "Contatore";
 
 /*  */
 "title.settings" = "Impostazioni";
@@ -154,4 +160,4 @@
 "dialog.player_actions.edit_player" = "Modifica giocatore";
 
 /*  */
-"menu.share_app" = "Condividi Munchkin Level Counter";
+"menu.share_app" = "Condividi Levels for Munchkin";

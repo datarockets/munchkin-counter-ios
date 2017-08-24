@@ -7,13 +7,16 @@
 */
 
 /*  */
-"app_name" = "Level Counter for Munchkin";
+"app_name" = "Levels for Munchkin";
 
 /*  */
 "title.choose_game_type" = "Choose Game Type";
 
 /*  */
 "title.players_editor" = "Players";
+
+/* */
+"title.level_counter" = "Counter";
 
 /*  */
 "title.analytics" = "Analytics";
@@ -31,7 +34,7 @@
 "menu.roll_dice" = "Roll a dice";
 
 /*  */
-"menu.share_app" = "Share Munchkin Level Counter";
+"menu.share_app" = "Share Levels for Munchkin";
 
 /*  */
 "button.finish" = "Finish";
@@ -122,6 +125,9 @@
 
 /* */
 "text.dice" = "Dropped %d";
+
+/* */
+"text.share_message" = "Levels for Munchkin - easy to use levels counter";
 
 /*  */
 "settings.max_level" = "Maximum level";
