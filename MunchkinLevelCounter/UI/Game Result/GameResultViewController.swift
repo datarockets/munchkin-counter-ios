@@ -59,12 +59,12 @@ extension GameResultViewController: GameResultView {
             let activityViewController = UIActivityViewController(activityItems: ["text.share_message".localized, link], applicationActivities: nil)
             activityViewController.popoverPresentationController?.sourceView = self.view
             activityViewController.excludedActivityTypes = [UIActivity.ActivityType.addToReadingList,
-                                                            UIActivityType.assignToContact,
-                                                            UIActivityType.openInIBooks,
-                                                            UIActivityType.postToFlickr,
-                                                            UIActivityType.postToVimeo,
-                                                            UIActivityType.print,
-                                                            UIActivityType.saveToCameraRoll]
+                                                            UIActivity.ActivityType.assignToContact,
+                                                            UIActivity.ActivityType.openInIBooks,
+                                                            UIActivity.ActivityType.postToFlickr,
+                                                            UIActivity.ActivityType.postToVimeo,
+                                                            UIActivity.ActivityType.print,
+                                                            UIActivity.ActivityType.saveToCameraRoll]
             
             self.present(activityViewController, animated: true)
         }
