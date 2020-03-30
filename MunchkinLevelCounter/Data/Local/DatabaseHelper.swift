@@ -21,7 +21,7 @@ class DatabaseHelper {
                 } else {
                     subscriber.onCompleted()
                 }
-            }, completion: { _ in
+            }, completion: { _, _ in
                 subscriber.onNext(player)
                 subscriber.onCompleted()
             })
@@ -137,7 +137,7 @@ class DatabaseHelper {
             MagicalRecord.save({ (context) in
                 let predicate = NSPredicate(format: "id = '\(id)'")
                 PlayerEntity.mr_deleteAll(matching: predicate, in: context)
-            }, completion: { _ in
+            }, completion: { _, _ in
                 subscriber.onCompleted()
             })
             return Disposables.create()
@@ -154,7 +154,7 @@ class DatabaseHelper {
                 } else {
                     subscriber.onCompleted()
                 }
-            }, completion: { _ in
+            }, completion: { _, _ in
                 subscriber.onCompleted()
             })
             return Disposables.create()
@@ -170,7 +170,7 @@ class DatabaseHelper {
                 } else {
                     subscriber.onCompleted()
                 }
-            }, completion: { _ in
+            }, completion: { _, _ in
                 subscriber.onCompleted()
             })
             return Disposables.create()
@@ -186,7 +186,7 @@ class DatabaseHelper {
                 } else {
                     subscriber.onCompleted()
                 }
-            }, completion: { _ in
+            }, completion: { _, _ in
                 subscriber.onCompleted()
             })
             return Disposables.create()
@@ -201,7 +201,7 @@ class DatabaseHelper {
                 } else {
                     subscriber.onCompleted()
                 }
-            }, completion: { _ in
+            }, completion: { _, _ in
                 subscriber.onCompleted()
             })
             return Disposables.create()
@@ -234,7 +234,7 @@ class DatabaseHelper {
                     subscriber.onCompleted()
                 }
                 GameStepEntity.mr_truncateAll(in: context)
-            }, completion: { _ in
+            }, completion: { _, _ in
                 subscriber.onCompleted()
             })
             return Disposables.create()
