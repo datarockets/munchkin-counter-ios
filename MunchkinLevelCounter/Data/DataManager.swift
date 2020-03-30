@@ -44,21 +44,21 @@ class DataManager {
     }
     
     func getPlayersByPosition() -> Observable<[Player]> {
-        return databaseHelper.getPlayersByPosition().toArray()
+        return databaseHelper.getPlayersByPosition().toArray().asObservable()
     }
     
     func getPlayingPlayers() -> Observable<[Player]> {
-        return databaseHelper.getPlayingPlayers().toArray()
+        return databaseHelper.getPlayingPlayers().toArray().asObservable()
     }
     
     func getPlayers(sortType: ScoreType) -> Observable<[Player]> {
         switch sortType {
             case .levelScore:
-                return databaseHelper.getPlayedPlayersByLevel().toArray()
+                return databaseHelper.getPlayedPlayersByLevel().toArray().asObservable()
             case .strengthScore:
-                return databaseHelper.getPlayedPlayersByStrength().toArray()
+                return databaseHelper.getPlayedPlayersByStrength().toArray().asObservable()
             case .totalScore:
-                return databaseHelper.getPlayedPlayersByTotal().toArray()
+                return databaseHelper.getPlayedPlayersByTotal().toArray().asObservable()
         }
     }
     
