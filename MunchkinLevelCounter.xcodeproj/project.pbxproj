@@ -14,7 +14,6 @@
 		A127FA881E4E0FDE002733AA /* DashboardPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A127FA871E4E0FDE002733AA /* DashboardPresenter.swift */; };
 		A127FA8A1E4E0FE6002733AA /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A127FA891E4E0FE6002733AA /* DashboardView.swift */; };
 		A12D01B01E54868B009BCD9E /* PlayersEditorTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A12D01AF1E54868B009BCD9E /* PlayersEditorTableViewCell.swift */; };
-		A16725FC1E5F24FB006CF6E8 /* fabric.apikey in Resources */ = {isa = PBXBuildFile; fileRef = A16725FB1E5F24FB006CF6E8 /* fabric.apikey */; };
 		A170F6001E5097FA006149D3 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = A170F5FF1E5097FA006149D3 /* Player.swift */; };
 		A17750101E4CB432004B910E /* PlayersEditorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A177500F1E4CB432004B910E /* PlayersEditorViewController.swift */; };
 		A17750121E4CB446004B910E /* PlayersEditorPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A17750111E4CB446004B910E /* PlayersEditorPresenter.swift */; };
@@ -75,7 +74,6 @@
 		A127FA871E4E0FDE002733AA /* DashboardPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardPresenter.swift; sourceTree = "<group>"; };
 		A127FA891E4E0FE6002733AA /* DashboardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; };
 		A12D01AF1E54868B009BCD9E /* PlayersEditorTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayersEditorTableViewCell.swift; sourceTree = "<group>"; };
-		A16725FB1E5F24FB006CF6E8 /* fabric.apikey */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = fabric.apikey; sourceTree = "<group>"; };
 		A170F5FF1E5097FA006149D3 /* Player.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		A177500F1E4CB432004B910E /* PlayersEditorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayersEditorViewController.swift; sourceTree = "<group>"; };
 		A17750111E4CB446004B910E /* PlayersEditorPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayersEditorPresenter.swift; sourceTree = "<group>"; };
@@ -266,7 +264,6 @@
 		A1F8F7401E4CA6B200B57DEB = {
 			isa = PBXGroup;
 			children = (
-				A16725FB1E5F24FB006CF6E8 /* fabric.apikey */,
 				A1F8F74B1E4CA6B200B57DEB /* MunchkinLevelCounter */,
 				FE08593D1F459F3B005662E2 /* MunchkinLevelCounterUITests */,
 				A1F8F74A1E4CA6B200B57DEB /* Products */,
@@ -454,7 +451,6 @@
 				A1F8F75A1E4CA6B200B57DEB /* LaunchScreen.storyboard in Resources */,
 				A1F8F7571E4CA6B200B57DEB /* Assets.xcassets in Resources */,
 				A19A76941E6CF078005C691A /* munchkin.ttf in Resources */,
-				A16725FC1E5F24FB006CF6E8 /* fabric.apikey in Resources */,
 				A1F8F7521E4CA6B200B57DEB /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -534,7 +530,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "FABRIC_APIKEY=$(cat ${SRCROOT}/fabric.apikey)\nFABRIC_BUILDSECRET=$(cat ${SRCROOT}/fabric.buildsecret)\n\"${PODS_ROOT}/Fabric/run\" ${FABRIC_APIKEY} ${FABRIC_BUILDSECRET}\n\"${PODS_ROOT}/SwiftLint/swiftlint\"\n";
+			shellScript = "#FABRIC_APIKEY=$(cat ${SRCROOT}/fabric.apikey)\n#FABRIC_BUILDSECRET=$(cat ${SRCROOT}/fabric.buildsecret)\n#\"${PODS_ROOT}/Fabric/run\" ${FABRIC_APIKEY} ${FABRIC_BUILDSECRET}\n#\"${PODS_ROOT}/SwiftLint/swiftlint\"\n";
 		};
 		A1DA49E21E685C94003FF1CF /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -547,7 +543,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if which swiftlint >/dev/null; then\n    swiftlint\nelse\n    echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+			shellScript = "#if which swiftlint >/dev/null; then\n#    swiftlint\n#else\n#    echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\n#fi\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 

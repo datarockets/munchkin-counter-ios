@@ -11,8 +11,8 @@ import CoreData
 import Swinject
 import SwinjectStoryboard
 import MagicalRecord
-import Fabric
-import Crashlytics
+//import Fabric
+//import Crashlytics
 
 enum Storyboard: String {
     case Main
@@ -113,23 +113,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return container
     }()
     
-    func initFabric() {
-        let resourceURL: URL = Bundle.main.url(forResource: "fabric.apikey", withExtension: nil)!
-        let fabricAPIKey: String?
-        do {
-            fabricAPIKey = try String(contentsOf: resourceURL, encoding: String.Encoding.utf8)
-        } catch _ {
-            fabricAPIKey = nil
-        }
-        let whitespaceToTrim: CharacterSet = CharacterSet.whitespacesAndNewlines
-        let fabricAPIKeyTrimmed: String = fabricAPIKey!.trimmingCharacters(in: whitespaceToTrim )
-        loggingPrint("Key for Fabric: \(fabricAPIKeyTrimmed)")
-        Crashlytics.start(withAPIKey: fabricAPIKeyTrimmed)
-        Fabric.with([Crashlytics.self])
-    }
+//    func initFabric() {
+//        let resourceURL: URL = Bundle.main.url(forResource: "fabric.apikey", withExtension: nil)!
+//        let fabricAPIKey: String?
+//        do {
+//            fabricAPIKey = try String(contentsOf: resourceURL, encoding: String.Encoding.utf8)
+//        } catch _ {
+//            fabricAPIKey = nil
+//        }
+//        let whitespaceToTrim: CharacterSet = CharacterSet.whitespacesAndNewlines
+//        let fabricAPIKeyTrimmed: String = fabricAPIKey!.trimmingCharacters(in: whitespaceToTrim )
+//        loggingPrint("Key for Fabric: \(fabricAPIKeyTrimmed)")
+//        Crashlytics.start(withAPIKey: fabricAPIKeyTrimmed)
+//        Fabric.with([Crashlytics.self])
+//    }
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        initFabric()
+//        initFabric()
         Appearance.setupUIAppearance()
         MagicalRecord.setupCoreDataStack()
         checkOnboarding()
