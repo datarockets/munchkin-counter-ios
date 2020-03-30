@@ -148,15 +148,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func launchStoryboard(storyboard: Storyboard) {
         switch storyboard {
-            case .Main:
-                let storyboard = SwinjectStoryboard.create(name: storyboard.rawValue, bundle: nil, container: container)
-                let rootViewController = storyboard.instantiateInitialViewController()! as UIViewController
-                let navigationController = UINavigationController(rootViewController: rootViewController)
-                window?.rootViewController = navigationController
-                break
-            case .Onboarding:
-                window?.rootViewController = container.resolve(OnboardingViewController.self)
-                break
+        case .Main:
+            let storyboard = SwinjectStoryboard.create(name: storyboard.rawValue, bundle: nil, container: container)
+            let rootViewController = storyboard.instantiateInitialViewController()! as UIViewController
+            let navigationController = UINavigationController(rootViewController: rootViewController)
+            window?.rootViewController = navigationController
+        case .Onboarding:
+            window?.rootViewController = container.resolve(OnboardingViewController.self)
         }
 
     }

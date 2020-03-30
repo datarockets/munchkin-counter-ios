@@ -251,7 +251,7 @@ extension PlayersEditorViewController: PlayersEditorView {
 
 // MARK: UITableViewDelegate & UITableViewDataSource
 
-extension PlayersEditorViewController : UITableViewDelegate, UITableViewDataSource {
+extension PlayersEditorViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = playersListTableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as? PlayersEditorTableViewCell else { fatalError("Dequeuing reusable cell failed") }
