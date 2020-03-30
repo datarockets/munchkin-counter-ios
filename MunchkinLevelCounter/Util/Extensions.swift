@@ -14,11 +14,11 @@ extension UIColor {
     open class func colorHash(hexString: String?) -> UIColor {
         if let n = hexString {
             var nameValue = 0
-            
-            for c in n.characters {
+
+            for c in n {
                 let characterString = String(c)
                 let scalars = characterString.unicodeScalars
-                nameValue +=  Int(scalars[scalars.startIndex].value)
+                nameValue += Int(scalars[scalars.startIndex].value)
             }
             
             var r = Float((nameValue * 123) % 51) / 51.0
