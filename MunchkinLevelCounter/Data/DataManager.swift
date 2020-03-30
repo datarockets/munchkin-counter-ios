@@ -124,7 +124,7 @@ class DataManager {
                     }
                 }
                 
-                let lineDataSet = LineChartDataSet.init(values: entries, label: nil)
+                let lineDataSet = LineChartDataSet.init(entries: entries, label: nil)
                 lineDataSet.drawCirclesEnabled = false
                 lineDataSet.setColor(playerColors[index])
                 lineDataSet.formLineWidth = 3.0

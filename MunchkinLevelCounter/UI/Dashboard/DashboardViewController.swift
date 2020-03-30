@@ -25,7 +25,7 @@ class DashboardViewController: BaseViewController {
         playingPlayersTableView.dataSource = self
         presenter?.attachView(self)
         presenter?.getPlayingPlayers()
-        playerViewController = self.childViewControllers.first as? PlayerViewController
+        playerViewController = self.children.first as? PlayerViewController
         playerViewController?.scoreChangedDelegate = self
     }
     

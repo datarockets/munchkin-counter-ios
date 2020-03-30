@@ -27,7 +27,7 @@ class GameResultViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         presenter?.attachView(self)
-        chartViewController = childViewControllers.first as? ChartsViewController
+        chartViewController = children.first as? ChartsViewController
         presenter?.chooseScoreType(scoreType: 0)
         self.navigationController?.viewControllers.remove(at: 1)
     }
@@ -58,7 +58,7 @@ extension GameResultViewController: GameResultView {
         if let link = URL(string: "https://itunes.apple.com/app/levels-for-munchkin/id1273260162") {
             let activityViewController = UIActivityViewController(activityItems: ["text.share_message".localized, link], applicationActivities: nil)
             activityViewController.popoverPresentationController?.sourceView = self.view
-            activityViewController.excludedActivityTypes = [UIActivityType.addToReadingList,
+            activityViewController.excludedActivityTypes = [UIActivity.ActivityType.addToReadingList,
                                                             UIActivityType.assignToContact,
                                                             UIActivityType.openInIBooks,
                                                             UIActivityType.postToFlickr,

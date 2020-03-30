@@ -108,11 +108,11 @@ extension UISegmentedControl {
 extension UIButton {
     
     @IBInspectable public var localizedTitle: String? {
-        set { setLocalizedTitle(newValue, state: UIControlState()) }
-        get { return getTitleForState(UIControlState()) }
+        set { setLocalizedTitle(newValue, state: UIControl.State()) }
+        get { return getTitleForState(UIControl.State()) }
     }
     
-    fileprivate func setLocalizedTitle(_ title: String?, state: UIControlState) {
+    fileprivate func setLocalizedTitle(_ title: String?, state: UIControl.State) {
         if title != nil {
             self.setTitle(title!.localized, for: state)
         } else {
@@ -120,7 +120,7 @@ extension UIButton {
         }
     }
     
-    fileprivate func getTitleForState(_ state: UIControlState) -> String? {
+    fileprivate func getTitleForState(_ state: UIControl.State) -> String? {
         if let title = self.titleLabel {
             return title.text
         }

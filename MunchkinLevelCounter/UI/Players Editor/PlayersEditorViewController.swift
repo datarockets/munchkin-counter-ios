@@ -283,11 +283,11 @@ extension PlayersEditorViewController : UITableViewDelegate, UITableViewDataSour
         return [delete, edit]
     }
     
-    func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCellEditingStyle {
+    func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
         if playersListTableView.isEditing {
-            return UITableViewCellEditingStyle.none
+            return UITableViewCell.EditingStyle.none
         } else {
-            return UITableViewCellEditingStyle.delete
+            return UITableViewCell.EditingStyle.delete
         }
     }
     
