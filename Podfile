@@ -15,10 +15,10 @@ target 'MunchkinLevelCounter' do
   pod 'Charts'
   pod 'SwiftLint'
 
-#  target 'MunchkinLevelCounterTests' do
-#    inherit! :search_paths
-#    pod 'Quick'
-#    pod 'Nimble'
-#  end
+  target 'MunchkinLevelCounterUITests' do
+    inherit! :search_paths
+    pod 'Quick'
+    pod 'Nimble'
+  end
 
 end

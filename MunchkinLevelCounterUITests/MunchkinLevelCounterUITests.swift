@@ -26,7 +26,7 @@ class MunchkinLevelCounterUITests: XCTestCase {
     
     func testScreenshots() {
         let app = XCUIApplication()
-        XCUIDevice.shared().orientation = .portrait
+        XCUIDevice.shared.orientation = .portrait
         
         // Players
         sleep(2)

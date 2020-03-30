@@ -11,6 +11,8 @@ PODS:
   - MagicalRecord (2.3.2):
     - MagicalRecord/Core (= 2.3.2)
   - MagicalRecord/Core (2.3.2)
+  - Nimble (8.0.7)
+  - Quick (2.2.0)
   - RxSwift (5.1.1)
   - SwiftLint (0.39.1)
   - Swinject (2.6.2)
@@ -24,6 +26,8 @@ DEPENDENCIES:
   - EAIntroView (~> 2.12.0)
   - Fabric
   - MagicalRecord
+  - Nimble
+  - Quick
   - RxSwift
   - SwiftLint
   - Swinject (= 2.6.2)
@@ -38,6 +42,8 @@ SPEC REPOS:
     - EARestrictedScrollView
     - Fabric
     - MagicalRecord
+    - Nimble
+    - Quick
     - RxSwift
     - SwiftLint
     - Swinject
@@ -51,12 +57,14 @@ SPEC CHECKSUMS:
   EARestrictedScrollView: b0c2a3f92fb2610bb44d71c5e4893777c89e45ef
   Fabric: 706c8b8098fff96c33c0db69cbf81f9c551d0d74
   MagicalRecord: 53bed74b4323b930992a725be713e53b37d19755
+  Nimble: a73af6ecd4c9106f434f3d55fc54570be3739e0b
+  Quick: 7fb19e13be07b5dfb3b90d4f9824c855a11af40e
   RxSwift: 81470a2074fa8780320ea5fe4102807cb7118178
   SwiftLint: 55e96a4a4d537d4a3156859fc1c54bd24851a046
   Swinject: cf7458774b1b00323080a9c67e47a1ee7f9d2af1
   SwinjectStoryboard: 32512ef16c2b0ff5b8f823b23539c4a50f6d3383
   UIImageView-Letters: f62db28076797adf3560ab7410647dc6899b9eef
 
-PODFILE CHECKSUM: 9daedf5e2de256f1d50f77af59455a7796f3dfe6
+PODFILE CHECKSUM: 69ad5e985d3cf692d68c82c652a69da40efa08cd
 
 COCOAPODS: 1.9.1
