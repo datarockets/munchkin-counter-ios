@@ -1,0 +1,58 @@
+PODS:
+  - Charts (3.4.0):
+    - Charts/Core (= 3.4.0)
+  - Charts/Core (3.4.0)
+  - Crashlytics (3.14.0):
+    - Fabric (~> 1.10.2)
+  - EAIntroView (2.12.0):
+    - EARestrictedScrollView (~> 1.1.0)
+  - EARestrictedScrollView (1.1.0)
+  - Fabric (1.10.2)
+  - MagicalRecord (2.3.2):
+    - MagicalRecord/Core (= 2.3.2)
+  - MagicalRecord/Core (2.3.2)
+  - RxSwift (5.1.1)
+  - Swinject (2.6.2)
+  - SwinjectStoryboard (2.2.0):
+    - Swinject (~> 2.6)
+  - UIImageView-Letters (1.1.4)
+
+DEPENDENCIES:
+  - Charts
+  - Crashlytics
+  - EAIntroView (~> 2.12.0)
+  - Fabric
+  - MagicalRecord
+  - RxSwift
+  - Swinject (= 2.6.2)
+  - SwinjectStoryboard (= 2.2.0)
+  - UIImageView-Letters
+
+SPEC REPOS:
+  https://github.com/CocoaPods/Specs.git:
+    - Charts
+    - Crashlytics
+    - EAIntroView
+    - EARestrictedScrollView
+    - Fabric
+    - MagicalRecord
+    - RxSwift
+    - Swinject
+    - SwinjectStoryboard
+    - UIImageView-Letters
+
+SPEC CHECKSUMS:
+  Charts: 74c9f256eaf0460c0c416522d1cf8c634ea6b286
+  Crashlytics: 540b7e5f5da5a042647227a5e3ac51d85eed06df
+  EAIntroView: 249559079ddfdbe80e5bcb755c04c3b964b2ac27
+  EARestrictedScrollView: b0c2a3f92fb2610bb44d71c5e4893777c89e45ef
+  Fabric: 706c8b8098fff96c33c0db69cbf81f9c551d0d74
+  MagicalRecord: 53bed74b4323b930992a725be713e53b37d19755
+  RxSwift: 81470a2074fa8780320ea5fe4102807cb7118178
+  Swinject: cf7458774b1b00323080a9c67e47a1ee7f9d2af1
+  SwinjectStoryboard: 32512ef16c2b0ff5b8f823b23539c4a50f6d3383
+  UIImageView-Letters: f62db28076797adf3560ab7410647dc6899b9eef
+
+PODFILE CHECKSUM: 28b965dc9ac8dd5ceca27d0a844ea65d444ef391
+
+COCOAPODS: 1.9.1
