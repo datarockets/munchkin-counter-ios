@@ -15,12 +15,12 @@ final class Player: Hashable {
     var playerColor: String?
     var isPlaying: Bool = false
     
-    var hashValue: Int {
-        return playerId.hashValue
-    }
-    
     init(playerId: String) {
         self.playerId = playerId
+    }
+    
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(self.playerId)
     }
     
     func getTotalScore() -> Int {

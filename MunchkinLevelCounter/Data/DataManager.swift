@@ -44,21 +44,21 @@ class DataManager {
     }
     
     func getPlayersByPosition() -> Observable<[Player]> {
-        return databaseHelper.getPlayersByPosition().toArray()
+        return databaseHelper.getPlayersByPosition().toArray().asObservable()
     }
     
     func getPlayingPlayers() -> Observable<[Player]> {
-        return databaseHelper.getPlayingPlayers().toArray()
+        return databaseHelper.getPlayingPlayers().toArray().asObservable()
     }
     
     func getPlayers(sortType: ScoreType) -> Observable<[Player]> {
         switch sortType {
-            case .levelScore:
-                return databaseHelper.getPlayedPlayersByLevel().toArray()
-            case .strengthScore:
-                return databaseHelper.getPlayedPlayersByStrength().toArray()
-            case .totalScore:
-                return databaseHelper.getPlayedPlayersByTotal().toArray()
+        case .levelScore:
+            return databaseHelper.getPlayedPlayersByLevel().toArray().asObservable()
+        case .strengthScore:
+            return databaseHelper.getPlayedPlayersByStrength().toArray().asObservable()
+        case .totalScore:
+            return databaseHelper.getPlayedPlayersByTotal().toArray().asObservable()
         }
     }
     
@@ -124,7 +124,7 @@ class DataManager {
                     }
                 }
                 
-                let lineDataSet = LineChartDataSet.init(values: entries, label: nil)
+                let lineDataSet = LineChartDataSet.init(entries: entries, label: nil)
                 lineDataSet.drawCirclesEnabled = false
                 lineDataSet.setColor(playerColors[index])
                 lineDataSet.formLineWidth = 3.0

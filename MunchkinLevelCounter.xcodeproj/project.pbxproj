@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		7AC27E8E985D8EB9173E1A46 /* Pods_MunchkinLevelCounter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46399C6A6BB7CEB218A85294 /* Pods_MunchkinLevelCounter.framework */; };
 		A127FA801E4DC65E002733AA /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A127FA7F1E4DC65E002733AA /* OnboardingViewController.swift */; };
 		A127FA821E4DC66A002733AA /* OnboardingPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A127FA811E4DC66A002733AA /* OnboardingPresenter.swift */; };
 		A127FA841E4DC67C002733AA /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A127FA831E4DC67C002733AA /* OnboardingView.swift */; };
@@ -15,7 +14,6 @@
 		A127FA881E4E0FDE002733AA /* DashboardPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A127FA871E4E0FDE002733AA /* DashboardPresenter.swift */; };
 		A127FA8A1E4E0FE6002733AA /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A127FA891E4E0FE6002733AA /* DashboardView.swift */; };
 		A12D01B01E54868B009BCD9E /* PlayersEditorTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A12D01AF1E54868B009BCD9E /* PlayersEditorTableViewCell.swift */; };
-		A16725FC1E5F24FB006CF6E8 /* fabric.apikey in Resources */ = {isa = PBXBuildFile; fileRef = A16725FB1E5F24FB006CF6E8 /* fabric.apikey */; };
 		A170F6001E5097FA006149D3 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = A170F5FF1E5097FA006149D3 /* Player.swift */; };
 		A17750101E4CB432004B910E /* PlayersEditorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A177500F1E4CB432004B910E /* PlayersEditorViewController.swift */; };
 		A17750121E4CB446004B910E /* PlayersEditorPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A17750111E4CB446004B910E /* PlayersEditorPresenter.swift */; };
@@ -49,6 +47,8 @@
 		A1FE902E1E65AABD0072315A /* ChartsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1FE902D1E65AABD0072315A /* ChartsTableViewCell.swift */; };
 		A1FE90641E66E69E0072315A /* Appearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1FE90631E66E69E0072315A /* Appearance.swift */; };
 		A1FE90681E67959A0072315A /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1FE90671E67959A0072315A /* Colors.swift */; };
+		B6FB04689D28DD382BA49FAC /* Pods_MunchkinLevelCounter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 208AB9BD1F0B5FD5A739002D /* Pods_MunchkinLevelCounter.framework */; };
+		EA80F3605FDAED44F1028EB1 /* Pods_MunchkinLevelCounterUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1413A2B59983C58F5DB7612 /* Pods_MunchkinLevelCounterUITests.framework */; };
 		FE08593F1F459F3B005662E2 /* MunchkinLevelCounterUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE08593E1F459F3B005662E2 /* MunchkinLevelCounterUITests.swift */; };
 		FE7A372F1F39D805005974F7 /* LoggingPrint.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE7A372E1F39D805005974F7 /* LoggingPrint.swift */; };
 		FE86853C1F45AE9C00F6A65A /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE86853B1F45AE9C00F6A65A /* SnapshotHelper.swift */; };
@@ -65,18 +65,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		15EAA78869A77B67CCD9A5A9 /* Pods-MunchkinLevelCounter.app store.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MunchkinLevelCounter.app store.xcconfig"; path = "Pods/Target Support Files/Pods-MunchkinLevelCounter/Pods-MunchkinLevelCounter.app store.xcconfig"; sourceTree = "<group>"; };
-		407977610C8921B6EB54369F /* Pods-MunchkinLevelCounter.ad hoc.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MunchkinLevelCounter.ad hoc.xcconfig"; path = "Pods/Target Support Files/Pods-MunchkinLevelCounter/Pods-MunchkinLevelCounter.ad hoc.xcconfig"; sourceTree = "<group>"; };
-		46399C6A6BB7CEB218A85294 /* Pods_MunchkinLevelCounter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MunchkinLevelCounter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		47FABE3AEFFEE99EA22B6D39 /* Pods-MunchkinLevelCounter.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MunchkinLevelCounter.release.xcconfig"; path = "Pods/Target Support Files/Pods-MunchkinLevelCounter/Pods-MunchkinLevelCounter.release.xcconfig"; sourceTree = "<group>"; };
-		4E9A64392CE0FF0897E8F225 /* Pods-MunchkinLevelCounterTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MunchkinLevelCounterTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MunchkinLevelCounterTests/Pods-MunchkinLevelCounterTests.release.xcconfig"; sourceTree = "<group>"; };
-		542F0FEBAD51AB9875B8A76F /* Pods-Munchkin Level Counter.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Munchkin Level Counter.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Munchkin Level Counter/Pods-Munchkin Level Counter.debug.xcconfig"; sourceTree = "<group>"; };
-		56F6911D425EA6423575B082 /* Pods_Munchkin_Level_Counter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Munchkin_Level_Counter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		5D31C7C05988FDF130E07539 /* Pods-Munchkin Level CounterTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Munchkin Level CounterTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Munchkin Level CounterTests/Pods-Munchkin Level CounterTests.release.xcconfig"; sourceTree = "<group>"; };
-		6166B033B03097EF4FDE051B /* Pods-Munchkin Level Counter.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Munchkin Level Counter.release.xcconfig"; path = "Pods/Target Support Files/Pods-Munchkin Level Counter/Pods-Munchkin Level Counter.release.xcconfig"; sourceTree = "<group>"; };
-		7CCEDB83BEC5440482DA548A /* Pods_Munchkin_Level_CounterTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Munchkin_Level_CounterTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		9083A2A5C71E08EADEBB36E7 /* Pods-MunchkinLevelCounterTests.app store.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MunchkinLevelCounterTests.app store.xcconfig"; path = "Pods/Target Support Files/Pods-MunchkinLevelCounterTests/Pods-MunchkinLevelCounterTests.app store.xcconfig"; sourceTree = "<group>"; };
-		A0522E5E71C1DB5DA4A41109 /* Pods-MunchkinLevelCounter.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MunchkinLevelCounter.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MunchkinLevelCounter/Pods-MunchkinLevelCounter.debug.xcconfig"; sourceTree = "<group>"; };
+		1C201EFB9B41E608E6F8279E /* Pods-MunchkinLevelCounterUITests.app store.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MunchkinLevelCounterUITests.app store.xcconfig"; path = "Target Support Files/Pods-MunchkinLevelCounterUITests/Pods-MunchkinLevelCounterUITests.app store.xcconfig"; sourceTree = "<group>"; };
+		1C65758B9AC53ECB53108C6B /* Pods-MunchkinLevelCounter.app store.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MunchkinLevelCounter.app store.xcconfig"; path = "Target Support Files/Pods-MunchkinLevelCounter/Pods-MunchkinLevelCounter.app store.xcconfig"; sourceTree = "<group>"; };
+		1F08FBAAB034E7B679ABECDE /* Pods-MunchkinLevelCounter.ad hoc.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MunchkinLevelCounter.ad hoc.xcconfig"; path = "Target Support Files/Pods-MunchkinLevelCounter/Pods-MunchkinLevelCounter.ad hoc.xcconfig"; sourceTree = "<group>"; };
+		208AB9BD1F0B5FD5A739002D /* Pods_MunchkinLevelCounter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MunchkinLevelCounter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5CBD12A1867842CFC7F39D48 /* Pods-MunchkinLevelCounterUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MunchkinLevelCounterUITests.debug.xcconfig"; path = "Target Support Files/Pods-MunchkinLevelCounterUITests/Pods-MunchkinLevelCounterUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		A127FA7F1E4DC65E002733AA /* OnboardingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		A127FA811E4DC66A002733AA /* OnboardingPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingPresenter.swift; sourceTree = "<group>"; };
 		A127FA831E4DC67C002733AA /* OnboardingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
@@ -84,7 +77,7 @@
 		A127FA871E4E0FDE002733AA /* DashboardPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardPresenter.swift; sourceTree = "<group>"; };
 		A127FA891E4E0FE6002733AA /* DashboardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; };
 		A12D01AF1E54868B009BCD9E /* PlayersEditorTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayersEditorTableViewCell.swift; sourceTree = "<group>"; };
-		A16725FB1E5F24FB006CF6E8 /* fabric.apikey */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = fabric.apikey; sourceTree = "<group>"; };
+		A1413A2B59983C58F5DB7612 /* Pods_MunchkinLevelCounterUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MunchkinLevelCounterUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A170F5FF1E5097FA006149D3 /* Player.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		A177500F1E4CB432004B910E /* PlayersEditorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayersEditorViewController.swift; sourceTree = "<group>"; };
 		A17750111E4CB446004B910E /* PlayersEditorPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayersEditorPresenter.swift; sourceTree = "<group>"; };
@@ -127,10 +120,8 @@
 		A1FE902D1E65AABD0072315A /* ChartsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartsTableViewCell.swift; sourceTree = "<group>"; };
 		A1FE90631E66E69E0072315A /* Appearance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Appearance.swift; sourceTree = "<group>"; };
 		A1FE90671E67959A0072315A /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
-		A2F903EC40DD9BDDCCA1E5B9 /* Pods_MunchkinLevelCounterTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MunchkinLevelCounterTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		CBAC2354BAA805BAA503F815 /* Pods-MunchkinLevelCounterTests.ad hoc.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MunchkinLevelCounterTests.ad hoc.xcconfig"; path = "Pods/Target Support Files/Pods-MunchkinLevelCounterTests/Pods-MunchkinLevelCounterTests.ad hoc.xcconfig"; sourceTree = "<group>"; };
-		DE001F53FC67234840A18435 /* Pods-Munchkin Level CounterTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Munchkin Level CounterTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Munchkin Level CounterTests/Pods-Munchkin Level CounterTests.debug.xcconfig"; sourceTree = "<group>"; };
-		DF0D7CDB2BB31B124060FDAE /* Pods-MunchkinLevelCounterTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MunchkinLevelCounterTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MunchkinLevelCounterTests/Pods-MunchkinLevelCounterTests.debug.xcconfig"; sourceTree = "<group>"; };
+		D3DF69A53496941246D6DA93 /* Pods-MunchkinLevelCounter.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MunchkinLevelCounter.debug.xcconfig"; path = "Target Support Files/Pods-MunchkinLevelCounter/Pods-MunchkinLevelCounter.debug.xcconfig"; sourceTree = "<group>"; };
+		E845C8543C4D767C5F27872A /* Pods-MunchkinLevelCounterUITests.ad hoc.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MunchkinLevelCounterUITests.ad hoc.xcconfig"; path = "Target Support Files/Pods-MunchkinLevelCounterUITests/Pods-MunchkinLevelCounterUITests.ad hoc.xcconfig"; sourceTree = "<group>"; };
 		FE08593C1F459F3B005662E2 /* MunchkinLevelCounterUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MunchkinLevelCounterUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE08593E1F459F3B005662E2 /* MunchkinLevelCounterUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MunchkinLevelCounterUITests.swift; sourceTree = "<group>"; };
 		FE0859401F459F3B005662E2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -143,7 +134,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7AC27E8E985D8EB9173E1A46 /* Pods_MunchkinLevelCounter.framework in Frameworks */,
+				B6FB04689D28DD382BA49FAC /* Pods_MunchkinLevelCounter.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -151,40 +142,33 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EA80F3605FDAED44F1028EB1 /* Pods_MunchkinLevelCounterUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		05F4BF00EB4873145F9E6A5D /* Frameworks */ = {
+		5447757963572DF043F50197 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				56F6911D425EA6423575B082 /* Pods_Munchkin_Level_Counter.framework */,
-				7CCEDB83BEC5440482DA548A /* Pods_Munchkin_Level_CounterTests.framework */,
-				46399C6A6BB7CEB218A85294 /* Pods_MunchkinLevelCounter.framework */,
-				A2F903EC40DD9BDDCCA1E5B9 /* Pods_MunchkinLevelCounterTests.framework */,
+				208AB9BD1F0B5FD5A739002D /* Pods_MunchkinLevelCounter.framework */,
+				A1413A2B59983C58F5DB7612 /* Pods_MunchkinLevelCounterUITests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		813606A9E38152C22EAE6CD7 /* Pods */ = {
+		588FB58D265DB7DC1A8FBF6D /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				542F0FEBAD51AB9875B8A76F /* Pods-Munchkin Level Counter.debug.xcconfig */,
-				6166B033B03097EF4FDE051B /* Pods-Munchkin Level Counter.release.xcconfig */,
-				DE001F53FC67234840A18435 /* Pods-Munchkin Level CounterTests.debug.xcconfig */,
-				5D31C7C05988FDF130E07539 /* Pods-Munchkin Level CounterTests.release.xcconfig */,
-				A0522E5E71C1DB5DA4A41109 /* Pods-MunchkinLevelCounter.debug.xcconfig */,
-				47FABE3AEFFEE99EA22B6D39 /* Pods-MunchkinLevelCounter.release.xcconfig */,
-				DF0D7CDB2BB31B124060FDAE /* Pods-MunchkinLevelCounterTests.debug.xcconfig */,
-				4E9A64392CE0FF0897E8F225 /* Pods-MunchkinLevelCounterTests.release.xcconfig */,
-				15EAA78869A77B67CCD9A5A9 /* Pods-MunchkinLevelCounter.app store.xcconfig */,
-				407977610C8921B6EB54369F /* Pods-MunchkinLevelCounter.ad hoc.xcconfig */,
-				9083A2A5C71E08EADEBB36E7 /* Pods-MunchkinLevelCounterTests.app store.xcconfig */,
-				CBAC2354BAA805BAA503F815 /* Pods-MunchkinLevelCounterTests.ad hoc.xcconfig */,
+				D3DF69A53496941246D6DA93 /* Pods-MunchkinLevelCounter.debug.xcconfig */,
+				1C65758B9AC53ECB53108C6B /* Pods-MunchkinLevelCounter.app store.xcconfig */,
+				1F08FBAAB034E7B679ABECDE /* Pods-MunchkinLevelCounter.ad hoc.xcconfig */,
+				5CBD12A1867842CFC7F39D48 /* Pods-MunchkinLevelCounterUITests.debug.xcconfig */,
+				1C201EFB9B41E608E6F8279E /* Pods-MunchkinLevelCounterUITests.app store.xcconfig */,
+				E845C8543C4D767C5F27872A /* Pods-MunchkinLevelCounterUITests.ad hoc.xcconfig */,
 			);
-			name = Pods;
+			path = Pods;
 			sourceTree = "<group>";
 		};
 		A127FA7D1E4DC5FA002733AA /* Dashboard */ = {
@@ -290,12 +274,11 @@
 		A1F8F7401E4CA6B200B57DEB = {
 			isa = PBXGroup;
 			children = (
-				A16725FB1E5F24FB006CF6E8 /* fabric.apikey */,
 				A1F8F74B1E4CA6B200B57DEB /* MunchkinLevelCounter */,
 				FE08593D1F459F3B005662E2 /* MunchkinLevelCounterUITests */,
 				A1F8F74A1E4CA6B200B57DEB /* Products */,
-				813606A9E38152C22EAE6CD7 /* Pods */,
-				05F4BF00EB4873145F9E6A5D /* Frameworks */,
+				588FB58D265DB7DC1A8FBF6D /* Pods */,
+				5447757963572DF043F50197 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -386,14 +369,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A1F8F7691E4CA6B200B57DEB /* Build configuration list for PBXNativeTarget "MunchkinLevelCounter" */;
 			buildPhases = (
-				9F6F4D1556553E029FA8D086 /* [CP] Check Pods Manifest.lock */,
+				16F0EE01130C50BFAC273F77 /* [CP] Check Pods Manifest.lock */,
 				A1F8F7451E4CA6B200B57DEB /* Sources */,
 				A1F8F7461E4CA6B200B57DEB /* Frameworks */,
 				A1DA49E21E685C94003FF1CF /* ShellScript */,
 				A1F8F7471E4CA6B200B57DEB /* Resources */,
-				469F216926D2EB0135B8362D /* [CP] Embed Pods Frameworks */,
-				B6E0C7F1841A6B9184B5B2D0 /* [CP] Copy Pods Resources */,
 				A14D0B201E5B3240008221F4 /* ShellScript */,
+				2AE8010E4DB135D4FEB93378 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -408,9 +390,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FE0859431F459F3C005662E2 /* Build configuration list for PBXNativeTarget "MunchkinLevelCounterUITests" */;
 			buildPhases = (
+				65520F30C816AC77B09B871D /* [CP] Check Pods Manifest.lock */,
 				FE0859381F459F3B005662E2 /* Sources */,
 				FE0859391F459F3B005662E2 /* Frameworks */,
 				FE08593A1F459F3B005662E2 /* Resources */,
+				6156C605E86B20BCAE515CE6 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -429,7 +413,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0830;
-				LastUpgradeCheck = 0820;
+				LastUpgradeCheck = 1130;
 				ORGANIZATIONNAME = datarockets;
 				TargetAttributes = {
 					A1F8F7481E4CA6B200B57DEB = {
@@ -449,6 +433,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 				ru,
@@ -478,7 +463,6 @@
 				A1F8F75A1E4CA6B200B57DEB /* LaunchScreen.storyboard in Resources */,
 				A1F8F7571E4CA6B200B57DEB /* Assets.xcassets in Resources */,
 				A19A76941E6CF078005C691A /* munchkin.ttf in Resources */,
-				A16725FC1E5F24FB006CF6E8 /* fabric.apikey in Resources */,
 				A1F8F7521E4CA6B200B57DEB /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -493,13 +477,35 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		469F216926D2EB0135B8362D /* [CP] Embed Pods Frameworks */ = {
+		16F0EE01130C50BFAC273F77 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MunchkinLevelCounter-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2AE8010E4DB135D4FEB93378 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-MunchkinLevelCounter/Pods-MunchkinLevelCounter-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-MunchkinLevelCounter/Pods-MunchkinLevelCounter-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Charts/Charts.framework",
 				"${BUILT_PRODUCTS_DIR}/EAIntroView/EAIntroView.framework",
 				"${BUILT_PRODUCTS_DIR}/EARestrictedScrollView/EARestrictedScrollView.framework",
@@ -522,21 +528,45 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MunchkinLevelCounter/Pods-MunchkinLevelCounter-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MunchkinLevelCounter/Pods-MunchkinLevelCounter-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		9F6F4D1556553E029FA8D086 /* [CP] Check Pods Manifest.lock */ = {
+		6156C605E86B20BCAE515CE6 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MunchkinLevelCounterUITests/Pods-MunchkinLevelCounterUITests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Nimble/Nimble.framework",
+				"${BUILT_PRODUCTS_DIR}/Quick/Quick.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Nimble.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Quick.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MunchkinLevelCounterUITests/Pods-MunchkinLevelCounterUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		65520F30C816AC77B09B871D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
 			);
 			inputPaths = (
 				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
 				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-MunchkinLevelCounter-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-MunchkinLevelCounterUITests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -554,7 +584,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "FABRIC_APIKEY=$(cat ${SRCROOT}/fabric.apikey)\nFABRIC_BUILDSECRET=$(cat ${SRCROOT}/fabric.buildsecret)\n\"${PODS_ROOT}/Fabric/run\" ${FABRIC_APIKEY} ${FABRIC_BUILDSECRET}\n\"${PODS_ROOT}/SwiftLint/swiftlint\"";
+			shellScript = "#FABRIC_APIKEY=$(cat ${SRCROOT}/fabric.apikey)\n#FABRIC_BUILDSECRET=$(cat ${SRCROOT}/fabric.buildsecret)\n#\"${PODS_ROOT}/Fabric/run\" ${FABRIC_APIKEY} ${FABRIC_BUILDSECRET}\n\"${PODS_ROOT}/SwiftLint/swiftlint\"\n";
 		};
 		A1DA49E21E685C94003FF1CF /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -567,22 +597,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if which swiftlint >/dev/null; then\n    swiftlint\nelse\n    echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi";
-		};
-		B6E0C7F1841A6B9184B5B2D0 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MunchkinLevelCounter/Pods-MunchkinLevelCounter-resources.sh\"\n";
-			showEnvVarsInLog = 0;
+			shellScript = "if which swiftlint >/dev/null; then\n    swiftlint\nelse\n    echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -693,15 +708,23 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -728,7 +751,7 @@
 		};
 		A18EBB281E699F730069DCC5 /* Ad Hoc */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 407977610C8921B6EB54369F /* Pods-MunchkinLevelCounter.ad hoc.xcconfig */;
+			baseConfigurationReference = 1F08FBAAB034E7B679ABECDE /* Pods-MunchkinLevelCounter.ad hoc.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -743,7 +766,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "631d52c1-c627-44e4-80cd-da4d69c1b181";
 				PROVISIONING_PROFILE_SPECIFIER = "match AdHoc com.datarockets.mnchknlvlcntr";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = "Ad Hoc";
@@ -758,15 +781,23 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -793,7 +824,6 @@
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
@@ -808,15 +838,23 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -843,7 +881,7 @@
 		};
 		A1F8F76A1E4CA6B200B57DEB /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A0522E5E71C1DB5DA4A41109 /* Pods-MunchkinLevelCounter.debug.xcconfig */;
+			baseConfigurationReference = D3DF69A53496941246D6DA93 /* Pods-MunchkinLevelCounter.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -858,15 +896,15 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "e9fb9159-0d92-452a-a16e-1edc42d0a1dd";
 				PROVISIONING_PROFILE_SPECIFIER = "match Development com.datarockets.mnchknlvlcntr";
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "-D DEBUG";
-				SWIFT_VERSION = 3.0;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
 		A1F8F76B1E4CA6B200B57DEB /* App Store */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 15EAA78869A77B67CCD9A5A9 /* Pods-MunchkinLevelCounter.app store.xcconfig */;
+			baseConfigurationReference = 1C65758B9AC53ECB53108C6B /* Pods-MunchkinLevelCounter.app store.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -882,13 +920,14 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "59990c93-b3a0-49b3-85f8-55612def9094";
 				PROVISIONING_PROFILE_SPECIFIER = "match AppStore com.datarockets.mnchknlvlcntr";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = "App Store";
 		};
 		FE0859441F459F3C005662E2 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5CBD12A1867842CFC7F39D48 /* Pods-MunchkinLevelCounterUITests.debug.xcconfig */;
 			buildSettings = {
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				DEVELOPMENT_TEAM = "";
@@ -907,6 +946,7 @@
 		};
 		FE0859451F459F3C005662E2 /* App Store */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1C201EFB9B41E608E6F8279E /* Pods-MunchkinLevelCounterUITests.app store.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -959,6 +999,7 @@
 		};
 		FE0859461F459F3C005662E2 /* Ad Hoc */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E845C8543C4D767C5F27872A /* Pods-MunchkinLevelCounterUITests.ad hoc.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;

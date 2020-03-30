@@ -65,7 +65,7 @@ class PlayersEditorViewController: BaseViewController {
         return name != "" && !players.filter { $0.playerName != editingPlayerName }.contains(where: { player in player.playerName == name })
     }
     
-    @objc fileprivate func validate(_ textField: UITextField) {
+    @objc fileprivate func validateInput(_ textField: UITextField) {
         var responder: UIResponder! = textField
         while !(responder is UIAlertController) {
             responder = responder.next
@@ -81,7 +81,7 @@ class PlayersEditorViewController: BaseViewController {
         alert.addTextField { textField in
             textField.returnKeyType = .done
             textField.placeholder = "text.player_name".localized
-            textField.addTarget(self, action: #selector(self.validate(_:)), for: .editingChanged)
+            textField.addTarget(self, action: #selector(self.validateInput(_:)), for: .editingChanged)
         }
         let addPlayerAction = UIAlertAction(title: "button.add_new_player".localized,
                                             style: .default) { _ in
@@ -108,7 +108,7 @@ class PlayersEditorViewController: BaseViewController {
             self.editingPlayerName = self.players[indexPath.row].playerName
             textField.returnKeyType = .done
             textField.text = self.editingPlayerName
-            textField.addTarget(self, action: #selector(self.validate(_:)), for: .editingChanged)
+            textField.addTarget(self, action: #selector(self.validateInput(_:)), for: .editingChanged)
         }
         let confirmEditPlayerAction = UIAlertAction(title: "button.edit".localized,
                                                     style: .default) { _ in
@@ -251,7 +251,7 @@ extension PlayersEditorViewController: PlayersEditorView {
 
 // MARK: UITableViewDelegate & UITableViewDataSource
 
-extension PlayersEditorViewController : UITableViewDelegate, UITableViewDataSource {
+extension PlayersEditorViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = playersListTableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as? PlayersEditorTableViewCell else { fatalError("Dequeuing reusable cell failed") }
@@ -283,11 +283,11 @@ extension PlayersEditorViewController : UITableViewDelegate, UITableViewDataSour
         return [delete, edit]
     }
     
-    func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCellEditingStyle {
+    func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
         if playersListTableView.isEditing {
-            return UITableViewCellEditingStyle.none
+            return UITableViewCell.EditingStyle.none
         } else {
-            return UITableViewCellEditingStyle.delete
+            return UITableViewCell.EditingStyle.delete
         }
     }
     
