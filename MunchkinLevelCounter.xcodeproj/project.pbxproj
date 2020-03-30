@@ -392,7 +392,6 @@
 				A1DA49E21E685C94003FF1CF /* ShellScript */,
 				A1F8F7471E4CA6B200B57DEB /* Resources */,
 				469F216926D2EB0135B8362D /* [CP] Embed Pods Frameworks */,
-				B6E0C7F1841A6B9184B5B2D0 /* [CP] Copy Pods Resources */,
 				A14D0B201E5B3240008221F4 /* ShellScript */,
 			);
 			buildRules = (
@@ -449,6 +448,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 				ru,
@@ -499,7 +499,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-MunchkinLevelCounter/Pods-MunchkinLevelCounter-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-MunchkinLevelCounter/Pods-MunchkinLevelCounter-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Charts/Charts.framework",
 				"${BUILT_PRODUCTS_DIR}/EAIntroView/EAIntroView.framework",
 				"${BUILT_PRODUCTS_DIR}/EARestrictedScrollView/EARestrictedScrollView.framework",
@@ -522,7 +522,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MunchkinLevelCounter/Pods-MunchkinLevelCounter-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MunchkinLevelCounter/Pods-MunchkinLevelCounter-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		9F6F4D1556553E029FA8D086 /* [CP] Check Pods Manifest.lock */ = {
@@ -554,7 +554,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "FABRIC_APIKEY=$(cat ${SRCROOT}/fabric.apikey)\nFABRIC_BUILDSECRET=$(cat ${SRCROOT}/fabric.buildsecret)\n\"${PODS_ROOT}/Fabric/run\" ${FABRIC_APIKEY} ${FABRIC_BUILDSECRET}\n\"${PODS_ROOT}/SwiftLint/swiftlint\"";
+			shellScript = "FABRIC_APIKEY=$(cat ${SRCROOT}/fabric.apikey)\nFABRIC_BUILDSECRET=$(cat ${SRCROOT}/fabric.buildsecret)\n\"${PODS_ROOT}/Fabric/run\" ${FABRIC_APIKEY} ${FABRIC_BUILDSECRET}\n\"${PODS_ROOT}/SwiftLint/swiftlint\"\n";
 		};
 		A1DA49E21E685C94003FF1CF /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -567,22 +567,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if which swiftlint >/dev/null; then\n    swiftlint\nelse\n    echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi";
-		};
-		B6E0C7F1841A6B9184B5B2D0 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MunchkinLevelCounter/Pods-MunchkinLevelCounter-resources.sh\"\n";
-			showEnvVarsInLog = 0;
+			shellScript = "if which swiftlint >/dev/null; then\n    swiftlint\nelse\n    echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -743,7 +728,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "631d52c1-c627-44e4-80cd-da4d69c1b181";
 				PROVISIONING_PROFILE_SPECIFIER = "match AdHoc com.datarockets.mnchknlvlcntr";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = "Ad Hoc";
@@ -858,8 +843,8 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "e9fb9159-0d92-452a-a16e-1edc42d0a1dd";
 				PROVISIONING_PROFILE_SPECIFIER = "match Development com.datarockets.mnchknlvlcntr";
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "-D DEBUG";
-				SWIFT_VERSION = 3.0;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -882,7 +867,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "59990c93-b3a0-49b3-85f8-55612def9094";
 				PROVISIONING_PROFILE_SPECIFIER = "match AppStore com.datarockets.mnchknlvlcntr";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = "App Store";
