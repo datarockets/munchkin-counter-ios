@@ -12,6 +12,7 @@ PODS:
     - MagicalRecord/Core (= 2.3.2)
   - MagicalRecord/Core (2.3.2)
   - RxSwift (5.1.1)
+  - SwiftLint (0.39.1)
   - Swinject (2.6.2)
   - SwinjectStoryboard (2.2.0):
     - Swinject (~> 2.6)
@@ -24,6 +25,7 @@ DEPENDENCIES:
   - Fabric
   - MagicalRecord
   - RxSwift
+  - SwiftLint
   - Swinject (= 2.6.2)
   - SwinjectStoryboard (= 2.2.0)
   - UIImageView-Letters
@@ -37,6 +39,7 @@ SPEC REPOS:
     - Fabric
     - MagicalRecord
     - RxSwift
+    - SwiftLint
     - Swinject
     - SwinjectStoryboard
     - UIImageView-Letters
@@ -49,10 +52,11 @@ SPEC CHECKSUMS:
   Fabric: 706c8b8098fff96c33c0db69cbf81f9c551d0d74
   MagicalRecord: 53bed74b4323b930992a725be713e53b37d19755
   RxSwift: 81470a2074fa8780320ea5fe4102807cb7118178
+  SwiftLint: 55e96a4a4d537d4a3156859fc1c54bd24851a046
   Swinject: cf7458774b1b00323080a9c67e47a1ee7f9d2af1
   SwinjectStoryboard: 32512ef16c2b0ff5b8f823b23539c4a50f6d3383
   UIImageView-Letters: f62db28076797adf3560ab7410647dc6899b9eef
 
-PODFILE CHECKSUM: 28b965dc9ac8dd5ceca27d0a844ea65d444ef391
+PODFILE CHECKSUM: 9daedf5e2de256f1d50f77af59455a7796f3dfe6
 
 COCOAPODS: 1.9.1

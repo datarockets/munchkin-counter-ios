@@ -13,7 +13,7 @@ target 'MunchkinLevelCounter' do
   pod 'Crashlytics'
   pod 'EAIntroView', '~> 2.12.0'
   pod 'Charts'
-#  pod 'SwiftLint'
+  pod 'SwiftLint'
 
 #  target 'MunchkinLevelCounterTests' do
 #    inherit! :search_paths

@@ -530,7 +530,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "#FABRIC_APIKEY=$(cat ${SRCROOT}/fabric.apikey)\n#FABRIC_BUILDSECRET=$(cat ${SRCROOT}/fabric.buildsecret)\n#\"${PODS_ROOT}/Fabric/run\" ${FABRIC_APIKEY} ${FABRIC_BUILDSECRET}\n#\"${PODS_ROOT}/SwiftLint/swiftlint\"\n";
+			shellScript = "#FABRIC_APIKEY=$(cat ${SRCROOT}/fabric.apikey)\n#FABRIC_BUILDSECRET=$(cat ${SRCROOT}/fabric.buildsecret)\n#\"${PODS_ROOT}/Fabric/run\" ${FABRIC_APIKEY} ${FABRIC_BUILDSECRET}\n\"${PODS_ROOT}/SwiftLint/swiftlint\"\n";
 		};
 		A1DA49E21E685C94003FF1CF /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -543,7 +543,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "#if which swiftlint >/dev/null; then\n#    swiftlint\n#else\n#    echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\n#fi\n";
+			shellScript = "if which swiftlint >/dev/null; then\n    swiftlint\nelse\n    echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
